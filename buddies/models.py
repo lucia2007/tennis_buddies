@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+# class Buddy(models.Model):
+#     """
+#     A model to create and manage Tennis Buddy profiles
+#     """
+
+#     user = models.ForeignKey(
+#         User, related_name="profile_owner", on_delete=models.CASCADE)
+
