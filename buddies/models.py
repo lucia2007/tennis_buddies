@@ -16,7 +16,7 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-        
+
 
 class Buddy(models.Model):
     """
@@ -25,8 +25,8 @@ class Buddy(models.Model):
 
     STATUS = ((0, "inactive"), (1, "active"))
 
-    owner = models.ForeignKey(
-        User, related_name="profile_owner", on_delete=models.CASCADE)
+    user_profile = models.OneToOneField(
+        UserProfile, related_name="profile_owner", on_delete=models.CASCADE)
     about_me = models.TextField()  # make it into RichTextField
     data_of_birth = models.DateField()
     profile_picture = CloudinaryField('image', default='placeholder')  # change placeholder text
@@ -35,8 +35,10 @@ class Buddy(models.Model):
     status = models.IntegerField(choices=STATUS, default=1)
     gender = models.CharField(max_length=6, choices=[
                               ('M', 'Male'), ('F', 'Female')])
+    level = models.CharField(max_length=15, choices=[
+                              ('Beginner', 'Beginner'), ('Intermediate', 'Intermediate'), ('Advanced', 'Advanced')])
     practice_type = models.CharField(max_length=25, choices=[
-                              ('Hitting Practice', 'Hitting Practice'), ('Match Practice', 'Match Practice')])
+                              ('Hitting Practice', 'Hitting Practice'), ('Match Practice', 'Match Practice'), ('Both', 'Both')])
     game_type = models.CharField(max_length=10, choices=[
                               ('Singles', 'Singles'), ('Doubles', 'Doubles'), ('Both', 'Both')])
     availability = models.CharField(max_length=10, choices=[
@@ -45,4 +47,4 @@ class Buddy(models.Model):
 
     def __str__(self):
         """ Returns strings representation of an object """
-        return self.user.username
+        return self.user_profile.first_name
