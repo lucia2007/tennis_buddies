@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     # Apps
     'buddies',
+    'bookings',
 ]
 
 SITE_ID = 1
