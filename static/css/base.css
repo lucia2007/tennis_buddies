@@ -1,4 +1,26 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* font-family: ; */
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
 img.logo {
     width: 60px;
     height: auto;
+}
+
+/* Footer  */
+/* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
+footer {
+    flex-shrink: 0;
 }
