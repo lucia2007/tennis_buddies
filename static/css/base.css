@@ -19,6 +19,10 @@ img.logo {
     height: auto;
 }
 
+.active {
+    font-weight: 600;
+}
+
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
 footer {
