@@ -6,7 +6,7 @@ from buddies.models import UserProfile  # type: ignore
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
-    list_display = ('owner', 'get_opponents', 'date', 'time', 'start_time', 'court', 'email_sent')
+    list_display = ('owner', 'get_opponents', 'date', 'time', 'court', 'email_sent')
 
     @admin.display(ordering='user_profile__first_name', description='name')
     def get_opponents(self, obj):
@@ -19,7 +19,7 @@ class BookingAdmin(admin.ModelAdmin):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['event_type', 'date', 'time', 'start_time', 'court']
+    list_display = ['event_type', 'date', 'time', 'court']
     list_filter = ['event_type',]
     search_fields = ['start_time', 'event_type']
 

@@ -35,7 +35,6 @@ class Booking(models.Model):
 
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     date = models.DateField()
-    start_time = models.DateTimeField()
     time = models.CharField(max_length=15, choices=TIMES, default="09:00 - 10:00")
     # maximum one booking per user per day
     court = models.ForeignKey(Court, on_delete=models.CASCADE)

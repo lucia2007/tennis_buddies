@@ -33,6 +33,8 @@ class Buddy(models.Model):
     about_me = models.TextField()  # make it into RichTextField
     data_of_birth = models.DateField()
     profile_picture = CloudinaryField('image', default='placeholder')  # change placeholder text
+    picture_description = models.CharField(max_length=200)
+    # add picture description
     # excerpt = models.TextField(blank=True)
     is_approved = models.BooleanField(default=False)
     status = models.IntegerField(choices=STATUS, default=1)
