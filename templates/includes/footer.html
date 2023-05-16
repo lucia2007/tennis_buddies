@@ -1,31 +1,33 @@
+{% load static %}
+
 <footer>
     <!-- Footer -->
     <!-- https://mdbootstrap.com/docs/standard/navigation/footer/ -->
     <footer class="text-center text-lg-start bg-white text-muted">
         <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Connect with us on social networks:</span>
-            </div>
-            <!-- Left -->
-
-            <!-- Right -->
+        <section class="d-flex justify-content-center justify-content-lg-center p-4 border-bottom social">
             <div>
-                <a href="" class="me-4 link-secondary">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://www.facebook.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                    aria-label="Facebook opens in a new tab">
+                    <img src="{% static '/icons/facebook.svg' %}" alt="Facebook Icon" class="social-icon">
                 </a>
-                <a href="" class="me-4 link-secondary">
-                    <i class="fab fa-twitter"></i>
+                <a href="https://www.twitter.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                    aria-label="Twitter opens in a new tab">
+                    <img src="{% static '/icons/twitter.svg' %}" alt="Twitter Icon" class="social-icon">
                 </a>
-                <a href="" class="me-4 link-secondary">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.pinterest.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                    aria-label="Pinterest opens in a new tab">
+                    <img src="{% static '/icons/pinterest.svg' %}" alt="Pinterest Icon" class="social-icon">
                 </a>
-                <a href="" class="me-4 link-secondary">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://www.instagram.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                    aria-label="Instagram opens in a new tab">
+                    <img src="{% static '/icons/instagram.svg' %}" alt="Instagram Icon" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                    aria-label="LinkedIn opens in a new tab">
+                    <img src="{% static '/icons/linkedin.svg' %}" alt="LinkedIn Icon" class="social-icon">
                 </a>
             </div>
-            <!-- Right -->
         </section>
         <!-- Section: Social media -->
 

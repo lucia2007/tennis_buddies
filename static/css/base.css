@@ -24,3 +24,7 @@ img.logo {
 footer {
     flex-shrink: 0;
 }
+
+.social-icon {
+    height: 2rem;
+}
