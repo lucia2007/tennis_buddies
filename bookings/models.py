@@ -5,7 +5,8 @@ from cloudinary.models import CloudinaryField  # type: ignore
 
 
 class Court(models.Model):
-    NAME = [('one', 'One'), ('two', 'Two'), ('three', 'Three'), ('four', 'Four'), ('five', 'Five')]
+    NAME = [('one', 'One'), ('two', 'Two'), ('three', 'Three'),
+            ('four', 'Four'), ('five', 'Five')]
     court_name = models.CharField(max_length=5, choices=NAME)
 
     def __str__(self):
@@ -35,7 +36,8 @@ class Booking(models.Model):
 
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     date = models.DateField()
-    time = models.CharField(max_length=15, choices=TIMES, default="09:00 - 10:00")
+    time = models.CharField(
+            max_length=15, choices=TIMES, default="09:00 - 10:00")
     # maximum one booking per user per day
     court = models.ForeignKey(Court, on_delete=models.CASCADE)
     opponents = models.ManyToManyField(
@@ -50,7 +52,8 @@ class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
     start_time = models.DateTimeField()
-    time = models.CharField(max_length=15, choices=TIMES, default="09:00 - 10:00")
+    time = models.CharField(
+            max_length=15, choices=TIMES, default="09:00 - 10:00")
     court = models.ForeignKey(Court, on_delete=models.CASCADE)
     event_type = models.CharField(max_length=25, choices=[
                               ('Coaching', 'Coaching'),

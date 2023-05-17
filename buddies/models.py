@@ -33,7 +33,7 @@ class Buddy(models.Model):
     about_me = models.TextField()  # make it into RichTextField
     data_of_birth = models.DateField()
     # change placeholder text
-    profile_picture = CloudinaryField('image', default='placeholder')  
+    profile_picture = CloudinaryField('image', default='placeholder')
     picture_description = models.CharField(max_length=200)
     # add picture description
     # excerpt = models.TextField(blank=True)
@@ -43,7 +43,7 @@ class Buddy(models.Model):
                               ('M', 'Male'),
                               ('F', 'Female')])
     level = models.CharField(max_length=15, choices=[
-                              ('Beginner', 'Beginner'), 
+                              ('Beginner', 'Beginner'),
                               ('Intermediate', 'Intermediate'),
                               ('Advanced', 'Advanced')])
     practice_type = models.CharField(max_length=25, choices=[
@@ -51,7 +51,7 @@ class Buddy(models.Model):
                               ('Match Practice', 'Match Practice'),
                               ('Both', 'Both')])
     game_type = models.CharField(max_length=10, choices=[
-                              ('Singles', 'Singles'), 
+                              ('Singles', 'Singles'),
                               ('Doubles', 'Doubles'),
                               ('Both', 'Both')])
     availability = models.CharField(max_length=10, choices=[
