@@ -6,6 +6,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    background-color: yellow;
     /* font-family: ; */
 }
 
@@ -23,6 +24,14 @@ img.logo {
     font-weight: 600;
 }
 
+/* Forms */
+.form {
+    width: 80%;
+    margin: 3% auto;
+    border-radius: 10px;
+}
+
+
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
 footer {
@@ -31,4 +40,14 @@ footer {
 
 .social-icon {
     height: 2rem;
+}
+
+/* Social icons > a */
+a.me-4.link-secondary {
+    text-decoration: none;
+}
+
+/* Navigation links in Footer */
+a.text-reset {
+    text-decoration: none;
 }
