@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Add Buddy Profile{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+        <h1 class="text-center">Add Buddy</h1>
+        <!-- update the url below -->
+        <p class="text-center">If you want to create a new Buddy Profile, please update your <a
+                href="{{ login_url }}">User Profile</a> first.</p>
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary w-30 mt-2">Create a Buddy Profile</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

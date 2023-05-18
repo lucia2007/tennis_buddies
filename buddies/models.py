@@ -5,20 +5,21 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField  # type: ignore
 from datetime import date
 from django.core.validators import RegexValidator
+from profiles.models import UserProfile
 
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    phone = models.CharField(
-        max_length=20,
-        null=True)
-    # validators=[RegexValidator(r'^\+?\d{9, 15}$')])  # validate if phone#
-    created_on = models.DateTimeField(auto_now=True)
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     first_name = models.CharField(max_length=20)
+#     last_name = models.CharField(max_length=20)
+#     phone = models.CharField(
+#         max_length=20,
+#         null=True)
+#     # validators=[RegexValidator(r'^\+?\d{9, 15}$')])  # validate if phone#
+#     created_on = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.user.username
+#     def __str__(self):
+#         return self.user.username
 
 
 class Buddy(models.Model):
@@ -27,15 +28,22 @@ class Buddy(models.Model):
     """
 
     STATUS = ((0, "inactive"), (1, "active"))
-
+    # user = models.ForeignKey(
+    #     User, related_name='buddy_profile_owner', on_delete=models.CASCADE)
     user_profile = models.OneToOneField(
         UserProfile, related_name="profile_owner", on_delete=models.CASCADE)
     about_me = models.TextField()  # make it into RichTextField
-    data_of_birth = models.DateField()
+    date_of_birth = models.DateField()
     # change placeholder text
     profile_picture = CloudinaryField('image', default='placeholder')
+    # image = ResizedImageField(
+    #     size=[400, None], quality=75, upload_to='buddies/', force_format="WEBP",
+    #     blank=False, null=False
+    #     
+    # if you decide to use this format, you need to install pip3 install
+    # django_resized, then freeze requirements and
+    # from django_resized import ResizedImageField + pip install pillow?)
     picture_description = models.CharField(max_length=200)
-    # add picture description
     # excerpt = models.TextField(blank=True)
     is_approved = models.BooleanField(default=False)
     status = models.IntegerField(choices=STATUS, default=1)
