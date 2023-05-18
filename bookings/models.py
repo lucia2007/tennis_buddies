@@ -1,6 +1,6 @@
 from django.db import models  # type: ignore
 from django.contrib.auth.models import User  # type: ignore
-from buddies.models import UserProfile
+from profiles.models import UserProfile
 from cloudinary.models import CloudinaryField  # type: ignore
 
 
@@ -43,6 +43,10 @@ class Booking(models.Model):
     opponents = models.ManyToManyField(
         UserProfile, related_name="booking_opponents")
     email_sent = models.BooleanField(default=False)
+
+    # to enable ordering
+    class Meta:
+        ordering = ['-date']
 
     def __str__(self):
         return str(self.owner)
