@@ -28,5 +28,5 @@ class AddBuddy(LoginRequiredMixin, CreateView):
     success_url = '/buddies/'
 
     def form_valid(self, form):
-        form.instance.user_profile = self.request.user_profile
-        return super(AddBuddy, self).form_valid(form)
+        form.instance.user_profile = self.request.user.user_profile
+        return super().form_valid(form)

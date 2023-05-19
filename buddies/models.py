@@ -28,10 +28,8 @@ class Buddy(models.Model):
     """
 
     STATUS = ((0, "inactive"), (1, "active"))
-    # user = models.ForeignKey(
-    #     User, related_name='buddy_profile_owner', on_delete=models.CASCADE)
     user_profile = models.OneToOneField(
-        UserProfile, related_name="profile_owner", on_delete=models.CASCADE)
+        UserProfile, related_name="buddy", on_delete=models.CASCADE)
     about_me = models.TextField()  # make it into RichTextField
     date_of_birth = models.DateField()
     # change placeholder text
@@ -44,7 +42,6 @@ class Buddy(models.Model):
     # django_resized, then freeze requirements and
     # from django_resized import ResizedImageField + pip install pillow?)
     picture_description = models.CharField(max_length=200)
-    # excerpt = models.TextField(blank=True)
     is_approved = models.BooleanField(default=False)
     status = models.IntegerField(choices=STATUS, default=1)
     gender = models.CharField(max_length=6, choices=[
