@@ -16,5 +16,5 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     # the success url should be home maybe?
 
     def form_valid(self, form):
-        form.instance.user_profile = self.request.user_profile
-        return super(AddUserProfile, self).form_valid(form)
+        form.instance.user = self.request.user
+        return super().form_valid(form)
