@@ -20,36 +20,43 @@
                         <a class="nav-link {% if url_name == 'home' %}active{% endif %}" href="{% url 'home' %}"
                             aria-current="page">Home</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Find a Buddy</a>
-                    </li> -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Find a Buddy
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
-                                    href="{% url 'add-profile' %}">Add User Profile</a></li>
-                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
-                                    href="{% url 'add-buddy' %}">Add Buddy Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
-                                    href="{% url 'buddies' %}">Find the
-                                    Perfect Buddy</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                        </ul>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Booking</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'buddies' %}">Find The Perfect Buddy</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-label="User Profile" aria-expanded="false">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                    href="{% url 'add-profile' %}">Contact Info</a></li>
+                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                    href="{% url 'add-buddy' %}">Profile</a></li>
+                        </ul>
+                    </li> -->
                 </ul>
-                <div class="d-flex">
+                <div class="d-flex me-4">
+                    <ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-label="User Profile" aria-expanded="false">
+                                <i class="fa-regular fa-user"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                        href="{% url 'add-profile' %}">Contact Info</a></li>
+                                <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                        href="{% url 'add-buddy' %}">Profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     {% if request.user.is_authenticated %}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
