@@ -6,21 +6,12 @@
 <h1 class="text-center p-2">Tennis Buddies</h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for buddy in buddies %}
-    <a href="#" class="buddies" aria-label="Click to view {{buddy.user_profile}}">
+    <a href="#" class="buddies" aria-label="Click to view {{buddy.user_profile.first_name}}">
         <div class="card m-2" style="width: 18rem;">
-            <img src="buddy.profile_picture.url" class="card-img-top" alt="{{buddy.profile_picture}}">
+            <img src="{{ buddy.profile_picture.url }}" class="card-img-top" alt="{{buddy.picture_description}}">
             <div class="card-body">
-                <h2 class="card-title">{{buddy.user_profile}}</h2>
-                <p class="card-text">{{buddy.about_me|truncatechars:150}}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <h2 class="card-title">{{buddy.user_profile.first_name}} {{buddy.user_profile.last_name}}</h2>
+                <p class="card-text">{{buddy.about_me|truncatechars:100}}</p>
             </div>
         </div>
     </a>
