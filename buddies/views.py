@@ -1,7 +1,9 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 
 # to make sure the user is logged in
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 from .models import Buddy
 from .forms import BuddyForm
@@ -34,3 +36,15 @@ class AddBuddy(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user_profile = self.request.user.user_profile
         return super().form_valid(form)
+
+
+class DeleteBuddy(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete a buddy profile """
+    model = Buddy
+    success_url = '/buddies/'
+
+    def test_func(self):
+        """
+        Checks if the signed in user is the same user who owns the object
+        """
+        return self.request.user == self.get_object().user_profile.user
