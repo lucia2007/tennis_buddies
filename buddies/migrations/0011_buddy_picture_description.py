@@ -5,15 +5,14 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('buddies', '0010_alter_userprofile_phone'),
+        ("buddies", "0010_alter_userprofile_phone"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='buddy',
-            name='picture_description',
+            model_name="buddy",
+            name="picture_description",
             field=models.TextField(default=django.utils.timezone.now),
             preserve_default=False,
         ),

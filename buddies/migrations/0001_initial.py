@@ -7,7 +7,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -16,32 +15,105 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='UserProfile',
+            name="UserProfile",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(blank=True, max_length=20)),
-                ('last_name', models.CharField(blank=True, max_length=20)),
-                ('email', models.EmailField(blank=True, max_length=254)),
-                ('phone', models.CharField(blank=True, max_length=20)),
-                ('created_on', models.DateTimeField(auto_now=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("first_name", models.CharField(blank=True, max_length=20)),
+                ("last_name", models.CharField(blank=True, max_length=20)),
+                ("email", models.EmailField(blank=True, max_length=254)),
+                ("phone", models.CharField(blank=True, max_length=20)),
+                ("created_on", models.DateTimeField(auto_now=True)),
+                (
+                    "user",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Buddy',
+            name="Buddy",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('about_me', models.TextField()),
-                ('data_of_birth', models.DateField()),
-                ('profile_picture', cloudinary.models.CloudinaryField(default='placeholder', max_length=255, verbose_name='image')),
-                ('is_approved', models.BooleanField(default=False)),
-                ('status', models.IntegerField(choices=[(0, 'inactive'), (1, 'active')], default=1)),
-                ('gender', models.CharField(choices=[('M', 'Male'), ('F', 'Female')], max_length=6)),
-                ('practice_type', models.CharField(choices=[('Hitting Practice', 'Hitting Practice'), ('Match Practice', 'Match Practice')], max_length=25)),
-                ('game_type', models.CharField(choices=[('Singles', 'Singles'), ('Doubles', 'Doubles'), ('Both', 'Both')], max_length=10)),
-                ('availability', models.CharField(choices=[('Morning', 'Morning'), ('Afternoon', 'Afternoon'), ('Both', 'Both')], max_length=10)),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='profile_owner', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("about_me", models.TextField()),
+                ("data_of_birth", models.DateField()),
+                (
+                    "profile_picture",
+                    cloudinary.models.CloudinaryField(
+                        default="placeholder", max_length=255, verbose_name="image"
+                    ),
+                ),
+                ("is_approved", models.BooleanField(default=False)),
+                (
+                    "status",
+                    models.IntegerField(
+                        choices=[(0, "inactive"), (1, "active")], default=1
+                    ),
+                ),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[("M", "Male"), ("F", "Female")], max_length=6
+                    ),
+                ),
+                (
+                    "practice_type",
+                    models.CharField(
+                        choices=[
+                            ("Hitting Practice", "Hitting Practice"),
+                            ("Match Practice", "Match Practice"),
+                        ],
+                        max_length=25,
+                    ),
+                ),
+                (
+                    "game_type",
+                    models.CharField(
+                        choices=[
+                            ("Singles", "Singles"),
+                            ("Doubles", "Doubles"),
+                            ("Both", "Both"),
+                        ],
+                        max_length=10,
+                    ),
+                ),
+                (
+                    "availability",
+                    models.CharField(
+                        choices=[
+                            ("Morning", "Morning"),
+                            ("Afternoon", "Afternoon"),
+                            ("Both", "Both"),
+                        ],
+                        max_length=10,
+                    ),
+                ),
+                ("created_on", models.DateTimeField(auto_now_add=True)),
+                (
+                    "owner",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="profile_owner",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

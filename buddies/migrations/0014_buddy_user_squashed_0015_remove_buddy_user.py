@@ -5,13 +5,11 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
-    replaces = [('buddies', '0014_buddy_user'), ('buddies', '0015_remove_buddy_user')]
+    replaces = [("buddies", "0014_buddy_user"), ("buddies", "0015_remove_buddy_user")]
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('buddies', '0013_rename_data_of_birth_buddy_date_of_birth'),
+        ("buddies", "0013_rename_data_of_birth_buddy_date_of_birth"),
     ]
 
-    operations = [
-    ]
+    operations = []

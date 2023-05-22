@@ -21,11 +21,12 @@ from .forms import BuddyForm
 
 
 class AddBuddy(LoginRequiredMixin, CreateView):
-    """ Add buddy view """
-    template_name = 'buddies/add.html'
+    """Add buddy view"""
+
+    template_name = "buddies/add.html"
     model = Buddy
     form_class = BuddyForm
-    success_url = '/buddies/'
+    success_url = "/buddies/"
 
     def form_valid(self, form):
         form.instance.user_profile = self.request.user.user_profile
