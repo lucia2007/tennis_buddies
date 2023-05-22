@@ -6,7 +6,8 @@
 <h1 class="text-center p-2">Tennis Buddies</h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for buddy in buddies %}
-    <a href="#" class="buddies" aria-label="Click to view {{buddy.user_profile.first_name}}">
+    <a href="{% url 'buddy-detail' buddy.id %}" class="buddies"
+        aria-label="Click to view {{buddy.user_profile.first_name}}">
         <div class="card m-2" style="width: 18rem;">
             <img src="{{ buddy.profile_picture.url }}" class="card-img-top" alt="{{buddy.picture_description}}">
             <div class="card-body">
