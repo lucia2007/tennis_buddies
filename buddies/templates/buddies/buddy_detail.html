@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Buddy Detail {{buddy.user_profile.first_name}}{{buddy.user_profile.last_name}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="buddy-details mt-2 p-1">
+        <div class="profile-picture">
+            <img src="{{ buddy.profile_picture.url }}" alt="{{ buddy.picture_description}}" class="buddy-picture">
+        </div>
+        <div class="buddy-detail">
+            <h1 class="text-center">{{ buddy.user_profile.first_name}} {{ buddy.user_profile.last_name}}</h1>
+            <hr>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p><strong>About Me: </strong>{{ buddy.about_me }}</p>
+                </li>
+                <li class="list-group-item">
+                    <p><strong>Date of Birth: </strong>{{ buddy.date_of_birth }}</p>
+                </li>
+                <li class="list-group-item">
+                    <p><strong>Gender: </strong>{{ buddy.gender }}</p>
+                </li>
+                <li class="list-group-item">
+                    <p><strong>Level: </strong>{{ buddy.level }}</p>
+                </li>
+                <li class="list-group-item">
+                    <p><strong>Practice Type: </strong>{{ buddy.practice_type }}</p>
+                </li>
+                <li class="list-group-item">
+                    <p><strong>Game Type: </strong>{{ buddy.game_type }}</p>
+                </li>
+                <li class="list-group-item">
+                    <p><strong>Available: </strong>{{ buddy.availability }}</p>
+                </li>
+            </ul>
+            {% if request.user == buddy.user_profile.user %}
+            <div class="text-center">
+                <a href="" class="btn btn-primary w-30">Edit</a>
+                <a href="" class="btn btn-primary w-30">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

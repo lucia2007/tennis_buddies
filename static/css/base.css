@@ -46,6 +46,23 @@ img.logo {
     cursor: pointer;
 }
 
+.buddy-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buddy-picture {
+    width: 100%;
+    height: auto;
+}
+
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
 footer {

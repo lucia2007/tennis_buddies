@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 
 # to make sure the user is logged in
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -15,9 +15,12 @@ class Buddies(ListView):
     context_object_name = "buddies"
 
 
-#     def form_valid(self, form):
-#         form.instance.user_profile = self.request.user_profile
-#         return super(AddUserProfile, self).form_valid(form)
+class BuddyDetail(DetailView):
+    """View a single Buddy profile"""
+
+    template_name = "buddies/buddy_detail.html"
+    model = Buddy
+    context_object_name = "buddy"
 
 
 class AddBuddy(LoginRequiredMixin, CreateView):
