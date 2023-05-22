@@ -29,16 +29,17 @@
                             Find a Buddy
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {% if url_name == 'home' %}active{% endif %}"
+                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
                                     href="{% url 'add-profile' %}">Add User Profile</a></li>
-                            <li><a class="dropdown-item {% if url_name == 'home' %}active{% endif %}"
+                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
                                     href="{% url 'add-buddy' %}">Add Buddy Profile</a></li>
-                            <li><a class="dropdown-item {% if url_name == 'home' %}active{% endif %}" href="#">Find the
-                                    Perfect Buddy</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                    href="{% url 'buddies' %}">Find the
+                                    Perfect Buddy</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">

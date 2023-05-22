@@ -1,4 +1,4 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 
 # to make sure the user is logged in
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,13 +7,13 @@ from .models import Buddy
 from .forms import BuddyForm
 
 
-# class AddUserProfile(LoginRequiredMixin, CreateView):
-#     """ Add user profile view """
-#     template_name = 'profiles/add.html'
-#     model = UserProfile
-#     form_class = UserProfileForm
-#     success_url = '/buddies/'
-#     # the success url should be home maybe?
+class Buddies(ListView):
+    """View all buddies"""
+
+    template_name = "buddies/buddies.html"
+    model = Buddy
+    context_object_name = "buddies"
+
 
 #     def form_valid(self, form):
 #         form.instance.user_profile = self.request.user_profile

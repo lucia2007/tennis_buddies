@@ -32,6 +32,20 @@ img.logo {
 }
 
 
+/* Buddies */
+.card {
+    height: 85%;
+    margin-top: 1rem;
+}
+
+.buddies {
+    text-decoration: none;
+}
+
+.buddies:hover {
+    cursor: pointer;
+}
+
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
 footer {
