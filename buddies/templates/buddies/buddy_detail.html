@@ -36,7 +36,7 @@
             </ul>
             {% if request.user == buddy.user_profile.user %}
             <div class="text-center">
-                <a href="" class="btn btn-primary w-30">Edit</a>
+                <a href="{% url 'edit-buddy' buddy.id %}" class="btn btn-primary w-30">Edit</a>
                 <a href="{% url 'delete-buddy' buddy.id %}" class="btn btn-primary w-30">Delete</a>
             </div>
             {% endif %}
