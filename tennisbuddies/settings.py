@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'django_extensions',
 
     'allauth',
     'allauth.account',
@@ -63,6 +64,12 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
 ]
+
+GRAPH_MODELS = {
+    'all_applications': True,
+    'group_models': True,
+}
+
 
 # https://www.youtube.com/watch?v=R_jlvi5xvSQ
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
