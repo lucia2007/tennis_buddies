@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title%}Find Your Perfect Tennis Buddy{% endblock %}
 
@@ -9,7 +10,12 @@
     <a href="{% url 'buddy-detail' buddy.id %}" class="buddies"
         aria-label="Click to view {{buddy.user_profile.first_name}}">
         <div class="card m-2" style="width: 18rem;">
+            <!-- add a condition to fill in a picture from static folder, if user doesn't provide one -->
+            {% if buddy.profile_picture.url is not none %}
             <img src="{{ buddy.profile_picture.url }}" class="card-img-top" alt="{{buddy.picture_description}}">
+            {% else %}
+            <img src="{% static '/icons/no-photography-icon.svg' %}" alt="Image not found">
+            {% endif %}
             <div class="card-body">
                 <h2 class="card-title">{{buddy.user_profile.first_name}} {{buddy.user_profile.last_name}}</h2>
                 <p class="card-text">{{buddy.about_me|truncatechars:100}}</p>
