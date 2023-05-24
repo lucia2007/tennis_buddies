@@ -28,14 +28,3 @@ class BuddyAdmin(SummernoteModelAdmin):
 
     def approve_buddy(self, request, queryset):
         queryset.update(is_approved=True)
-
-
-# @admin.register(UserProfile)
-# class UserProfileAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'first_name',
-#         'last_name',
-#         'phone',
-#         'created_on')
-#     list_filter = ('first_name', 'created_on')
-#     search_fields = ['first_nane', 'last_name', 'phone']
