@@ -1,17 +1,15 @@
 from django import forms
-# import summernote?
 from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
-    """ Form to create a user profile """
+    """ Form to create a user profile with contact details """
     class Meta:
         model = UserProfile
         fields = [
             'first_name',
             'last_name',
             'phone',
-            # should the model have an email as well prefilled from the user sign up???
         ]
 
     labels = {

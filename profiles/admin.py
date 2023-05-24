@@ -10,6 +10,8 @@ class UserProfileAdmin(admin.ModelAdmin):
     #     return obj.user_profile.first_name + " " + obj.user_profile.last_name
 
     list_display = (
+        'pk',
+        'user',
         'first_name',
         'last_name',
         'phone',
