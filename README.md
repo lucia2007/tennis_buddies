@@ -1,10 +1,10 @@
 # Tennis Buddies
 
-Tennis Buddies is an application which can be used in real life by smaller tennis clubs across the country. Its main purpose is for new but also current members of the club to find a partner for tennis practice. It also enables the players to book a court to play on.
+Tennis Buddies is an application which can be used in real life by smaller tennis clubs across the country. Its main purpose is for new but also current members of the club to find a suitable partner for tennis practice. It also enables the players to book a court to play on.
 
-I was inspired to develop this app by two local tennis clubs back home. If I wanted to make a booking in one of them, I would have to do it by phone. In the other one, I would have to go physically to a pub connected to the tennis facilities, find the person who was the owner of the notebook where the bookings were noted down, and thus make a reservation. I believe this app will make booking a court a much more pleasant and smoother experience.
+I was inspired to develop this app by two local tennis clubs back home. If I wanted to make a booking in one of them, I would have to do it by phone. In the other one, I would have to go physically to a pub connected to the tennis facilities, find the person who was the owner of the notebook where the bookings were noted down, and thus make a reservation. Both of these processes are quite incovenient. I believe this app will make booking a court a much more pleasant and smoother experience.
 
-The other functionality revolves around finding a tennis buddy. When a new player joins the club, they often encounter difficulties in finding a suitable hitting partner. Some players are looking for hitting practice, others are looking to practice for matches, still others are looking to play socially and to have fun. This app will enable the registered users to search in the clubs database and hopefully find a great tennis buddy.
+The other functionality revolves around finding a tennis buddy. When a new player joins the club, they often encounter difficulties in finding a suitable hitting partner. Many people already have their regular games set up and it's hard to approach them. On the other hand, there are other players who are available and willing to play, but they usually don't know about each other. Some players are looking for hitting practice, others are looking to practice for matches, still others are looking to play socially and to have fun. This app will enable the registered users to search in the clubs database and hopefully find a great tennis buddy.
 
 The app was developed for a fictional tennis club called Nebu Tennis Club, inspired by the two above mentioned clubs.
 
@@ -19,6 +19,10 @@ You can access the Tennis Buddies app here:
 
 - [Tennis Buddies](#tennis-buddies)
 - [Contents](#contents)
+- [Project](#project)
+  - [Objective](#objective)
+  - [Site User's Goal](#site-users-goal)
+  - [Site Owner's Goal](#site-owners-goal)
 - [User Experience (UX)](#user-experience-ux)
   - [User Stories](#user-stories)
     - [Primary Goal](#primary-goal)
@@ -29,6 +33,7 @@ You can access the Tennis Buddies app here:
   - [Creation Process](#creation-process)
     - [Design Prototype](#design-prototype)
     - [Project Management](#project-management)
+  - [Project Management](#project-management-1)
       - [GitHub Projects Board](#github-projects-board)
       - [Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing](#moscow-principles-milestones-epics-user-stories-acceptance-criteria-tasks-testing)
     - [Database Schema (ERD)](#database-schema-erd)
@@ -69,6 +74,18 @@ You can access the Tennis Buddies app here:
   - [Acknowledgements](#acknowledgements)
 
 [Back to top](#contents)
+
+# Project
+
+## Objective
+I used to play tennis as a child. But due to my knee problems, unfortunately, I had to stop playing at a young age. When we moved to Ireland couple years ago, my children started playing tennis in the local tennis club. I never thought I wwould go back to tennis, but I tried and discovered that my limitations were gone. I had rediscovered my love and passion for tennis and have been playing frequently ever since. I was lucky to find a great hitting partner right at the beginning, but in those two years I have seen many people struggle in that respect. My local club has a great website which provides the booking functionality and I thought combining these two features and making them perhaps available to smaller local clubs would be beneficial.
+
+When developing this project, my goal was to put my knowledge of HTML, CSS, JavaScript, Python, Bootstrap and Django Framework to use.
+## Site User's Goal
+The Tennis Buddies site user is a tennis aficionado. They want to find a suitable and compatible tennis partner for their practice. Also they want to be able to make a reservartion of a court to play on.
+## Site Owner's Goal
+As the site owner, I want to provide a platform where new tennis club members can meet and organize games, no matter what their tennis level or goals are.
+
 # User Experience (UX)
 
 ## User Stories
@@ -104,32 +121,33 @@ Tennis Buddies game has been designed to be straightforward, with minimalist des
 Wireframes, Figma
 ### Project Management
 
-Before I started working on the actual application, I created a flow chart (see below) which helped me organize dependencies and provided me with a blueprint to follow when developing the app. This was extremely useful especially in moments when it was not clear where a certain function or a feature belonged, what the dependencies were or what should be tackled next. 
+## Project Management
+I have been using GitHub projects for organizing my project, tracking user stories and epics. It is a very helpful tool which enabled me to keep all my PBIs in one place and to tackle them gradually.
 
-I tried to break each step into a managable bite-size function so the code would be easy to read and understand. I started by figuring out the dimensions of my disks and the maximum number of disks the user would be able to use for choosing difficulty levels. Afterwards, I focused on being able to move the disks from one base to another. At first I was printing the pyramids below each other for simplicity, but later I changed the layout to parallel for better readability and to go back to the original layout. Towards the end of the development process, I started adding some nice-to-have features, like clearing the screen for a less messy output or shortening and rephrasing the rules and prompts for better comprehension. As I went, I refactored the code wherever possible to make it easily comprehensible.
+At the beginning of the project, I spent a fair amount of time on project planning, on thinking it through. I created wireframes and a sketch of my models first. Having the wireframes and the ERD model to refer to when working on the project was both essential and very helpful. Any time I was getting lost or confused, I could consult them and figure out how to proceed.
 
-For this project, I did not create any wireframes, as the application is rather simple in layout and is mainly intended to be played on the desktop. But, I was inspired by this [picture](readme-images/tower-of-hanoi.png) and this [version in terminal](/readme-images/towers_of_hanoi_terminal.gif).
+Later I jotted down as many PBIs as I could think of. I also started writing my Epics and User Stories to an excel file. Subsequently, I started using the Kanban board in projects for organizing the PBIs into Epics and User stories and assigning them to Milestones, which also served as my sprint trackers. 
 
-My main goal was for the content to fit within the restricted size of the window. The width of the window also predetermined the highest level of difficulty, as the largest disks needed to fit three times next to each other on the screen of 80 characters. I used the clear function to keep the CLI neat and easily readable.
+At first I did not know how many story points to assign to each user story and how to organize them into sprints, so the first two to three sprints were more experimental, where I would retrospectively note down how many story points each user story took, to see how many of user story points I could do in one sprint.
 
-Example of requirements taken into account:
-  - The game will use simple and clear representation of the Tennis Buddies.
-  - The user will be able to choose the level of difficulty.
-  - The screen will be cleared periodically, so the user is not overwhelmed or confussed by a large number of print statements.
-  - The game will show the scores in the winning message and compare them to minimum required moves.
-  - The user will have a choice to play again or stop playing the game.
-  
+I used Milestones for organizing my sprints. I know it is not ideal, but the Project tool does not have a great alternative to tracking sprints. Thus, I would create my milestones, give them a description, assing Epics and User stories to them and add a finish date for each Milestone. My sprints were usually one week long, but sometimes I had to stretch them due to a problem which took me longer to solve than I had expected.
+
+Breaking up the project in Epics, User stories and essentially into tasks has been very helpful and enabled me to tackle the project in managable bite-size steps. Using acceptance criteria as a part of my user stories helped me define what was necessary to achieve but I could consider the user story done.
+
+ 
 [Back to top](#contents)
 
 #### GitHub Projects Board
 
-#### Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing
-
 I used Projects tool inbuilt in GitHub, [GitHub's Projects](https://github.com/lucia2007?tab=projects), to help me manage the scope of the project, to track my progress and record bugs, but also to jot down any ideas that were relevant for the application development. These ideas were either later applied in the code or dismissed if they did not seem to enhance the user's experience or improve the development process.
 
-Whenever I had an idea related to the project, I would jot it down in the "To Do" section. Later, I would choose 2, max 3 things that were currently being worked on and I placed them in the "In Progress" section. If I became stuck on a task for whatever reason or depended on external input, I moved it to "Blocked". At last, when a task was completed, I would move it to the "Done" section.
+Whenever I had an idea related to the project, I would jot it down in the "Backlog section/Brainstorming" section. Then I would go through the tasks and assing them to the current Milestone I was working on. I would convert the simple ideas into proper User Stories with acceptance criteria and necessary tasks and move them to the To Do section. I would label each User Story with the following labels: MoSCoW, story points, relevant Epic and Milestone, priority. Some of the tasks were labeled as Developer tasks. These tasks were usually centered around the backend part of the project, getting the frameworks set up and functional.
 
-This tool has been very benefitial for my development process, especially, because I could rely on having all the information there. I would write down the sources to be credited, or bugs to be fixed or ideas on how to improve some part of the application, so I did not have to worry about having forgotten something crucial. 
+When my Milestone with its deadline was set up (Sprint), I would assign relevant Epics with their User Stories to it. On a day-to-day basis, each morning, I would choose 2, max 3 things that were currently being worked on and I would place them in the "In Progress" section. If I became stuck on a task for whatever reason or depended on external input, I moved it to "Blocked". At last, when a task was completed, I would one more time check against the acceptance criteria, tick each of the finished tasks and move it to the "Done" section. I also made sure to work on my Readme file regularly in order to avoid having to tackle it all at once at the end. 
+
+This tool has been very benefitial for my development process, especially, because I could rely on having all the information there. I would write down the sources to be credited, or bugs to be fixed or ideas on how to improve some part of the application, so I did not have to worry about having forgotten something crucial. And the same time, keeping everything in one place gave me peace of mind that I was not going to forget something essential.
+
+In the future, I should able to surmise the amount of story points for each Epic/User story more easily and thus plan my Sprints more effectively.
 
 In the future, for a bigger project, I would focus on a more detailed description of the tasks and adding next steps or a deadline for each of the entries.
 
@@ -138,7 +156,9 @@ In the future, for a bigger project, I would focus on a more detailed descriptio
 [Back to top](#contents)
 ### Database Schema (ERD)
 
-  This is the ERD scheme which was instrumental for creating all the necessary models for this app.
+[ERD Schema]()
+
+This is the ERD schema was instrumental for creating all the necessary models for this app. Creating this schema helped me realize the relationships between different apps and models and clarified what kind of fields each of the model components would need. Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me clarify some of the relationships.
 
   Models:
   - Buddies
@@ -147,7 +167,9 @@ In the future, for a bigger project, I would focus on a more detailed descriptio
   - User Profile
   - Court
   - ....
-  [Dependency Diagram](dependency.drawio.svg)
+
+
+
 
 [Back to top](#contents)
 ### Site Structure
