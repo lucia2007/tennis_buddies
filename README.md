@@ -432,6 +432,18 @@ Take the following steps to create a clone of a project:
 7. Press **enter** and the local clone will be created.
 
 [Github cloning process image](/readme-images/cloning_process.png)
+8. Install requirements to get the project to work by typing in this command:
+   pip3 install -r requirements.txt
+   This command downloads and installs all the required dependencies as found in requirements.txt file.
+9. Set up environment file so that the project knows what variables are needed to make it work. These variables are usually hidden due to sensitivity of the information. You must not push the env.py file to GitHub. You 
+   will achieve this by adding the env.py to the .gitignore-file. The variables that are declared in the env.py also need to be added to the Heroku config vars. Make all the relevant migrations before running the server by:
+    - python3 manage.py migrate - this makes the necessary migrations
+    - python3 manage.py runserver - enables the project to live locally 
+
+  <details><summary><b>Setup env.py (incomplete image due to sensitive information)</b></summary>
+   
+  ![Env.py](/readme-images/env_py.png)
+  </details><br />
 
 [Back to top](#contents)
 
