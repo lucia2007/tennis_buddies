@@ -341,6 +341,104 @@ The application was deployed to Heroku. In order to deploy, the following steps 
 
 1. If you have an account, login to Heroku. Otherwise create a new account.
 2. Once signed in, click the button "New" in the top right corner, below the header and choose "Create new app".
+
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+
+## Create a new GitHub Repository from CI template
+
+1. Create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+
+<details><summary><b>Step 1</b></summary>
+
+![Step 1](readme-images/heroku_step_1.png)
+</details><br />
+
+2. Fill in the needed details as stated in the screenshot below and then click 'Create Repository From Template'.
+
+<details><summary><b>Step 2</b></summary>
+
+![Step 2](readme-images/heroku_step_2.png)
+</details><br />
+
+3. When the repository is created, click the green 'Gitpod' button as stated in the screenshot below.
+
+<details><summary><b>Step 3</b></summary>
+
+![Step 3](readme-images/heroku_step_3.png)
+</details><br />
+
+## Install Django and the supporting libraries
+
+4. To install Django and the supporting libraries, type the commands below.
+
+* ```pip3 install 'django<4' gunicorn```
+* ```pip3 install dj_database_url psycopg2```
+* ```pip3 install dj3-cloudinary-storage```
+
+<details><summary><b>Step 4</b></summary>
+
+![Step 4](readme-images/heroku_step_4.png)
+</details><br />
+
+5. When Django and the libraries are installed we need to create a requirements file.
+
+* ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
+
+<details><summary><b>Step 5</b></summary>
+
+![Step 5](readme-images/heroku_step_5.png)
+</details><br />
+
+6. Create the project.
+
+* ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create your project
+
+<details><summary><b>Step 6</b></summary>
+
+![Step 6](readme-images/heroku_step_6.png)
+</details><br />
+
+7. When the project is created, we can now create the application.
+
+* ```django-admin startapp APP_NAME``` - This will create your application
+
+<details><summary><b>Step 7</b></summary>
+
+![Step 7](readme-images/heroku_step_7.png)
+</details><br />
+
+8. We now need to add the application to settings.py
+
+<details><summary><b>Step 8</b></summary>
+
+![Step 8](readme-images/heroku_step_8.png)
+</details><br />
+
+9. Now do your first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+
+* ```python3 manage.py migrate``` - This will migrate the changes.
+* ```python3 manage.py runserver``` - This runs the server. To test it, click the 'open browser' button that will be visible after the command is run.
+
+
+## Create an app on Heroku
+
+9. Next create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+
+* Go to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
+
+* In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
+
+<details><summary><b>Step 09</b></summary>
+
+![Step 9](readme-images/heroku_step_9.png)
+</details><br />
+
+10. Enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
+
+<details><summary><b>Step 10</b></summary>
+
+![Step 10](readme-images/heroku_step_10.png)
+</details><br />
    <details><summary><b>Create new app</b></summary>
 
    ![Create new app](/readme-images/create_new_app.png)
