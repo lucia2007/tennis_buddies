@@ -412,7 +412,7 @@ The link to the GitHub repository can be found here - https://github.com/lucia20
 
 A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changed without affecting the original repository. Take the following steps to fork the repository:
 
-1. Log in to **GitHub** and locate the [repository](https://github.com/lucia2007/towers-of-hanoi).
+1. Log in to **GitHub** and locate the [repository](https://github.com/lucia2007/tennis_buddies).
 2. On the top right hand side of the page is a button called **'Fork'**. Click on the button to create a copy of the original repository in your GitHub Account.
 
 [GitHub forking process image](/readme-images/forking_process.png)
