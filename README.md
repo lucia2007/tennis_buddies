@@ -7,11 +7,8 @@ I was inspired to develop this app by two local tennis clubs back home. If I wan
 The other functionality revolves around finding a tennis buddy. When a new player joins the club, they often encounter difficulties in finding a suitable hitting partner. Many people already have their regular games set up and it's hard to approach them. On the other hand, there are other players who are available and willing to play, but they usually don't know about each other. Some players are looking for hitting practice, others are looking to practice for matches, still others are looking to play socially and to have fun. This app will enable the registered users to search in the clubs database and hopefully find a great tennis buddy.
 
 The app was developed for a fictional tennis club called Nebu Tennis Club, inspired by the two above mentioned clubs.
-
-Tennis Buddies is a Python command line interface (CLI) application which allows the user to play a well-know game of <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi" target="_blank" rel="noopener">Tower of Hanoi</a>. The user has an option to choose the difficulty level. The easy level can be played in a minute, the more difficult levels will take some time, but will help the user develop and improve their logical thinking. 
-
 You can access the Tennis Buddies app here:
-[Tennis Buddies](https://towers-of-hanoi-game.herokuapp.com/)
+[Tennis Buddies](https://tennis-buddies.herokuapp.com/)
 
 [Back to top](#contents)
 
@@ -66,6 +63,9 @@ You can access the Tennis Buddies app here:
     - [Automated Testing](#automated-testing)
 - [Deployment to Heroku](#deployment-to-heroku)
   - [Project Deployment](#project-deployment)
+  - [Create a new GitHub Repository from CI template](#create-a-new-github-repository-from-ci-template)
+  - [Install Django and the supporting libraries](#install-django-and-the-supporting-libraries)
+  - [Create an app on Heroku](#create-an-app-on-heroku)
   - [To fork the repository on GitHub](#to-fork-the-repository-on-github)
   - [To create a local clone of a project](#to-create-a-local-clone-of-a-project)
 - [Credits](#credits)
@@ -149,7 +149,7 @@ This tool has been very benefitial for my development process, especially, becau
 
 In the future, I should able to surmise the amount of story points for each Epic/User story more easily and thus plan my Sprints more effectively.
 
-In the future, for a bigger project, I would focus on a more detailed description of the tasks and adding next steps or a deadline for each of the entries.
+#### Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing
 
 [GitHub Projects](readme-images/projects_tool.png)
 
@@ -552,6 +552,8 @@ Take the following steps to create a clone of a project:
 - The overall inspiration came from the well-known game called <a href="https://www.amazon.co.uk/Tower-Hanoi-9-disc-version/dp/B0006A3JZC/ref=asc_df_B0006A3JZC/?tag=googshopuk-21&linkCode=df0&hvadid=310869104636&hvpos=&hvnetw=g&hvrand=15866353930159951919&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007850&hvtargid=pla-439214070867&psc=1" target="_blank" rel="noopener">Tower of Hanoi</a> which my children recently discovered and fell in love with.
 - [Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) was used to create the dependency diagram.
 - The framework for the Readme file was originally inspired by [Wawas Wood](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md), [Scoops](https://github.com/amylour/scoops_pp1/blob/main/README.md#testing) and [CI_Project-Protfolio-3](https://github.com/MikeR94/CI-Project-Portfolio-3#python-logic)
+- Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped 
+- Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment
 
 ## Media
 - I was inspired by <a href="https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/" target="_blank" rel="noopener">Tennis Buddies illustrative picture</a>. 
