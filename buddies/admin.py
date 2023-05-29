@@ -6,7 +6,9 @@ from django_summernote.admin import SummernoteModelAdmin  # type: ignore
 @admin.register(Buddy)
 class BuddyAdmin(SummernoteModelAdmin):
     list_display = (
+        'pk',
         "get_user_name",
+        'user_profile',
         "is_approved",
         "status",
         "gender",
