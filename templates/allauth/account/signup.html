@@ -14,9 +14,7 @@
   <form class="form p-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
     {{ form|crispy }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
-    {% endif %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{% url 'edit-profile' user %}">
     <button class="btn btn-primary w-30 mb-2" type="submit">Sign Up</button>
   </form>
 </div>

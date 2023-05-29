@@ -1,4 +1,6 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView, DeleteView, UpdateView
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 # to make sure the user is logged in
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,12 +9,33 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 
+class ProfileDetail(DetailView):
+    """ View a single profile """
+    template_name = 'profiles/detail.html'
+    model = UserProfile
+    context_object_name = "profile"
+
+
+class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ Edit Contact Info """
+    template_name = 'profiles/edit.html'
+    model = UserProfile
+    form_class = UserProfileForm
+    success_url = '/buddies/'  # change this to profile-detail
+
+    def test_func(self):
+        """
+        Checks if the signed in user is the same user who owns the profile
+        """
+        return self.request.user == self.get_object().user
+
+
 class AddUserProfile(LoginRequiredMixin, CreateView):
     """ Add user profile view """
     template_name = 'profiles/add.html'
     model = UserProfile
     form_class = UserProfileForm
-    success_url = '/buddies/'
+    success_url = '/'
     # the success url should be home maybe?
 
     def form_valid(self, form):
