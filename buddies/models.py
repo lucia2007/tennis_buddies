@@ -19,8 +19,8 @@ class Buddy(models.Model):
     user_profile = models.OneToOneField(
         UserProfile, related_name="buddy", on_delete=models.CASCADE
     )
-    about_me = models.TextField()  # make it into RichTextField
-    date_of_birth = models.DateField()
+    about_me = models.TextField(default="Describe yourself")  # make it into RichTextField
+    date_of_birth = models.DateField(default="2003-12-01")
     # change placeholder text
     profile_picture = CloudinaryField("image", default="placeholder")
     # image = ResizedImageField(
@@ -30,10 +30,13 @@ class Buddy(models.Model):
     # if you decide to use this format, you need to install pip3 install
     # django_resized, then freeze requirements and
     # from django_resized import ResizedImageField + pip install pillow?)
-    picture_description = models.CharField(max_length=200)
+    picture_description = models.CharField(
+        max_length=200, default="A picture of me"
+        )
     is_approved = models.BooleanField(default=False)
     status = models.IntegerField(choices=STATUS, default=1)
-    gender = models.CharField(max_length=6, choices=[("M", "Male"), ("F", "Female")])
+    gender = models.CharField(max_length=6, choices=[
+        ("M", "Male"), ("F", "Female")], default="M")
     level = models.CharField(
         max_length=15,
         choices=[
@@ -41,6 +44,7 @@ class Buddy(models.Model):
             ("Intermediate", "Intermediate"),
             ("Advanced", "Advanced"),
         ],
+        default="Beginner"
     )
     practice_type = models.CharField(
         max_length=25,
@@ -49,14 +53,21 @@ class Buddy(models.Model):
             ("Match Practice", "Match Practice"),
             ("Both", "Both"),
         ],
+        default="Both"
     )
     game_type = models.CharField(
         max_length=10,
-        choices=[("Singles", "Singles"), ("Doubles", "Doubles"), ("Both", "Both")],
+        choices=[
+            ("Singles", "Singles"),
+            ("Doubles", "Doubles"),
+            ("Both", "Both")], default="Singles"
     )
     availability = models.CharField(
         max_length=10,
-        choices=[("Morning", "Morning"), ("Afternoon", "Afternoon"), ("Both", "Both")],
+        choices=[
+            ("Morning", "Morning"),
+            ("Afternoon", "Afternoon"),
+            ("Both", "Both")], default="Both"
     )
     created_on = models.DateTimeField(auto_now_add=True)
 
