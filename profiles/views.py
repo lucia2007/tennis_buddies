@@ -18,3 +18,15 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+class DeleteUserProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete User Profile (contact info) """
+    model = UserProfile
+    success_url = '/'
+
+    def test_func(self):
+        """
+        Checks if the signed in user is the same user who owns the object
+        """
+        return self.request.user == self.get_object().user
