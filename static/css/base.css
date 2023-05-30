@@ -19,6 +19,13 @@ li.nav-item.dropdown {
     align-items: baseline;
 }
 
+/* Carousel */
+.carousel-image {
+    height: 400px;
+    object-fit: cover;
+}
+
+
 /* Main */
 main {
     flex: 1 0 auto;
