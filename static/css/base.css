@@ -41,6 +41,23 @@ img.logo {
     font-weight: 600;
 }
 
+.feature-image {
+    text-align: center;
+}
+
+.feature-title {
+    font-family: serif;
+    font-size: 30px;
+    color: black;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.feature-text {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 /* Forms */
 .form {
     width: 80%;
