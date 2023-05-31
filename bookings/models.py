@@ -1,5 +1,6 @@
 from django.db import models  # type: ignore
 from django.contrib.auth.models import User  # type: ignore
+from datetime import datetime
 from profiles.models import UserProfile
 from cloudinary.models import CloudinaryField  # type: ignore
 
@@ -49,7 +50,7 @@ class Booking(models.Model):
         ordering = ['-date']
 
     def __str__(self):
-        return str(self.owner)
+        return str(self.user.username)
 
 
 class Event(models.Model):
