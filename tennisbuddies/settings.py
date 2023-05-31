@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["tennis-buddies.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["tennis-buddies.herokuapp.com", "localhost",
+                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu98.gitpod.io"]
 
 
 # Application definition
