@@ -6,8 +6,9 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}" alt="Tennis Buddies Logo"
-                    class="logo"></a>
+            <a class="navbar-brand" href="{% url 'home' %}"
+                alt="A click on the Buddy logo takes the client back to Home page"><img
+                    src="{% static 'images/logo.png' %}" alt="Tennis Buddies Logo" class="logo"></a>
             <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -45,30 +46,39 @@
                             <ul class="dropdown-menu">
                                 <!-- correct the url name -->
                                 <li><a class="dropdown-item {% if url_name == 'contact' %}active{% endif %}"
+                                        alt="Takes user either to his profile details or lets them add the contact details."
                                         {% if user.user_profile %}
                                         href="{% url 'profile-detail' user.user_profile.id %}" {% else %}
                                         href="{% url 'add-profile'%}" {% endif %}>Contact Info</a>
                                 </li>
                                 <li><a class="dropdown-item {% if url_name == 'add-buddy' %}active{% endif %}"
-                                        href="{% url 'add-buddy' %}">Profile</a></li>
+                                        alt="Take the user to their Buddy profile or let's them add a new one."
+                                        {% if user.user_profile%} {% if user.user_profile.buddy %}
+                                        href="{% url 'buddy-detail' user.user_profile.buddy.id %}" {%else%}
+                                        href="{% url 'add-buddy' %}" {% endif %} {% else %}
+                                        href="{% url 'add-profile'%}" {% endif %}>Profile</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-success me-2 {% if url_name == 'accounts_logout' %}active{% endif %}"
-                                type="submit" aria-current="page" href="/accounts/logout/">Logout</a>
+                                type="submit" aria-current="page" href="/accounts/logout/"
+                                alt="Let's the user click Logout Button">Logout</a>
                         </li>
                     </ul>
                     {% else %}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-success me-2 {% if url_name == 'accounts_signup' %}active{% endif %}"
-                                type="submit" aria-current="page" href="/accounts/signup/">Register</a>
+                                type="submit" aria-current="page" href="/accounts/signup/"
+                                alt="Let's the user register their account">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-success me-2 {% if url_name == 'accounts_login' %}active{% endif %}"
-                                type="submit" aria-current="page" href="/accounts/login/">Login</a>
+                                type="submit" aria-current="page" href="/accounts/login/"
+                                alt="Let's the user click Login button">Login</a>
                             <!-- <button class="btn btn-outline-success me-2" type="submit">Login</button>
                             <button class="btn btn-outline-success" type="submit">Register</button> -->
                         </li>
