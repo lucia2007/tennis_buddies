@@ -19,7 +19,7 @@ class Buddy(models.Model):
     user_profile = models.OneToOneField(
         UserProfile, related_name="buddy", on_delete=models.CASCADE
     )
-    about_me = models.TextField(default="Describe yourself")  # make it into RichTextField
+    about_me = models.TextField(default="Describe yourself")
     date_of_birth = models.DateField(default="2003-12-01")
     # change placeholder text
     profile_picture = CloudinaryField("image", default="placeholder")
