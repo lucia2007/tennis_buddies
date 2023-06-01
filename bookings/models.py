@@ -3,6 +3,7 @@ from django.contrib.auth.models import User  # type: ignore
 from datetime import datetime
 from profiles.models import UserProfile
 from cloudinary.models import CloudinaryField  # type: ignore
+from django.utils import timezone
 
 
 class Court(models.Model):
@@ -35,12 +36,15 @@ class Booking(models.Model):
     in advance, max 1 court per day
     """
 
-    owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    date = models.DateField()
+    owner = models.ForeignKey(
+                            UserProfile,
+                            on_delete=models.CASCADE,
+                            )
+    date = models.DateField(default=timezone.now)
     time = models.CharField(
             max_length=15, choices=TIMES, default="09:00 - 10:00")
     # maximum one booking per user per day
-    court = models.ForeignKey(Court, on_delete=models.CASCADE)
+    court = models.ForeignKey(Court, on_delete=models.CASCADE, default='one')
     opponents = models.ManyToManyField(
         UserProfile, related_name="booking_opponents")
     email_sent = models.BooleanField(default=False)
@@ -50,7 +54,7 @@ class Booking(models.Model):
         ordering = ['-date']
 
     def __str__(self):
-        return str(self.user.username)
+        return str(self.owner)
 
 
 class Event(models.Model):
@@ -59,7 +63,9 @@ class Event(models.Model):
     start_time = models.DateTimeField()
     time = models.CharField(
             max_length=15, choices=TIMES, default="09:00 - 10:00")
+    # time should be a many to many field for staff
     court = models.ForeignKey(Court, on_delete=models.CASCADE)
+    #court should be a many to many field for staff
     event_type = models.CharField(max_length=25, choices=[
                               ('Coaching', 'Coaching'),
                               ('Tournament', 'Tournament'),
