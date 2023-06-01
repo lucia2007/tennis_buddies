@@ -35,6 +35,10 @@
                         <a class="nav-link {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}"
                             alt="Takes the client to Contact Us Page">Contact
                             Us</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'bookings' %}active{% endif %}" href="{% url 'bookings' %}"
+                            alt="Takes the admin user to Staff page">Staff
+                        </a>
                     </li>
                 </ul>
                 <div class="d-flex me-4">
