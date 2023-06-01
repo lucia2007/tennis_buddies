@@ -26,8 +26,10 @@
                             alt="Takes the client to Find the Perfect Buddy Page">Find The Perfect Buddy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'booking' %}active{% endif %}" href="{% url 'booking' %}"
-                            alt="Takes the client to Booking Page">Booking</a>
+                        <a class="nav-link {% if url_name == 'booking' %}active{% endif %}"
+                            alt="Takes the client to Booking Page or to fill in contact info"
+                            {% if request.user.is_authenticated %} {% if user.user_profile %} href="{% url 'booking' %}"
+                            {% else %} href="{% url 'add-profile'%}" {% endif %} {% endif %}>Booking</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}"
@@ -53,7 +55,7 @@
                                 </li>
                                 <li><a class="dropdown-item {% if url_name == 'add-buddy' %}active{% endif %}"
                                         alt="Take the user to their Buddy profile or let's them add a new one."
-                                        {% if user.user_profile%} {% if user.user_profile.buddy %}
+                                        {% if user.user_profile %} {% if user.user_profile.buddy %}
                                         href="{% url 'buddy-detail' user.user_profile.buddy.id %}" {%else%}
                                         href="{% url 'add-buddy' %}" {% endif %} {% else %}
                                         href="{% url 'add-profile'%}" {% endif %}>Profile</a>
