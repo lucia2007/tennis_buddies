@@ -2,5 +2,42 @@
 {% load static %}
 
 {% block content %}
-<h1 class="display-4 text-success">Create a Booking</h1>
+<!-- Features section -->
+<!-- The features part was inspired by: https://easy-eater.herokuapp.com/ -->
+<section class="container px-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="my-3 pink-text text-center">Make a Reservation</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-sm-5">
+            <div class="col-12">
+                <p class="mt-3 my-md-3 text-center lead">
+                    What is worse than coming to a club hoping to find a free court only to find out that all courts are
+                    busy? To avoid coming to a busy club with occupied courts, make a reservation beforehand and
+                    play when it suits you best.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid feature-image-outer">
+        <div class="row">
+            <div class="col-12 mb-2">
+                <a href="{% url 'add-booking' %}" class="calendar-link" alt="Takes the client to Create a Booking Page">
+                    <div class="feature-image mb-2">
+                        <i class="fa-solid fa-calendar fa-5x"></i>
+                </a>
+            </div>
+            <h3 class="feature-title">Book a Court</h3>
+            <p class="feature-text lead">
+                Choose the day, time, court and your opponent/s. You can choose yourself if you want to practice
+                on
+                your own, you can choose one opponent for singles and maximum three opponnets for doubles.
+            </p>
+        </div>
+    </div>
+    </div>
+</section>
 {% endblock %}
