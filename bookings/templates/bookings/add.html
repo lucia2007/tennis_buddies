@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Make a Reservation{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+        <h1 class="text-center">Your Booking</h1>
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary w-30 mt-2">Make a Reservation</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

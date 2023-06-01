@@ -6,14 +6,22 @@ from .models import Booking, Event, Court
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
-    list_display = ('owner', 'get_opponents', 'date', 'time', 'court', 'email_sent')
+    list_display = (
+                    'owner',
+                    'get_opponents',
+                    'date',
+                    'time',
+                    'court',
+                    'email_sent'
+                    )
 
-    @admin.display(ordering='user_profile__first_name', description='name')
+    @admin.display(ordering='user_profile__first_name', description='Opponents')
     def get_opponents(self, obj):
         # return ', '.join(sorted(str(opponent) for opponent in obj.opponents.all()))
+        # makes a string of all chosen opponents
         return ', '.join(sorted(map(str, obj.opponents.all())))
 
-    search_fields = ['user_profile', 'court']
+    search_fields = ['user_profile', 'court', 'opponents']
     list_filter = ['court',]
 
 
