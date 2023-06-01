@@ -18,29 +18,21 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'home' %}active{% endif %}" href="{% url 'home' %}"
-                            aria-current="page">Home</a>
+                            aria-current="page" alt="Takes the client to Home Page">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'buddies' %}">Find The Perfect Buddy</a>
+                        <a class="nav-link {% if url_name == 'buddies' %}active{% endif %}" href="{% url 'buddies' %}"
+                            alt="Takes the client to Find the Perfect Buddy Page">Find The Perfect Buddy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'booking' %}">Booking</a>
+                        <a class="nav-link {% if url_name == 'booking' %}active{% endif %}" href="{% url 'booking' %}"
+                            alt="Takes the client to Booking Page">Booking</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="nav-link {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}"
+                            alt="Takes the client to Contact Us Page">Contact
+                            Us</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-label="User Profile" aria-expanded="false">
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
-                                    href="{% url 'add-profile' %}">Contact Info</a></li>
-                            <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
-                                    href="{% url 'add-buddy' %}">Profile</a></li>
-                        </ul>
-                    </li> -->
                 </ul>
                 <div class="d-flex me-4">
                     {% if request.user.is_authenticated %}
@@ -51,12 +43,13 @@
                                 <i class="fa-regular fa-user"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                <!-- correct the url name -->
+                                <li><a class="dropdown-item {% if url_name == 'contact' %}active{% endif %}"
                                         {% if user.user_profile %}
                                         href="{% url 'profile-detail' user.user_profile.id %}" {% else %}
                                         href="{% url 'add-profile'%}" {% endif %}>Contact Info</a>
                                 </li>
-                                <li><a class="dropdown-item {% if url_name == 'buddies' %}active{% endif %}"
+                                <li><a class="dropdown-item {% if url_name == 'add-buddy' %}active{% endif %}"
                                         href="{% url 'add-buddy' %}">Profile</a></li>
                             </ul>
                         </li>
