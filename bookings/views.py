@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from datetime import datetime, timedelta
 # from .models import *
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from django.contrib import messages
 from .models import Booking, Court, Event
 from .forms import BookingForm
@@ -14,7 +14,7 @@ def booking(request):
 
 class Bookings(ListView):
     """ Shows a list of all bookings """
-    template_name = 'bookings/bookings.html'
+    template_name = 'bookings/list.html'
     model = Booking
     context_object_name = 'bookings'
 
@@ -42,3 +42,12 @@ class AddBooking(LoginRequiredMixin, CreateView):
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
         return super(AddBooking, self).form_valid(form)
+
+
+class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete a booking """
+    model = Booking
+    success_url = '/bookings/list/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().owner.user

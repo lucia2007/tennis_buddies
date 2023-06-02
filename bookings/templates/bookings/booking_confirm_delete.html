@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Booking #{{ booking.id }} by {{ object.user }} {% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1 class="text-center mt-2">Confirm Booking Deletion</h1>
+    <div class="d-flex justify-center p-2">
+        <form method="POST" class="text-center">
+            {%  csrf_token %}
+            <p>Are you sure you want to delete booking #"{{ booking.id }}"?</p>
+            <button type="submit" class="btn btn-primary w-30">Confirm</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
