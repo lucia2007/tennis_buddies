@@ -18,11 +18,25 @@ def booking(request):
     return render(request, "bookings/booking.html", {})
 
 
-class Bookings(ListView):
+class BookingListView(ListView):
     """ Shows a list of all bookings """
     template_name = 'bookings/list.html'
     model = Booking
     context_object_name = 'bookings'
+
+    def get_queryset(self):
+        # https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user
+        """ 
+        This view should return all the bookings when approached from
+        Staff link (determined from the URL) or a filtered
+        list of bookings approached from the profile/bookings
+        """
+        user = self.request.user.user_profile
+        all_or_own = self.kwargs['all_or_own']
+        if all_or_own == "all":
+            return Booking.objects.all()
+        else:
+            return Booking.objects.filter(owner_id=user)
 
 
 class BookingDetail(DetailView):
@@ -55,7 +69,7 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'bookings/edit.html'
     model = Booking
     form_class = BookingForm
-    success_url = '/bookings/list'
+    success_url = '/bookings/list/all'
 
     def test_func(self):
         return self.request.user == self.get_object().owner.user
@@ -63,7 +77,7 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a booking """
     model = Booking
-    success_url = '/bookings/list/'
+    success_url = '/bookings/list/all'
 
     def test_func(self):
         return self.request.user == self.get_object().owner.user

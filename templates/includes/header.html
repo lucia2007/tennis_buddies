@@ -37,7 +37,7 @@
                             Us</a>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'list-bookings' %}active{% endif %}"
-                            href="{% url 'list-bookings' %}" alt="Takes the admin user to Staff page">Staff
+                            href="{% url 'list-bookings' 'all' %}" alt="Takes the admin user to Staff page">Staff
                         </a>
                     </li>
                 </ul>
@@ -65,7 +65,7 @@
                                         href="{% url 'add-profile'%}" {% endif %}>Profile</a>
                                 </li>
                                 <li><a class="dropdown-item" alt="Takes the user to their Bookings overview"
-                                        href="{% url 'list-bookings' %}">Bookings</a>
+                                        href="{% url 'list-bookings' 'own' %}">Bookings</a>
                                 </li>
                             </ul>
                         </li>
