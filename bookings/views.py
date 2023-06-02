@@ -1,7 +1,13 @@
 from django.shortcuts import render, redirect
 from datetime import datetime, timedelta
 # from .models import *
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import (
+    CreateView,
+    ListView,
+    DetailView,
+    DeleteView,
+    UpdateView
+    )
 from django.contrib import messages
 from .models import Booking, Court, Event
 from .forms import BookingForm
@@ -43,6 +49,16 @@ class AddBooking(LoginRequiredMixin, CreateView):
         # It returns an object that represents the parent class.
         return super(AddBooking, self).form_valid(form)
 
+
+class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ Edit Booking """
+    template_name = 'bookings/edit.html'
+    model = Booking
+    form_class = BookingForm
+    success_url = '/bookings/list'
+
+    def test_func(self):
+        return self.request.user == self.get_object().owner.user
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a booking """
