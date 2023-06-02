@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Bookings{% endblock %}
+
+
+{% block content %}
+<h1 class="text-center p-2">Latest Bookings</h1>
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+    {% for booking in bookings %}
+    <a href="" class="bookings" aria-label="Click to view booking #{{booking.id}}">
+        <div class="container">
+            <div class="contact-info mt-3 p-3">
+                <div class="contact-detail">
+                    <h1 class="text-center">{{ booking.owner.first_name }} {{ booking.owner.last_name}}</h1>
+                    <h2 class="text-center">Booking #{{booking.id}}</h2>
+                    <hr>
+                    <strong>Owner: </strong>{{ booking.owner }}
+                    <strong>Date: </strong>{{ booking.date }}
+                    <strong>Time: </strong>{{ booking.time }}
+                    <strong>Opponents: </strong>{{ booking.opponents }}
+                    <!-- <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p><strong>Owner: </strong>{{ booking.owner }} </p>
+                        </li>
+                        <li class="list-group-item">
+                            <p><strong>Date: </strong>{{ booking.date }}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p><strong>Time: </strong>{{ booking.time }}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p><strong>Opponents: </strong>{{ booking.opponents }}</p>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </a>
+    <!-- This structure was inspired by: https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s -->
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Owner</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Opponents</th>
+                    </tr>
+
+                    {% for booking in bookings %}
+
+                    <tr>
+                        <td>{{ booking.owner }}</td>
+                        <td>{{ booking.date }}</td>
+                        <td>{{ booking.time }}</td>
+                        <td>{{ booking.opponents }}</td>
+                        <td><a href="" class="btn btn-primary w-30"></a>Update</td>
+                        <td><a href="{% url 'delete-booking' booking.id%}" class="btn btn-primary w-30"></a>Delete</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

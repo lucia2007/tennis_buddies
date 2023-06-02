@@ -36,8 +36,8 @@
                             alt="Takes the client to Contact Us Page">Contact
                             Us</a>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'bookings' %}active{% endif %}" href="{% url 'bookings' %}"
-                            alt="Takes the admin user to Staff page">Staff
+                        <a class="nav-link {% if url_name == 'list-bookings' %}active{% endif %}"
+                            href="{% url 'list-bookings' %}" alt="Takes the admin user to Staff page">Staff
                         </a>
                     </li>
                 </ul>
@@ -64,10 +64,13 @@
                                         href="{% url 'add-buddy' %}" {% endif %} {% else %}
                                         href="{% url 'add-profile'%}" {% endif %}>Profile</a>
                                 </li>
+                                <li><a class="dropdown-item" alt="Takes the user to their Bookings overview"
+                                        href="{% url 'list-bookings' %}">Bookings</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-success me-2 {% if url_name == 'accounts_logout' %}active{% endif %}"
                                 type="submit" aria-current="page" href="/accounts/logout/"
