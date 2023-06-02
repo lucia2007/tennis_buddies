@@ -80,6 +80,12 @@ img.logo {
     cursor: pointer;
 }
 
+/* Buddy Details */
+.card {
+    height: 90%;
+    margin-top: 1.5rem
+}
+
 .buddy-details {
     display: flex;
     flex-direction: column;
@@ -95,6 +101,23 @@ img.logo {
 .buddy-picture {
     width: 100%;
     height: auto;
+}
+
+/* Booking */
+.calendar-link {
+    text-decoration: none;
+}
+
+.calendar-link:hover {
+    cursor: pointer;
+}
+
+.bookings {
+    text-decoration: none;
+}
+
+.bookings:hover {
+    cursor: pointer;
 }
 
 /* Footer  */

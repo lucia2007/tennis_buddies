@@ -7,6 +7,7 @@ from .models import Booking, Event, Court
 class BookingAdmin(admin.ModelAdmin):
 
     list_display = (
+                    'pk',
                     'owner',
                     'get_opponents',
                     'date',
