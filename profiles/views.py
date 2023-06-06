@@ -37,6 +37,7 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     template_name = 'profiles/add.html'
     model = UserProfile
     form_class = UserProfileForm
+    success_url = '/'
 
     # Lets me specify 'next' page after success
     # https://stackoverflow.com/questions/64040028/how-to-redirect-to-the-next-url-instead-of-the-success-url-in-a-generic-class-b
