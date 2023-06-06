@@ -14,6 +14,9 @@ from .forms import BookingForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 
+# CRUD functionality was done following Dee Mc's Recipe tutorial: 
+# https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy
+
 def booking(request):
     return render(request, "bookings/booking.html", {})
 
@@ -51,13 +54,12 @@ class AddBooking(LoginRequiredMixin, CreateView):
     template_name = 'bookings/add.html'
     model = Booking
     form_class = BookingForm
-    success_url = '/'
+    success_url = '/bookings/list/own'
 
     # Updates the instance of the user to the current signed in user
     def form_valid(self, form):
         form.instance.user = self.request.user
         # form.instance.booking = self.request.user.booking.owner
-        # form.instance.user_profile = self.request.user.user_profile
 
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
