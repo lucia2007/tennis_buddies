@@ -6,6 +6,7 @@
 <div class="container">
     <form method="POST" enctype="multipart/form-data" class="p-2 form">
         <h1 class="text-center">Add Your Contact Details</h1>
+        <p class="text-center">In order to access this functionality, you need to add your contact details first</p>
         {% csrf_token %}
         {{ form.media }}
         {{ form|crispy }}
