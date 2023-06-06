@@ -554,10 +554,16 @@ Take the following steps to create a clone of a project:
 - The framework for the Readme file was originally inspired by [Wawas Wood](https://github.com/EwanColquhoun/wawaswoods/blob/master/README.md), [Scoops](https://github.com/amylour/scoops_pp1/blob/main/README.md#testing) and [CI_Project-Protfolio-3](https://github.com/MikeR94/CI-Project-Portfolio-3#python-logic)
 - Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped 
 - Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment
+- Table structure in Dashboard https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s
+- Filtered booking list https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user
+- To query according to url+filter https://docs.djangoproject.com/en/4.2/topics/db/queries/
+- [CRUD functionality was done following Dee Mc's Recipe tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
 
 ## Media
 - I was inspired by <a href="https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/" target="_blank" rel="noopener">Tennis Buddies illustrative picture</a>. 
 - When looking for inspiration as how to approach the visualization of the game in CLI, I came accross this version: <a href="https://unix.stackexchange.com/questions/382585/animation-inside-terminal-with-escape-codes" target="_blank" rel="noopener">Tennis Buddies in CLI</a>.
+- https://www.istockphoto.com/photos/tennis-friends
+- [Features section of the home page](https://easy-eater.herokuapp.com/)
 
 ## Acknowledgements
 - Extra help and guidance was received from my mentor Precious Ijege, from my husband Sam and fellow colleagues from the Code Institute.
