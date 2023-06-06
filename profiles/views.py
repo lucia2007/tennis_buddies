@@ -37,8 +37,12 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     template_name = 'profiles/add.html'
     model = UserProfile
     form_class = UserProfileForm
-    success_url = '/'
-    # here it should let the user add his profile (?next=)
+
+    # Lets me specify 'next' page after success
+    # https://stackoverflow.com/questions/64040028/how-to-redirect-to-the-next-url-instead-of-the-success-url-in-a-generic-class-b
+    def get_success_url(self):
+        url = self.request.GET.get('next', self.success_url)
+        return url
 
     def form_valid(self, form):
         form.instance.user = self.request.user

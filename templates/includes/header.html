@@ -60,7 +60,7 @@
                                         {% if user.user_profile %} {% if user.user_profile.buddy %}
                                         href="{% url 'buddy-detail' user.user_profile.buddy.id %}" {%else%}
                                         href="{% url 'add-buddy' %}" {% endif %} {% else %}
-                                        href="{% url 'add-profile'%}" {% endif %}>Profile</a>
+                                        href="{% url 'add-profile'%}?next={% url 'add-buddy'%}" {% endif %}>Profile</a>
                                 </li>
                                 <li><a class="dropdown-item" alt="Takes the user to their Bookings overview"
                                         {% if user.user_profile %} href="{% url 'list-bookings' 'own' %}" {% else %}
