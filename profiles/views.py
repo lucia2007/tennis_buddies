@@ -38,7 +38,7 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     model = UserProfile
     form_class = UserProfileForm
     success_url = '/'
-    # the success url should be home maybe?
+    # here it should let the user add his profile (?next=)
 
     def form_valid(self, form):
         form.instance.user = self.request.user
