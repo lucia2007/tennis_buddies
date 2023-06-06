@@ -27,9 +27,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'booking' %}active{% endif %}"
-                            alt="Takes the client to Booking Page or to fill in contact info"
-                            {% if request.user.is_authenticated %} {% if user.user_profile %} href="{% url 'booking' %}"
-                            {% else %} href="{% url 'add-profile'%}" {% endif %} {% endif %}>Booking</a>
+                            alt="Takes the client to Booking Page" href="{% url 'booking' %}">Booking</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}"
