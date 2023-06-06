@@ -21,7 +21,7 @@ def booking(request):
     return render(request, "bookings/booking.html", {})
 
 
-class BookingListView(ListView):
+class BookingListView(LoginRequiredMixin, ListView):
     """ Shows a list of all bookings """
     template_name = 'bookings/list.html'
     model = Booking
@@ -29,16 +29,16 @@ class BookingListView(ListView):
 
     def get_queryset(self):
         # https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user
-        """ 
-        This view should return all the bookings when approached from
-        Staff link (determined from the URL) or a filtered
-        list of bookings approached from the profile/bookings
         """
-        user = self.request.user.user_profile
+        This view should return all the bookings when approached from
+        Staff link (determined from the URL 'all') or a filtered
+        list of bookings approached from the profile/bookings ('own')
+        """
         all_or_own = self.kwargs['all_or_own']
         if all_or_own == "all":
             return Booking.objects.all()
         else:
+            user = self.request.user.user_profile
             return Booking.objects.filter(owner_id=user)
 
 
