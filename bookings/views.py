@@ -57,9 +57,9 @@ class AddBooking(LoginRequiredMixin, CreateView):
     success_url = '/bookings/list/own'
 
     # Updates the instance of the user to the current signed in user
+    # https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user
     def form_valid(self, form):
-        form.instance.user = self.request.user
-        # form.instance.booking = self.request.user.booking.owner
+        form.instance.owner = self.request.user.user_profile
 
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
