@@ -4,6 +4,8 @@ from datetime import datetime
 from profiles.models import UserProfile
 from cloudinary.models import CloudinaryField  # type: ignore
 from django.utils import timezone
+from django.db.models.constraints import UniqueConstraint
+from django.core.exceptions import ValidationError
 
 
 class Court(models.Model):
@@ -52,6 +54,11 @@ class Booking(models.Model):
     # to enable ordering
     class Meta:
         ordering = ['-date']
+        constraints = [
+            models.UniqueConstraint(
+                fields=["date", "time", "court"], name="unique_booking"
+            )
+        ]
 
     def __str__(self):
         return str(self.owner)
@@ -65,7 +72,7 @@ class Event(models.Model):
             max_length=15, choices=TIMES, default="09:00 - 10:00")
     # time should be a many to many field for staff
     court = models.ForeignKey(Court, on_delete=models.CASCADE)
-    #court should be a many to many field for staff
+    # court should be a many to many field for staff
     event_type = models.CharField(max_length=25, choices=[
                               ('Coaching', 'Coaching'),
                               ('Tournament', 'Tournament'),
