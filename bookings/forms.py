@@ -29,5 +29,3 @@ class BookingForm(forms.ModelForm):
             "court": "Court",
             "opponents": "Opponent/s",
         }
-
-

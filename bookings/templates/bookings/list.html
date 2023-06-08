@@ -17,6 +17,7 @@
                     <strong>Owner: </strong>{{ booking.owner }}
                     <strong>Date: </strong>{{ booking.date }}
                     <strong>Time: </strong>{{ booking.time }}
+                    <strong>Court: </strong>{{ booking.court }}
                     <strong>Opponents: </strong>{{ booking.opponents }}
                     <!-- <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -45,6 +46,7 @@
                         <th>Owner</th>
                         <th>Date</th>
                         <th>Time</th>
+                        <th>Court</th>
                         <th>Opponents</th>
                     </tr>
 
@@ -54,6 +56,7 @@
                         <td>{{ booking.owner }}</td>
                         <td>{{ booking.date }}</td>
                         <td>{{ booking.time }}</td>
+                        <td>{{ booking.court }}</td>
                         <td>{{ booking.opponents }}</td>
                         <td><a href="{% url 'edit-booking' booking.id %}" class="btn btn-primary w-30"></a>Update</td>
                         <td><a href="{% url 'delete-booking' booking.id %}" class="btn btn-primary w-30"></a>Delete</td>
