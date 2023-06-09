@@ -69,12 +69,13 @@ class AddBooking(LoginRequiredMixin, CreateView):
         return super(AddBooking, self).form_valid(form)
 
 
-class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EditBooking(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """ Edit Booking """
     template_name = 'bookings/edit.html'
     model = Booking
     form_class = BookingForm
-    success_url = '/bookings/list/all'
+    success_url = '/bookings/list/own'
+    success_message = "Your booking was successfully updated."
 
     def test_func(self):
         return self.request.user == self.get_object().owner.user

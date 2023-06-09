@@ -53,12 +53,17 @@ class AddBuddy(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class EditBuddy(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EditBuddy(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        SuccessMessageMixin,
+        UpdateView
+        ):
     """" Edit User Buddy Profile """
     template_name = "buddies/edit.html"
     model = Buddy
     form_class = BuddyForm
-    success_url = "/buddies/"
+    success_message = "Your Buddy Profile was successfully updated."
 
     def test_func(self):
         """

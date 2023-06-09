@@ -28,6 +28,7 @@ class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = UserProfile
     form_class = UserProfileForm
     success_url = '/buddies/'  # change this to profile-detail
+    success_message = "Your Contact Info was successfully updated."
 
     def test_func(self):
         """
