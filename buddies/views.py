@@ -72,13 +72,23 @@ class EditBuddy(
         return self.request.user == self.get_object().user_profile.user
 
 
-class DeleteBuddy(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class DeleteBuddy(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        SuccessMessageMixin,
+        DeleteView):
     """ Delete a buddy profile """
     model = Buddy
     success_url = '/buddies/'
+    success_message = "Your Buddy Profile was successfully deleted."
 
     def test_func(self):
         """
         Checks if the signed in user is the same user who owns the object
         """
         return self.request.user == self.get_object().user_profile.user
+
+    # https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteBuddy, self).delete(request, *args, **kwargs)

@@ -58,13 +58,23 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class DeleteUserProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class DeleteUserProfile(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        SuccessMessageMixin,
+        DeleteView):
     """ Delete User Profile (contact info) """
     model = UserProfile
     success_url = '/'
+    success_message = "All your information has been successfully deleted."
 
     def test_func(self):
         """
         Checks if the signed in user is the same user who owns the object
         """
         return self.request.user == self.get_object().user
+
+    # https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteUserProfile, self).delete(request, *args, **kwargs)

@@ -69,7 +69,11 @@ class AddBooking(LoginRequiredMixin, CreateView):
         return super(AddBooking, self).form_valid(form)
 
 
-class EditBooking(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class EditBooking(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        SuccessMessageMixin,
+        UpdateView):
     """ Edit Booking """
     template_name = 'bookings/edit.html'
     model = Booking
@@ -80,10 +84,21 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, 
     def test_func(self):
         return self.request.user == self.get_object().owner.user
 
-class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+class DeleteBooking(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        SuccessMessageMixin,
+        DeleteView):
     """ Delete a booking """
     model = Booking
     success_url = '/bookings/list/all'
+    success_message = "Your booking was successfully deleted."
 
     def test_func(self):
         return self.request.user == self.get_object().owner.user
+
+    # https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteBooking, self).delete(request, *args, **kwargs)
