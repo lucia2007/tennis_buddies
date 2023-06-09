@@ -36,7 +36,7 @@ class Buddy(models.Model):
     is_approved = models.BooleanField(default=False)
     status = models.IntegerField(choices=STATUS, default=1)
     gender = models.CharField(max_length=6, choices=[
-        ("M", "Male"), ("F", "Female")], default="M")
+        ("Male", "Male"), ("Female", "Female")], default="M")
     level = models.CharField(
         max_length=15,
         choices=[
@@ -47,27 +47,30 @@ class Buddy(models.Model):
         default="Beginner"
     )
     practice_type = models.CharField(
-        max_length=25,
+        max_length=50,
         choices=[
             ("Hitting Practice", "Hitting Practice"),
             ("Match Practice", "Match Practice"),
-            ("Both", "Both"),
+            (
+             "Both Match and Hitting Practice",
+             "Both Match and Hitting Practice"
+            ),
         ],
         default="Both"
     )
     game_type = models.CharField(
-        max_length=10,
+        max_length=50,
         choices=[
             ("Singles", "Singles"),
             ("Doubles", "Doubles"),
-            ("Both", "Both")], default="Singles"
+            ("Both Singles and Doubles", "Both Singles and Doubles")], default="Singles"
     )
     availability = models.CharField(
-        max_length=10,
+        max_length=50,
         choices=[
             ("Morning", "Morning"),
             ("Afternoon", "Afternoon"),
-            ("Both", "Both")], default="Both"
+            ("Both Morning and Afternoon", "Both Morning and Afternoon")], default="Both"
     )
     created_on = models.DateTimeField(auto_now_add=True)
 
