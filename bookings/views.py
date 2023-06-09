@@ -9,6 +9,8 @@ from django.views.generic import (
     UpdateView
     )
 from django.contrib import messages
+# to display messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Booking, Court, Event
 from .forms import BookingForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -63,6 +65,7 @@ class AddBooking(LoginRequiredMixin, CreateView):
 
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
+        messages.success(self.request, f"Booking was created successfully.")
         return super(AddBooking, self).form_valid(form)
 
 

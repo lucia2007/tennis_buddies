@@ -2,6 +2,10 @@ from django.views.generic import CreateView, DetailView, DeleteView, UpdateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+# to display messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+
 # to make sure the user is logged in
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -47,6 +51,9 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(
+            self.request, f"Your contact info was saved successfully."
+            )
         return super().form_valid(form)
 
 

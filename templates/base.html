@@ -43,8 +43,22 @@
     {% include 'includes/header.html' %}
     <!-- <header class="container-fluid fixed-top"></header> -->
 
+    <!-- https://learn.codeinstitute.net/login?next=/courses/course-v1%3ACodeInstitute%2BFST101%2B2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/%3Fchild%3Dfirst -->
+    <!-- Add messages to inform the user about their actions -->
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     {% endif %}
 
     {% block page_header %}

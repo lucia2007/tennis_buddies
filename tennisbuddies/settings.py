@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 
@@ -31,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["tennis-buddies.herokuapp.com", "localhost",
-                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu98.gitpod.io"]
+                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu99.gitpod.io"]
 
 
 # Application definition
@@ -91,6 +92,15 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 # LOGOUT_REDIRECT_URL = '/'
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-succes',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

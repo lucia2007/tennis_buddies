@@ -10,6 +10,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
+from django.contrib import messages
+
+# to display messages
+from django.contrib.messages.views import SuccessMessageMixin
+
 from .models import Buddy
 from .forms import BuddyForm
 
@@ -42,6 +47,9 @@ class AddBuddy(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user_profile = self.request.user.user_profile
+        messages.success(
+            self.request, f"Your Buddy Profile was created successfully."
+            )
         return super().form_valid(form)
 
 
