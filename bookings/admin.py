@@ -35,6 +35,6 @@ class EventAdmin(admin.ModelAdmin):
 
 @admin.register(Court)
 class CourtAdmin(admin.ModelAdmin):
-    list_display = ['court_name',]
-    list_filter = ['court_name',]
-    search_fields = ['court_name',]
+    list_display = ['name',]
+    list_filter = ['name',]
+    search_fields = ['name',]

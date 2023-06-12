@@ -7,14 +7,27 @@ from django.utils import timezone
 from django.db.models.constraints import UniqueConstraint
 from django.core.exceptions import ValidationError
 
+from psycopg2.extras import DateTimeTZRange  # type: ignore
+# from django.utils import timezone
+# from datetime import timedelta
+
+from django.contrib.postgres.constraints import ExclusionConstraint
+from django.contrib.postgres.fields import DateTimeRangeField, RangeOperators
+
+COURT_NAME = [
+    ('one', 'One'),
+    ('two', 'Two'),
+    ('three', 'Three'),
+    ('four', 'Four'),
+    ('five', 'Five')
+    ]
+
 
 class Court(models.Model):
-    NAME = [('one', 'One'), ('two', 'Two'), ('three', 'Three'),
-            ('four', 'Four'), ('five', 'Five')]
-    court_name = models.CharField(max_length=5, choices=NAME)
+    name = models.CharField(max_length=5, choices=COURT_NAME)
 
     def __str__(self):
-        return self.court_name
+        return self.name
 
 
 TIMES = [
@@ -32,6 +45,13 @@ TIMES = [
     ('21:00 - 22:00', '21:00 - 22:00')]
 
 
+# https://stackoverflow.com/questions/64362067/django-datetimerangefield-default-timezone-now-timezone-now10years
+# def next_seven_days():
+#     now = timezone.now()
+
+#     return DateTimeTZRange(now, now + timedelta(days=7))
+
+
 class Booking(models.Model):
     """
     This class enables a signed in user to book a court up to 7 days
@@ -43,6 +63,7 @@ class Booking(models.Model):
                             on_delete=models.CASCADE,
                             )
     date = models.DateField(default=timezone.now)
+    # date = models.DateTimeRangeField(default=next_seven_days())
     time = models.CharField(
             max_length=15, choices=TIMES, default="09:00 - 10:00")
     # maximum one booking per user per day
