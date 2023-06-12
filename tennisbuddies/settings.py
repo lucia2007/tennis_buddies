@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
 
+    'django_tables2',
 
     # Apps
     'buddies',
@@ -62,6 +63,7 @@ INSTALLED_APPS = [
     'home',
     'profiles',
     'contact',
+    'bookingcalendar',
 
     # Other
     'crispy_forms',
