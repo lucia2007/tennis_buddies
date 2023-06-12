@@ -8,21 +8,21 @@ from django.utils import timezone
 
 
 class BookingCalendarListView(SingleTableView):
-    # model = BookingCalendar
-    queryset = [{'time': item[0]} for item in TIMES]
+    # queryset = [{'hour': item[0], 'one': "unavailable"} for item in TIMES]
     table_class = BookingCalendarTable
     template_name = 'bookingcalendar/calendar.html'
 
     def get_queryset(self) -> list[dict[str, str]]:
         dict_list = []
         d = date(2023, 6, 12)
-        court_id = Court.objects.get(name="one").id
+        courts = Court.objects.all()
+
         for item in TIMES:
-            if Booking.objects.filter(date=d, time=item[0], court=court_id).count() >=1:
-                availability = "booked"
-            else:
-                availability = "free"
-            dictionary = {'hour': item[0], 'one': availability}
+            dictionary = {'hour': item[0]}
+            for court in courts:
+                if Booking.objects.filter(date=d, time=item[0], court=court).count() >=1:
+                    dictionary[court.name] = "booked"
+                else:
+                    dictionary[court.name] = "free"
             dict_list.append(dictionary)
         return dict_list
-
