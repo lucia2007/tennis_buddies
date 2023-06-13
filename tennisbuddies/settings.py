@@ -82,7 +82,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Account Setup
 # https://www.youtube.com/watch?v=R_jlvi5xvSQ&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=7
@@ -218,3 +217,16 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# https://www.youtube.com/watch?v=xNqnHmXIuzU&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=8
+#  myaccount.google.com/lesssecureapps
+
+# Email settings
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = '587'
+# EMAIL_HOST_USER = 'lferencikova@gmail.com'
+# EMAIL_HOST_PASSWORD = 'cpvalyaffaemqhpk'
+# EMAIL_USE_TLS = True

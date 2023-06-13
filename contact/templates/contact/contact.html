@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<!-- https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s -->
+<!-- https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend -->
 <h1 class="display-4 text-center mb-5 mt-5">Get in touch with us</h1>
 <!-- Contact Form -->
 <div class="container text-center mt-5 mb-5">
@@ -10,33 +10,20 @@
         <div class="col-12 col-md-8 d-flex justify-content-center mx-auto mt-3 mb-3">
             <div class="contact-form">
                 <div class="form-heading">
-                    <!-- <h2>Get in Touch - {{ message_name }}</h2> -->
-                    <!-- <div class="line"></div> -->
                 </div>
                 <!-- Form -->
                 <form action="{% url 'contact' %}" method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <input type="text" name="message-name" class="form-control mb-3" placeholder="Your Name">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="email" name="message-email" class="form-control mb-3" placeholder="Your Email">
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" id="message" class="form-control mb-3" cols="30" rows="10"
-                                placeholder="Your Message"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary w-30">Send Message</button>
-                        </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-30">Send Message</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s -->
     <h1 class="display-4 text-center mb-5 mt-5">Find us on the map</h1>
     <div class="row">
         <div class="col-8 d-flex justify-content-center mx-auto mt-3 mb-3">
