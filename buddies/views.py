@@ -18,6 +18,9 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import Buddy
 from .forms import BuddyForm
 
+# for search functionality
+from django.db.models import Q
+
 
 # CRUD functionality was done following Dee Mc's Recipe tutorial: 
 # https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy
@@ -27,6 +30,20 @@ class Buddies(ListView):
     template_name = "buddies/buddies.html"
     model = Buddy
     context_object_name = "buddies"
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            buddies = self.model.objects.filter(
+                Q(level__icontains=query) |
+                Q(game_type__icontains=query) |
+                Q(availability__icontains=query) |
+                Q(practice_type__icontains=query) |
+                Q(gender__icontains=query)
+                )
+        else:
+            buddies = self.model.objects.all()
+        return buddies
 
 
 class BuddyDetail(DetailView):

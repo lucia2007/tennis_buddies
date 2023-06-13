@@ -39,6 +39,16 @@
                         </a>
                     </li>
                 </ul>
+                <!-- Form for search bar -->
+                <!-- https://www.youtube.com/watch?v=LsU79aY79UA -->
+                {% if 'buddies' in url_name %}
+                <div>
+                    <form class="d-flex" role="search" method="get" action="{% url 'buddies' %}">
+                        <input type="search" name="q" class="form-contol me-2" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+                {% endif %}
                 <div class="d-flex me-4">
                     {% if request.user.is_authenticated %}
                     <ul>
