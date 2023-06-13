@@ -96,11 +96,11 @@ LOGIN_REDIRECT_URL = '/'
 # LOGOUT_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {
-    messages.DEBUG: 'alert-info',
-    messages.INFO: 'alert-info',
-    messages.SUCCESS: 'alert-succes',
-    messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger',
+    messages.DEBUG: 'alert_info_mine',
+    messages.INFO: 'alert_info_mine',
+    messages.SUCCESS: 'alert_success_mine',
+    messages.WARNING: 'alert_warning_mine',
+    messages.ERROR: 'alert_danger_mine',
 }
 
 

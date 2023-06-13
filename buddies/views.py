@@ -41,6 +41,11 @@ class Buddies(ListView):
                 Q(practice_type__icontains=query) |
                 Q(gender__icontains=query)
                 )
+            if not buddies:
+                messages.success(
+                    self.request,
+                    f"There is no match for your search. Try a different keyword."
+                    )
         else:
             buddies = self.model.objects.all()
         return buddies

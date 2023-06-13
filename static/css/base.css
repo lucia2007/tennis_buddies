@@ -25,6 +25,38 @@ li.nav-item.dropdown {
     object-fit: cover;
 }
 
+/* Messages */
+.alert_success_mine {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+.alert_info_mine {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+.alert_warning_mine {
+    background-color: #51ec4b;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+.alert_danger_mine {
+    background-color: #ca7474;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 1rem;
+}
 
 /* Main */
 main {
@@ -96,6 +128,7 @@ a.fontawesome-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* max-height: 50%; */
 }
 
 .profile-picture {
