@@ -2,5 +2,50 @@
 {% load static %}
 
 {% block content %}
-<h1 class="display-4 text-success">Get in touch with us</h1>
+<!-- https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s -->
+<h1 class="display-4 text-center mb-5 mt-5">Get in touch with us</h1>
+<!-- Contact Form -->
+<div class="container text-center mt-5 mb-5">
+    <div class="row">
+        <div class="col-12 col-md-8 d-flex justify-content-center mx-auto mt-3 mb-3">
+            <div class="contact-form">
+                <div class="form-heading">
+                    <!-- <h2>Get in Touch - {{ message_name }}</h2> -->
+                    <!-- <div class="line"></div> -->
+                </div>
+                <!-- Form -->
+                <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" name="message-name" class="form-control mb-3" placeholder="Your Name">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="email" name="message-email" class="form-control mb-3" placeholder="Your Email">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" id="message" class="form-control mb-3" cols="30" rows="10"
+                                placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-30">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="display-4 text-center mb-5 mt-5">Find us on the map</h1>
+    <div class="row">
+        <div class="col-8 d-flex justify-content-center mx-auto mt-3 mb-3">
+            <iframe title="Nebusice Club Map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1688.0820910044097!2d14.333473332028912!3d50.11148527998126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bbfedd98717bb%3A0x4f3d333035a5bfbe!2sTenis%20Nebu%C5%A1ice!5e0!3m2!1sen!2sie!4v1686656631103!5m2!1sen!2sie"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
