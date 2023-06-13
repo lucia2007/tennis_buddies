@@ -4,13 +4,13 @@
 
 {% block content %}
 <div class="container">
-    <div class="buddy-details mt-2 p-1">
+    <div class="buddy-details mt-2 p-1 mx-auto">
         <div class="profile-picture">
             <!-- add an if statement if there is no picture -->
             <img src="{{ buddy.profile_picture.url }}" alt="{{ buddy.picture_description}}" class="buddy-picture">
         </div>
         <div class="buddy-detail">
-            <h1 class="text-center">{{ buddy.user_profile.first_name}} {{ buddy.user_profile.last_name}}</h1>
+            <h2 class="text-center">{{ buddy.user_profile.first_name}} {{ buddy.user_profile.last_name}}</h2>
             <hr>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -37,8 +37,8 @@
             </ul>
             {% if request.user == buddy.user_profile.user %}
             <div class="text-center">
-                <a href="{% url 'edit-buddy' buddy.id %}" class="btn btn-primary w-30">Edit</a>
-                <a href="{% url 'delete-buddy' buddy.id %}" class="btn btn-primary w-30">Delete</a>
+                <a href="{% url 'edit-buddy' buddy.id %}" class="btn btn-primary w-30 mt-2 mb-2">Edit</a>
+                <a href="{% url 'delete-buddy' buddy.id %}" class="btn btn-primary w-30 mt-2 mb-2   ">Delete</a>
             </div>
             {% endif %}
         </div>

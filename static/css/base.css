@@ -98,6 +98,10 @@ img.logo {
     border-radius: 10px;
 }
 
+ul.list-group.list-group-flush {
+    border-radius: 5px;
+}
+
 
 /* Home */
 a.fontawesome-link {
@@ -119,6 +123,10 @@ a.fontawesome-link {
 }
 
 /* Buddy Details */
+.buddy-picture {
+    border-radius: 5px;
+}
+
 .card {
     height: 90%;
     margin-top: 1.5rem
@@ -128,7 +136,7 @@ a.fontawesome-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* max-height: 50%; */
+    width: 30%;
 }
 
 .profile-picture {
