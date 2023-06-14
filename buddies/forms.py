@@ -1,5 +1,6 @@
 from django import forms
 from .models import Buddy
+from django.contrib.auth.models import User
 
 
 class BuddyForm(forms.ModelForm):
@@ -18,6 +19,7 @@ class BuddyForm(forms.ModelForm):
             "practice_type",
             "game_type",
             "availability",
+            "email",
         ]
 
     labels = {
@@ -31,4 +33,5 @@ class BuddyForm(forms.ModelForm):
         "practice_type": "Practice Type",
         "game_type": "Game Type",
         "availability": "Available",
+        "email": "Email",
     }

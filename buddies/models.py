@@ -72,6 +72,8 @@ class Buddy(models.Model):
             ("Afternoon", "Afternoon"),
             ("Both Morning and Afternoon", "Both Morning and Afternoon")], default="Both"
     )
+    email = models.EmailField(max_length=150)
+
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

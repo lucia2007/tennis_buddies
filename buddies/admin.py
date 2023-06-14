@@ -16,6 +16,7 @@ class BuddyAdmin(SummernoteModelAdmin):
         "game_type",
         "availability",
         "practice_type",
+        "email",
         "created_on",
     )
 

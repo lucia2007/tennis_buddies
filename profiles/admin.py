@@ -15,6 +15,7 @@ class UserProfileAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'phone',
+        'email',
         'created_on')
     list_filter = ('last_name', 'created_on')
     search_fields = ['first_nane', 'last_name', 'phone']

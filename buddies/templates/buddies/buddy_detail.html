@@ -41,6 +41,9 @@
                 <li class="list-group-item">
                     <p><strong>Available: </strong>{{ buddy.availability }}</p>
                 </li>
+                <li class="list-group-item">
+                    <p><strong>Email: </strong>{{ buddy.email }}</p>
+                </li>
             </ul>
             {% if request.user == buddy.user_profile.user %}
             <div class="text-center">
