@@ -74,6 +74,10 @@ class AddBuddy(LoginRequiredMixin, CreateView):
             )
         return super().form_valid(form)
 
+    def get_initial(self):
+        initial = super().get_initial()
+        initial['email'] = self.request.user.email
+        return initial
 
 class EditBuddy(
         LoginRequiredMixin,
