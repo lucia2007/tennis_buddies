@@ -51,7 +51,7 @@ class Buddies(ListView):
         return buddies
 
 
-class BuddyDetail(DetailView):
+class BuddyDetail(LoginRequiredMixin, DetailView):
     """View a single Buddy profile"""
 
     template_name = "buddies/buddy_detail.html"

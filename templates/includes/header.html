@@ -75,7 +75,7 @@
                                 <li><a class="dropdown-item" alt="Takes the user to their Bookings overview"
                                         {% if user.user_profile %} href="{% url 'list-bookings' 'own' %}" {% else %}
                                         href="{% url 'add-profile'%}?next={% url 'list-bookings' 'own' %}"
-                                        {% endif %}>Bookings</a>
+                                        {% endif %}>Your Bookings</a>
                                 </li>
                             </ul>
                         </li>
