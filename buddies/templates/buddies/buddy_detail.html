@@ -1,16 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Buddy Detail {{buddy.user_profile.first_name}}{{buddy.user_profile.last_name}}{% endblock %}
 
 {% block content %}
 <div class="container">
-    <div class="buddy-details mt-2 p-1 mx-auto">
+    <div class="buddy-details mt-2 mb-2 p-1 mx-auto">
         <div class="profile-picture">
-            <!-- add an if statement if there is no picture -->
-            <img src="{{ buddy.profile_picture.url }}" alt="{{ buddy.picture_description}}" class="buddy-picture">
+            <!-- If there is no picture, add a placeholder one -->
+            {% if "placeholder" in buddy.profile_picture.url %}
+            <img src="{% static '/icons/no-photo-icon.png' %}" class="card-img-top buddy-detail-picture" width="100%"
+                alt="Image not found, placeholder picture">
+            {% else %}
+            <img src="{{ buddy.profile_picture.url }}" class="card-img-top buddy-detail-picture" width="100%"
+                alt="{{buddy.picture_description}}">
+            {% endif %}
         </div>
         <div class="buddy-detail">
-            <h2 class="text-center">{{ buddy.user_profile.first_name}} {{ buddy.user_profile.last_name}}</h2>
+            <h2 class="text-center mt-2">{{ buddy.user_profile.first_name}} {{ buddy.user_profile.last_name}}</h2>
             <hr>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">

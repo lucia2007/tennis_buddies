@@ -10,11 +10,13 @@
     <a href="{% url 'buddy-detail' buddy.id %}" class="buddies"
         aria-label="Click to view {{buddy.user_profile.first_name}}">
         <div class="card m-2" style="width: 18rem;">
-            <!-- add a condition to fill in a picture from static folder, if user doesn't provide one -->
-            {% if buddy.profile_picture.url is not none %}
-            <img src="{{ buddy.profile_picture.url }}" class="card-img-top" alt="{{buddy.picture_description}}">
+            <!-- If there is no picture, add a placeholder one -->
+            {% if "placeholder" in buddy.profile_picture.url %}
+            <img src="{% static '/icons/no-photo-icon.png' %}" class="card-img-top buddy-image" width="100%"
+                alt="Image not found, placeholder picture">
             {% else %}
-            <img src="{% static '/icons/no-photography-icon.svg' %}" alt="Image not found">
+            <img src="{{ buddy.profile_picture.url }}" class="card-img-top buddy-image" width="100%"
+                alt="{{buddy.picture_description}}">
             {% endif %}
             <div class="card-body">
                 <h2 class="card-title">{{buddy.user_profile.first_name}} {{buddy.user_profile.last_name}}</h2>
