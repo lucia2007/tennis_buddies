@@ -95,8 +95,11 @@ class DeleteBooking(
     success_url = '/bookings/list/all'
     success_message = "Your booking was successfully deleted."
 
+    # Either the owner of the booking or a superuser can delete it
     def test_func(self):
-        return self.request.user == self.get_object().owner.user
+        booking = self.get_object()
+        user = self.request.user
+        return user.is_superuser or self.request.user == self.get_object().owner.user
 
     # https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
