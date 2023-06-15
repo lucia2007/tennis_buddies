@@ -118,7 +118,9 @@ class EditBooking(
     success_message = "Your booking was successfully updated."
 
     def test_func(self):
-        return self.request.user == self.get_object().owner.user
+        booking = self.get_object()
+        user = self.request.user
+        return user.is_superuser or self.request.user == self.get_object().owner.user
 
 
 class DeleteBooking(
