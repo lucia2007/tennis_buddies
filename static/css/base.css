@@ -198,6 +198,9 @@ a.fontawesome-link {
     padding: 10px;
 }
 
+.even {
+    background-color: #e9e981;
+}
 
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
@@ -220,17 +223,31 @@ a.text-reset {
 }
 
 
-/* Small screen devices (600px and above) */
-/* @media only screen and (min-width: 600px) {
+/* Small screen devices (576px and above) */
+@media only screen and (min-width: 576px) {
 
-    /* .form {
-        width: 70%;
+    .table-sm>:not(caption)>*>* {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .table {
+        font-size: medium;
+    }
+
+    /* form {
+        width: 70%;/
     } */
 
+}
 
 /* Medium screen devices (768px and above) */
-/* @media only screen and (min-width: 768px) {
-    .buddy-details {
+@media only screen and (min-width: 768px) {
+
+    .table-sm>:not(caption)>*>* {
+        padding: 0.75rem 0.75rem;
+    }
+
+
         flex-direction: row;
     }
 
