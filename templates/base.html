@@ -62,8 +62,9 @@
     {% endif %}
 
     {% block page_header %}
+    <!-- Carousel -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
+        <div class=" carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
@@ -73,37 +74,51 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
+                <div class="position-relative">
                 <img src="{% static '/images/tennis_court.jpg' %}" alt="A picture of a tennis court"
                     class="d-block w-100 carousel-image">
-                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <!-- Overlay -->
+                    <div class="overlay">
+                    </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Welcome to Tennis Buddies!</h5>
-                    <p>Are you mad about tennis? Are you looking for people to plays with? Find your ideal Tennis Buddy
-                        with
-                        us! <a href="{% url 'account_login' %}">Sign in</a> if you already have an account.</p>
+                        <p>Are you mad about tennis? Are you looking for people to plays with? <a
+                                href="{% url 'account_login' %}">Sign in</a> if you already have an account.</p>
                     <a href="{% url 'account_signup' %}" class="btn btn-primary text-reset">Sign Up</a>
                 </div>
             </div>
+            </div>
             <div class="carousel-item">
+                <div class="position-relative">
                 <img src="{% static '/images/tennis_buddies.jpg' %}" alt="A picture of a friends playing tennis"
                     class="d-block w-100 carousel-image">
+                    <!-- Overlay -->
+                    <div class="overlay">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Find Your Perfect Tennis Buddy</h5>
-                    <p>You do not need to look any longer. Browse through our catalouge to find a new tennis partner.
+                            <p>You do not need to look any longer. Browse through our catalouge to find a new tennis
+                                partner.
                     </p>
                     <a href="{% url 'buddies' %}" class="btn btn-primary text-reset">Find Your Perfect Buddy</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="carousel-item">
+                <div class="position-relative">
                 <img src="{% static '/images/tennis_courts.jpg' %}" alt="A picture of a tennis courts"
                     class="d-block w-100 carousel-image">
+                    <!-- Overlay -->
+                    <div class="overlay">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Book a Court</h5>
                     <p>Reserve one of our outdoor courts to play when it suits you.</p>
-                    <a class="btn btn-primary text-reset" {% if user.user_profile %} href="{% url 'add-booking' %}"
-                        {% else %} href="{% url 'add-profile'%}?next={% url 'add-booking' %}" {% endif %}>Book
+                            <a class="btn btn-primary text-reset" {% if user.user_profile %}
+                                href="{% url 'add-booking' %}" {% else %}
+                                href="{% url 'add-profile'%}?next={% url 'add-booking' %}" {% endif %}>Book
                         a Court</a>
-
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,7 +133,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <!-- <h1 class="display-4 text-success">It works</h1> -->
+    <!-- End of Carousel -->
     {% endblock %}
 
     <main>
