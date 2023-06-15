@@ -5,12 +5,13 @@
 
 {% block content %}
 <h1 class="text-center p-2">Latest Bookings</h1>
-<div class="container d-flex flex-row flex-wrap justify-content-center">
+{% if bookings %}
+<div class="container container-table d-flex flex-row flex-wrap justify-content-center mb-5">
     <!-- This structure was inspired by: https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s -->
     <div class="row">
         <div class="col-md">
             <div class="card card-body">
-                <table class="table table-sm">
+                <table class="table table-sm d-flex d-wrap">
                     <tr>
                         <th>Owner</th>
                         <th>Date</th>
@@ -36,9 +37,12 @@
                             {% endfor %}
                         </td>
                         <!-- Either the booking owner or a superuser can delete a booking -->
+                        <!-- https://stackoverflow.com/questions/65421561/how-can-i-check-if-an-user-is-superuser-in-django -->
                         {% if booking.owner == request.user.user_profile or request.user.is_superuser %}
-                        <td><a href="{% url 'edit-booking' booking.id %}" class="btn btn-primary w-30"></a>Update</td>
-                        <td><a href="{% url 'delete-booking' booking.id %}" class="btn btn-primary w-30"></a>Delete</td>
+                        <td><a href="{% url 'edit-booking' booking.id %}" class="btn btn-primary w-30 me-2"></a>Update
+                        </td>
+                        <td><a href="{% url 'delete-booking' booking.id %}" class="btn btn-danger w-30 me-2"></a>Delete
+                        </td>
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -47,4 +51,7 @@
         </div>
     </div>
 </div>
+{% else%}
+<p class="text-center">No bookings found.</p>
+{% endif %}
 {% endblock %}
