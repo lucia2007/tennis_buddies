@@ -181,6 +181,24 @@ a.fontawesome-link {
     cursor: pointer;
 }
 
+
+/* Booking List View */
+
+.table-sm>:not(caption)>*>* {
+    padding: 0.3rem 0.3rem;
+}
+
+.table {
+    font-size: small;
+}
+
+/* Booking Calendar */
+.table-container {
+    margin: 15px;
+    padding: 10px;
+}
+
+
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
 footer {
