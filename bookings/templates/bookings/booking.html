@@ -26,10 +26,10 @@
         <div class="row">
             <div class="col-12 mb-2">
                 <a class="calendar-link fontawesome-link" alt="Takes the client to Create a Booking Page"
-                    {% if user.user_profile %} href="{% url 'add-booking' %}" {% else %}
-                    href="{% url 'add-profile'%}?next={% url 'add-booking' %}" {% endif %}>
+                    href="{% url 'add-booking' %}">
                     <div class="feature-image mb-2">
                         <i class="fa-solid fa-calendar fa-5x"></i>
+                    </div>
                 </a>
             </div>
             <h3 class="feature-title">Book a Court</h3>

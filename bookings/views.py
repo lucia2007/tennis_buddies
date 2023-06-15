@@ -1,5 +1,10 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse, reverse_lazy
 from datetime import datetime, timedelta
+from django.utils import timezone
+from django.http import HttpResponseRedirect
+from django.views import generic, View
+from django.core.exceptions import ValidationError
 # from .models import *
 from django.views.generic import (
     CreateView,
@@ -13,11 +18,34 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Booking, Court, Event
 from .forms import BookingForm
+from profiles.models import UserProfile
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 
-# CRUD functionality was done following Dee Mc's Recipe tutorial: 
+# CRUD functionality was done following Dee Mc's Recipe tutorial:
 # https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy
+
+# https://stackoverflow.com/a/42193610/15098344
+class TestIfHasProfileMixin(UserPassesTestMixin):
+    '''Check if user has profile. If yes, take him to add-booking.
+       If not, take him to add contact details and then to add-booking.
+    '''
+
+    def test_func(self):
+        try:
+            UserProfile.objects.get(user=self.request.user)
+            return True
+        except UserProfile.DoesNotExist:
+            return False
+
+    def handle_no_permission(self):
+        '''to:[login,Profile] will signup or create profiles'''
+        if not self.request.user.is_authenticated:
+            return super().handle_no_permission()
+        if self.raise_exception:
+            raise PermissionDenied(self.get_permission_denied_message())
+        return redirect(reverse('add-profile') + '?next=' + self.request.path)
+
 
 def booking(request):
     return render(request, "bookings/booking.html", {})
@@ -51,16 +79,16 @@ class BookingDetail(DetailView):
     context_object_name = 'booking'
 
 
-class AddBooking(LoginRequiredMixin, CreateView):
+class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
     """" Add booking view """
     template_name = 'bookings/add.html'
     model = Booking
     form_class = BookingForm
     success_url = '/bookings/list/own'
 
-    # Updates the instance of the user to the current signed in user
-    # https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user
     def form_valid(self, form):
+        # Updates the instance of the user to the current signed in user
+        # https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user
         form.instance.owner = self.request.user.user_profile
 
         # Check if the booking is not in the past
