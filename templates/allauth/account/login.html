@@ -12,9 +12,9 @@
   <h1>{% trans "Sign In" %}</h1>
 
   <p>{% blocktrans %}Welcome back to Tennis Buddies! To make a court reservation, to see the perfect tennis
-    buddy's details and contact info, or to view all bookings, please sign in below. </p> If you have not created an
-  account yet, then
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    buddy's details and contact info, or to view all bookings, please sign in below. If you have not created an
+    account yet, then
+    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
   <form class="form p-2" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %}
@@ -27,4 +27,5 @@
       href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </form>
 </div>
+
 {% endblock %}

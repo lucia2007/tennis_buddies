@@ -560,7 +560,17 @@ Take the following steps to create a clone of a project:
 - [Restrict the number of opponents](https://stackoverflow.com/questions/20203806/limit-maximum-choices-of-manytomanyfield/20230270#20230270)
 - [Update Owner to current user](https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user)
 - [Messages](https://learn.codeinstitute.net/login?next=/courses/course-v1%3ACodeInstitute%2BFST101%2B2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/%3Fchild%3Dfirst)
+- [Delete Message](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown)
+- [Search Functionality](https://www.youtube.com/watch?v=LsU79aY79UA)
 - [Contact Page](https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s)
+- [Contact Form](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend)
+- [If not for loop last](https://www.reddit.com/r/django/comments/13p2uuz/is_there_a_way_to_if_not_forlooplast/)
+<!-- - [Send Email Tutorial](https://www.youtube.com/watch?v=xNqnHmXIuzU&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=8) -->
+- [Check if superuser](https://stackoverflow.com/questions/65421561/how-can-i-check-if-an-user-is-superuser-in-django)
+- [Image overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
+- [Check if date not in the past](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
+- [TestIfUserProfile Mixin](https://stackoverflow.com/a/42193610/15098344)
+
 
 ## Media
 - https://www.istockphoto.com/photos/tennis-friends

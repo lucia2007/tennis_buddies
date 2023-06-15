@@ -10,6 +10,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
+from django.urls import reverse_lazy
+
 from django.contrib import messages
 
 # to display messages
@@ -22,7 +24,7 @@ from .forms import BuddyForm
 from django.db.models import Q
 
 
-# CRUD functionality was done following Dee Mc's Recipe tutorial: 
+# CRUD functionality was done following Dee Mc's Recipe tutorial:
 # https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy
 class Buddies(ListView):
     """View all buddies"""
@@ -31,6 +33,7 @@ class Buddies(ListView):
     model = Buddy
     context_object_name = "buddies"
 
+    # https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
         if query:

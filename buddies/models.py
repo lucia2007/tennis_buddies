@@ -78,4 +78,4 @@ class Buddy(models.Model):
 
     def __str__(self):
         """Returns strings representation of an object"""
-        return self.user_profile.first_name
+        return f"{self.user_profile.first_name} - {self.user_profile.email}"
