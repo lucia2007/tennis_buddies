@@ -4,8 +4,11 @@
 {% block title%}Find Your Perfect Tennis Buddy{% endblock %}
 
 {% block content %}
-<h1 class="text-center p-2">Tennis Buddies</h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
+    <div class="col-12">
+        <h2 class="my-3 pink-text text-center">Tennis Buddies</h2>
+    </div>
+    {% if buddies %}
     {% for buddy in buddies %}
     <a href="{% url 'buddy-detail' buddy.id %}" class="buddies"
         aria-label="Click to view {{buddy.user_profile.first_name}}">
@@ -25,5 +28,8 @@
         </div>
     </a>
     {% endfor %}
+    {% else%}
+    <p class="text-center">No buddies found.</p>
+    {% endif %}
 </div>
 {% endblock %}

@@ -7,7 +7,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #c3c30e;
-    /* font-family: ; */
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Header */
@@ -33,9 +36,13 @@ li.nav-item.dropdown {
     object-fit: cover;
 }
 
+a.nav-link.login-button.btn.btn-outline-success.me-2 {
+    text-align: left;
+}
+
 /* Messages */
 .alert_success_mine {
-    background-color: whitesmoke;
+    background-color: rgb(177, 226, 121);
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -51,7 +58,7 @@ li.nav-item.dropdown {
 }
 
 .alert_warning_mine {
-    background-color: #51ec4b;
+    background-color: #eb8838;
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -59,7 +66,7 @@ li.nav-item.dropdown {
 }
 
 .alert_danger_mine {
-    background-color: #ca7474;
+    background-color: #cf5b5b;
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -69,8 +76,8 @@ li.nav-item.dropdown {
 /* Main */
 main {
     flex: 1 0 auto;
+    padding-top: 1rem;
 }
-
 
 img.logo {
     width: 60px;
@@ -78,7 +85,7 @@ img.logo {
 }
 
 .active {
-    font-weight: 600;
+    font-weight: 900;
 }
 
 .feature-image {
@@ -118,7 +125,7 @@ img.logo {
 
 .carousel-caption {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -232,6 +239,12 @@ a.fontawesome-link {
     background-color: #e9e981;
 }
 
+/* Contact Us */
+.map-image {
+    border-radius: 5px;
+}
+
+
 /* Footer  */
 /* https://www.youtube.com/watch?v=E9eWdZTpiGA - so the footer stays at the bottom*/
 footer {
@@ -295,6 +308,8 @@ a.text-reset {
         width: 60%;
     }
 } */
+}
+
 /* Big screen devices (992px and above) */
 @media only screen and (min-width: 992px) {
     .table-sm>:not(caption)>*>* {
@@ -311,6 +326,4 @@ a.text-reset {
 }
 
 /* Extra big screen devices (1200px and above) */
-/* @media only screen and (min-width: 1200px) {
-    ...
-} */
+@media only screen and (min-width: 1200px) {}
