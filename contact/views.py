@@ -30,14 +30,3 @@ def contact(request):
 
     form = ContactForm()
     return render(request, 'contact/contact.html', {'form': form})
-
-
-
-
-
-        )
-
-
-        return render(request, "contact/contact.html", {'message-name': message_name})
-    else:
-        return render(request, "contact/contact.html", {})
