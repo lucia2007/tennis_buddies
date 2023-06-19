@@ -29,10 +29,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ["tennis-buddies.herokuapp.com", "localhost",
-                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu99.gitpod.io"]
+                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu100.gitpod.io"]
 
 
 # Application definition
