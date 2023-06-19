@@ -12,9 +12,15 @@ class BookingCalendarListView(SingleTableView):
     table_class = BookingCalendarTable
     template_name = 'bookingcalendar/calendar.html'
 
-    def get_queryset(self) -> list[dict[str, str]]:
+    def get_queryset(self):
         dict_list = []
-        d = date(2023, 6, 12)
+        # Get the date from the request parameters
+        # Change the booking table details according to the chosen date
+        date_param = self.request.GET.get('date')
+        # The bookings are displayed for the current day by default, otherwise for the chosen date
+        # Convert a string to datetime
+        # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
+        d = timezone.datetime.strptime(date_param, '%Y-%m-%d').date() if date_param else timezone.now().date()
         courts = Court.objects.all()
 
         for item in TIMES:
