@@ -37,9 +37,14 @@ class BookingCalendarListView(SingleTableView):
         for item in TIMES:
             dictionary = {'hour': item[0]}
             for court in courts:
-                if Booking.objects.filter(date=d, time=item[0], court=court).count() >=1:
-                    dictionary[court.name] = "booked"
+                bookings = Booking.objects.filter(date=d, time=item[0], court=court)
+                # Checks if there is a booking for a particular date, time and court
+                if bookings.exists():
+                    # This selects the owner of the booking
+                    owner = Booking.objects.filter(date=d, time=item[0], court=court).first().owner
+                    dictionary[court.name] = "booked" + ', ' + f"owner: {owner}"
+                    # dictionary[court.name] = f
                 else:
-                    dictionary[court.name] = "free"
+                    dictionary[court.name] = "free" + ', ' + f"Date: {d}, Time: {item[0]}, Court: {court}"
             dict_list.append(dictionary)
         return dict_list
