@@ -108,9 +108,7 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         # https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
         booking_date = form.cleaned_data.get('date')
         if booking_date is not None and booking_date < timezone.now().date():
-            messages.warning(self.request, f"You are trying to make a booking in the past. Change the date please.")
-
-            return redirect('add-booking')
+            messages.warning(self.request, f"You have made a booking in the past. Is that what you wanted?")
 
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
