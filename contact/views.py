@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
-# from django.contrib import messages
 # to display messages
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 
