@@ -21,15 +21,7 @@ class Buddy(models.Model):
     )
     about_me = models.TextField(default="Describe yourself")
     date_of_birth = models.DateField(default="2003-12-01")
-    # change placeholder text
     profile_picture = CloudinaryField("image", default="placeholder")
-    # image = ResizedImageField(
-    #     size=[400, None], quality=75, upload_to='buddies/', force_format="WEBP",
-    #     blank=False, null=False
-    #
-    # if you decide to use this format, you need to install pip3 install
-    # django_resized, then freeze requirements and
-    # from django_resized import ResizedImageField + pip install pillow?)
     picture_description = models.CharField(
         max_length=200, default="A picture of me"
         )

@@ -8,20 +8,8 @@ from django.utils import timezone
 
 
 class BookingCalendarListView(SingleTableView):
-    # queryset = [{'hour': item[0], 'one': "unavailable"} for item in TIMES]
     table_class = BookingCalendarTable
     template_name = 'bookingcalendar/calendar.html'
-
-    # Initialize date_param
-    def __init__(self, **kwargs):
-        self.date_param = None
-        super().__init__(**kwargs)
-
-    # Get the date_param from the date picker
-    def get_table(self, **kwargs):
-        table = super().get_table(**kwargs)
-        table.date_param = self.date_param
-        return table
 
     def get_queryset(self):
         dict_list = []
