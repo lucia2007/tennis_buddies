@@ -3,8 +3,10 @@ from django_tables2 import SingleTableView
 from django.views.generic import ListView
 from .tables import BookingCalendarTable
 from bookings.models import TIMES, COURT_NAME, Booking, Court
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from django.utils import timezone
+from django.urls import reverse, reverse_lazy
+from django.utils.html import format_html
 
 
 class BookingCalendarListView(SingleTableView):
