@@ -6,6 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
+from django.urls import reverse_lazy
+
 # to make sure the user is logged in
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -27,7 +29,6 @@ class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'profiles/edit.html'
     model = UserProfile
     form_class = UserProfileForm
-    success_url = '/buddies/'  # change this to profile-detail
     success_message = "Your Contact Info was successfully updated."
 
     def test_func(self):
@@ -35,6 +36,14 @@ class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         Checks if the signed in user is the same user who owns the profile
         """
         return self.request.user == self.get_object().user
+
+    # https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model
+    def get_success_url(self):
+        # Get the primary key from the updated user
+        pk = self.object.pk
+
+        # Redirect to the user's updated contact-detail page
+        return reverse_lazy("profile-detail", kwargs={'pk': pk})
 
 
 class AddUserProfile(LoginRequiredMixin, CreateView):

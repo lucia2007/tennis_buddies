@@ -82,6 +82,7 @@ class AddBuddy(LoginRequiredMixin, CreateView):
         initial['email'] = self.request.user.email
         return initial
 
+
 class EditBuddy(
         LoginRequiredMixin,
         UserPassesTestMixin,
@@ -99,6 +100,14 @@ class EditBuddy(
         Checks if the signed in user is the same user who owns the object
         """
         return self.request.user == self.get_object().user_profile.user
+
+    # https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model
+    def get_success_url(self):
+        # Get the primary key of the updated buddy
+        pk = self.object.pk
+
+        # Redirect to the buddy-detail page after a successful update
+        return reverse_lazy('buddy-detail', kwargs={'pk':pk})
 
 
 class DeleteBuddy(
