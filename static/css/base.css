@@ -288,7 +288,7 @@ a.text-reset {
         font-size: medium;
     }
 
-    form {
+    .form {
         width: 70%;/
     }
 
@@ -310,7 +310,7 @@ a.text-reset {
         width: 40%;
         margin: 0 auto;
     }
-
+    
     .buddy-details {
         width: 60%;
         padding: 1rem;
@@ -320,6 +320,7 @@ a.text-reset {
         width: 60%;
     }
 }
+
 
 /* Big screen devices (992px and above) */
 @media only screen and (min-width: 992px) {
