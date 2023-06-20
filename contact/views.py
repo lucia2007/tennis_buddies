@@ -26,6 +26,7 @@ def contact(request):
                 send_mail(subject, message, 'lferencikova@gmail.com', ['lferencikova@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
+            messages.success(request, 'Your inquiry has been sent successfully.')
             return redirect('home')
 
     form = ContactForm()
