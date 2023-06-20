@@ -8,6 +8,8 @@
 <div class="container">
     <form method="POST" enctype="multipart/form-data" class="p-2 form">
         <h1 class="text-center">Your Profile</h1>
+        <p text-center>When you fill in your buddy profile, other players will be able to find your preferences
+            including your email address, so you can get in touch and plan your next game.</p>
         {% csrf_token %}
         {{ form.media }}
         {{ form|crispy }}

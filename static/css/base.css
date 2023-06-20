@@ -42,7 +42,7 @@ a.nav-link.login-button.btn.btn-outline-success.me-2 {
 
 /* Messages */
 .alert_success_mine {
-    background-color: rgb(177, 226, 121);
+    background-color: #c3c30e;
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -85,7 +85,7 @@ img.logo {
 }
 
 .active {
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .feature-image {
@@ -133,9 +133,13 @@ img.logo {
     /* margin-bottom: 10px; */
 }
 
+.carousel-text {
+    font-weight: 400;
+}
+
 /* Forms */
 .form {
-    width: 80%;
+    width: 60%;
     margin: 3% auto;
     border-radius: 10px;
 }
@@ -230,6 +234,13 @@ a.fontawesome-link {
 }
 
 /* Booking Calendar */
+.date-picker {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    line-height: 2;
+}
+
 .table-container {
     margin: 15px;
     padding: 10px;
@@ -291,6 +302,7 @@ a.text-reset {
     }
 
 
+    /* .buddy-details {
         flex-direction: row;
     }
 
@@ -306,7 +318,6 @@ a.text-reset {
 
     .form {
         width: 60%;
-    }
 } */
 }
 
