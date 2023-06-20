@@ -5,6 +5,7 @@
 
 {% block content %}
 
+<div class="container">
 <!-- Add a date picker to the form -->
 <!-- https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#now -->
 <form method="get" class="date-picker" action="{% url 'calendar' %}">
@@ -14,5 +15,5 @@
 </form>
 
 {% render_table table %}
-
+</div>
 {% endblock %}
