@@ -191,7 +191,7 @@ a.fontawesome-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    width: 90%;
 }
 
 .profile-picture {
@@ -244,6 +244,8 @@ a.fontawesome-link {
 .table-container {
     margin: 15px;
     padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .even {
@@ -292,6 +294,10 @@ a.text-reset {
         width: 70%;/
     }
 
+    .contact-detail {
+        width: 90%;
+    }
+
 }
 
 /* Medium screen devices (768px and above) */
@@ -312,11 +318,15 @@ a.text-reset {
     }
     
     .buddy-details {
-        width: 60%;
+        width: 30%;
         padding: 1rem;
-    } */
+    }
 
     .form {
+        width: 60%;
+    }
+
+    .contact-detail {
         width: 60%;
     }
 }
