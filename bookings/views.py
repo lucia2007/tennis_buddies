@@ -86,6 +86,19 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
     form_class = BookingForm
     success_url = '/bookings/list/own'
 
+    # https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
+    def get_initial(self):
+        # Prepopulate the AddBooking form with params from bookingcalendar
+        initial = super().get_initial()
+        date = self.request.GET.get('date')
+        time = self.request.GET.get('time')
+        court_name = self.request.GET.get('court')
+        court = Court.objects.get(name=court_name)  # Retrieve the Court object based on the court name
+        initial['date'] = date
+        initial['time'] = time
+        initial['court'] = court
+        return initial
+
     def form_valid(self, form):
         # Updates the instance of the user to the current signed in user
         # https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user

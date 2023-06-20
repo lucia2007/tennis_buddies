@@ -28,11 +28,13 @@ class BookingCalendarListView(SingleTableView):
                 bookings = Booking.objects.filter(date=d, time=item[0], court=court)
                 # Checks if there is a booking for a particular date, time and court
                 if bookings.exists():
-                    # This selects the owner of the booking
-                    owner = Booking.objects.filter(date=d, time=item[0], court=court).first().owner
-                    dictionary[court.name] = "booked" + ', ' + f"owner: {owner}"
-                    # dictionary[court.name] = f
+                    dictionary[court.name] = "Booked"
                 else:
-                    dictionary[court.name] = "free" + ', ' + f"Date: {d}, Time: {item[0]}, Court: {court}"
+                    url = reverse('add-booking')
+                    query_params = f"?date={d}&time={item[0]}&court={court}"
+                    # Generate HTML in Django
+                    # https://twitter.com/AdamChainz/status/1504231031574040578
+                    hyperlink = format_html('<a href="{}">Book now</a>', url + query_params)
+                    dictionary[court.name] = hyperlink
             dict_list.append(dictionary)
         return dict_list
