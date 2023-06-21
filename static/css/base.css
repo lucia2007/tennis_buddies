@@ -73,6 +73,10 @@ a.nav-link.login-button.btn.btn-outline-success.me-2 {
     margin-top: 1rem;
 }
 
+.alert-dismissible .btn-close {
+    padding: 1.25rem 1rem 0.5rem;
+}
+
 /* Main */
 main {
     flex: 1 0 auto;
@@ -158,11 +162,6 @@ a.fontawesome-link {
 }
 
 /* Buddies */
-.card {
-    height: 90%;
-    /* margin-top: 1rem; */
-}
-
 .buddies {
     text-decoration: none;
 }
@@ -183,7 +182,6 @@ a.fontawesome-link {
 }
 
 .card {
-    height: 90%;
     margin-top: 1.5rem
 }
 
@@ -315,8 +313,8 @@ a.text-reset {
     .profile-picture {
         width: 40%;
         margin: 0 auto;
-    }
-    
+    }*/
+
     .buddy-details {
         width: 30%;
         padding: 1rem;

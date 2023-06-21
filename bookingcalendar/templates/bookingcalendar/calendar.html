@@ -6,14 +6,14 @@
 {% block content %}
 
 <div class="container">
-<!-- Add a date picker to the form -->
-<!-- https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#now -->
-<form method="get" class="date-picker" action="{% url 'calendar' %}">
-    <input type="date" name="date"
-        value="{% if request.GET.date %}{{ request.GET.date }}{% else %}{% now 'Y-m-d' %}{% endif %}">
-    <button type="submit" class="btn btn-primary w-30">Submit</button>
-</form>
+    <!-- Add a date picker to the form -->
+    <!-- https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#now -->
+    <form method="get" class="date-picker" action="{% url 'calendar' %}">
+        <input type="date" name="date"
+            value="{% if request.GET.date %}{{ request.GET.date }}{% else %}{% now 'Y-m-d' %}{% endif %}">
+        <button type="submit" class="btn btn-primary w-30">Submit</button>
+    </form>
 
-{% render_table table %}
+    {% render_table table %}
 </div>
 {% endblock %}
