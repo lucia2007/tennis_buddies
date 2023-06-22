@@ -33,13 +33,26 @@ class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         """
-        Checks if the signed in user is the same user who owns the profile
+        Checks if the signed-in user is the same user who owns the profile.
         """
         return self.request.user == self.get_object().user
 
+    def get_context_data(self, **kwargs):
+        """
+        Pass the generated URL to the template context
+        """
+        context = super().get_context_data(**kwargs)
+        pk = self.object.pk
+        profile_detail_url = reverse_lazy("profile-detail", kwargs={'pk': pk})
+        context['profile_detail_url'] = profile_detail_url
+        return context
+
     # https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model
     def get_success_url(self):
-        # Get the primary key from the updated user
+        """
+        Get the primary key from the updated user.
+        Get the success_url after updating the user's contact info.
+        """
         pk = self.object.pk
 
         # Redirect to the user's updated contact-detail page
@@ -56,10 +69,16 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     # Lets me specify 'next' page after success
     # https://stackoverflow.com/questions/64040028/how-to-redirect-to-the-next-url-instead-of-the-success-url-in-a-generic-class-b
     def get_success_url(self):
+        """
+        Get success_url after creating the user profile.
+        """
         url = self.request.GET.get('next', self.success_url)
         return url
 
     def form_valid(self, form):
+        """
+        Process the valid form and display success message.
+        """
         form.instance.user = self.request.user
         messages.success(
             self.request, f"Your contact info was saved successfully."
@@ -76,6 +95,16 @@ class DeleteUserProfile(
     model = UserProfile
     success_url = '/'
     success_message = "All your information has been successfully deleted."
+
+    def get_context_data(self, **kwargs):
+        """
+        Pass the generated URL to the template context
+        """
+        context = super().get_context_data(**kwargs)
+        pk = self.object.pk
+        profile_detail_url = reverse_lazy("profile-detail", kwargs={'pk': pk})
+        context['profile_detail_url'] = profile_detail_url
+        return context
 
     def test_func(self):
         """

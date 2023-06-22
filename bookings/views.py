@@ -107,12 +107,12 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         # Check if the booking is not in the past
         # https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
         booking_date = form.cleaned_data.get('date')
+        messages.success(self.request, f"Booking was created successfully.")
         if booking_date is not None and booking_date < timezone.now().date():
             messages.warning(self.request, f"You have made a booking in the past. Is that what you wanted?")
 
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
-        messages.success(self.request, f"Booking was created successfully.")
         return super(AddBooking, self).form_valid(form)
 
 
@@ -125,7 +125,7 @@ class EditBooking(
     template_name = 'bookings/edit.html'
     model = Booking
     form_class = BookingForm
-    success_url = '/bookings/list/own'
+    success_url = reverse_lazy('list-bookings', kwargs={'all_or_own': 'own'})
     success_message = "Your booking was successfully updated."
 
     def test_func(self):
@@ -141,7 +141,7 @@ class DeleteBooking(
         DeleteView):
     """ Delete a booking """
     model = Booking
-    success_url = '/bookings/list/all'
+    success_url = reverse_lazy('list-bookings', kwargs={'all_or_own': 'own'})
     success_message = "Your booking was successfully deleted."
 
     # Either the owner of the booking or a superuser can delete it
