@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from datetime import datetime, timedelta
 from django.utils import timezone
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
 from django.core.exceptions import ValidationError
 # from .models import *
@@ -44,7 +44,7 @@ class TestIfHasProfileMixin(UserPassesTestMixin):
             return super().handle_no_permission()
         if self.raise_exception:
             raise PermissionDenied(self.get_permission_denied_message())
-        return redirect(reverse('add-profile') + '?next=' + self.request.path)
+        return redirect(reverse('add-profile') + '?next=' + self.request.get_full_path())
 
 
 def booking(request):
@@ -92,8 +92,7 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         initial = super().get_initial()
         date = self.request.GET.get('date')
         time = self.request.GET.get('time')
-        court_name = self.request.GET.get('court')
-        court = Court.objects.get(name=court_name)  # Retrieve the Court object based on the court name
+        court = self.request.GET.get('court')
         initial['date'] = date
         initial['time'] = time
         initial['court'] = court
