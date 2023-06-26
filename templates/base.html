@@ -116,9 +116,7 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Book a Court</h5>
                             <p class="carousel-text">Reserve one of our outdoor courts to play when it suits you.</p>
-                            <a class="btn btn-primary text-reset" {% if user.user_profile %}
-                                href="{% url 'add-booking' %}" {% else %}
-                                href="{% url 'add-profile'%}?next={% url 'add-booking' %}" {% endif %}>Book
+                            <a class="btn btn-primary text-reset" href="{% url 'calendar' %}">Book
                                 a Court</a>
                         </div>
                     </div>
