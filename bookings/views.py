@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
 from django.core.exceptions import ValidationError
+from django.utils.http import urlencode
 # from .models import *
 from django.views.generic import (
     CreateView,
@@ -44,7 +45,8 @@ class TestIfHasProfileMixin(UserPassesTestMixin):
             return super().handle_no_permission()
         if self.raise_exception:
             raise PermissionDenied(self.get_permission_denied_message())
-        return redirect(reverse('add-profile') + '?next=' + self.request.get_full_path())
+        # https://stackoverflow.com/questions/64538729/how-to-url-encode-in-django-views
+        return redirect(reverse('add-profile') + '?' + urlencode({'next': self.request.get_full_path()}))
 
 
 def booking(request):
@@ -92,7 +94,8 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         initial = super().get_initial()
         date = self.request.GET.get('date')
         time = self.request.GET.get('time')
-        court = self.request.GET.get('court')
+        court_name = self.request.GET.get('court')
+        court = Court.objects.get(name=court_name)  # Retrieve the Court object based on the court name
         initial['date'] = date
         initial['time'] = time
         initial['court'] = court
@@ -105,8 +108,8 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
 
         # Check if the booking is not in the past
         # https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
-        booking_date = form.cleaned_data.get('date')
         messages.success(self.request, f"Booking was created successfully.")
+        booking_date = form.cleaned_data.get('date')
         if booking_date is not None and booking_date < timezone.now().date():
             messages.warning(self.request, f"You have made a booking in the past. Is that what you wanted?")
 

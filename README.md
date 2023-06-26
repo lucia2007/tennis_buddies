@@ -575,7 +575,7 @@ Take the following steps to create a clone of a project:
 - [Get success url](# https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model)
 - [Prepopulate AddBooking Form](https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data)
 - [Generate HTML in Django](https://twitter.com/AdamChainz/status/1504231031574040578)
-
+- [Url encode](https://stackoverflow.com/questions/64538729/how-to-url-encode-in-django-views)
 ## Media
 - https://www.istockphoto.com/photos/tennis-friends
 - https://www.coachhousevets.com/meet-the-team/the-team/no-photo-icon-22/
