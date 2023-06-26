@@ -571,6 +571,7 @@ Take the following steps to create a clone of a project:
 - [Check if date not in the past](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
 - [TestIfUserProfile Mixin](https://stackoverflow.com/a/42193610/15098344)
 - [Placeholder time=now](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#now)
+- [Split string and get 1st element](https://bobbyhadz.com/blog/python-split-string-and-get-last-element#split-a-string-and-get-the-first-element-in-python)
 - [Convert string to datetime](https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/)
 - [Get success url](# https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model)
 - [Prepopulate AddBooking Form](https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data)

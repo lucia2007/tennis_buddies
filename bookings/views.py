@@ -110,7 +110,12 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         # https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
         messages.success(self.request, f"Booking was created successfully.")
         booking_date = form.cleaned_data.get('date')
-        if booking_date is not None and booking_date < timezone.now().date():
+        booking_time = form.cleaned_data.get('time')
+        # https://bobbyhadz.com/blog/python-split-string-and-get-last-element#split-a-string-and-get-the-first-element-in-python
+        start_time_str = booking_time.split('-')[0].strip()
+        # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
+        start_time = datetime.strptime(start_time_str, "%H:%M").time()
+        if start_time < datetime.now().time():
             messages.warning(self.request, f"You have made a booking in the past. Is that what you wanted?")
 
         # If form is valid, it leads to a reload.
