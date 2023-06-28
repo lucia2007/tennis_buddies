@@ -43,11 +43,15 @@ You can access the Tennis Buddies app here:
     - [Color Scheme](#color-scheme)
 - [Features](#features)
     - [Site Responsive Navigation Bar](#site-responsive-navigation-bar)
-    - [Hero Images](#hero-images)
-    - [Hours and Location](#hours-and-location)
+    - [Carousel](#carousel)
     - [Footer](#footer)
     - [Buddy Matching Functionality (buddy.html)](#buddy-matching-functionality-buddyhtml)
-    - [Booking of the courts (booking.html)](#booking-of-the-courts-bookinghtml)
+    - [Booking of the courts (bookingcalendar.html)](#booking-of-the-courts-bookingcalendarhtml)
+      - [Booking requirements](#booking-requirements)
+      - [Making a reservation](#making-a-reservation)
+      - [Edit/Delete Functionality](#editdelete-functionality)
+      - [Bookings in the past](#bookings-in-the-past)
+      - [Future features for Booking](#future-features-for-booking)
       - [Sign Up Page](#sign-up-page)
       - [Sign In Page](#sign-in-page)
     - [Contact Form (contact.html)](#contact-form-contacthtml)
@@ -315,7 +319,7 @@ The users are allowed to create bookings in the past as well. This is due to the
 
 #### Future features for Booking
 There are several ways how the booking system could/should be improved:
-- Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance.
+- Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance. 
 - The user should be restricted to making one booking per day so that all players have a change to make reservations and play.
 - At the moment, the combination of date/time/court is unique, but the system should also be checking if the owner has not already created a booking at that particular time/date on a different court or if the user had not been entered as an opponent for the particular time/date combination.
 - The user should be sent an email after they created a booking.
@@ -324,7 +328,8 @@ There are several ways how the booking system could/should be improved:
 - The user could get a confirmation email when their reservation is coming up.
 - When the user approached the booking system from the calendar, they can clearly see which courts are available. However, when they are editing their booking, they don't see anymore which courts are free on the new desired date/time combination. In the future, the user should be either taken back to the calendar or get some suggestion about which courts are free so they wouldn't have to keep guessing. Maybe the user should be able to just edit the opponents and when they want to change the date/time or court, they would have to cancel the booking and add a new one through the calendar link.
 - The booking calendar could display who the owner/opponents are for a particular booking instead of just "Booked".
- 
+- A member of staff should be able to create any number of bookings on a given day, in case of a special ocasion or event taking place in the club. A staff member would have a priority for booking and would be able to make bookings more in advance than a regular user. 
+
 
 
 In order to book a courts, the user must have a registered account and must be signed in.
