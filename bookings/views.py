@@ -134,8 +134,12 @@ class EditBooking(
     template_name = 'bookings/edit.html'
     model = Booking
     form_class = BookingForm
-    success_url = reverse_lazy('list-bookings', kwargs={'all_or_own': 'own'})
     success_message = "Your booking was successfully updated."
+
+    def get_success_url(self):
+        # Determine the success URL based on if the user is a superuser and not the owner of the booking
+        all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'
+        return reverse_lazy('list-bookings', kwargs={'all_or_own': all_or_own})
 
     def test_func(self):
         booking = self.get_object()
@@ -152,6 +156,11 @@ class DeleteBooking(
     model = Booking
     success_url = reverse_lazy('list-bookings', kwargs={'all_or_own': 'own'})
     success_message = "Your booking was successfully deleted."
+
+    def get_success_url(self):
+        # Determine the success URL based on if the user is a superuser and not the owner of the booking
+        all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'
+        return reverse_lazy('list-bookings', kwargs={'all_or_own': all_or_own})
 
     # Either the owner of the booking or a superuser can delete it
     def test_func(self):
