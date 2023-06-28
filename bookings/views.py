@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from django.utils import timezone
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic, View
@@ -102,12 +102,14 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         return initial
 
     def form_valid(self, form):
-        # Updates the instance of the user to the current signed in user
-        # https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user
+        """
+        Updates the instance of the user to the current signed in user
+        https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user
+        Check if the booking is not in the past (date and time)
+        https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
+        """
         form.instance.owner = self.request.user.user_profile
 
-        # Check if the booking is not in the past
-        # https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
         messages.success(self.request, f"Booking was created successfully.")
         booking_date = form.cleaned_data.get('date')
         booking_time = form.cleaned_data.get('time')
@@ -115,7 +117,7 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         start_time_str = booking_time.split('-')[0].strip()
         # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
         start_time = datetime.strptime(start_time_str, "%H:%M").time()
-        if start_time < datetime.now().time():
+        if booking_date < date.today() or start_time < datetime.now().time():
             messages.warning(self.request, f"You have made a booking in the past. Is that what you wanted?")
 
         # If form is valid, it leads to a reload.
