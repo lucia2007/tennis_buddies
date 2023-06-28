@@ -241,18 +241,29 @@ The NavBar is responsive and is available in its full version on large screens o
 ![Hamburger open](./readme-images/hamburger_open.png)
 ![Hamburger Profile](./readme-images/hamburger_profile.png)
 
+### Carousel
 
-![Welcome message](./readme-images/welcome_message.png)
+I used a moving carousel with three hero images to highlight the main features of the site easily accessible:
+- The first image of a tennis ball on a tennis court makes the theme/content of the page clearly tennis related for any visiting user. The user can access sign in and sign up functionalities on this image.
 
-The welcome message and the rules are printed slowly so the user is not overwhelmed by the long text they would have to read when opening the app. 
+![Welcome Image](./readme-images/carousel_welcome_image.png)
+- The second image evokes friendship and companionship. It provides links to finding a new tennis buddy.
 
-The first few user options are displayed with a slight delay so the user has time to make a choice.
+![Find Your Perfect Buddy](./readme-images/carousel_find_buddy.png)
 
-[Back to top](#contents)
+- The third image of outdoor tennis courts shows the clubs layout and provides a shortcut to the booking system.
 
-### Hours and Location
+![Book a Court](./readme-images/carousel_tennis_courts.png)
 
-Each time the user moves a disk from one stack/pyramid to another, the number of moves is increased. The moves are displayed when the user has accomplished moving all the disks from the first base to the third base in the winning message, see below.
+I created an overlay effect over the images for better legibility and accessibility. It also bring the text forward. The details of the images are not so important, as they are mainly to convery the main ideas and intentions.
+
+The carousel also contains arrows and "dashes"/buttons to take the user to the desired carousel-image. 
+
+On smaller screens, the text disappears to avoid making the images cluttered.
+
+![Welcome Small](./readme-images/carousel_tennis_ball_small.png)
+![Find a Perfect Buddy Small](./readme-images/carousel_buddies_small.png)
+![Book a Court Small](./readme-images/carousel_courts_small.png)
 
 [Back to top](#contents)
 
