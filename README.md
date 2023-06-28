@@ -280,7 +280,41 @@ After the welcome message, the user is promted to choose a number of disks they 
 
 The user is expected to enter a number between 3 and 6. If they choose a number smaller or bigger than the given range, they are informed of their mistake and prompted to choose a number from the indicated range. Also, they are alerted if they choose a string instead of a number.
 
-### Booking of the courts (booking.html)
+### Booking of the courts (bookingcalendar.html)
+
+#### Booking requirements
+In order to book a court, the user must have a registered account and must be signed in. The user also must have created a user profile where they add their contact information. This is because the club staff wants to be able to give the user a quick phone call in case of a late cancelation, last minute change, or an emergency.
+
+#### Making a reservation
+When the user clicks on the Booking link in NavBar or approaches it from the carousel, they are taken to bookingcalendar.html. Here the user is informed which courts are booked/free for the current date, or on the date they had chosen in the datepicker. The courts which are free contain a hyperlink. When the user clicks on a particular "Book now" link, the information about the chosen date/time/court combination is carried over to the bookings/add.html page. The user only has to choose an opponent/(s). At this point, they could still edit the time/date/court, but they would not be sure if the combination had already been booked by someone else.
+
+The user can choose min 1 and max 3 opponents. The user can also choose themselves if they want to e.g. practice their serve on their own.
+
+The user can see a pop up message which informs them about the successful reservation.
+
+#### Edit/Delete Functionality
+When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. 
+
+Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
+
+However, if the user is admin/staff/superuser, they will also see a "Staff" option in their NavBar through which they can access all the bookings of all the members. The staff user can edit or delete a booking of any of the users.
+
+#### Bookings in the past
+The users are allowed to create bookings in the past as well. This is due to the fact that the club requires exact information about the court usage and the members sometimes don't make a booking and just come and use a court that is free or they don't update the opponents on the booking. The club needs the information about the players in case something was damaged, or somebody got hurt (insurance reasons) or e.g. in case of the recent Covid Pandemic, they could inform the players if one them had turned Covid positive. When a booking in the past gets created, the user gets a messages about its successful creation, but is informed about having made a booking in the past.
+
+#### Future features for Booking
+There are several ways how the booking system could/should be improved:
+- Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance.
+- The user should be restricted to making one booking per day so that all players have a change to make reservations and play.
+- At the moment, the combination of date/time/court is unique, but the system should also be checking if the owner has not already created a booking at that particular time/date on a different court or if the user had not been entered as an opponent for the particular time/date combination.
+- The user should be sent an email after they created a booking.
+- The users which were chosen as opponents should also get a confirmation and the reminder email.
+- The user/opponent should also be getting an email when a booking which they are a part of has been edited or deleted.
+- The user could get a confirmation email when their reservation is coming up.
+- When the user approached the booking system from the calendar, they can clearly see which courts are available. However, when they are editing their booking, they don't see anymore which courts are free on the new desired date/time combination. In the future, the user should be either taken back to the calendar or get some suggestion about which courts are free so they wouldn't have to keep guessing. Maybe the user should be able to just edit the opponents and when they want to change the date/time or court, they would have to cancel the booking and add a new one through the calendar link.
+- The booking calendar could display who the owner/opponents are for a particular booking instead of just "Booked".
+ 
+
 
 In order to book a courts, the user must have a registered account and must be signed in.
 
