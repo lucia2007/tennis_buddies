@@ -190,30 +190,57 @@ Home, Find a Buddy, Booking, Contact
 
 ## Design Choices
 
-I tried to keep the game design very simple and easily legible. However, I used ASCII art to make the welcome and good-bye screens a bit more interesting. I also used the ASCII Art to inform the user of their win. The winning message is in yellow color to make it stand out more.
+The goal for the site was to make it simple, easily understandable, yet attractive. I kept the used colours to a minimum and used just three images for the carousel to make the site more lively.
 
 [Back to top](#contents)
 ### Typography
 
-I have not altered the type of script, as the original one is well suited for this app. 
+Originally I wanted to change the provided font-type, but in the end I was quite happy with the provided one and so I did not make any alternations.
 
 [Back to top](#contents)
 
 ### Color Scheme
 
-As regards the color scheme, I mostly went along with the original setting, but I did install [Colorama](https://pypi.org/project/colorama/) in order to be able to use red color of font for warnings and yellow color for the winning display.
+As regards the color scheme, I normally would use a color scheme/wheel, but here I used only one main yellow/green color for the body and only altered the colour of the messages to match it. I kept the header and footer white to give the site a clean look.
 
 [Back to top](#contents)
 
 # Features
 ### Site Responsive Navigation Bar
 
-![Welcome message](./readme-images/welcome_message.png)
+![NavBar Login](./readme-images/navbar_login.png)
 
-Responsive (Hamburger), expandable
+The site contains a simple but effective NavBar which simplifies the movement of the user on the site. The following links are available:
+- Logo - the tennis buddy logo which evokes friendship and companionship is clickable and takes the user to the home page.
+- Home - the home button takes the user to the home page.
+- Find the ideal Buddy - this link takes the user to the buddies.html where the user can see a catalouge of players from which they can choose a player to engage with.
+- Conditional Search functionality - if the user is signed in, they can see a search bar on the right. They can enter values like "beginner/advanced/intermediate", or "morning/afternoon/both morning and afternoon", or "hitting practice/match practice", or "singles/doubles", or "male/female".
+  
+![Search Feature](./readme-images/conditional_search.png)  
+<!-- Add info about the pop up modal if included, if not, add it to the future features -->
+- Booking - this link takes the user to the bookingcalendar.html where they can see which courts are available on a particular day.
+- Contact us - the contact.html page lets the user get in touch with the club and provides information about the location of the club.
+- Register/Login - when the user is not logged in, they can see "Register/Login" buttons which allow then to create an accout if they don't already have on or to log in, if they already have an account.
+- User Profile Icon/Logout - when the user is logged in, the links on the right change to the "Profile Icon/Logout".
 
-As soon as the page is loaded, the ASCII Art is displayed and a welcome message is gradually printed out. In the welcome message the rules and mechanism of the game are explained. 
-### Hero Images
+![Search Feature](./readme-images/profile_logout.png)  
+- Conditional Profile icon appears, when the user is logged in. The user can access the following features through this icon:
+  - Contact details - the user can either add their contact details through this link, or edit/delete them if the contact details had already been provided
+  - Profile - the user can either create their buddy profile here, or they can edit/delete the profile if they already have one
+  - Your bookings - here the user can see all of their bookings, which they can edit/delete, or they are informed about having no bookings in their name.
+  
+![Search Feature](./readme-images/condition_profile_icon.png)
+- Conditional Staff link - if the user is admin/staff, when they log in, "Staff" link appears which lets them access the bookings/list/all where they can see/edit/delete everybody's bookings.
+
+When a user is on a particular page, the link is becomes bold to make it clear to the user which page they are on.
+
+
+The NavBar is responsive and is available in its full version on large screens only. When the screen size diminishes, the NavBar is collapsed into a clickable Hamburger.
+
+![Hamburger](./readme-images/hamburger_collapsed.png)
+![Hamburger open](./readme-images/hamburger_open.png)
+![Hamburger Profile](./readme-images/hamburger_profile.png)
+
 
 ![Welcome message](./readme-images/welcome_message.png)
 
