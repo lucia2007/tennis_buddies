@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ["tennis-buddies.herokuapp.com", "localhost",
-                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu100.gitpod.io"]
+                 "8000-lucia2007-tennisbuddies-itc06udfo0u.ws-eu101.gitpod.io"]
 
 
 # Application definition
@@ -88,6 +88,7 @@ SITE_ID = 1
 # https://www.youtube.com/watch?v=R_jlvi5xvSQ&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=7
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
