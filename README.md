@@ -34,6 +34,13 @@ You can access the Tennis Buddies app here:
       - [Tablet Wireframes](#tablet-wireframes)
       - [Mobile Wireframes](#mobile-wireframes)
     - [Project Management](#project-management)
+      - [Sprint #1 - 08/05 -12/05](#sprint-1---0805--1205)
+      - [Sprint #2 - 15/05 - 19/05](#sprint-2---1505---1905)
+      - [Sprint #3 - 22/05 -26/05](#sprint-3---2205--2605)
+      - [Sprint #4 + #5 - 29/05 - 09/06](#sprint-4--5---2905---0906)
+      - [Sprint #6 - 12/06 - 16/06](#sprint-6---1206---1606)
+      - [Sprint #7 - 19/06 - 23/06](#sprint-7---1906---2306)
+      - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
       - [GitHub Projects Board](#github-projects-board)
       - [Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing](#moscow-principles-milestones-epics-user-stories-acceptance-criteria-tasks-testing)
     - [Database Schema (ERD)](#database-schema-erd)
@@ -235,15 +242,100 @@ I have been using GitHub projects for organizing my project, tracking user stori
 
 At the beginning of the project, I spent a fair amount of time on project planning, on thinking it through. I created wireframes and a sketch of my models first. Having the wireframes and the ERD model to refer to when working on the project was both essential and very helpful. Any time I was getting lost or confused, I could consult them and figure out how to proceed.
 
-Later I jotted down as many PBIs as I could think of. I also started writing my Epics and User Stories to an excel file. Subsequently, I started using the Kanban board in projects for organizing the PBIs into Epics and User stories and assigning them to Milestones, which also served as my sprint trackers. 
+Later I jotted down as many PBIs as I could think of. I also started writing my Epics and User Stories to an excel file. Subsequently, I started using the Kanban board in Projects for organizing the PBIs into Epics and User stories and assigning them to Milestones, which also served as my sprint trackers. 
 
-At first I did not know how many story points to assign to each user story and how to organize them into sprints, so the first two to three sprints were more experimental, where I would retrospectively note down how many story points each user story took, to see how many of user story points I could do in one sprint.
+At first I did not know how many story points to assign to each user story and how to organize them into sprints (milestones), so the first two to three sprints were more experimental, where I would retrospectively note down how many story points each user story took, to see how many of user story points I could do in one sprint. As am a novice at this, I am taking this as a practice run for the future projects. When I am finished with this project, I plan to make an average of the points I did in each sprit, to have a better idea how to organize my next project.
 
-I used Milestones for organizing my sprints. I know it is not ideal, but the Project tool does not have a great alternative to tracking sprints. Thus, I would create my milestones, give them a description, assing Epics and User stories to them and add a finish date for each Milestone. My sprints were usually one week long, but sometimes I had to stretch them due to a problem which took me longer to solve than I had expected.
+I used Milestones for organizing my sprints. I know it is not ideal, but the Project tool does not have a great alternative to tracking sprints. Thus, I would create my milestones, give them a description, assign Epics and User stories to them and add a finish date for each Milestone. My sprints were usually one week long Monday to Friday, but sometimes I had to move some issues to the next sprint due to a problem which took me longer to solve than I had expected. As I was expecting setting of the booking system to be more challenging, I planned out to do it in two sprints.
 
-Breaking up the project in Epics, User stories and essentially into tasks has been very helpful and enabled me to tackle the project in managable bite-size steps. Using acceptance criteria as a part of my user stories helped me define what was necessary to achieve but I could consider the user story done.
+As you will see from my progress, I have always kept MVP in mind. At first I made sure the backend functionality was in place, then I started working on other crucial elements and when I had some extra time, I added some nice to have features, but always keeping in mind meeting the core project requirements first. This is visible especially with my booking system, which at first was very basic, but functional. When I assumed I would have enough time to implement the more complicated and advanced version of the booking system, I expanded on the original. When that was done, I went back to the core requirements - documentation and testing and when I felt I had a bit of time, I added a few should-haves/could-haves. Overall, primarily, I focused on completing majority of the must-haves, in later stages of the product development I would consider some should and could-haves. At the same time, I was identifying user stories which would have to change into won't haves.
 
- 
+Breaking up the project in Epics, User stories and essentially into tasks has been very helpful and enabled me to tackle the project in managable bite-size steps. Using acceptance criteria as a part of my user stories helped me define what was necessary to achieve before I could consider the user story done. Each user story also contained detailed tasks which had to be fulfilled before labeling the story as done.
+
+Each of the user stories would get labels such as: must have, should have, could have, won't have; story points; epic number; user story/dev task/bug; high/medium/low priority. Each user story would be assigned to its respective epic and milestone (sprint).
+
+My sprints were planned out as follows:
+
+#### Sprint #1 - 08/05 -12/05
+In the first milestone my main goal was to get the project's framework set up and running and do an early deployment.  I also added Login/Registration functionality using django-allauth. Most of this sprint was about setting up the backend and the tasks were labeled as Dev Task (DT). The following tasks where a part of this sprint:
+
+- DT Install of Django Environment
+- DT Create Django Project
+- DT Set Up Heroku
+- DT Set Up Cloudinary
+- DT Deployment
+- DT Set Up Django allauth
+- DT Create an admin panel
+- DT Create Database models from ERD
+  
+#### Sprint #2 - 15/05 - 19/05
+Create models, general site structure and navigation elements (navbar and footer) based on the original wireframes. In this sprint I moved from the backend to setting up the basic frontend features of the app and to user stories (US). I had to fix a few crucial bugs in this sprint (BF).
+
+- US Homepage Setup
+- US Navigation
+- US Footer
+- US Sign Up
+- US Log In
+- US Log Out
+- US Create User Profile
+- US Create Buddy Profile
+- US Edit Buddy Profile
+- DT Install Django Crispy Forms
+- BF Crispy Filter not working 
+- BF Set up user profile in views.py and save into database
+- BF Set up Buddy profile in views.py and save into database
+
+#### Sprint #3 - 22/05 -26/05
+Finish CRUD functionality for Contact Details (user_profile), for buddy profile
+
+- US Delete User Profile (Contact Info)
+- US Edit User Profile
+- US View Buddies (ListView)
+- DT Readme Forking/Cloning
+
+#### Sprint #4 + #5 - 29/05 - 09/06
+The goal is to create a booking CRUD functionality which will enable the user to book a court, view, edit and delete a booking. In the meantime, add carousel and improve basic style of the app, add messages to main user actionas (CRUD).
+
+- US Create Booking
+- US View all Bookings (ListView)
+- US Delete Booking
+- US Edit Booking
+- US Alternate List View depending on current user/staff
+- US Add Carousel
+- US Display messages uopn user action
+- DT Write up all the bugs until now
+
+#### Sprint #6 - 12/06 - 16/06
+The goal is to finish adding the main features: search functionality, contact form, improve styling of main elements.
+
+- US Contact Us page
+- US Add placeholder picture for Buddy
+- US Basich Search Functionality
+- US Improve website's style
+- BF Favicon not loading
+
+#### Sprint #7 - 19/06 - 23/06
+Make a more advanced booking system, deploy with css and images, make progress with Readme. Connect the AddBooking form to a visual calendar which will inform the user about the court availability.
+
+- US Make a more sophisticated visual booking system
+- US Booking Calendar
+- US Add Cancel button to edit/delete forms
+- US Change column desctription in booking calendar
+- US Inform the user when they have made a booking in the past (started in sprint #7, finalized in sprint #8)
+- BF Heroku not loading css file
+- BF When add booking is approached from the booking calendar, the information about date/time/court is lot
+
+
+
+#### Sprint #8 - 27/06 - 30/06
+Make progress with Readme and fix small bugs encountered during testing.
+
+- BF Correct the flow for admin when editing/deleting a booking
+- BF Fix hrefs for sign in and sign up pages
+
+
+
+
 [Back to top](#contents)
 
 #### GitHub Projects Board
