@@ -2,11 +2,12 @@
 
 Tennis Buddies is an application which can be used in real life by smaller tennis clubs across the country. Its main purpose is for new but also current members of the club to find a suitable partner for tennis practice. It also enables the players to book a court to play on.
 
-I was inspired to develop this app by two local tennis clubs back home. If I wanted to make a booking in one of them, I would have to do it by phone. In the other one, I would have to go physically to a pub connected to the tennis facilities, find the person who was the owner of the notebook where the bookings were noted down, and thus make a reservation. Both of these processes are quite incovenient. I believe this app will make booking a court a much more pleasant and smoother experience.
+I was inspired to develop this app by two local tennis clubs back home. If I wanted to make a booking in one of them, I would have to do it by phone. In the other one, I would have to go physically to a pub connected to the tennis facilities, find the person who was the owner of a notebook where the bookings were noted down, and thus make a reservation. Both of these processes are quite incovenient. I believe this app will make booking a court a much more pleasant and smoother experience.
 
-The other functionality revolves around finding a tennis buddy. When a new player joins the club, they often encounter difficulties in finding a suitable hitting partner. Many people already have their regular games set up and it's hard to approach them. On the other hand, there are other players who are available and willing to play, but they usually don't know about each other. Some players are looking for hitting practice, others are looking to practice for matches, still others are looking to play socially and to have fun. This app will enable the registered users to search in the clubs database and hopefully find a great tennis buddy.
+The other functionality revolves around finding a tennis buddy. When a new player joins a club, they often encounter difficulties in finding a suitable hitting partner. Many people already have their regular games set up and it's hard to approach them. On the other hand, there are other players who are available and willing to play, but they usually don't know about each other. Some players are looking for hitting practice, others are looking to practice for matches, still others are looking to play socially and to have fun. This app will enable the registered users to search in the club's database and hopefully find a great tennis buddy.
 
 The app was developed for a fictional tennis club called Nebu Tennis Club, inspired by the two above mentioned clubs.
+
 You can access the Tennis Buddies app here:
 [Tennis Buddies](https://tennis-buddies.herokuapp.com/)
 
@@ -28,9 +29,11 @@ You can access the Tennis Buddies app here:
       - [Returning Visitor](#returning-visitor)
       - [Frequent Visitor](#frequent-visitor)
   - [Creation Process](#creation-process)
-    - [Design Prototype](#design-prototype)
+    - [Design Prototype (Wireframes)](#design-prototype-wireframes)
+      - [Desktop Wireframes](#desktop-wireframes)
+      - [Tablet Wireframes](#tablet-wireframes)
+      - [Mobile Wireframes](#mobile-wireframes)
     - [Project Management](#project-management)
-  - [Project Management](#project-management-1)
       - [GitHub Projects Board](#github-projects-board)
       - [Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing](#moscow-principles-milestones-epics-user-stories-acceptance-criteria-tasks-testing)
     - [Database Schema (ERD)](#database-schema-erd)
@@ -82,13 +85,15 @@ You can access the Tennis Buddies app here:
 # Project
 
 ## Objective
-I used to play tennis as a child. But due to my knee problems, unfortunately, I had to stop playing at a young age. When we moved to Ireland couple years ago, my children started playing tennis in the local tennis club. I never thought I wwould go back to tennis, but I tried and discovered that my limitations were gone. I had rediscovered my love and passion for tennis and have been playing frequently ever since. I was lucky to find a great hitting partner right at the beginning, but in those two years I have seen many people struggle in that respect. My local club has a great website which provides the booking functionality and I thought combining these two features and making them perhaps available to smaller local clubs would be beneficial.
+I used to play tennis as a child. But due to my knee problems, unfortunately, I had to stop playing at a young age. When we moved to Ireland couple years ago, my children started playing tennis in the local tennis club. I never thought I wwould go back to tennis, but I tried and discovered that my physical limitations were gone. I had rediscovered my love and passion for tennis and have been playing frequently ever since. I was lucky to find a great hitting partner right at the beginning, but in those two years I have seen many people struggle in that respect. My local club has a great website which provides the booking functionality and I thought combining these two features and perhaps making them available to smaller local clubs would be beneficial.
 
 When developing this project, my goal was to put my knowledge of HTML, CSS, JavaScript, Python, Bootstrap and Django Framework to use.
+
+As the main objective was to apply CRUD functionality to custom made models and use a backend framework, I did not quite get my booking system or the search functionality to where I wanted them to be. But I have several custom models with full CRUD functionality in place, and I plan to improve both of my main features in the next version of this project.
 ## Site User's Goal
 The Tennis Buddies site user is a tennis aficionado. They want to find a suitable and compatible tennis partner for their practice. Also they want to be able to make a reservartion of a court to play on.
 ## Site Owner's Goal
-As the site owner, I want to provide a platform where new tennis club members can meet and organize games, no matter what their tennis level or goals are.
+As the site owner, I want to provide a platform where new tennis club members can meet and organize games, no matter what their tennis level or goals are. I also want to make booking a court a simple, straightforward, fast experience.
 
 # User Experience (UX)
 
@@ -96,36 +101,136 @@ As the site owner, I want to provide a platform where new tennis club members ca
 
 ### Primary Goal
 
-The primary goal of this CLI application is to provide a simple game for children and adults to help them develop critical logical skills, but at the same time to teach them patience and perseverence, especially when playing the more difficult levels.
+The primary goal of this application is to enable member of a tennis club to find a tennis buddy and to make court reservations.
 
 ### Visitor Goals
-Tennis Buddies game has been designed to be straightforward, with minimalist design due to using CLI. The current version is aimed at people who enjoy puzzles and challenges so they can put their logical skills to test. The user can choose a level of difficulty and can challenge themselves the beat the minimum number of moves needed.
+As a visitor, I want to easily find a tennis partner to practise with and make a court reservation for a suitable time. I also want to be able to get in touch with the tennis club in case of any enquiries.
 
 #### First Time Visitor
-  - A user can read the welcome message.
-  - A user can find the game rules on the opening screen.
-  - A user can choose the level of difficulty by indicating a number of disks they want to play with.
-  - A user can expect a visual feedback for warnings, but also for winning the game.
-  - A user can expect the number of moves to be displayed in the winning message.
-  - A user can compare their number of moves with the minimum number of moves needed.
-  - A user can choose to Play again after they have won, or choose to leave the game.
+  - A user sees the three main features of the app on the welcome page: Find a buddy, Book a court, Contact us
+  - A user can register, log in and logout.
+  - A user can see Buddy profiles on Find the perfect buddy page. 
+  - A user can see details of buddies including an email address when they have signed in.
+  - A logged in user can avail of the search bar to search for a buddy when on Find the Perfect Buddy tab.
+  - A logged in user can click on Buddy card and be presented with their details (level, availability, preferences etc). They can also contact the chosen buddy by email to make arrangements.
+  - A user can see the booking calendar and choose different dates to see court availability if not signed in.
+  - A signed in user can click on a link in the booking calendar and make a reservation on the following page with the prefilled date/time/court information.
+  - A signed is user can choose an opponent/s to play with when making a reservation. They can choose maximum 3 players.
+  - A user is informed if they had not chosen the correct number of opponents.
+  - A user is informed about a successful booking and about having made a reservation in the past if that's the case.
+  - A user can add/edit/delete their contact information which can be accessed from the Profile Icon on the right (Contact Info). They are informed about having created, updated or deleted their Contact info.
+  - A user can add/edit/delete their buddy information which can also be accessed from the Profile Icon (Profile).
+  - Lastly, a user can see and manage their own bookings available under the Profile Icon (Your Bookings).
+  - A user can contact the tennis club by filling in a form.
+  - A user can easily see the location of the club on the Contact Us page.
+  - A user can access useful information in the footer:
+    - Links to social media
+    - Opening hours
+    - Site navigation
+    - Recommendations for improvement
+    - Contact information
 #### Returning Visitor
-  - A user is familiar with the rules and can start the game by clicking the Run button.
-  - A user can choose the level of difficulty. The more disks they choose, the more difficult the game.
+  - A user can easily sign in and access majority of the features of the website.
+  - A user with filled in Contact info can also make court reservations.
+  - A user can easily find a tennis buddy and contact them.
 
 #### Frequent Visitor
-  - A user can try to use the minimum number of moves which according to [Wikipeadia](https://en.wikipedia.org/wiki/Tower_of_Hanoi) is 2**n - 1.
+  - A user can easily make a court reservation or look for a new buddy.
 
 
 [Back to top](#contents)
 ## Creation Process
+When I started creating the web application, I had a very clear idea of what I wanted to achieve. My tennis club has a very good booking system which served as an inspiration for me. The club's booking system can be viewed [here](https://clubmanager365.com/CourtCalendar.aspx?club=shankill&sport=tennis). I liked the calendar view where a user can easily see which courts are free and make a reservation by clicking on a free cell. The club's system is of course more sophisticated and more advanced, but I tried to simulate as many of the features as possible.
 
-### Design Prototype
+### Design Prototype (Wireframes)
 
-Wireframes, Figma
+I started by creating wireframes which is always a great process because it helps me think in much more detail about what I want to accomplish. As you will see from my wireframes I had hoped to create a much more sophisticated search system for my "Find a Perfect Buddy" functionality, but I will have to do that in the next version due to time constraints. My booking system is almost where I wanted it to be, but it definitely needs more logical restrictions to function faultlessly and to avoid invalid reservations (more on that in Future Features).
+
+The wireframes include a view for desktop, tablet and mobile to take responsives into accout. Many of the simple pages look the same on all devices (sign in, sign up, logout, forms,...). For those whose layout is different on smaller devices, I created a sample wireframe. The main difference in smaller screen is a collapsed NavBar accessible at the hamburger icon and the footer where the items stack up. The number of displayed tennis buddies and other relevant features also responds to the size of the screen.
+
+I used [Figma](www.figma.com) which is an excellent tool for making wireframes.
+
+#### Desktop Wireframes
+
+
+<details><summary><b>Home Page</b></summary>
+   
+![Home Page](/readme-images/homepage_desktop.png)
+</details><br />
+
+<details><summary><b>Find a Perfect Buddy</b></summary>
+   
+![Find a Perfect Buddy](/readme-images/findbuddy_desktop.png)
+</details><br />
+
+<details><summary><b>Buddy Details</b></summary>
+   
+![Buddy Details](/readme-images/buddydetails_desktop.png)
+</details><br />
+
+<details><summary><b>Booking Calendar</b></summary>
+   
+![Booking Calendar](/readme-images/bookcourt_desktop.png)
+</details><br />
+
+<details><summary><b>Make a Booking</b></summary>
+   
+![Make a Booking](/readme-images/makebooking_desktop.png)
+</details><br />
+
+<details><summary><b>Staff Dashboard</b></summary>
+   
+![Staff Dashboard](/readme-images/staffdashboard_desktop.png)
+</details><br />
+
+<details><summary><b>Contact Us</b></summary>
+   
+![Staff Dashboard](/readme-images/contactus_desktop.png)
+</details><br />
+
+<details><summary><b>Sign Up</b></summary>
+   
+![Sign Up](/readme-images/signup_desktop.png)
+</details><br />
+
+<details><summary><b>Sign In</b></summary>
+   
+![Sign In](/readme-images/signin_desktop.png)
+</details><br />
+
+<details><summary><b>Add/Edit Contact Info</b></summary>
+   
+![Add/Edit Contact Info](/readme-images/add_edit_contact_desktop.png)
+</details><br />
+
+<details><summary><b>Add/Edit Buddy Profile</b></summary>
+   
+![Add/Edit Buddy Profile](/readme-images/add_edit_buddy_profile_desktop.png)
+</details><br />
+
+#### Tablet Wireframes
+
+
+<details><summary><b>Home Page</b></summary>
+   
+![Home Page](/readme-images/homepage_tablet.png)
+</details><br />
+
+<details><summary><b>Find a Perfect Buddy</b></summary>
+   
+![Find a Perfect Buddy](/readme-images/findbuddy_tablet.png)
+</details><br />
+
+#### Mobile Wireframes
+
+
+<details><summary><b>Home and Find Buddy Page</b></summary>
+   
+![Home and Find Buddy Page](/readme-images/homebuddy_mobile.png)
+</details><br />
+
+
 ### Project Management
-
-## Project Management
 I have been using GitHub projects for organizing my project, tracking user stories and epics. It is a very helpful tool which enabled me to keep all my PBIs in one place and to tackle them gradually.
 
 At the beginning of the project, I spent a fair amount of time on project planning, on thinking it through. I created wireframes and a sketch of my models first. Having the wireframes and the ERD model to refer to when working on the project was both essential and very helpful. Any time I was getting lost or confused, I could consult them and figure out how to proceed.
