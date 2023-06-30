@@ -522,42 +522,73 @@ The user can find all necessary information in the footer. There is information 
 
 [Back to top](#contents)
 
-### Buddy Matching Functionality (buddy.html)
+### [Home Page](https://tennis-buddies.herokuapp.com/)
 
-In order to avail of the buddy matching functionality, the user must be registered, signed in, but also his profile must be complete with all required information.
+The home page contains basic information about the main features of the application. There are links to Find the Perfect Buddy, Booking and Contact us pages. 
 
-One there conditions are met, the user can search for a suitable partner by filtering categories like level, availability, type of game etc.
+![Home Page](./readme-images/homepage.png)
 
-Buddies Cards List, Buddy card, Search functionality
+### [Find the Perfect Buddy Page](https://tennis-buddies.herokuapp.com/buddies/)
 
-After the welcome message, the user is promted to choose a number of disks they want to play with. The more disks the user chooses, the more difficult and longer the game.
+On this page the user can see a display of players who are looking for a hitting partner. You can see their picture, or a placeholder picture if they did not provide one, their name and a brief description. If they want to see a player's details, they need to be signed in.
 
-![Difficulty level](/readme-images/difficulty_level_input.png)
+![Find the Perfect Buddy Page](./readme-images/findbuddy.png)
+#### Buddy Search
 
-The user is expected to enter a number between 3 and 6. If they choose a number smaller or bigger than the given range, they are informed of their mistake and prompted to choose a number from the indicated range. Also, they are alerted if they choose a string instead of a number.
+In order to avail of the buddy search functionality, the user must be registered and signed in. They can search for terms like: "beginner/advanced/intermediate", or "morning/afternoon/both morning and afternoon", or "hitting practice/match practice", or "singles/doubles", or "male/female". Once the user has narrowed down the players to those who match their search criteria, they can click on the card and are taken to a page where the chosen buddy details are presented.
 
-### Booking of the courts (bookingcalendar.html)
+#### [Buddy Details](https://tennis-buddies.herokuapp.com/accounts/login/?next=/buddies/"pk")
 
+The link above should have a particular buddy's "pk" at the end of the link. The link in this form does not work. I did not provide a particular profile number, as the profile might get deleted and the link would not work.
+
+![Buddy Detail Page](./readme-images/buddydetails.png)
+
+Here the user can see the player's details such as their level, availability, preferences etc. Also an email address is present at the bottom of the form so that the user can contact the player and arrange a game with them.
+
+If the signed user is also the owner of the buddy profile, when they click on their own card, they can see "Edit/Delete" buttons at the bottom of their card. These buttons are not present if the profile belongs to someone else.
+
+[Buddy Detail Page](./readme-images/buddydetails_owner.png)
+
+#### Future Features for Buddy Matching
+- The admin will have to approve a profile before it can be added.
+- The user can indicate if their status is active or not. If inactive, their profile would not be displayed on this page.
+- The search functionality is to be more sophisticated: the user should be able to click on different available criteria and search for a combination of values, e.g. beginner + morning + doubles.
+- Only the users which had created a buddy profile, will be able to search for a tennis buddy.
+- The email of the registered users needs to be verified, so that the contact email address is a valid one and not a made up one which the user might have used at the registration.
+  
+### [Booking of the courts](https://tennis-buddies.herokuapp.com/bookingcalendar/)
+
+![Booking Calendar](./readme-images/bookingcalendar.png)
+
+The booking page consists of a date picker and a table with court availability on a particular day.
 #### Booking requirements
 In order to book a court, the user must have a registered account and must be signed in. The user also must have created a user profile where they add their contact information. This is because the club staff wants to be able to give the user a quick phone call in case of a late cancelation, last minute change, or an emergency.
 
-#### Making a reservation
-When the user clicks on the Booking link in NavBar or approaches it from the carousel, they are taken to bookingcalendar.html. Here the user is informed which courts are booked/free for the current date, or on the date they had chosen in the datepicker. The courts which are free contain a hyperlink. When the user clicks on a particular "Book now" link, the information about the chosen date/time/court combination is carried over to the bookings/add.html page. The user only has to choose an opponent/(s). At this point, they could still edit the time/date/court, but they would not be sure if the combination had already been booked by someone else.
+#### [Making a reservation](https://tennis-buddies.herokuapp.com/bookings/add/?date=2023-06-01&time=15:00%20-%2016:00&court=three)
+When the user clicks on a Booking link in NavBar or approaches it from the carousel or the footer, they are taken to bookingcalendar.html. Here the user is informed which courts are booked/free for the current date, or on the date they had chosen in the datepicker. The courts which are free contain a hyperlink. When the user clicks on a particular "Book now" link, the information about the chosen date/time/court combination is carried over to the bookings/add.html page. The user only has to choose an opponent/(s). At this point, they could still edit the time/date/court, but they would not be sure if the combination had already been booked by someone else.
 
-The user can choose min 1 and max 3 opponents. The user can also choose themselves if they want to e.g. practice their serve on their own.
+The user can choose min 1 and max 3 opponents. The user chooses multiple opponents by holding shift or control. The user can also choose themselves if they want to e.g. practice their serve on their own. The user gets a warning if they choose more than 3 opponents.
 
-The user can see a pop up message which informs them about the successful reservation.
+![Make a Booking](./readme-images/makebooking.png)
 
-#### Edit/Delete Functionality
+![Opponents Warning](./readme-images/opponents.png)
+
+The user can see a pop up message which informs them about the successful reservation at the top of the page.
+![Booking Success](./readme-images/bookingsuccessful.png)
+
+#### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
 When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. 
 
 Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
 
-However, if the user is admin/staff/superuser, they will also see a "Staff" option in their NavBar through which they can access all the bookings of all the members. The staff user can edit or delete a booking of any of the users.
+#### [Staff Dashboard](https://tennis-buddies.herokuapp.com/bookings/list/all/)
+However, if the user is admin/staff/superuser, they will also see a "Staff" option in their NavBar through which they can access all the bookings of all the members. The staff user can edit or delete a booking of any of the users. If they access their own booking, they are taken to their booking list, but it they edit/delete somebody else's booking the staff user is taken to staff dashboard.
 
+![Staff Dashboard](./readme-images/staffdashboard.png)
 #### Bookings in the past
 The users are allowed to create bookings in the past as well. This is due to the fact that the club requires exact information about the court usage and the members sometimes don't make a booking and just come and use a court that is free or they don't update the opponents on the booking. The club needs the information about the players in case something was damaged, or somebody got hurt (insurance reasons) or e.g. in case of the recent Covid Pandemic, they could inform the players if one them had turned Covid positive. When a booking in the past gets created, the user gets a messages about its successful creation, but is informed about having made a booking in the past.
 
+![Booking in the Past ](./readme-images/bookingpast.png)
 #### Future features for Booking
 There are several ways how the booking system could/should be improved:
 - Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance. 
@@ -570,8 +601,19 @@ There are several ways how the booking system could/should be improved:
 - When the user approached the booking system from the calendar, they can clearly see which courts are available. However, when they are editing their booking, they don't see anymore which courts are free on the new desired date/time combination. In the future, the user should be either taken back to the calendar or get some suggestion about which courts are free so they wouldn't have to keep guessing. Maybe the user should be able to just edit the opponents and when they want to change the date/time or court, they would have to cancel the booking and add a new one through the calendar link.
 - The booking calendar could display who the owner/opponents are for a particular booking instead of just "Booked".
 - A member of staff should be able to create any number of bookings on a given day, in case of a special ocasion or event taking place in the club. A staff member would have a priority for booking and would be able to make bookings more in advance than a regular user. 
+- In the future I should diferentiate between a superuser and staff members and adjust the conditional statements.
+- A modal window should pop up when the user is chosing opponents with an information to hold shift or control buttons for choosing multiple players.
 
+### [Contact Us page](https://tennis-buddies.herokuapp.com/contact/)
 
+![Contact Us](./readme-images/contactus.png)
+This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club.
+
+#### Future Features for Contact Us
+At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is deliver. I need to set this functionality up. At the moment, only a message in CLI appears, but only if sent from the localhost.
+
+![Inquiry Confirmation](./readme-images/inquiry.png)
+![CLI Message](./readme-images/cli_message.png)
 
 In order to book a courts, the user must have a registered account and must be signed in.
 
