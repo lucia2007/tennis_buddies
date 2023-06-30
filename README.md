@@ -436,22 +436,22 @@ This is the ERD schema was instrumental for creating all the necessary models fo
 
 ## Design Choices
 
-The goal for the site was to make it simple, easily understandable, yet attractive. I kept the used colours to a minimum and used just three images for the carousel to make the site more lively.
+The goal for the site was to make it simple, easily understandable, yet attractive. I kept the used colors to a minimum and used just three images for the carousel to make the site more lively.
 
 [Back to top](#contents)
 ### Typography
 
-Originally I wanted to change the provided font-type, but in the end I was quite happy with the provided one and so I did not make any alternations.
+Originally I wanted to change the provided font-type, but in the end I was quite happy with the original one and so I did not make any alternations.
 
 [Back to top](#contents)
 
 ### Color Scheme
 
-As regards the color scheme, I normally would use a color scheme/wheel, but here I used only one main yellow/green color for the body and only altered the colour of the messages to match it. I kept the header and footer white to give the site a clean look.
+As regards the color scheme, I normally would use a color scheme/wheel, but here I used only one main yellow/green color for the body and only altered the color of the messages to match it. I chose colors which are associated with tennis. I kept the header and footer white to give the site a clean look.
 
 [Back to top](#contents)
 
-# Features
+## Features
 ### Site Responsive Navigation Bar
 
 ![NavBar Login](./readme-images/navbar_login.png)
@@ -469,13 +469,13 @@ The site contains a simple but effective NavBar which simplifies the movement of
 - Register/Login - when the user is not logged in, they can see "Register/Login" buttons which allow then to create an accout if they don't already have on or to log in, if they already have an account.
 - User Profile Icon/Logout - when the user is logged in, the links on the right change to the "Profile Icon/Logout".
 
-![Search Feature](./readme-images/profile_logout.png)  
+![Profile Icon](./readme-images/profile_logout.png)  
 - Conditional Profile icon appears, when the user is logged in. The user can access the following features through this icon:
   - Contact details - the user can either add their contact details through this link, or edit/delete them if the contact details had already been provided
   - Profile - the user can either create their buddy profile here, or they can edit/delete the profile if they already have one
   - Your bookings - here the user can see all of their bookings, which they can edit/delete, or they are informed about having no bookings in their name.
   
-![Search Feature](./readme-images/condition_profile_icon.png)
+![Staff Tab](./readme-images/condition_profile_icon.png)
 - Conditional Staff link - if the user is admin/staff, when they log in, "Staff" link appears which lets them access the bookings/list/all where they can see/edit/delete everybody's bookings.
 
 When a user is on a particular page, the link is becomes bold to make it clear to the user which page they are on.
@@ -515,11 +515,10 @@ On smaller screens, the text disappears to avoid making the images cluttered.
 
 ### Footer
 
-including responsive image
+The user can find all necessary information in the footer. There is information about the opening hours of the club, there is site navigation which takes the user quickly to a desired part of the app, there are links to tips for self-improvement and lastly, there are contact details for getting in touch with the club. The footer also contains links to social media. The footer is site responsive and the items are stacked on top of each other for smaller screens, whereas they are next to each other for larger screens. 
 
-When the user manages to move all the disks from the 1st base to the last one, they are informed of successfully finishing the game. 
-
-![The Winning message](/readme-images/congratulations.png)
+![Footer](./readme-images/footer.png)
+[Footer small screens](./readme-images/footer_small_screens.png)
 
 [Back to top](#contents)
 
