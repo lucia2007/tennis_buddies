@@ -22,12 +22,11 @@ You can access the Tennis Buddies app here:
   - [Site User's Goal](#site-users-goal)
   - [Site Owner's Goal](#site-owners-goal)
 - [User Experience (UX)](#user-experience-ux)
-  - [User Stories](#user-stories)
-    - [Primary Goal](#primary-goal)
-    - [Visitor Goals](#visitor-goals)
-      - [First Time Visitor](#first-time-visitor)
-      - [Returning Visitor](#returning-visitor)
-      - [Frequent Visitor](#frequent-visitor)
+  - [Primary Goal](#primary-goal)
+  - [Visitor Goals](#visitor-goals)
+    - [First Time Visitor](#first-time-visitor)
+    - [Returning Visitor](#returning-visitor)
+    - [Frequent Visitor](#frequent-visitor)
   - [Creation Process](#creation-process)
     - [Design Prototype (Wireframes)](#design-prototype-wireframes)
       - [Desktop Wireframes](#desktop-wireframes)
@@ -107,16 +106,14 @@ As the site owner, I want to provide a platform where new tennis club members ca
 
 # User Experience (UX)
 
-## User Stories
-
-### Primary Goal
+## Primary Goal
 
 The primary goal of this application is to enable member of a tennis club to find a tennis buddy and to make court reservations.
 
-### Visitor Goals
-As a visitor, I want to easily find a tennis partner to practise with and make a court reservation for a suitable time. I also want to be able to get in touch with the tennis club in case of any enquiries.
+## Visitor Goals
+As a visitor, I want to easily find a tennis partner to practise with and make a court reservation for a suitable time. I also want to be able to get in touch with the tennis club in case of any inquiries.
 
-#### First Time Visitor
+### First Time Visitor
   - A user sees the three main features of the app on the welcome page: Find a buddy, Book a court, Contact us
   - A user can register, log in and logout.
   - A user can see Buddy profiles on Find the perfect buddy page. 
@@ -139,12 +136,13 @@ As a visitor, I want to easily find a tennis partner to practise with and make a
     - Site navigation
     - Recommendations for improvement
     - Contact information
-#### Returning Visitor
+  
+### Returning Visitor
   - A user can easily sign in and access majority of the features of the website.
   - A user with filled in Contact info can also make court reservations.
   - A user can easily find a tennis buddy and contact them.
 
-#### Frequent Visitor
+### Frequent Visitor
   - A user can easily make a court reservation or look for a new buddy.
 
 
@@ -329,8 +327,6 @@ Make a more advanced booking system, deploy with css and images, make progress w
 - BF Heroku not loading css file
 - BF When add booking is approached from the booking calendar, the information about date/time/court is lot
 
-
-
 #### Sprint #8 - 27/06 - 30/06
 Make progress with Readme and fix small bugs encountered during testing.
 
@@ -356,6 +352,7 @@ In the future, I should able to surmise the amount of story points for each Epic
 
 #### Moscow principles
 I had tried to apply MoSCoW principles in my development but more on a project basis than on a sprint basis. In my first sprints I solely focused on meeting must-have user stories and when most of my necessary features were in place, only then did I start incorporating should-haves or could-haves. As I went along, I also indentified won't-haves which were either to be fully abandoned or left for future development.
+
 #### Milestones
 I split up my project development into the following milestones:
 
@@ -384,7 +381,7 @@ Each milestone was split into epics. Looking back at it, my epics copy milestone
 #### User Stories
 Each epic would contain several user stories. Each user story has a description, acceptance criteria and tasks which had to be done before the user story could be closed and moved to done. For details as to which user story was a part of a particular epic/milestone and for the acceptance criteria/tasks, please refer to my [Projects](https://github.com/users/lucia2007/projects/6/views/1) where all the details can be found.
 
-I had split the project into following user stories:
+I split the project into following user stories:
 - As a **user**, I would like to **view the apps homepage** so that I can **learn about the app and see what services it provides**.
 - As a **user** I can **locate the navigation area** so that I can **easily access different parts of the website**
 - As a **user**, I can **access relevant information about opening hours, contact information and social media links without having to scroll back to the top of the page** so that I can **visit the club, contact the club and follow the club online**.
@@ -426,6 +423,7 @@ I realize that my attempt at agile project development was not perfect and I kno
 
 This is the ERD schema was instrumental for creating all the necessary models for this app. Creating this schema helped me realize the relationships between different apps and models and clarified what kind of fields each of the model components would need. Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me clarify some of the relationships.
 
+
   Models:
   - Buddies
   - Booking
@@ -433,24 +431,6 @@ This is the ERD schema was instrumental for creating all the necessary models fo
   - User Profile
   - Court
   - ....
-
-
-
-
-[Back to top](#contents)
-### Site Structure
-
-#### Main website
-Home, Find a Buddy, Booking, Contact
-
-#### Staff Dashboard
-
-
-[Back to top](#contents)
-### App Logic
-  Any registered member can make a reservation of a court either for two players for singles or for 4 players for doubles. Each member is able to amend or cancel their reservation. Maximum of one booking per player is possible in one day. 
-
-  Staff is able to access all reservations at once and can add, amend or delete any of them. The admin is also responsible for approving a new user's buddy profile. Staff/admin can make multiple reservation on a particular day, also can make reservations more in advance. Staff/admin always has priority over any bookings. Staff/admin also has to approve a new buddy.
 
 [Back to top](#contents)
 
