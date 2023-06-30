@@ -42,7 +42,10 @@ You can access the Tennis Buddies app here:
       - [Sprint #7 - 19/06 - 23/06](#sprint-7---1906---2306)
       - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
       - [GitHub Projects Board](#github-projects-board)
-      - [Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing](#moscow-principles-milestones-epics-user-stories-acceptance-criteria-tasks-testing)
+      - [Moscow principles](#moscow-principles)
+      - [Milestones](#milestones)
+      - [Epics](#epics)
+      - [User Stories](#user-stories-1)
     - [Database Schema (ERD)](#database-schema-erd)
     - [Site Structure](#site-structure)
       - [Main website](#main-website)
@@ -280,6 +283,7 @@ Create models, general site structure and navigation elements (navbar and footer
 - US Create User Profile
 - US Create Buddy Profile
 - US Edit Buddy Profile
+- US Delete Buddy Profile
 - DT Install Django Crispy Forms
 - BF Crispy Filter not working 
 - BF Set up user profile in views.py and save into database
@@ -302,7 +306,7 @@ The goal is to create a booking CRUD functionality which will enable the user to
 - US Edit Booking
 - US Alternate List View depending on current user/staff
 - US Add Carousel
-- US Display messages uopn user action
+- US Display messages upon user action
 - DT Write up all the bugs until now
 
 #### Sprint #6 - 12/06 - 16/06
@@ -310,7 +314,7 @@ The goal is to finish adding the main features: search functionality, contact fo
 
 - US Contact Us page
 - US Add placeholder picture for Buddy
-- US Basich Search Functionality
+- US Basic Search Functionality
 - US Improve website's style
 - BF Favicon not loading
 
@@ -342,17 +346,78 @@ Make progress with Readme and fix small bugs encountered during testing.
 
 I used Projects tool inbuilt in GitHub, [GitHub's Projects](https://github.com/lucia2007?tab=projects), to help me manage the scope of the project, to track my progress and record bugs, but also to jot down any ideas that were relevant for the application development. These ideas were either later applied in the code or dismissed if they did not seem to enhance the user's experience or improve the development process.
 
-Whenever I had an idea related to the project, I would jot it down in the "Backlog section/Brainstorming" section. Then I would go through the tasks and assing them to the current Milestone I was working on. I would convert the simple ideas into proper User Stories with acceptance criteria and necessary tasks and move them to the To Do section. I would label each User Story with the following labels: MoSCoW, story points, relevant Epic and Milestone, priority. Some of the tasks were labeled as Developer tasks. These tasks were usually centered around the backend part of the project, getting the frameworks set up and functional.
+Whenever I had an idea related to the project, I would jot it down in the "Backlog section/Brainstorming" section. Then I would go through the tasks and assign them to the current Milestone I was working on. I would convert the simple ideas into proper User Stories with acceptance criteria and necessary tasks and move them to the To Do section. I would label each User Story with the following labels: MoSCoW lables, story points, relevant Epic and Milestone, priority, user story/dev task/bug-fix. The developed tasks were usually centered around the backend part of the project, getting the frameworks set up and functional, or fixing bugs, writing documentation or testing.
 
 When my Milestone with its deadline was set up (Sprint), I would assign relevant Epics with their User Stories to it. On a day-to-day basis, each morning, I would choose 2, max 3 things that were currently being worked on and I would place them in the "In Progress" section. If I became stuck on a task for whatever reason or depended on external input, I moved it to "Blocked". At last, when a task was completed, I would one more time check against the acceptance criteria, tick each of the finished tasks and move it to the "Done" section. I also made sure to work on my Readme file regularly in order to avoid having to tackle it all at once at the end. 
 
-This tool has been very benefitial for my development process, especially, because I could rely on having all the information there. I would write down the sources to be credited, or bugs to be fixed or ideas on how to improve some part of the application, so I did not have to worry about having forgotten something crucial. And the same time, keeping everything in one place gave me peace of mind that I was not going to forget something essential.
+The Project tool has been very benefitial for my development process, especially because I could rely on having all the relevant information in one place. I would write down the sources to be credited, or bugs to be fixed or ideas on how to improve some part of the application, so I did not have to worry about having forgotten something crucial.
 
-In the future, I should able to surmise the amount of story points for each Epic/User story more easily and thus plan my Sprints more effectively.
+In the future, I should able to surmise the amount of story points for each Epic/User story more easily and thus plan my Sprints more effectively. Also I would like to improve my process for reporting bugs in Project and connecting them to their commits. At the moment I usually took note of a bug, but only retrospectively made it into an issue. In the future I would like to use a similar process as with user stories, with acceptance criteria and tasks and connect the issue to the commit message with solved it.
 
-#### Moscow principles, milestones, Epics, User Stories, Acceptance Criteria, Tasks, Testing
+#### Moscow principles
+I had tried to apply MoSCoW principles in my development but more on a project basis than on a sprint basis. In my first sprints I solely focused on meeting must-have user stories and when most of my necessary features were in place, only then did I start incorporating should-haves or could-haves. As I went along, I also indentified won't-haves which were either to be fully abandoned or left for future development.
+#### Milestones
+I split up my project development into the following milestones:
 
-[GitHub Projects](readme-images/projects_tool.png)
+1. Set up project's framework, do an early deployment, add django allauth.
+2. Create models, general site structure and navigation elements (navbar and footer) based on the original wireframes.
+3. Finish CRUD functionality for Contact Details (user_profile) and for buddy profile.
+4. Basic Booking functionality, improve app content/style, add user messages.
+5. Search Functionality, Contact Form, Improve Styling of Main Elements.
+6. Make a more advanced booking system, deploy with css and images, make progress with Readme.
+7. Make progress with Readme and fix small bugs encountered during testing
+8. Testing
+
+#### Epics
+Each milestone was split into epics. Looking back at it, my epics copy milestones quite a bit and I probably should have split them into more detailed ones. Some milestones contain just one epic, others contain more. For details please look into my [Projects](https://github.com/users/lucia2007/projects/6/views/1) where you can see which epic was a part of which milestone.
+
+1. Setup development environment, install dependencies and packages, early deployment. Install Allauth.
+2. Create genereal site structure and navigation elements based on wireframes.
+3. Enable CRUD functionality for User_profile and Buddy.
+4. Enable CRUD functionality for Booking.
+5. Add Carousel and improve website styling.
+6. Add messages to user actions.
+7. Add search functionality, contact form and other small embelishments.
+8. Make a more advanced Booking system.
+9. Fix bugs encountered during testing.
+
+#### User Stories
+Each epic would contain several user stories. Each user story has a description, acceptance criteria and tasks which had to be done before the user story could be closed and moved to done. For details as to which user story was a part of a particular epic/milestone and for the acceptance criteria/tasks, please refer to my [Projects](https://github.com/users/lucia2007/projects/6/views/1) where all the details can be found.
+
+I had split the project into following user stories:
+- As a **user**, I would like to **view the apps homepage** so that I can **learn about the app and see what services it provides**.
+- As a **user** I can **locate the navigation area** so that I can **easily access different parts of the website**
+- As a **user**, I can **access relevant information about opening hours, contact information and social media links without having to scroll back to the top of the page** so that I can **visit the club, contact the club and follow the club online**.
+- As an **unregistered user** I want to be able **to sign up onto the website** so that I can **access websites functionality and content**.
+- As a **registered user** I want to be able **to sign in into my account** so that I can **get access to the website's functionality and options**.
+- As a **signed in user** I want to be able **to sign out of my account** so that I can **keep my account private and safe**.
+- As a **user** I can **enter my personal details** so that I can **create an account with Tennis buddies and be contacted in case of need**
+- As a **signed in user with an active profile** I can **create a buddy profile** so that **I can use the search functionality to find the best tennis partner**
+- As a **user**, I can **edit my buddy profile** to **update my preferences regarding the style of play/practice**.
+- As a **registered user** I can **press delete button on my buddy profile form** so that I can **delete all provided information regarding my preferences for a tennis partner, including pictures**
+- As a **registered user** I can **press delete button on my user profile/contact form** so that I can **delete all provided information regarding my contact details**.
+- As a **user**, I can **edit my user profile** to **update my personal details**.
+- As a **user** I can **visit the Find Your Perfect Buddy page** so that I can **find the perfect match for my tennis practice**.
+- As a **user** I can **reserve a court** so that I can **play at a time that suits me and can avoid come to a full club**.
+- As a **signed in user/staff member** I can **view all the bookings** so that I can **see when other people are playing/the courts are busy**.
+- As a **registered user/superuser** I can **press delete button on my booking details** so that I can **delete my/any user's booking**.
+- As a **user**, I can **edit my bookings** to **update my preferences regarding the day/time/court/opponents**.
+- As a **user/staff** I can **see the list of all bookings (staff)/my own bookings (current user)** so that I can **be reminded of my reservations, but also to be able to update them or delete them**.
+- As a **user** I can **be visually attracted to the app and see the main site features on the moving carousel** so that I can **quickly get an idea what the app offers**.
+- As a **user I want to be informed about different user actions** so that I can **be sure that the itended action took place**.
+- As a **user** I can **view the contact us page** so that I can **get in touch with the club by filling in a contact form and also see the clubs location and opening hours**.
+- As a **user** I can **not add a picture to my buddy profile** so that I can **protect my privacy**.
+- As a **signed in user** I can **search among the buddies** so that I can **find the best partnert to play with**.
+- As a **user** I can **enjoy browsing the webpage while looking for information** so that **I don't feel compelled to leave**.
+- As a **user** I can **easily see which courts are available for booking in a calendar** so that I **don't have to randomly look for free date/time/court combinations**.
+- As a **signed in user** I can **easily see which courts are free on a given day** so that I **don't have to keep guessing a combination of court/time/date which would be free**.
+- As a **user** I want to **press a cancel button which will take me to the previous page** so that I **don't have to use the Back button**.
+- As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
+- As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
+
+The user stories above had all been finished. There are several user stories which had not been done and are postponed for future development, others were moved into won't do category. For more details see Future Features.
+
+I realize that my attempt at agile project development was not perfect and I know I will do several things differently in the future, but it has definitely been an enriching experience and helped me manage the project's scope. In the future I plan to make more detailed Epics and to plan my sprints according to user story points, as now I have a better idea how long different tasks take me and I can make better, if imperfect, estimates.
 
 [Back to top](#contents)
 ### Database Schema (ERD)
