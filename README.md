@@ -53,19 +53,25 @@ You can access the Tennis Buddies app here:
   - [Design Choices](#design-choices)
     - [Typography](#typography)
     - [Color Scheme](#color-scheme)
-- [Features](#features)
+  - [Features](#features)
     - [Site Responsive Navigation Bar](#site-responsive-navigation-bar)
     - [Carousel](#carousel)
     - [Footer](#footer)
-    - [Buddy Matching Functionality (buddy.html)](#buddy-matching-functionality-buddyhtml)
-    - [Booking of the courts (bookingcalendar.html)](#booking-of-the-courts-bookingcalendarhtml)
+    - [Home Page](#home-page)
+    - [Find the Perfect Buddy Page](#find-the-perfect-buddy-page)
+      - [Buddy Search](#buddy-search)
+      - [Buddy Details](#buddy-details)
+      - [Future Features for Buddy Matching](#future-features-for-buddy-matching)
+    - [Booking of the courts](#booking-of-the-courts)
       - [Booking requirements](#booking-requirements)
       - [Making a reservation](#making-a-reservation)
       - [Edit/Delete Functionality](#editdelete-functionality)
+      - [Staff Dashboard](#staff-dashboard)
       - [Bookings in the past](#bookings-in-the-past)
       - [Future features for Booking](#future-features-for-booking)
-      - [Sign Up Page](#sign-up-page)
-      - [Sign In Page](#sign-in-page)
+    - [Contact Us page](#contact-us-page)
+      - [Future Features for Contact Us](#future-features-for-contact-us)
+    - [Profile Icon](#profile-icon)
     - [Contact Form (contact.html)](#contact-form-contacthtml)
     - [404 and 500 Error Pages](#404-and-500-error-pages)
     - [Staff Dashboard](#staff-dashboard-1)
@@ -615,7 +621,13 @@ At the moment, when the user fills in the form, they get a message about the inq
 ![Inquiry Confirmation](./readme-images/inquiry.png)
 ![CLI Message](./readme-images/cli_message.png)
 
-In order to book a courts, the user must have a registered account and must be signed in.
+### Profile Icon
+A profile Icon appears when the user is signed in. When the user clicks on the icon, they see the following options:
+
+1. Contact Info - here the user can either [add their contact information](https://tennis-buddies.herokuapp.com/profiles/add/) if they had not done so before, or they can edit/delete the information. The user is informed about each action with a message that appears at the top of the page. Before deleting the profile, the user is asked to confirm the action. The user has an option to cancel edit/delete action in which case they are taken back to the previous page. Contact info is compulsary for a user who wants to make a booking.
+2. Profile - A user can choose to fill in their buddy/profile details if they want to be contacted by other players to arrange a game. They are either taken to [add profile](https://tennis-buddies.herokuapp.com/profiles/add/?next=/buddies/add/) or to edit/delete profile if they had previously filled in the information. Again, the user is asked if they are sure about deletion or they can cancel edit/delete and go back to the previous page.
+3. [Your Bookings](https://tennis-buddies.herokuapp.com/bookings/list/own/) - Here is user can see/edit/delete their own bookings if they have made some, or they see a message that they have no bookings.
+
 
 #### Sign Up Page
 
