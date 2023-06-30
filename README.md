@@ -70,7 +70,9 @@ You can access the Tennis Buddies app here:
       - [Bookings in the past](#bookings-in-the-past)
       - [Future features for Booking](#future-features-for-booking)
     - [Contact Us page](#contact-us-page)
+      - [Inquiry Confirmation Message](#inquiry-confirmation-message)
       - [Future Features for Contact Us](#future-features-for-contact-us)
+      - [CLI Message](#cli-message)
     - [Profile Icon](#profile-icon)
     - [Contact Form (contact.html)](#contact-form-contacthtml)
     - [404 and 500 Error Pages](#404-and-500-error-pages)
@@ -612,21 +614,57 @@ There are several ways how the booking system could/should be improved:
 
 ### [Contact Us page](https://tennis-buddies.herokuapp.com/contact/)
 
+This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club. When the user fills in the form, they see a message about the inquiry having been sent. However, this is not fully functional yet and will be taken care of in the next version.
+
 ![Contact Us](./readme-images/contactus.png)
-This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club.
+
+#### Inquiry Confirmation Message
+![Inquiry Confirmation Message](./readme-images/inquiry.png)
+
 
 #### Future Features for Contact Us
-At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is deliver. I need to set this functionality up. At the moment, only a message in CLI appears, but only if sent from the localhost.
-
-![Inquiry Confirmation](./readme-images/inquiry.png)
+At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is delivered. I need to set this functionality up. At the moment, only a message in CLI appears, but only if sent from the localhost.
+#### CLI Message
 ![CLI Message](./readme-images/cli_message.png)
+
 
 ### Profile Icon
 A profile Icon appears when the user is signed in. When the user clicks on the icon, they see the following options:
 
-1. Contact Info - here the user can either [add their contact information](https://tennis-buddies.herokuapp.com/profiles/add/) if they had not done so before, or they can edit/delete the information. The user is informed about each action with a message that appears at the top of the page. Before deleting the profile, the user is asked to confirm the action. The user has an option to cancel edit/delete action in which case they are taken back to the previous page. Contact info is compulsary for a user who wants to make a booking.
+1. Contact Info - here the user can either [add their contact information](https://tennis-buddies.herokuapp.com/profiles/add/) if they had not done so before, or they can edit/delete the information. Contact Info is required in case the user wants to make a booking, view bookings or wants to add a buddy profile.
+
+The user is informed about each action with a message that appears at the top of the page. Before deleting the profile, the user is asked to confirm the action. The user has an option to cancel edit/delete action in which case they are taken back to the previous page. 
+
+- Add Contact Info   
+</br>
+![Add Contact Info](./readme-images/add_contact_details.png)
+</br>
+[Add Contact Success Message](./readme-images/add_contact_success.png)
+
+- View Added Contact Info
+</br>
+![Contact Added](./readme-images/contact_added.png)
+
+- Edit Contact Info
+</br>
+![Edit Contact Info](./readme-images/edit_contact.png)
+</br>
+[Edit Contact Success Message](./readme-images/contact_update_success.png)
+
+- Delete Contact Info
+</br>
+![Delete Contact Info](./readme-images/contact_confirm_delete.png)
+</br>
+[Delete Contact Success Message](./readme-images/contact_delete_success_message.png)
+
 2. Profile - A user can choose to fill in their buddy/profile details if they want to be contacted by other players to arrange a game. They are either taken to [add profile](https://tennis-buddies.herokuapp.com/profiles/add/?next=/buddies/add/) or to edit/delete profile if they had previously filled in the information. Again, the user is asked if they are sure about deletion or they can cancel edit/delete and go back to the previous page.
-3. [Your Bookings](https://tennis-buddies.herokuapp.com/bookings/list/own/) - Here is user can see/edit/delete their own bookings if they have made some, or they see a message that they have no bookings.
+
+- Add Buddy Profile   
+</br>
+![Add Buddy Profile](./readme-images/add_buddy_details.png)
+</br>
+[Add Buddy Success Message](./readme-images/add_buddy_success_message.png)
+
 
 
 #### Sign Up Page
