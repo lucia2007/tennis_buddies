@@ -15,10 +15,10 @@
             <button type="submit" class="btn btn-primary w-30 mt-2">Save</button>
             {% if request.user.is_superuser %}
             <a href="{% url 'list-bookings' all_or_own='all' %}" class="btn btn-primary w-30 mt-2"
-                alt="Go to all bookings">Cancel</a>
+                aria-label="Go to all bookings">Cancel</a>
             {% else %}
             <a href="{% url 'list-bookings' all_or_own='own' %}" class="btn btn-primary w-30 mt-2"
-                alt="Let's the user cancel editing. Takes user back to their bookings">Cancel</a>
+                aria-label="Let's the user cancel editing. Takes user back to their bookings">Cancel</a>
             {% endif %}
         </div>
     </form>
