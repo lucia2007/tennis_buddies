@@ -2,7 +2,37 @@
 
 ## Code Validation
 
-The [Tennis Buddies](https://tennis-buddies.herokuapp.com/) webpage was thouroughly tested. HTML code was reviewed in the [W3C HTML Validator](https://validator.w3.org). The CSS code was validated in the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the JS file was check in [JS Hint](https://jshint.com/). Python..........  All errors were corrected and HTML, JS and CSS files currently have no errors.
+The [Tennis Buddies](https://tennis-buddies.herokuapp.com/) webpage was thouroughly tested. HTML code was reviewed in the [W3C HTML Validator](https://validator.w3.org). The CSS code was validated in the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the JS file was check in [JS Hint](https://jshint.com/). Python files were tested in [Python Linter](https://pep8ci.herokuapp.com/#).  
+
+<!-- All errors were corrected and HTML, JS and CSS files currently have no errors. -->
+### HTML Testing
+During HTML validation I encountered a number of errors in my file. In order to avoid verbosity, I'm attaching the original validation message and a commit number where the errors were corrected. 
+
+| Page | Current Errors and Warning | Original Errors and Warnings | Bug-Fix (Commit #)
+| ---- | ---------- | --------- |  ---------- |
+| Home | [Home Page validation](./testing-images/index_html_no_errors.png) | [index.html Errors](./testing-images/homepage_html_validation_errors.png)  | [2c843fa](https://github.com/lucia2007/tennis_buddies/commit/2c843fa7a82dca807c5b41020fd5433524763c75), [522bb31](https://github.com/lucia2007/tennis_buddies/commit/522bb3181c1df4854706dbbc2a55d40e24438dd2)  |
+| Find the Perfect Buddy | [Find Perfect buddy validation](./testing-images/perfect_buddy_no_errors.png) | [Find Buddy Errors](testing-images/perfect_buddy_no_errors.png)  | [0dd4f0d](https://github.com/lucia2007/tennis_buddies/commit/0dd4f0d99bacc93a8cd09d5bcc8bb4af4a5e7bb7) |
+| Booking Calendar | [Booking Validation](./testing-images/booking_calendar_html_no_errors.png) |  [Booking Errors](testing-images/booking_calendar_html_validation_errors.png) | [915dd87](https://github.com/lucia2007/tennis_buddies/commit/915dd87d5b811a77238837d4c9b7dd11ffdd1cff)
+| Add Booking | [Add Booking Validation](./testing-images/add_booking_html_no_errors.png) |
+| Your Bookings | [Your Bookings Validation](./testing-images/your_bookings_html_no_errors.png) |
+| Edit Booking | [Edit Booking Validation](./testing-images/edit_booking_html_no_errors.png)
+| Delete Booking | [Delete Booking Validation](./testing-images/delete_booking_html_no_errors.png)
+| Contact Us | [Contact Us Validation](./testing-images/contact_us_html_no_errors.png) |
+| Staff | [Staff Validation](./testing-images/staff_html_no_errors.png) | [Staff Warnings](./testing-images/staff_html_validation_errors.png) | [b8701f0](https://github.com/lucia2007/tennis_buddies/commit/b8701f0bc0e4ca7d0ff80c6d359e60cba6bc2586)
+| Add Profile | [Add Profile Validation](./testing-images/add_profile_html_no_errors.png) | [Add Profile Errors](testing-images/add_booking_html_validation_errors.png) |[c384b01](https://github.com/lucia2007/tennis_buddies/commit/c384b01e1bab7c0ff42ee35e859859aa6765ae53)
+| Edit Profile | [Edit Profile Validation](./testing-images/edit_profile_html_no_errors.png) |
+| Delete Profile | [Delete Profile Validation](./testing-images/delete_profile_html_no_errors.png) |
+| Add Buddy  | [Add Buddy Profile Validation](./testing-images/add_buddy_html_no_errors.png) |
+| Buddy Details | [Buddy Details Validation](./testing-images/buddy_details_html_no_errors.png)  |
+| Edit Buddy | [Edit Buddy Validation](./testing-images/edit_buddy_html_no_errors.png) |
+| Delete Buddy | [Delete Buddy Validation](./testing-images/delete_buddy_html_no_errors.png) |
+| Sign In | [Sign In Validation](./testing-images/sign_in_html_no_errors.png) |
+| Sign Up | [Sign Up Validation](./testing-images/sign_up_html_no_errors.png) |
+| Sign Out | [Sign Out Validation](./testing-images/sign_out_html_no_errors.png) |
+| 404 Error Page |[404 Erro Page Validation](./testing-images/404_html_no_errors.png)
+| 403 Error Page |
+| 500 Error Page |
+
 
 ## Browser Compatibility
 ## Responsiveness Test

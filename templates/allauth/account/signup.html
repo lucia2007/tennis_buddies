@@ -10,7 +10,7 @@
   <h1>{% trans "Ready To Give It a Try?" %}</h1>
 
   <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"
-      alt="Takes the use to the signin page">sign in</a>.{% endblocktrans %}</p>
+      aria-label="Takes the use to the signin page">sign in</a>.{% endblocktrans %}</p>
 
   <form class="form p-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
