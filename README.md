@@ -74,10 +74,13 @@ You can access the Tennis Buddies app here:
       - [Future Features for Contact Us](#future-features-for-contact-us)
       - [CLI Message](#cli-message)
     - [Profile Icon](#profile-icon)
+    - [Sign Up Page](#sign-up-page)
+    - [Sign In Page](#sign-in-page)
+    - [Logout Page](#logout-page)
+    - [Future Features Sign in functionality](#future-features-sign-in-functionality)
     - [Contact Form (contact.html)](#contact-form-contacthtml)
     - [404 and 500 Error Pages](#404-and-500-error-pages)
     - [Staff Dashboard](#staff-dashboard-1)
-      - [Automatic Email Sending](#automatic-email-sending)
     - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
 - [Python Packages](#python-packages)
@@ -533,6 +536,7 @@ The home page contains basic information about the main features of the applicat
 
 ![Home Page](./readme-images/homepage.png)
 
+[Back to top](#contents)
 ### [Find the Perfect Buddy Page](https://tennis-buddies.herokuapp.com/buddies/)
 
 On this page the user can see a display of players who are looking for a hitting partner. You can see their picture, or a placeholder picture if they did not provide one, their name and a brief description. If they want to see a player's details, they need to be signed in.
@@ -560,7 +564,8 @@ If the signed user is also the owner of the buddy profile, when they click on th
 - The search functionality is to be more sophisticated: the user should be able to click on different available criteria and search for a combination of values, e.g. beginner + morning + doubles.
 - Only the users which had created a buddy profile, will be able to search for a tennis buddy.
 - The email of the registered users needs to be verified, so that the contact email address is a valid one and not a made up one which the user might have used at the registration.
-  
+
+[Back to top](#contents)  
 ### [Booking of the courts](https://tennis-buddies.herokuapp.com/bookingcalendar/)
 
 ![Booking Calendar](./readme-images/bookingcalendar.png)
@@ -581,20 +586,29 @@ The user can choose min 1 and max 3 opponents. The user chooses multiple opponen
 The user can see a pop up message which informs them about the successful reservation at the top of the page.
 ![Booking Success](./readme-images/bookingsuccessful.png)
 
+[Back to top](#contents)
+
 #### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
 When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
 
 ![Your Bookings](./readme-images/yourbookings.png)
 </br>
+
+[Back to top](#contents)
+
 ![Edit Booking](./readme-images/edit_booking.png)
 </br>
 When the user has updated their booking, they can see a success message at the top of the page.
 ![Update Booking Success](./readme-images/edit_booking_success_message.png)
+
+[Back to top](#contents)
+
 </br>
 ![Delete Booking](./readme-images/booking_delete_confirmation.png)
 </br>
 ![Delete Booking Success](./readme-images/booking_delete_success_message.png)
 
+[Back to top](#contents)
 #### [Staff Dashboard](https://tennis-buddies.herokuapp.com/bookings/list/all/)
 However, if the user is admin/staff/superuser, they will also see a "Staff" option in their NavBar through which they can access all the bookings of all the members. The staff user can edit or delete a booking of any of the users. If they access their own booking, they are taken to their booking list, but it they edit/delete somebody else's booking the staff user is taken to staff dashboard.
 
@@ -603,6 +617,8 @@ However, if the user is admin/staff/superuser, they will also see a "Staff" opti
 The users are allowed to create bookings in the past as well. This is due to the fact that the club requires exact information about the court usage and the members sometimes don't make a booking and just come and use a court that is free or they don't update the opponents on the booking. The club needs the information about the players in case something was damaged, or somebody got hurt (insurance reasons) or e.g. in case of the recent Covid Pandemic, they could inform the players if one them had turned Covid positive. When a booking in the past gets created, the user gets a messages about its successful creation, but is informed about having made a booking in the past.
 
 ![Booking in the Past ](./readme-images/bookingpast.png)
+
+[Back to top](#contents)
 #### Future features for Booking
 There are several ways how the booking system could/should be improved:
 - Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance. 
@@ -618,6 +634,8 @@ There are several ways how the booking system could/should be improved:
 - In the future I should diferentiate between a superuser and staff members and adjust the conditional statements.
 - A modal window should pop up when the user is chosing opponents with an information to hold shift or control buttons for choosing multiple players.
 
+[Back to top](#contents)
+
 ### [Contact Us page](https://tennis-buddies.herokuapp.com/contact/)
 
 This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club. When the user fills in the form, they see a message about the inquiry having been sent. However, this is not fully functional yet and will be taken care of in the next version.
@@ -626,14 +644,16 @@ This page contains two main sections: a form which a client can fill in if they 
 
 #### Inquiry Confirmation Message
 ![Inquiry Confirmation Message](./readme-images/inquiry.png)
-
+[Back to top](#contents)
 
 #### Future Features for Contact Us
 At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is delivered. I need to set this functionality up. At the moment, only a message in CLI appears, but only if sent from the localhost.
+
+[Back to top](#contents)
 #### CLI Message
 ![CLI Message](./readme-images/cli_message.png)
 
-
+[Back to top](#contents)
 ### Profile Icon
 A profile Icon appears when the user is signed in. When the user clicks on the icon, they see the following options:
 
@@ -647,9 +667,13 @@ The user is informed about each action with a message that appears at the top of
 </br>
 [Add Contact Success Message](./readme-images/add_contact_success.png)
 
+[Back to top](#contents)
+
 - View Added Contact Info
 </br>
 ![Contact Added](./readme-images/contact_added.png)
+
+[Back to top](#contents)
 
 - Edit Contact Info
 </br>
@@ -657,31 +681,88 @@ The user is informed about each action with a message that appears at the top of
 </br>
 [Edit Contact Success Message](./readme-images/contact_update_success.png)
 
+[Back to top](#contents)
+
 - Delete Contact Info
 </br>
 ![Delete Contact Info](./readme-images/contact_confirm_delete.png)
 </br>
 [Delete Contact Success Message](./readme-images/contact_delete_success_message.png)
 
-2. Profile - A user can choose to fill in their buddy/profile details if they want to be contacted by other players to arrange a game. They are either taken to [add profile](https://tennis-buddies.herokuapp.com/profiles/add/?next=/buddies/add/) or to edit/delete profile if they had previously filled in the information. Again, the user is asked if they are sure about deletion or they can cancel edit/delete and go back to the previous page.
+[Back to top](#contents)
+
+2. Profile - A user can choose to fill in their buddy/profile details if they want to be contacted by other players to arrange a game. They are either taken to [add profile](https://tennis-buddies.herokuapp.com/profiles/add/?next=/buddies/add/) or to edit/delete profile if they had previously filled in the information. Again, the user is asked if they are sure about deletion or they can cancel edit/delete and go back to the previous page. All user actions are accompanied by a success message which appears at the top of the page. 
 
 - Add Buddy Profile   
+The only information that is prefilled in this form is the user's email address. This is not an editable field. As regards an image, if the user does not provide one, a placeholder image will be used.
+
+The user can choose their level, availability, type of game, etc. In the future, they will also be able to say that their profile is not to appear in the catalague or in the searches (the backend functionality is not currently in place.)
+
 </br>
 ![Add Buddy Profile](./readme-images/add_buddy_details.png)
 </br>
 [Add Buddy Success Message](./readme-images/add_buddy_success_message.png)
 
+[Back to top](#contents)
+
+- View Added Buddy Details
+</br>
+When the user approaches their own buddy details either from Profile Icon or from Find the Perfect buddies, they can see edit/delete buttons underneath their profile. These are only present when the owner of the profile is the same as the current logged in user. 
+
+</br>
+![Buddy Details](./readme-images/buddy_details.png)
+</br>
+
+[Back to top](#contents)
+
+- Edit Buddy Details
+</br>
+![Edit Buddy Details](./readme-images/edit_buddy_details.png)
+</br>
+[Edit Buddy Success Message](./readme-images/edit_buddy_success_message.png)
+
+[Back to top](#contents)
+
+- Delete Buddy Details
+</br>
+![Delete Buddy Details](./readme-images/buddy_delete_confirmation.png)
+</br>
+[Delete Buddy Success Message](./readme-images/buddy_delete_success_message.png)
+
+[Back to top](#contents)
 
 3. Under Your Bookings the user can see/edit/delete their own bookings if they have made some, or they see a message that they have no bookings. More details above.
 
+[Back to top](#contents)
+### Sign Up Page
 
+Sign up Page has a simple design. The user has to enter their email and the password twice. This is due to defensive programming principle where we try to avoid unnecessary errors caused by small typos.
 
-#### Sign In Page
-- forgot password
+All sign in functionalities are a result of using django-allauth. Using this packages has enabled me to set this functionality up quickly and easily.
 
-After the user chooses a number of disks, a "playground" with the correct number of disks is displayed.
+![Sign Up Page](./readme-images/sign_up_page.png)
+</br>
+[Sign Up Success](./readme-images/sign_up_success_message.png)
 
-![Initial Picture](readme-images/intial_picture.png)
+[Back to top](#contents)
+
+### Sign In Page
+![Sign In Page](./readme-images/sign_in_page.png)
+</br>
+[Sign In Success](./readme-images/sign_in_success_message.png)
+
+[Back to top](#contents)
+### Logout Page
+![Sign Out Page](./readme-images/sign_out_page.png)
+</br>
+[Sign Out Success](./readme-images/sign_out_success_message.png)
+
+[Back to top](#contents)
+
+### Future Features Sign in functionality
+In the next version I would like to enable registration with social account sign in as this functionality makes the registration process much quicker and easier. Users are often dissuaded from signing up to new apps and this could facilitate the process.
+
+At the moment, the email is not being verified and user can use a made up email. In the future I definitely want to add email verification as this is important for other features in the app, like contacting a buddy to organize a game or for contacting users in case of need by staff.
 
 [Back to top](#contents)
 
