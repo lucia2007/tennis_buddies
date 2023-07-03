@@ -1,133 +1,132 @@
 {% load static %}
 
-<footer>
-    <!-- Footer -->
-    <!-- https://mdbootstrap.com/docs/standard/navigation/footer/ -->
-    <footer class="text-center text-lg-start bg-white text-muted">
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-center p-4 border-bottom social">
-            <div>
-                <a href="https://www.facebook.com/" class="me-4 link-secondary" target="blank" rel="noopener"
-                    aria-label="Facebook opens in a new tab">
-                    <img src="{% static 'icons/facebook.svg' %}" alt="Facebook Icon" class="social-icon">
-                </a>
-                <a href="https://www.twitter.com/" class="me-4 link-secondary" target="blank" rel="noopener"
-                    aria-label="Twitter opens in a new tab">
-                    <img src="{% static 'icons/twitter.svg' %}" alt="Twitter Icon" class="social-icon">
-                </a>
-                <a href="https://www.pinterest.com/" class="me-4 link-secondary" target="blank" rel="noopener"
-                    aria-label="Pinterest opens in a new tab">
-                    <img src="{% static 'icons/pinterest.svg' %}" alt="Pinterest Icon" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/" class="me-4 link-secondary" target="blank" rel="noopener"
-                    aria-label="Instagram opens in a new tab">
-                    <img src="{% static 'icons/instagram.svg' %}" alt="Instagram Icon" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/" class="me-4 link-secondary" target="blank" rel="noopener"
-                    aria-label="LinkedIn opens in a new tab">
-                    <img src="{% static 'icons/linkedin.svg' %}" alt="LinkedIn Icon" class="social-icon">
-                </a>
-            </div>
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fa-regular fa-clock me-2 text-secondary"></i>opening hours:
-                        </h6>
-                        <div>
-                            <p>Monday - Sunday</p>
-                            <p>09:00 - 22:00</p>
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Navigation
-                        </h6>
-                        <p>
-                            <a href="{% url 'home' %}" class="text-reset" alt="Takes user back to home page">Home</a>
-                        </p>
-                        <p>
-                            <a href="{% url 'buddies' %}" class="text-reset"
-                                alt="Takes user to Find a Tennis Buddy page">Find a
-                                Buddy</a>
-                        </p>
-                        <p>
-                            <a href="{% url 'calendar' %}" class="text-reset"
-                                alt="Takes user back to the booking page">Booking</a>
-                        </p>
-                        <p>
-                            <a href="{% url 'contact' %}" class="text-reset"
-                                alt="Takes user back to the contact page">Contact Us</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Get Inspired
-                        </h6>
-                        <p>
-                            <a href="https://www.feeltennis.net/serve-technique/" class="text-reset" target="blank"
-                                rel="noopener" aria-label="A guide to improving your serve">Serve</a>
-                        </p>
-                        <p>
-                            <a href="https://serveandvolleytennis.com/how-to-effortlessly-generate-more-power-on-your-groundstrokes/"
-                                class="text-reset" target="blank" rel="noopener"
-                                aria-label="A guide to improving your grand strokes">Grand Strokes</a>
-                        </p>
-                        <p>
-                            <a href="https://mytennishq.com/7-drills-to-improve-your-volleys/" class="text-reset"
-                                target="blank" rel="noopener" aria-label="A guide to improving your vollyes">Volleys</a>
-                        </p>
-                        <p>
-                            <a href="https://thetennisbros.com/tennis-tips/tactics/tennis-singles-strategy/"
-                                class="text-reset" target="blank" rel="noopener"
-                                aria-label="A guide to improving your vollyes">Strategy</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="fas fa-home me-3 text-secondary"></i>Nebusice, 16 400, Czech Republic</p>
-                        <p>
-                            <a href="mailto:nebu@tennis.com" target="_blank" rel="noopener"
-                                aria-label="A clickable envelope icon opens a new email from in your browser."><i
-                                    class="fas fa-envelope me-3 text-secondary"></i></a>nebu@tennis.com
-                        </p>
-                        <p><i class="fas fa-phone me-3 text-secondary"></i>+420 775 371 859</p>
-                    </div>
-                    <!-- Grid column -->
-                </div>
-                <!-- Grid row -->
-            </div>
-        </section>
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-            © 2023 Copyright:
-            <a class="text-reset text-secondary" href="https://codeinstitute.net/" alt="">
-                For Educational Purposes Only
+<!-- Footer -->
+<!-- https://mdbootstrap.com/docs/standard/navigation/footer/ -->
+<footer class="text-center text-lg-start bg-white text-muted">
+    <!-- Section: Social media -->
+    <div class="d-flex justify-content-center justify-content-lg-center p-4 border-bottom social">
+        <div>
+            <a href="https://www.facebook.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                aria-label="Facebook opens in a new tab">
+                <img src="{% static 'icons/facebook.svg' %}" alt="Facebook Icon" class="social-icon">
+            </a>
+            <a href="https://www.twitter.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                aria-label="Twitter opens in a new tab">
+                <img src="{% static 'icons/twitter.svg' %}" alt="Twitter Icon" class="social-icon">
+            </a>
+            <a href="https://www.pinterest.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                aria-label="Pinterest opens in a new tab">
+                <img src="{% static 'icons/pinterest.svg' %}" alt="Pinterest Icon" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                aria-label="Instagram opens in a new tab">
+                <img src="{% static 'icons/instagram.svg' %}" alt="Instagram Icon" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/" class="me-4 link-secondary" target="blank" rel="noopener"
+                aria-label="LinkedIn opens in a new tab">
+                <img src="{% static 'icons/linkedin.svg' %}" alt="LinkedIn Icon" class="social-icon">
             </a>
         </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
+    </div>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <div class="links">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fa-regular fa-clock me-2 text-secondary"></i>opening hours:
+                    </h6>
+                    <div>
+                        <p>Monday - Sunday</p>
+                        <p>09:00 - 22:00</p>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Navigation
+                    </h6>
+                    <p>
+                        <a href="{% url 'home' %}" class="text-reset" aria-label="Takes user back to home page">Home</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'buddies' %}" class="text-reset"
+                            aria-label="Takes user to Find a Tennis Buddy page">Find a
+                            Buddy</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'calendar' %}" class="text-reset"
+                            aria-label="Takes user back to the booking page">Booking</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'contact' %}" class="text-reset"
+                            aria-label="Takes user back to the contact page">Contact Us</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Get Inspired
+                    </h6>
+                    <p>
+                        <a href="https://www.feeltennis.net/serve-technique/" class="text-reset" target="blank"
+                            rel="noopener" aria-label="A guide to improving your serve">Serve</a>
+                    </p>
+                    <p>
+                        <a href="https://serveandvolleytennis.com/how-to-effortlessly-generate-more-power-on-your-groundstrokes/"
+                            class="text-reset" target="blank" rel="noopener"
+                            aria-label="A guide to improving your grand strokes">Grand Strokes</a>
+                    </p>
+                    <p>
+                        <a href="https://mytennishq.com/7-drills-to-improve-your-volleys/" class="text-reset"
+                            target="blank" rel="noopener" aria-label="A guide to improving your vollyes">Volleys</a>
+                    </p>
+                    <p>
+                        <a href="https://thetennisbros.com/tennis-tips/tactics/tennis-singles-strategy/"
+                            class="text-reset" target="blank" rel="noopener"
+                            aria-label="A guide to improving your vollyes">Strategy</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3 text-secondary"></i>Nebusice, 16 400, Czech Republic</p>
+                    <p>
+                        <a href="mailto:nebu@tennis.com" target="_blank" rel="noopener"
+                            aria-label="A clickable envelope icon opens a new email from in your browser."><i
+                                class="fas fa-envelope me-3 text-secondary"></i></a>nebu@tennis.com
+                    </p>
+                    <p><i class="fas fa-phone me-3 text-secondary"></i>+420 775 371 859</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </div>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2023 Copyright:
+        <a class="text-reset text-secondary" href="https://codeinstitute.net/"
+            aria-label="For Educational Purposes Only">
+            For Educational Purposes Only
+        </a>
+    </div>
+    <!-- Copyright -->
 </footer>
+<!-- Footer -->

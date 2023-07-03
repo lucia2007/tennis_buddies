@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="{% url 'home' %}"
-                alt="A click on the Buddy logo takes the client back to Home page"><img
+                aria-label="A click on the Buddy logo takes the client back to Home page"><img
                     src="{% static 'images/logo.png' %}" alt="Tennis Buddies Logo" class="logo"></a>
             <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -19,25 +19,25 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'home' %}active{% endif %}" href="{% url 'home' %}"
-                            aria-current="page" alt="Takes the client to Home Page">Home</a>
+                            aria-current="page" aria-label="Takes the client to Home Page">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'buddies' %}active{% endif %}" href="{% url 'buddies' %}"
-                            alt="Takes the client to Find the Perfect Buddy Page">Find The Perfect Buddy</a>
+                            aria-label="Takes the client to Find the Perfect Buddy Page">Find The Perfect Buddy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'calendar' %}active{% endif %}"
-                            alt="Takes the client to Booking Page" href="{% url 'calendar' %}">Booking</a>
+                            aria-label="Takes the client to Booking Page" href="{% url 'calendar' %}">Booking</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}"
-                            alt="Takes the client to Contact Us Page">Contact
+                            aria-label="Takes the client to Contact Us Page">Contact
                             Us</a>
                     </li>
                     {% if request.user.is_superuser %}
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'list-bookings' %}active{% endif %}"
-                            href="{% url 'list-bookings' 'all' %}" alt="Takes the admin user to Staff page">Staff
+                            href="{% url 'list-bookings' 'all' %}" aria-label="Takes the admin user to Staff page">Staff
                         </a>
                     </li>
                     {% endif %}
@@ -63,19 +63,19 @@
                             <ul class="dropdown-menu">
                                 <!-- correct the url name -->
                                 <li><a class="dropdown-item {% if url_name == 'contact' %}active{% endif %}"
-                                        alt="Takes user either to his profile details or lets them add the contact details."
+                                        aria-label="Takes user either to his profile details or lets them add the contact details."
                                         {% if user.user_profile %}
                                         href="{% url 'profile-detail' user.user_profile.id %}" {% else %}
                                         href="{% url 'add-profile'%}" {% endif %}>Contact Info</a>
                                 </li>
                                 <li><a class="dropdown-item {% if url_name == 'add-buddy' %}active{% endif %}"
-                                        alt="Take the user to their Buddy profile or let's them add a new one."
+                                        aria-label="Take the user to their Buddy profile or let's them add a new one."
                                         {% if user.user_profile %} {% if user.user_profile.buddy %}
                                         href="{% url 'buddy-detail' user.user_profile.buddy.id %}" {%else%}
                                         href="{% url 'add-buddy' %}" {% endif %} {% else %}
                                         href="{% url 'add-profile'%}?next={% url 'add-buddy'%}" {% endif %}>Profile</a>
                                 </li>
-                                <li><a class="dropdown-item" alt="Takes the user to their Bookings overview"
+                                <li><a class="dropdown-item" aria-label="Takes the user to their Bookings overview"
                                         {% if user.user_profile %} href="{% url 'list-bookings' 'own' %}" {% else %}
                                         href="{% url 'add-profile'%}?next={% url 'list-bookings' 'own' %}"
                                         {% endif %}>Your Bookings</a>
@@ -86,21 +86,21 @@
                     <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link me-2 {% if url_name == 'account_logout' %}active{% endif %}"
-                                type="submit" aria-current="page" href="/accounts/logout/"
-                                alt="Let's the user click Logout Button">Logout</a>
+                                aria-current="page" href="/accounts/logout/"
+                                aria-label="Let's the user click Logout Button">Logout</a>
                         </li>
                     </ul>
                     {% else %}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link me-2 {% if url_name == 'account_signup' %}active{% endif %}"
-                                type="submit" aria-current="page" href="/accounts/signup/"
-                                alt="Let's the user register their account">Register</a>
+                                aria-current="page" href="/accounts/signup/"
+                                aria-label="Let's the user register their account">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link login-button me-2 {% if url_name == 'account_login' %}active{% endif %}"
-                                type="submit" aria-current="page" href="/accounts/login/"
-                                alt="Let's the user click Login button">Login</a>
+                                aria-current="page" href="/accounts/login/"
+                                aria-label="Let's the user click Login button">Login</a>
                         </li>
                     </ul>
                     {% endif %}
