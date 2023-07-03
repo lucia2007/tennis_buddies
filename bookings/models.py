@@ -31,18 +31,18 @@ class Court(models.Model):
 
 
 TIMES = [
-    ('09:00 - 10:00', '09:00 - 10:00'),
-    ('10:00 - 11:00', '10:00 - 11:00'),
-    ('11:00 - 12:00', '11:00 - 12:00'),
-    ('12:00 - 13:00', '12:00 - 13:00'),
-    ('13:00 - 14:00', '13:00 - 14:00'),
-    ('14:00 - 15:00', '14:00 - 15:00'),
-    ('15:00 - 16:00', '15:00 - 16:00'),
-    ('16:00 - 17:00', '16:00 - 17:00'),
-    ('17:00 - 18:00', '17:00 - 18:00'),
-    ('18:00 - 19:00', '18:00 - 19:00'),
-    ('19:00 - 20:00', '19:00 - 20:00'),
-    ('21:00 - 22:00', '21:00 - 22:00')]
+    ('09:00-10:00', '09:00 - 10:00'),
+    ('10:00-11:00', '10:00 - 11:00'),
+    ('11:00-12:00', '11:00 - 12:00'),
+    ('12:00-13:00', '12:00 - 13:00'),
+    ('13:00-14:00', '13:00 - 14:00'),
+    ('14:00-15:00', '14:00 - 15:00'),
+    ('15:00-16:00', '15:00 - 16:00'),
+    ('16:00-17:00', '16:00 - 17:00'),
+    ('17:00-18:00', '17:00 - 18:00'),
+    ('18:00-19:00', '18:00 - 19:00'),
+    ('19:00-20:00', '19:00 - 20:00'),
+    ('21:00-22:00', '21:00 - 22:00')]
 
 
 # https://stackoverflow.com/questions/64362067/django-datetimerangefield-default-timezone-now-timezone-now10years
@@ -80,6 +80,18 @@ class Booking(models.Model):
                 fields=["date", "time", "court"], name="unique_booking"
             )
         ]
+
+    # def clean(self):
+    #     # Check if the owner already has a booking on the selected date
+    #     existing_booking = Booking.objects.filter(
+    #         owner=self.owner,
+    #         date=self.date
+    #     ).exclude(pk=self.pk).first()
+
+    #     if existing_booking:
+    #         raise ValidationError(
+    #             "You can only make one reservation per day."
+    #             " Please make a booking for a different date.")
 
     def __str__(self):
         return str(self.owner)
