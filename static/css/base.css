@@ -186,6 +186,10 @@ a.fontawesome-link {
     margin-top: 1.5rem
 }
 
+.buddy-card {
+    width: 18rem;
+}
+
 .buddy-details {
     display: flex;
     flex-direction: column;
@@ -277,6 +281,10 @@ a.text-reset {
     text-decoration: none;
 }
 
+.copyright {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
 
 /* Small screen devices (576px and above) */
 @media only screen and (min-width: 576px) {
@@ -290,7 +298,7 @@ a.text-reset {
     }
 
     .form {
-        width: 70%;/
+        width: 70%;
     }
 
     .contact-detail {

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import UserProfile
-from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.admin import SummernoteModelAdmin  # type:ignore
 
 
 @admin.register(UserProfile)

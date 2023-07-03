@@ -1,4 +1,4 @@
-import django_tables2 as tables
+import django_tables2 as tables  # type: ignore
 
 
 class BookingCalendarTable(tables.Table):

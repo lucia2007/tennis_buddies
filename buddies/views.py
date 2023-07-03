@@ -47,7 +47,7 @@ class Buddies(ListView):
             if not buddies:
                 messages.success(
                     self.request,
-                    f"There is no match for your search. Try a different keyword."
+                    f"There is no match for your search. Try a different word."
                     )
         else:
             buddies = self.model.objects.all()
@@ -107,7 +107,7 @@ class EditBuddy(
         pk = self.object.pk
 
         # Redirect to the buddy-detail page after a successful update
-        return reverse_lazy('buddy-detail', kwargs={'pk':pk})
+        return reverse_lazy('buddy-detail', kwargs={'pk': pk})
 
 
 class DeleteBuddy(

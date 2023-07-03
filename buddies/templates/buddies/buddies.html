@@ -12,7 +12,7 @@
     {% for buddy in buddies %}
     <a href="{% url 'buddy-detail' buddy.id %}" class="buddies"
         aria-label="Click to view {{buddy.user_profile.first_name}}">
-        <div class="card m-2" style="width: 18rem;">
+        <div class="card m-2 buddy-card">
             <!-- If there is no picture, add a placeholder one -->
             {% if "placeholder" in buddy.profile_picture.url %}
             <img src="{% static 'icons/no-photo-icon.png' %}" class="card-img-top buddy-image"

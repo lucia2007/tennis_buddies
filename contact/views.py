@@ -23,10 +23,15 @@ def contact(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, 'lferencikova@gmail.com', ['lferencikova@gmail.com'])
+                send_mail(
+                    subject,
+                    message,
+                    'lferencikova@gmail.com',
+                    ['lferencikova@gmail.com']
+                    )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            messages.success(request, 'Your inquiry has been sent successfully.')
+            messages.success(request, 'Your inquiry was sent successfully.')
             return redirect('home')
 
     form = ContactForm()

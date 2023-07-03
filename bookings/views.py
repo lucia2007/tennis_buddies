@@ -46,7 +46,11 @@ class TestIfHasProfileMixin(UserPassesTestMixin):
         if self.raise_exception:
             raise PermissionDenied(self.get_permission_denied_message())
         # https://stackoverflow.com/questions/64538729/how-to-url-encode-in-django-views
-        return redirect(reverse('add-profile') + '?' + urlencode({'next': self.request.get_full_path()}))
+        return redirect(
+            reverse('add-profile') + '?' + urlencode(
+                {'next': self.request.get_full_path()}
+                )
+            )
 
 
 def booking(request):
@@ -95,7 +99,8 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         date = self.request.GET.get('date')
         time = self.request.GET.get('time')
         court_name = self.request.GET.get('court')
-        court = Court.objects.get(name=court_name)  # Retrieve the Court object based on the court name
+        # Retrieve the Court object based on the court name
+        court = Court.objects.get(name=court_name)
         initial['date'] = date
         initial['time'] = time
         initial['court'] = court
@@ -118,7 +123,9 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
         start_time = datetime.strptime(start_time_str, "%H:%M").time()
         if booking_date < date.today() or start_time < datetime.now().time():
-            messages.warning(self.request, f"You have made a booking in the past. Is that what you wanted?")
+            messages.warning(
+                self.request, f"You have made a booking in the past. Is that what you wanted?"
+                )
 
         # If form is valid, it leads to a reload.
         # It returns an object that represents the parent class.
@@ -137,7 +144,8 @@ class EditBooking(
     success_message = "Your booking was successfully updated."
 
     def get_success_url(self):
-        # Determine the success URL based on if the user is a superuser and not the owner of the booking
+        # Determine the success URL based on if the user is a superuser
+        # and not the owner of the booking
         all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'
         return reverse_lazy('list-bookings', kwargs={'all_or_own': all_or_own})
 
@@ -158,7 +166,8 @@ class DeleteBooking(
     success_message = "Your booking was successfully deleted."
 
     def get_success_url(self):
-        # Determine the success URL based on if the user is a superuser and not the owner of the booking
+        # Determine the success URL based on if the user is a superuser
+        # and not the owner of the booking
         all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'
         return reverse_lazy('list-bookings', kwargs={'all_or_own': all_or_own})
 

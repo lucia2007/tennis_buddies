@@ -8,8 +8,6 @@ from django.db.models.constraints import UniqueConstraint
 from django.core.exceptions import ValidationError
 
 from psycopg2.extras import DateTimeTZRange  # type: ignore
-# from django.utils import timezone
-# from datetime import timedelta
 
 from django.contrib.postgres.constraints import ExclusionConstraint
 from django.contrib.postgres.fields import DateTimeRangeField, RangeOperators
@@ -45,13 +43,6 @@ TIMES = [
     ('21:00-22:00', '21:00 - 22:00')]
 
 
-# https://stackoverflow.com/questions/64362067/django-datetimerangefield-default-timezone-now-timezone-now10years
-# def next_seven_days():
-#     now = timezone.now()
-
-#     return DateTimeTZRange(now, now + timedelta(days=7))
-
-
 class Booking(models.Model):
     """
     This class enables a signed in user to book a court up to 7 days
@@ -80,18 +71,6 @@ class Booking(models.Model):
                 fields=["date", "time", "court"], name="unique_booking"
             )
         ]
-
-    # def clean(self):
-    #     # Check if the owner already has a booking on the selected date
-    #     existing_booking = Booking.objects.filter(
-    #         owner=self.owner,
-    #         date=self.date
-    #     ).exclude(pk=self.pk).first()
-
-    #     if existing_booking:
-    #         raise ValidationError(
-    #             "You can only make one reservation per day."
-    #             " Please make a booking for a different date.")
 
     def __str__(self):
         return str(self.owner)

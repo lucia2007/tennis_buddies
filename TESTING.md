@@ -8,7 +8,7 @@ The [Tennis Buddies](https://tennis-buddies.herokuapp.com/) webpage was thouroug
 ### HTML Testing
 During HTML validation I encountered a number of errors in my file. In order to avoid verbosity, I'm attaching the original validation message and a commit number where the errors were corrected. 
 
-| Page | Current Errors and Warning | Original Errors and Warnings | Bug-Fix (Commit #)
+| Page | Current Errors and Warning (No Errors) | Original Errors and Warnings | Bug-Fix (Commit #)
 | ---- | ---------- | --------- |  ---------- |
 | Home | [Home Page validation](./testing-images/index_html_no_errors.png) | [index.html Errors](./testing-images/homepage_html_validation_errors.png)  | [2c843fa](https://github.com/lucia2007/tennis_buddies/commit/2c843fa7a82dca807c5b41020fd5433524763c75), [522bb31](https://github.com/lucia2007/tennis_buddies/commit/522bb3181c1df4854706dbbc2a55d40e24438dd2)  |
 | Find the Perfect Buddy | [Find Perfect buddy validation](./testing-images/perfect_buddy_no_errors.png) | [Find Buddy Errors](testing-images/perfect_buddy_no_errors.png)  | [0dd4f0d](https://github.com/lucia2007/tennis_buddies/commit/0dd4f0d99bacc93a8cd09d5bcc8bb4af4a5e7bb7) |

@@ -12,8 +12,8 @@ class UserProfileForm(forms.ModelForm):
             'phone',
         ]
 
-    labels = {
-        'first_name': 'First Name',
-        'last_name': 'Last Name',
-        'phone': 'Phone Number',
-    }
+        labels = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'phone': 'Phone Number',
+        }
