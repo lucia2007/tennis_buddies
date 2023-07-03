@@ -226,7 +226,6 @@ I used [Figma](www.figma.com) which is an excellent tool for making wireframes.
 
 #### Tablet Wireframes
 
-
 <details><summary><b>Home Page</b></summary>
    
 ![Home Page](/readme-images/homepage_tablet.png)
@@ -239,12 +238,10 @@ I used [Figma](www.figma.com) which is an excellent tool for making wireframes.
 
 #### Mobile Wireframes
 
-
 <details><summary><b>Home and Find Buddy Page</b></summary>
    
 ![Home and Find Buddy Page](/readme-images/homebuddy_mobile.png)
 </details><br />
-
 
 ### Project Management
 I have been using GitHub projects for organizing my project, tracking user stories and epics. It is a very helpful tool which enabled me to keep all my PBIs in one place and to tackle them gradually.
@@ -585,9 +582,18 @@ The user can see a pop up message which informs them about the successful reserv
 ![Booking Success](./readme-images/bookingsuccessful.png)
 
 #### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
-When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. 
+When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
 
-Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
+![Your Bookings](./readme-images/yourbookings.png)
+</br>
+![Edit Booking](./readme-images/edit_booking.png)
+</br>
+When the user has updated their booking, they can see a success message at the top of the page.
+![Update Booking Success](./readme-images/edit_booking_success_message.png)
+</br>
+![Delete Booking](./readme-images/booking_delete_confirmation.png)
+</br>
+![Delete Booking Success](./readme-images/booking_delete_success_message.png)
 
 #### [Staff Dashboard](https://tennis-buddies.herokuapp.com/bookings/list/all/)
 However, if the user is admin/staff/superuser, they will also see a "Staff" option in their NavBar through which they can access all the bookings of all the members. The staff user can edit or delete a booking of any of the users. If they access their own booking, they are taken to their booking list, but it they edit/delete somebody else's booking the staff user is taken to staff dashboard.
@@ -666,8 +672,9 @@ The user is informed about each action with a message that appears at the top of
 [Add Buddy Success Message](./readme-images/add_buddy_success_message.png)
 
 
+3. Under Your Bookings the user can see/edit/delete their own bookings if they have made some, or they see a message that they have no bookings. More details above.
 
-#### Sign Up Page
+
 
 #### Sign In Page
 - forgot password
