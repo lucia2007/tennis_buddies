@@ -88,9 +88,11 @@
                         <h5>Welcome to Tennis Buddies!</h5>
                         <p class="carousel-text">Are you mad about tennis? Are you looking for people to play with? </p>
                         <p class="carousel-text">
-                            <a href="/accounts/login/">Sign in</a> if you already have an account.
+                            <a href="/accounts/login/" area-label="Takes user to accounts login">Sign in</a> if you
+                            already have an account.
                         </p>
-                        <a href="/accounts/signup/" class="btn btn-primary text-reset">Sign Up</a>
+                        <a href="/accounts/signup/" class="btn btn-primary text-reset"
+                            area-label="Takes user to accouts sign up">Sign Up</a>
                     </div>
                 </div>
             </div>
@@ -120,7 +122,8 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Book a Court</h5>
                             <p class="carousel-text">Reserve one of our outdoor courts to play when it suits you.</p>
-                            <a class="btn btn-primary text-reset" href="{% url 'calendar' %}">Book
+                            <a class="btn btn-primary text-reset" href="{% url 'calendar' %}"
+                                area-label="Takes user to Booking calendar">Book
                                 a Court</a>
                         </div>
                     </div>

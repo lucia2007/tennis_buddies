@@ -113,7 +113,6 @@ img.logo {
 .carousel-image {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    /* position: relative; */
 }
 
 /* https://www.w3schools.com/howto/howto_css_overlay.asp */
@@ -134,7 +133,6 @@ img.logo {
     transform: translate(-50%, -50%);
     z-index: 2;
     color: whitesmoke;
-    /* margin-bottom: 10px; */
 }
 
 .carousel-text {
@@ -313,16 +311,6 @@ a.text-reset {
     .table-sm>:not(caption)>*>* {
         padding: 0.75rem 0.75rem;
     }
-
-
-    /* .buddy-details {
-        flex-direction: row;
-    }
-
-    .profile-picture {
-        width: 40%;
-        margin: 0 auto;
-    }*/
 
     .buddy-details {
         width: 30%;

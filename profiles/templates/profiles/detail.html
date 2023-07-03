@@ -22,8 +22,10 @@
             </ul>
             <!-- should here be a condition to check if the logged in user is the same one as the booking owner? -->
             <div class="text-center">
-                <a href="{% url 'edit-profile' user.user_profile.id %}" class="btn btn-primary w-30 mt-3">Edit</a>
-                <a href="{% url 'delete-profile' user.user_profile.id %}" class="btn btn-primary w-30 mt-3">Delete</a>
+                <a href="{% url 'edit-profile' user.user_profile.id %}" class="btn btn-primary w-30 mt-3"
+                    aria-label="Edit Contact Info">Edit</a>
+                <a href="{% url 'delete-profile' user.user_profile.id %}" class="btn btn-primary w-30 mt-3"
+                    aria-label="Delete Contact Info">Delete</a>
             </div>
         </div>
     </div>
