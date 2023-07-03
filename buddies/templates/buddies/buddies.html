@@ -15,10 +15,10 @@
         <div class="card m-2" style="width: 18rem;">
             <!-- If there is no picture, add a placeholder one -->
             {% if "placeholder" in buddy.profile_picture.url %}
-            <img src="{% static 'icons/no-photo-icon.png' %}" class="card-img-top buddy-image" width="100%"
+            <img src="{% static 'icons/no-photo-icon.png' %}" class="card-img-top buddy-image"
                 alt="Image not found, placeholder picture">
             {% else %}
-            <img src="{{ buddy.profile_picture.url }}" class="card-img-top buddy-image" width="100%"
+            <img src="{{ buddy.profile_picture.url }}" class="card-img-top buddy-image"
                 alt="{{buddy.picture_description}}">
             {% endif %}
             <div class="card-body">
