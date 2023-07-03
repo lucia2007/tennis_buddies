@@ -4,22 +4,14 @@ from django.views.generic import (
     DetailView,
     DeleteView,
     UpdateView)
-
 # to make sure the user is logged in
-from django.contrib.auth.mixins import LoginRequiredMixin
-
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-
 from django.urls import reverse_lazy
-
 from django.contrib import messages
-
 # to display messages
 from django.contrib.messages.views import SuccessMessageMixin
-
 from .models import Buddy
 from .forms import BuddyForm
-
 # for search functionality
 from django.db.models import Q
 
@@ -27,14 +19,18 @@ from django.db.models import Q
 # CRUD functionality was done following Dee Mc's Recipe tutorial:
 # https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy
 class Buddies(ListView):
-    """View all buddies"""
+    """ View all buddies """
 
     template_name = "buddies/buddies.html"
     model = Buddy
     context_object_name = "buddies"
 
-    # https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s
     def get_queryset(self, **kwargs):
+        """
+        Enables user to search for different levels, game type,
+        availability, practice type and gender.
+        https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s
+        """
         query = self.request.GET.get('q')
         if query:
             buddies = self.model.objects.filter(
@@ -55,7 +51,7 @@ class Buddies(ListView):
 
 
 class BuddyDetail(LoginRequiredMixin, DetailView):
-    """View a single Buddy profile"""
+    """ View a single Buddy profile. """
 
     template_name = "buddies/buddy_detail.html"
     model = Buddy
@@ -78,6 +74,9 @@ class AddBuddy(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_initial(self):
+        """
+        Prefills user's email in the form.
+        """
         initial = super().get_initial()
         initial['email'] = self.request.user.email
         return initial
@@ -97,16 +96,17 @@ class EditBuddy(
 
     def test_func(self):
         """
-        Checks if the signed in user is the same user who owns the object
+        Checks if the signed in user is the same user who owns the object.
         """
         return self.request.user == self.get_object().user_profile.user
 
-    # https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model
     def get_success_url(self):
-        # Get the primary key of the updated buddy
+        """ Gets the primary key of the updated buddy.
+        https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model
+        Redirects to the buddy-detail page after a successful update.
+        """
         pk = self.object.pk
 
-        # Redirect to the buddy-detail page after a successful update
         return reverse_lazy('buddy-detail', kwargs={'pk': pk})
 
 
@@ -122,11 +122,14 @@ class DeleteBuddy(
 
     def test_func(self):
         """
-        Checks if the signed in user is the same user who owns the object
+        Checks if the signed in user is the same user who owns the object.
         """
         return self.request.user == self.get_object().user_profile.user
 
-    # https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
+        """
+        Enables to display success message after successful deletion.
+        https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+        """
         messages.success(self.request, self.success_message)
         return super(DeleteBuddy, self).delete(request, *args, **kwargs)

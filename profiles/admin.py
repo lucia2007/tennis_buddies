@@ -5,10 +5,9 @@ from django_summernote.admin import SummernoteModelAdmin  # type:ignore
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    # @admin.display(ordering='user_profile__first_name', description='name')
-    # def get_user_name(self, obj):
-    #     return obj.user_profile.first_name + " " + obj.user_profile.last_name
-
+    """
+    Display User Profile details in admin panel.
+    """
     list_display = (
         'pk',
         'user',

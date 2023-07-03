@@ -5,7 +5,9 @@ from .models import Booking, Event, Court
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-
+    """
+    Display Booking details in Admin panel
+    """
     list_display = (
                     'pk',
                     'owner',

@@ -1,8 +1,6 @@
 from django.db import models
-
 # Import User model from the Django auth app
 from django.contrib.auth.models import User
-
 # Import Cloudinary for storing images
 from cloudinary.models import CloudinaryField  # type: ignore
 from datetime import date
@@ -13,9 +11,8 @@ from django.core.exceptions import ValidationError
 
 class Buddy(models.Model):
     """
-    A model to create and manage Tennis Buddy profiles
+    A model to create and manage Tennis Buddy profiles.
     """
-
     STATUS = ((0, "inactive"), (1, "active"))
     user_profile = models.OneToOneField(
         UserProfile, related_name="buddy", on_delete=models.CASCADE

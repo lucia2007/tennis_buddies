@@ -4,12 +4,14 @@ from django.core.mail import send_mail, BadHeaderError
 # to display messages
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-
-
 from django.http import HttpResponse
 
 
 def contact(request):
+    """
+    Send an inquiry to CLI.
+    https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend
+    """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

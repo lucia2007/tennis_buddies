@@ -22,6 +22,7 @@ COURT_NAME = [
 
 
 class Court(models.Model):
+    """ Create a class with given courts """
     name = models.CharField(max_length=5, choices=COURT_NAME)
 
     def __str__(self):
@@ -45,8 +46,8 @@ TIMES = [
 
 class Booking(models.Model):
     """
-    This class enables a signed in user to book a court up to 7 days
-    in advance, max 1 court per day
+    This model collects information about date, time, court, opponents
+    and if an email was sent (future feature)
     """
 
     owner = models.ForeignKey(
@@ -54,17 +55,15 @@ class Booking(models.Model):
                             on_delete=models.CASCADE,
                             )
     date = models.DateField(default=timezone.now)
-    # date = models.DateTimeRangeField(default=next_seven_days())
     time = models.CharField(
             max_length=15, choices=TIMES, default="09:00 - 10:00")
-    # maximum one booking per user per day
     court = models.ForeignKey(Court, on_delete=models.CASCADE, default='one')
     opponents = models.ManyToManyField(
         UserProfile, related_name="booking_opponents")
     email_sent = models.BooleanField(default=False)
 
-    # to enable ordering
     class Meta:
+        """ To enable ordering """
         ordering = ['-date']
         constraints = [
             models.UniqueConstraint(
