@@ -24,7 +24,7 @@ class ProfileDetail(DetailView):
     context_object_name = "profile"
 
 
-class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EditUserProfile(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """ Edit Contact Info """
     template_name = 'profiles/edit.html'
     model = UserProfile
