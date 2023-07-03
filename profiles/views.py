@@ -64,16 +64,22 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
     template_name = 'profiles/add.html'
     model = UserProfile
     form_class = UserProfileForm
-    success_url = '/'
+    success_url = reverse_lazy('profile-detail', kwargs={'pk': None})
 
     # Lets me specify 'next' page after success
     # https://stackoverflow.com/questions/64040028/how-to-redirect-to-the-next-url-instead-of-the-success-url-in-a-generic-class-b
     def get_success_url(self):
         """
-        Get success_url after creating the user profile.
+        Get success_url after creating the user profile. If there is a 'next'
+        parameter, take the user to "url", else default to success_url.
         """
-        url = self.request.GET.get('next', self.success_url)
-        return url
+        url = self.request.GET.get('next')
+        if url:
+            return url
+        else:
+            return reverse_lazy(
+                'profile-detail',
+                kwargs={'pk': self.object.pk})
 
     def form_valid(self, form):
         """
