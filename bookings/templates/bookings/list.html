@@ -18,6 +18,8 @@
                         <th>Time</th>
                         <th>Court</th>
                         <th>Opponents</th>
+                        <th>Update</th>
+                        <th>Delete</th>
                     </tr>
 
                     {% for booking in bookings %}
@@ -39,9 +41,11 @@
                         <!-- Either the booking owner or a superuser can delete a booking -->
                         <!-- https://stackoverflow.com/questions/65421561/how-can-i-check-if-an-user-is-superuser-in-django -->
                         {% if booking.owner == request.user.user_profile or request.user.is_superuser %}
-                        <td><a href="{% url 'edit-booking' booking.id %}" class="btn btn-primary w-30 me-2"></a>Update
+                        <td><a href="{% url 'edit-booking' booking.id %}" class="btn btn-primary w-30 me-2"
+                                aria-label="Takes user to Edit Booking"></a>Update
                         </td>
-                        <td><a href="{% url 'delete-booking' booking.id %}" class="btn btn-danger w-30 me-2"></a>Delete
+                        <td><a href="{% url 'delete-booking' booking.id %}" class="btn btn-danger w-30 me-2"
+                                aria-label="Takes user to Delete Booking"></a>Delete
                         </td>
                         {% endif %}
                     </tr>
