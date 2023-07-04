@@ -1,4 +1,5 @@
 # Tennis Buddies
+![Tennis Buddies](/readme-images/amiresponsive.png)
 
 Tennis Buddies is an application which can be used in real life by smaller tennis clubs across the country. Its main purpose is for new but also current members of the club to find a suitable partner for tennis practice. It also enables the players to book a court to play on.
 
