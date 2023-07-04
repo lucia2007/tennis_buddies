@@ -29,9 +29,10 @@ During HTML validation I encountered a number of errors in my file. In order to 
 | Sign In | [Sign In Validation](./testing-images/sign_in_html_no_errors.png) |
 | Sign Up | [Sign Up Validation](./testing-images/sign_up_html_no_errors.png) |
 | Sign Out | [Sign Out Validation](./testing-images/sign_out_html_no_errors.png) |
-| 404 Error Page |[404 Erro Page Validation](./testing-images/404_html_no_errors.png)
-| 403 Error Page |
-| 500 Error Page |
+| 404 Error Page |[404 Error Page Validation](./testing-images/404_html_no_errors.png)
+| 403 Error Page | [403 Error Page Validation]() | [403 Page Errors](./testing-images/403_page_errors.png) | [f0a1efc](https://github.com/lucia2007/tennis_buddies/commit/f0a1efca45e32d496e99c98b589809b23a7ae347)
+
+I could not check the source for 500 Error page, because when I tried to look at the source code in devtools, I had to Confirm Form Resubmission and thus my html code no longer applied.
 
 
 ## Browser Compatibility
