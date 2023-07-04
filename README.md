@@ -868,10 +868,11 @@ For testing the application, I used manual testing and external validators. Both
 
 ### Manual testing
   - I used manual testing throughout the whole development phase of the project. Mainly:
-    - I frequently checked if all the inputs were valid, namely if my validation functions were catching all errors and exceptions. (Details are in the [Testing file](TESTING.md).)
-    - I played the game repeatedly to see if the correct winning message was displaying when the user finished the game.
-    - I made sure that when the user chose to play again, they would be taken to the choice of a difficulty level and the moves counter was cleared (setting of the initial state).
-    - I checked if a good-bye message displayed after the user chose not to play again.
+    - I deployed early to avoid any last minute issues and checked my local and life site periodically. With the live site, I could check responsivness from early on on different devices.
+    - I attended to any errors which I came across during development process.
+    - I used validators to check my HTML, css and backend code.
+    - For each of the user stories I wrote down clear acceptance criteria and tasks which had to be done to meet those criteria. Only after I had met all the conditions, did I move the user story to done.
+
 
 ### External Testing
   All external testing is a part of a separate testing [file](/TESTING.md).
