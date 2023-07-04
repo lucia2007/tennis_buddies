@@ -40,16 +40,13 @@ You can access the Tennis Buddies app here:
       - [Sprint #6 - 12/06 - 16/06](#sprint-6---1206---1606)
       - [Sprint #7 - 19/06 - 23/06](#sprint-7---1906---2306)
       - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
+      - [Testing #9 - 03/07 - 07/07](#testing-9---0307---0707)
       - [GitHub Projects Board](#github-projects-board)
       - [Moscow principles](#moscow-principles)
       - [Milestones](#milestones)
       - [Epics](#epics)
-      - [User Stories](#user-stories-1)
+      - [User Stories](#user-stories)
     - [Database Schema (ERD)](#database-schema-erd)
-    - [Site Structure](#site-structure)
-      - [Main website](#main-website)
-      - [Staff Dashboard](#staff-dashboard)
-    - [App Logic](#app-logic)
   - [Design Choices](#design-choices)
     - [Typography](#typography)
     - [Color Scheme](#color-scheme)
@@ -80,7 +77,6 @@ You can access the Tennis Buddies app here:
     - [Future Features Sign in functionality](#future-features-sign-in-functionality)
     - [Contact Form (contact.html)](#contact-form-contacthtml)
     - [404 and 500 Error Pages](#404-and-500-error-pages)
-    - [Staff Dashboard](#staff-dashboard-1)
     - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
 - [Python Packages](#python-packages)
@@ -633,6 +629,7 @@ There are several ways how the booking system could/should be improved:
 - A member of staff should be able to create any number of bookings on a given day, in case of a special ocasion or event taking place in the club. A staff member would have a priority for booking and would be able to make bookings more in advance than a regular user. 
 - In the future I should diferentiate between a superuser and staff members and adjust the conditional statements.
 - A modal window should pop up when the user is chosing opponents with an information to hold shift or control buttons for choosing multiple players.
+- One of the features I did not manage to do, was to create a separate booking system for staff members, where they would be able to book multiple courts on the same day for multiple hours, much more in advance in the future. (This was taking into account restrictions which are not yet in place for the user booking either: one booking per day per user, bookings only one week in advance.) And of course a staff member should be able to make a booking in anybody's name.
 
 [Back to top](#contents)
 

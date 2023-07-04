@@ -1,5 +1,5 @@
 from django.contrib import admin  # type: ignore
-from .models import Booking, Event, Court
+from .models import Booking, Court
 # from buddies.models import UserProfile  # type: ignore
 
 
@@ -27,13 +27,6 @@ class BookingAdmin(admin.ModelAdmin):
 
     search_fields = ['user_profile', 'court', 'opponents']
     list_filter = ['court', ]
-
-
-@admin.register(Event)
-class EventAdmin(admin.ModelAdmin):
-    list_display = ['event_type', 'date', 'time', 'court']
-    list_filter = ['event_type', ]
-    search_fields = ['start_time', 'event_type']
 
 
 @admin.register(Court)

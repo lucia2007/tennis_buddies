@@ -73,21 +73,3 @@ class Booking(models.Model):
 
     def __str__(self):
         return str(self.owner)
-
-
-class Event(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField()
-    start_time = models.DateTimeField()
-    time = models.CharField(
-            max_length=15, choices=TIMES, default="09:00 - 10:00")
-    # time should be a many to many field for staff
-    court = models.ForeignKey(Court, on_delete=models.CASCADE)
-    # court should be a many to many field for staff
-    event_type = models.CharField(max_length=25, choices=[
-                              ('Coaching', 'Coaching'),
-                              ('Tournament', 'Tournament'),
-                              ('Social', 'Social')])
-
-    def __str__(self):
-        return self.user.username

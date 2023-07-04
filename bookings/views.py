@@ -16,7 +16,7 @@ from django.views.generic import (
 from django.contrib import messages
 # to display messages
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Booking, Court, Event
+from .models import Booking, Court
 from .forms import BookingForm
 from profiles.models import UserProfile
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
