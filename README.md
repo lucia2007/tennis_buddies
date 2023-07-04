@@ -760,6 +760,7 @@ The user is informed about each action with a message that appears at the top of
 [Back to top](#contents)
 
 ### Buddy Profile
+A user can choose to fill in their buddy/profile details if they want to be contacted by other players to arrange a game. They are either taken to [add profile](https://tennis-buddies.herokuapp.com/profiles/add/?next=/buddies/add/) or to edit/delete profile if they had previously filled in the information. Again, the user is asked if they are sure about deletion or they can cancel edit/delete and go back to the previous page. All user actions are accompanied by a success message which appears at the top of the page. 
 
 [Back to top](#contents)
 #### Add Buddy Profile   
