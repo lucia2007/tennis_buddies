@@ -47,8 +47,10 @@
             </ul>
             {% if request.user == buddy.user_profile.user %}
             <div class="text-center">
-                <a href="{% url 'edit-buddy' buddy.id %}" class="btn btn-primary w-30 mt-2 mb-2">Edit</a>
-                <a href="{% url 'delete-buddy' buddy.id %}" class="btn btn-primary w-30 mt-2 mb-2   ">Delete</a>
+                <a href="{% url 'edit-buddy' buddy.id %}" class="btn btn-primary w-30 mt-2 mb-2"
+                    aria-label="Edit Buddy Profile">Edit</a>
+                <a href="{% url 'delete-buddy' buddy.id %}" class="btn btn-primary w-30 mt-2 mb-2"
+                    aria-label="Delete Buddy Profile">Delete</a>
             </div>
             {% endif %}
         </div>
