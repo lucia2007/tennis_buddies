@@ -138,6 +138,11 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
             return redirect(reverse('calendar'))
 
         messages.success(self.request, f"Booking was created successfully.")
+
+        if booking_date < date.today() or (booking_date == date.today() and start_time < datetime.now().time()):
+            messages.warning(
+                self.request, f"You have made a booking in the past. "
+                "Is that what you wanted?"
                 )
         return super(AddBooking, self).form_valid(form)
 
