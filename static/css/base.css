@@ -234,6 +234,10 @@ a.fontawesome-link {
     font-size: small;
 }
 
+.container-table {
+    font-family: none;
+}
+
 /* Booking Calendar */
 .date-picker {
     margin: 15px;
