@@ -120,7 +120,6 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         """
         form.instance.owner = self.request.user.user_profile
 
-        messages.success(self.request, f"Booking was created successfully.")
         booking_date = form.cleaned_data.get('date')
         booking_time = form.cleaned_data.get('time')
         # https://bobbyhadz.com/blog/python-split-string-and-get-last-element#split-a-string-and-get-the-first-element-in-python

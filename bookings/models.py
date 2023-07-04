@@ -63,7 +63,9 @@ class Booking(models.Model):
     email_sent = models.BooleanField(default=False)
 
     class Meta:
-        """ To enable ordering """
+        """
+        To enable ordering and enforce unique date/time/court combination
+        """
         ordering = ['-date']
         constraints = [
             models.UniqueConstraint(
