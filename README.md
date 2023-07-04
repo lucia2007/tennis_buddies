@@ -289,6 +289,7 @@ Breaking up the project in Epics, User stories and essentially into tasks has be
 Each of the user stories would get labels such as: must have, should have, could have, won't have; story points; epic number; user story/dev task/bug; high/medium/low priority. Each user story would be assigned to its respective epic and milestone (sprint).
 
 [Back to top](#contents)
+
 My sprints were planned out as follows:
 
 ### Sprint #1 - 08/05 -12/05
@@ -737,10 +738,11 @@ The user is informed about each action with a message that appears at the top of
 
 [Back to top](#contents)
 #### Add Contact Info   
-</br>
 ![Add Contact Info](./readme-images/add_contact_details.png)
-</br>
 [Add Contact Success Message](./readme-images/add_contact_success.png)
+
+The user has to enter the phone number in a desired format: +353xxxxxxxxx. If the number is not valid, a warning is displayed and a prompt is shown to help the user enter the number correctly.
+![Phone Validation Warning](./readme-images/phone_number_validation.png)
 
 [Back to top](#contents)
 
