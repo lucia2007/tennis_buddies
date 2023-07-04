@@ -56,8 +56,12 @@ I could not check the source for 500 Error page, because when I tried to look at
 | The favicon was not loading properly                                             |  base.html   |  I had to move the favicon.ico file to the static folder and update the path in base.html  |[65c2731](https://github.com/lucia2007/tennis_buddies/commit/65c27313286e41ee3a22b13eabb22f0d8cdf7cc8)
 | When I accessed any of the Home, Find the buddy, Booking or Contact pages from the NavBar, the sign in and sign up buttons on the carousel would not take me to the desired pages.      |  all pages   | I had to change the href reference for them to work on any of the given pages.   |[ae15a3d](https://github.com/lucia2007/tennis_buddies/commit/ae15a3daab39b7201c2f3f81aa94bf8072c2546f)
 | When I edited or deleted bookings as an admin, it would take me 'bookings/list/own' instead of 'bookings/list/all'  |  edit/delete booking pages   | I had to create conditions for get_success_url() and introduce a condition around "Cancel" button on edit/delete booking pages. |[1bf5cf5](https://github.com/lucia2007/tennis_buddies/commit/1bf5cf5f23787d7ee08663e49e1257bb9f792dc1)
+Lines > 80, other minor errors     |  many different files, mostly python   | I shortened most of the lines in python files, except for those where I felt the readability of the code would suffer if the code were split to numerous lines |[74fed1e](https://github.com/lucia2007/tennis_buddies/commit/74fed1e47c47c90f3a9fba0e81a5891acb64d383)
+| When I made a booking at a future date, but the time has passed, I would get a warning about booking in the past. |  views.py bookings   | I had to change the condition check for time in the past |[9aa7a16](https://github.com/lucia2007/tennis_buddies/commit/9aa7a160ba0560cb9ccf5e625de5b3cc1f76c078)
 
 ## Unfixed Bugs
+
+Bug: The Staff link is highlighted also when the user is on bookings/list/own, even though it should be highlighted only when the staff user is on bookings/list/all.
 
 ## Additional Testing
 ### Lighthouse
