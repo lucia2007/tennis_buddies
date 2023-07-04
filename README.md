@@ -27,58 +27,71 @@ You can access the Tennis Buddies app here:
     - [First Time Visitor](#first-time-visitor)
     - [Returning Visitor](#returning-visitor)
     - [Frequent Visitor](#frequent-visitor)
-  - [Creation Process](#creation-process)
-    - [Design Prototype (Wireframes)](#design-prototype-wireframes)
-      - [Desktop Wireframes](#desktop-wireframes)
-      - [Tablet Wireframes](#tablet-wireframes)
-      - [Mobile Wireframes](#mobile-wireframes)
-    - [Project Management](#project-management)
-      - [Sprint #1 - 08/05 -12/05](#sprint-1---0805--1205)
-      - [Sprint #2 - 15/05 - 19/05](#sprint-2---1505---1905)
-      - [Sprint #3 - 22/05 -26/05](#sprint-3---2205--2605)
-      - [Sprint #4 + #5 - 29/05 - 09/06](#sprint-4--5---2905---0906)
-      - [Sprint #6 - 12/06 - 16/06](#sprint-6---1206---1606)
-      - [Sprint #7 - 19/06 - 23/06](#sprint-7---1906---2306)
-      - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
-      - [Testing #9 - 03/07 - 07/07](#testing-9---0307---0707)
-      - [GitHub Projects Board](#github-projects-board)
-      - [Moscow principles](#moscow-principles)
-      - [Milestones](#milestones)
-      - [Epics](#epics)
-      - [User Stories](#user-stories)
-    - [Database Schema (ERD)](#database-schema-erd)
-  - [Design Choices](#design-choices)
-    - [Typography](#typography)
-    - [Color Scheme](#color-scheme)
-  - [Features](#features)
-    - [Site Responsive Navigation Bar](#site-responsive-navigation-bar)
-    - [Carousel](#carousel)
-    - [Footer](#footer)
-    - [Home Page](#home-page)
-    - [Find the Perfect Buddy Page](#find-the-perfect-buddy-page)
-      - [Buddy Search](#buddy-search)
-      - [Buddy Details](#buddy-details)
-      - [Future Features for Buddy Matching](#future-features-for-buddy-matching)
-    - [Booking of the courts](#booking-of-the-courts)
-      - [Booking requirements](#booking-requirements)
-      - [Making a reservation](#making-a-reservation)
-      - [Edit/Delete Functionality](#editdelete-functionality)
-      - [Staff Dashboard](#staff-dashboard)
-      - [Bookings in the past](#bookings-in-the-past)
-      - [Future features for Booking](#future-features-for-booking)
-    - [Contact Us page](#contact-us-page)
-      - [Inquiry Confirmation Message](#inquiry-confirmation-message)
-      - [Future Features for Contact Us](#future-features-for-contact-us)
+- [Creation Process](#creation-process)
+  - [Design Prototype (Wireframes)](#design-prototype-wireframes)
+    - [Desktop Wireframes](#desktop-wireframes)
+    - [Tablet Wireframes](#tablet-wireframes)
+    - [Mobile Wireframes](#mobile-wireframes)
+  - [Project Management](#project-management)
+    - [Sprint #1 - 08/05 -12/05](#sprint-1---0805--1205)
+    - [Sprint #2 - 15/05 - 19/05](#sprint-2---1505---1905)
+    - [Sprint #3 - 22/05 -26/05](#sprint-3---2205--2605)
+    - [Sprint #4 + #5 - 29/05 - 09/06](#sprint-4--5---2905---0906)
+    - [Sprint #6 - 12/06 - 16/06](#sprint-6---1206---1606)
+    - [Sprint #7 - 19/06 - 23/06](#sprint-7---1906---2306)
+    - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
+    - [Testing #9 - 03/07 - 07/07](#testing-9---0307---0707)
+    - [GitHub Projects Board](#github-projects-board)
+    - [Moscow principles](#moscow-principles)
+    - [Milestones](#milestones)
+    - [Epics](#epics)
+    - [User Stories](#user-stories)
+  - [Database Schema (ERD)](#database-schema-erd)
+  - [Site Structure](#site-structure)
+- [Design Choices](#design-choices)
+  - [Typography](#typography)
+  - [Color Scheme](#color-scheme)
+- [Features](#features)
+  - [Site Responsive Navigation Bar](#site-responsive-navigation-bar)
+  - [Carousel](#carousel)
+  - [Footer](#footer)
+  - [Home Page](#home-page)
+  - [Find the Perfect Buddy Page](#find-the-perfect-buddy-page)
+    - [Buddy Search](#buddy-search)
+    - [Buddy Details](#buddy-details)
+    - [Future Features for Buddy Matching](#future-features-for-buddy-matching)
+  - [Booking of the courts](#booking-of-the-courts)
+    - [Booking requirements](#booking-requirements)
+    - [Making a reservation](#making-a-reservation)
+    - [Edit/Delete Functionality](#editdelete-functionality)
+    - [Staff Dashboard](#staff-dashboard)
+    - [Bookings in the past](#bookings-in-the-past)
+    - [Future features for Booking](#future-features-for-booking)
+  - [Contact Us page](#contact-us-page)
+    - [Inquiry Confirmation Message](#inquiry-confirmation-message)
+    - [Future Features for Contact Us](#future-features-for-contact-us)
       - [CLI Message](#cli-message)
-    - [Profile Icon](#profile-icon)
-    - [Sign Up Page](#sign-up-page)
-    - [Sign In Page](#sign-in-page)
-    - [Logout Page](#logout-page)
+  - [Profile Icon](#profile-icon)
+    - [Contact Info](#contact-info)
+      - [Add Contact Info](#add-contact-info)
+      - [View Added Contact Info](#view-added-contact-info)
+      - [Edit Contact Info](#edit-contact-info)
+      - [Delete Contact Info](#delete-contact-info)
+    - [Buddy Profile](#buddy-profile)
+      - [Add Buddy Profile](#add-buddy-profile)
+      - [View Added Buddy Details](#view-added-buddy-details)
+      - [Edit Buddy Details](#edit-buddy-details)
+      - [Delete Buddy Details](#delete-buddy-details)
+    - [Your Bookings](#your-bookings)
+  - [Sign Up Page](#sign-up-page)
+  - [Sign In Page](#sign-in-page)
+  - [Logout Page](#logout-page)
     - [Future Features Sign in functionality](#future-features-sign-in-functionality)
-    - [Contact Form (contact.html)](#contact-form-contacthtml)
-    - [404 and 500 Error Pages](#404-and-500-error-pages)
-    - [Future Features](#future-features)
+  - [403, 404 and 500 Error Pages](#403-404-and-500-error-pages)
+  - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Frameworks and Software](#frameworks-and-software)
 - [Python Packages](#python-packages)
 - [Testing](#testing)
     - [Manual testing](#manual-testing)
@@ -154,10 +167,11 @@ As a visitor, I want to easily find a tennis partner to practise with and make a
 
 
 [Back to top](#contents)
-## Creation Process
+# Creation Process
 When I started creating the web application, I had a very clear idea of what I wanted to achieve. My tennis club has a very good booking system which served as an inspiration for me. The club's booking system can be viewed [here](https://clubmanager365.com/CourtCalendar.aspx?club=shankill&sport=tennis). I liked the calendar view where a user can easily see which courts are free and make a reservation by clicking on a free cell. The club's system is of course more sophisticated and more advanced, but I tried to simulate as many of the features as possible.
 
-### Design Prototype (Wireframes)
+[Back to top](#contents)
+## Design Prototype (Wireframes)
 
 I started by creating wireframes which is always a great process because it helps me think in much more detail about what I want to accomplish. As you will see from my wireframes I had hoped to create a much more sophisticated search system for my "Find a Perfect Buddy" functionality, but I will have to do that in the next version due to time constraints. My booking system is almost where I wanted it to be, but it definitely needs more logical restrictions to function faultlessly and to avoid invalid reservations (more on that in Future Features).
 
@@ -165,84 +179,98 @@ The wireframes include a view for desktop, tablet and mobile to take responsives
 
 I used [Figma](www.figma.com) which is an excellent tool for making wireframes.
 
-#### Desktop Wireframes
-
+[Back to top](#contents)
+### Desktop Wireframes
 
 <details><summary><b>Home Page</b></summary>
    
 ![Home Page](/readme-images/homepage_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Find a Perfect Buddy</b></summary>
    
 ![Find a Perfect Buddy](/readme-images/findbuddy_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Buddy Details</b></summary>
    
 ![Buddy Details](/readme-images/buddydetails_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Booking Calendar</b></summary>
    
 ![Booking Calendar](/readme-images/bookcourt_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Make a Booking</b></summary>
    
 ![Make a Booking](/readme-images/makebooking_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Staff Dashboard</b></summary>
    
 ![Staff Dashboard](/readme-images/staffdashboard_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Contact Us</b></summary>
    
 ![Staff Dashboard](/readme-images/contactus_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Sign Up</b></summary>
    
 ![Sign Up](/readme-images/signup_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Sign In</b></summary>
    
 ![Sign In](/readme-images/signin_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Add/Edit Contact Info</b></summary>
    
 ![Add/Edit Contact Info](/readme-images/add_edit_contact_desktop.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Add/Edit Buddy Profile</b></summary>
    
 ![Add/Edit Buddy Profile](/readme-images/add_edit_buddy_profile_desktop.png)
 </details><br />
 
-#### Tablet Wireframes
+[Back to top](#contents)
+### Tablet Wireframes
 
 <details><summary><b>Home Page</b></summary>
    
 ![Home Page](/readme-images/homepage_tablet.png)
 </details><br />
 
+[Back to top](#contents)
 <details><summary><b>Find a Perfect Buddy</b></summary>
    
 ![Find a Perfect Buddy](/readme-images/findbuddy_tablet.png)
 </details><br />
 
-#### Mobile Wireframes
+[Back to top](#contents)
+### Mobile Wireframes
 
 <details><summary><b>Home and Find Buddy Page</b></summary>
    
 ![Home and Find Buddy Page](/readme-images/homebuddy_mobile.png)
 </details><br />
 
-### Project Management
+[Back to top](#contents)
+## Project Management
 I have been using GitHub projects for organizing my project, tracking user stories and epics. It is a very helpful tool which enabled me to keep all my PBIs in one place and to tackle them gradually.
 
 At the beginning of the project, I spent a fair amount of time on project planning, on thinking it through. I created wireframes and a sketch of my models first. Having the wireframes and the ERD model to refer to when working on the project was both essential and very helpful. Any time I was getting lost or confused, I could consult them and figure out how to proceed.
@@ -259,9 +287,10 @@ Breaking up the project in Epics, User stories and essentially into tasks has be
 
 Each of the user stories would get labels such as: must have, should have, could have, won't have; story points; epic number; user story/dev task/bug; high/medium/low priority. Each user story would be assigned to its respective epic and milestone (sprint).
 
+[Back to top](#contents)
 My sprints were planned out as follows:
 
-#### Sprint #1 - 08/05 -12/05
+### Sprint #1 - 08/05 -12/05
 In the first milestone my main goal was to get the project's framework set up and running and do an early deployment.  I also added Login/Registration functionality using django-allauth. Most of this sprint was about setting up the backend and the tasks were labeled as Dev Task (DT). The following tasks where a part of this sprint:
 
 - DT Install of Django Environment
@@ -273,7 +302,8 @@ In the first milestone my main goal was to get the project's framework set up an
 - DT Create an admin panel
 - DT Create Database models from ERD
   
-#### Sprint #2 - 15/05 - 19/05
+[Back to top](#contents)
+### Sprint #2 - 15/05 - 19/05
 Create models, general site structure and navigation elements (navbar and footer) based on the original wireframes. In this sprint I moved from the backend to setting up the basic frontend features of the app and to user stories (US). I had to fix a few crucial bugs in this sprint (BF).
 
 - US Homepage Setup
@@ -291,7 +321,8 @@ Create models, general site structure and navigation elements (navbar and footer
 - BF Set up user profile in views.py and save into database
 - BF Set up Buddy profile in views.py and save into database
 
-#### Sprint #3 - 22/05 -26/05
+[Back to top](#contents)
+### Sprint #3 - 22/05 -26/05
 Finish CRUD functionality for Contact Details (user_profile), for buddy profile
 
 - US Delete User Profile (Contact Info)
@@ -299,7 +330,8 @@ Finish CRUD functionality for Contact Details (user_profile), for buddy profile
 - US View Buddies (ListView)
 - DT Readme Forking/Cloning
 
-#### Sprint #4 + #5 - 29/05 - 09/06
+[Back to top](#contents)
+### Sprint #4 + #5 - 29/05 - 09/06
 The goal is to create a booking CRUD functionality which will enable the user to book a court, view, edit and delete a booking. In the meantime, add carousel and improve basic style of the app, add messages to main user actionas (CRUD).
 
 - US Create Booking
@@ -311,7 +343,8 @@ The goal is to create a booking CRUD functionality which will enable the user to
 - US Display messages upon user action
 - DT Write up all the bugs until now
 
-#### Sprint #6 - 12/06 - 16/06
+[Back to top](#contents)
+### Sprint #6 - 12/06 - 16/06
 The goal is to finish adding the main features: search functionality, contact form, improve styling of main elements.
 
 - US Contact Us page
@@ -320,7 +353,8 @@ The goal is to finish adding the main features: search functionality, contact fo
 - US Improve website's style
 - BF Favicon not loading
 
-#### Sprint #7 - 19/06 - 23/06
+[Back to top](#contents)
+### Sprint #7 - 19/06 - 23/06
 Make a more advanced booking system, deploy with css and images, make progress with Readme. Connect the AddBooking form to a visual calendar which will inform the user about the court availability.
 
 - US Make a more sophisticated visual booking system
@@ -331,18 +365,21 @@ Make a more advanced booking system, deploy with css and images, make progress w
 - BF Heroku not loading css file
 - BF When add booking is approached from the booking calendar, the information about date/time/court is lot
 
-#### Sprint #8 - 27/06 - 30/06
+[Back to top](#contents)
+### Sprint #8 - 27/06 - 30/06
 Make progress with Readme and fix small bugs encountered during testing.
 
 - BF Correct the flow for admin when editing/deleting a booking
 - BF Fix hrefs for sign in and sign up pages
+<!-- - US DOC!!! -->
 
-
+[Back to top](#contents)
+### Testing #9 - 03/07 - 07/07
 
 
 [Back to top](#contents)
 
-#### GitHub Projects Board
+### GitHub Projects Board
 
 I used Projects tool inbuilt in GitHub, [GitHub's Projects](https://github.com/lucia2007?tab=projects), to help me manage the scope of the project, to track my progress and record bugs, but also to jot down any ideas that were relevant for the application development. These ideas were either later applied in the code or dismissed if they did not seem to enhance the user's experience or improve the development process.
 
@@ -354,10 +391,12 @@ The Project tool has been very benefitial for my development process, especially
 
 In the future, I should able to surmise the amount of story points for each Epic/User story more easily and thus plan my Sprints more effectively. Also I would like to improve my process for reporting bugs in Project and connecting them to their commits. At the moment I usually took note of a bug, but only retrospectively made it into an issue. In the future I would like to use a similar process as with user stories, with acceptance criteria and tasks and connect the issue to the commit message with solved it.
 
-#### Moscow principles
+[Back to top](#contents)
+### Moscow principles
 I had tried to apply MoSCoW principles in my development but more on a project basis than on a sprint basis. In my first sprints I solely focused on meeting must-have user stories and when most of my necessary features were in place, only then did I start incorporating should-haves or could-haves. As I went along, I also indentified won't-haves which were either to be fully abandoned or left for future development.
 
-#### Milestones
+[Back to top](#contents)
+### Milestones
 I split up my project development into the following milestones:
 
 1. Set up project's framework, do an early deployment, add django allauth.
@@ -369,7 +408,8 @@ I split up my project development into the following milestones:
 7. Make progress with Readme and fix small bugs encountered during testing
 8. Testing
 
-#### Epics
+[Back to top](#contents)
+### Epics
 Each milestone was split into epics. Looking back at it, my epics copy milestones quite a bit and I probably should have split them into more detailed ones. Some milestones contain just one epic, others contain more. For details please look into my [Projects](https://github.com/users/lucia2007/projects/6/views/1) where you can see which epic was a part of which milestone.
 
 1. Setup development environment, install dependencies and packages, early deployment. Install Allauth.
@@ -382,7 +422,8 @@ Each milestone was split into epics. Looking back at it, my epics copy milestone
 8. Make a more advanced Booking system.
 9. Fix bugs encountered during testing.
 
-#### User Stories
+[Back to top](#contents)
+### User Stories
 Each epic would contain several user stories. Each user story has a description, acceptance criteria and tasks which had to be done before the user story could be closed and moved to done. For details as to which user story was a part of a particular epic/milestone and for the acceptance criteria/tasks, please refer to my [Projects](https://github.com/users/lucia2007/projects/6/views/1) where all the details can be found.
 
 I split the project into following user stories:
@@ -421,7 +462,7 @@ The user stories above had all been finished. There are several user stories whi
 I realize that my attempt at agile project development was not perfect and I know I will do several things differently in the future, but it has definitely been an enriching experience and helped me manage the project's scope. In the future I plan to make more detailed Epics and to plan my sprints according to user story points, as now I have a better idea how long different tasks take me and I can make better, if imperfect, estimates.
 
 [Back to top](#contents)
-### Database Schema (ERD)
+## Database Schema (ERD)
 
 [ERD Schema]()
 
@@ -438,25 +479,28 @@ This is the ERD schema was instrumental for creating all the necessary models fo
 
 [Back to top](#contents)
 
-## Design Choices
+## Site Structure
+
+[Back to top](#contents)
+# Design Choices
 
 The goal for the site was to make it simple, easily understandable, yet attractive. I kept the used colors to a minimum and used just three images for the carousel to make the site more lively.
 
 [Back to top](#contents)
-### Typography
+## Typography
 
 Originally I wanted to change the provided font-type, but in the end I was quite happy with the original one and so I did not make any alternations.
 
 [Back to top](#contents)
 
-### Color Scheme
+## Color Scheme
 
 As regards the color scheme, I normally would use a color scheme/wheel, but here I used only one main yellow/green color for the body and only altered the color of the messages to match it. I chose colors which are associated with tennis. I kept the header and footer white to give the site a clean look.
 
 [Back to top](#contents)
 
-## Features
-### Site Responsive Navigation Bar
+# Features
+## Site Responsive Navigation Bar
 
 ![NavBar Login](./readme-images/navbar_login.png)
 
@@ -466,6 +510,8 @@ The site contains a simple but effective NavBar which simplifies the movement of
 - Find the ideal Buddy - this link takes the user to the buddies.html where the user can see a catalouge of players from which they can choose a player to engage with.
 - Conditional Search functionality - if the user is signed in, they can see a search bar on the right. They can enter values like "beginner/advanced/intermediate", or "morning/afternoon/both morning and afternoon", or "hitting practice/match practice", or "singles/doubles", or "male/female".
   
+[Back to top](#contents)
+
 ![Search Feature](./readme-images/conditional_search.png)  
 <!-- Add info about the pop up modal if included, if not, add it to the future features -->
 - Booking - this link takes the user to the bookingcalendar.html where they can see which courts are available on a particular day.
@@ -473,12 +519,16 @@ The site contains a simple but effective NavBar which simplifies the movement of
 - Register/Login - when the user is not logged in, they can see "Register/Login" buttons which allow then to create an accout if they don't already have on or to log in, if they already have an account.
 - User Profile Icon/Logout - when the user is logged in, the links on the right change to the "Profile Icon/Logout".
 
+[Back to top](#contents)
+
 ![Profile Icon](./readme-images/profile_logout.png)  
 - Conditional Profile icon appears, when the user is logged in. The user can access the following features through this icon:
   - Contact details - the user can either add their contact details through this link, or edit/delete them if the contact details had already been provided
   - Profile - the user can either create their buddy profile here, or they can edit/delete the profile if they already have one
   - Your bookings - here the user can see all of their bookings, which they can edit/delete, or they are informed about having no bookings in their name.
-  
+
+[Back to top](#contents)
+
 ![Staff Tab](./readme-images/condition_profile_icon.png)
 - Conditional Staff link - if the user is admin/staff, when they log in, "Staff" link appears which lets them access the bookings/list/all where they can see/edit/delete everybody's bookings.
 
@@ -487,11 +537,13 @@ When a user is on a particular page, the link is becomes bold to make it clear t
 
 The NavBar is responsive and is available in its full version on large screens only. When the screen size diminishes, the NavBar is collapsed into a clickable Hamburger.
 
+
 ![Hamburger](./readme-images/hamburger_collapsed.png)
 ![Hamburger open](./readme-images/hamburger_open.png)
 ![Hamburger Profile](./readme-images/hamburger_profile.png)
 
-### Carousel
+[Back to top](#contents)
+## Carousel
 
 I used a moving carousel with three hero images to highlight the main features of the site easily accessible:
 - The first image of a tennis ball on a tennis court makes the theme/content of the page clearly tennis related for any visiting user. The user can access sign in and sign up functionalities on this image.
@@ -499,11 +551,17 @@ I used a moving carousel with three hero images to highlight the main features o
 ![Welcome Image](./readme-images/carousel_welcome_image.png)
 - The second image evokes friendship and companionship. It provides links to finding a new tennis buddy.
 
+[Back to top](#contents)
+
 ![Find Your Perfect Buddy](./readme-images/carousel_find_buddy.png)
 
 - The third image of outdoor tennis courts shows the clubs layout and provides a shortcut to the booking system.
 
+[Back to top](#contents)
+
 ![Book a Court](./readme-images/carousel_tennis_courts.png)
+
+[Back to top](#contents)
 
 I created an overlay effect over the images for better legibility and accessibility. It also bring the text forward. The details of the images are not so important, as they are mainly to convery the main ideas and intentions.
 
@@ -517,7 +575,7 @@ On smaller screens, the text disappears to avoid making the images cluttered.
 
 [Back to top](#contents)
 
-### Footer
+## Footer
 
 The user can find all necessary information in the footer. There is information about the opening hours of the club, there is site navigation which takes the user quickly to a desired part of the app, there are links to tips for self-improvement and lastly, there are contact details for getting in touch with the club. The footer also contains links to social media. The footer is site responsive and the items are stacked on top of each other for smaller screens, whereas they are next to each other for larger screens. 
 
@@ -526,23 +584,26 @@ The user can find all necessary information in the footer. There is information 
 
 [Back to top](#contents)
 
-### [Home Page](https://tennis-buddies.herokuapp.com/)
+## [Home Page](https://tennis-buddies.herokuapp.com/)
 
 The home page contains basic information about the main features of the application. There are links to Find the Perfect Buddy, Booking and Contact us pages. 
 
 ![Home Page](./readme-images/homepage.png)
 
 [Back to top](#contents)
-### [Find the Perfect Buddy Page](https://tennis-buddies.herokuapp.com/buddies/)
+## [Find the Perfect Buddy Page](https://tennis-buddies.herokuapp.com/buddies/)
 
 On this page the user can see a display of players who are looking for a hitting partner. You can see their picture, or a placeholder picture if they did not provide one, their name and a brief description. If they want to see a player's details, they need to be signed in.
 
 ![Find the Perfect Buddy Page](./readme-images/findbuddy.png)
-#### Buddy Search
+
+[Back to top](#contents)
+### Buddy Search
 
 In order to avail of the buddy search functionality, the user must be registered and signed in. They can search for terms like: "beginner/advanced/intermediate", or "morning/afternoon/both morning and afternoon", or "hitting practice/match practice", or "singles/doubles", or "male/female". Once the user has narrowed down the players to those who match their search criteria, they can click on the card and are taken to a page where the chosen buddy details are presented.
 
-#### [Buddy Details](https://tennis-buddies.herokuapp.com/accounts/login/?next=/buddies/"pk")
+[Back to top](#contents)
+### [Buddy Details](https://tennis-buddies.herokuapp.com/accounts/login/?next=/buddies/"pk")
 
 The link above should have a particular buddy's "pk" at the end of the link. The link in this form does not work. I did not provide a particular profile number, as the profile might get deleted and the link would not work.
 
@@ -552,9 +613,10 @@ Here the user can see the player's details such as their level, availability, pr
 
 If the signed user is also the owner of the buddy profile, when they click on their own card, they can see "Edit/Delete" buttons at the bottom of their card. These buttons are not present if the profile belongs to someone else.
 
-[Buddy Detail Page](./readme-images/buddydetails_owner.png)
+[Buddy Detail Page Owner](./readme-images/buddydetails_owner.png)
 
-#### Future Features for Buddy Matching
+[Back to top](#contents)
+### Future Features for Buddy Matching
 - The admin will have to approve a profile before it can be added.
 - The user can indicate if their status is active or not. If inactive, their profile would not be displayed on this page.
 - The search functionality is to be more sophisticated: the user should be able to click on different available criteria and search for a combination of values, e.g. beginner + morning + doubles.
@@ -562,18 +624,22 @@ If the signed user is also the owner of the buddy profile, when they click on th
 - The email of the registered users needs to be verified, so that the contact email address is a valid one and not a made up one which the user might have used at the registration.
 
 [Back to top](#contents)  
-### [Booking of the courts](https://tennis-buddies.herokuapp.com/bookingcalendar/)
+## [Booking of the courts](https://tennis-buddies.herokuapp.com/bookingcalendar/)
+
+[Back to top](#contents)
 
 ![Booking Calendar](./readme-images/bookingcalendar.png)
 
 The booking page consists of a date picker and a table with court availability on a particular day.
-#### Booking requirements
+### Booking requirements
 In order to book a court, the user must have a registered account and must be signed in. The user also must have created a user profile where they add their contact information. This is because the club staff wants to be able to give the user a quick phone call in case of a late cancelation, last minute change, or an emergency.
 
-#### [Making a reservation](https://tennis-buddies.herokuapp.com/bookings/add/?date=2023-06-01&time=15:00%20-%2016:00&court=three)
+### [Making a reservation](https://tennis-buddies.herokuapp.com/bookings/add/?date=2023-06-01&time=15:00%20-%2016:00&court=three)
 When the user clicks on a Booking link in NavBar or approaches it from the carousel or the footer, they are taken to bookingcalendar.html. Here the user is informed which courts are booked/free for the current date, or on the date they had chosen in the datepicker. The courts which are free contain a hyperlink. When the user clicks on a particular "Book now" link, the information about the chosen date/time/court combination is carried over to the bookings/add.html page. The user only has to choose an opponent/(s). At this point, they could still edit the time/date/court, but they would not be sure if the combination had already been booked by someone else.
 
 The user can choose min 1 and max 3 opponents. The user chooses multiple opponents by holding shift or control. The user can also choose themselves if they want to e.g. practice their serve on their own. The user gets a warning if they choose more than 3 opponents.
+
+[Back to top](#contents)
 
 ![Make a Booking](./readme-images/makebooking.png)
 
@@ -605,17 +671,19 @@ When the user has updated their booking, they can see a success message at the t
 ![Delete Booking Success](./readme-images/booking_delete_success_message.png)
 
 [Back to top](#contents)
-#### [Staff Dashboard](https://tennis-buddies.herokuapp.com/bookings/list/all/)
+### [Staff Dashboard](https://tennis-buddies.herokuapp.com/bookings/list/all/)
 However, if the user is admin/staff/superuser, they will also see a "Staff" option in their NavBar through which they can access all the bookings of all the members. The staff user can edit or delete a booking of any of the users. If they access their own booking, they are taken to their booking list, but it they edit/delete somebody else's booking the staff user is taken to staff dashboard.
 
 ![Staff Dashboard](./readme-images/staffdashboard.png)
-#### Bookings in the past
+
+[Back to top](#contents)
+### Bookings in the past
 The users are allowed to create bookings in the past as well. This is due to the fact that the club requires exact information about the court usage and the members sometimes don't make a booking and just come and use a court that is free or they don't update the opponents on the booking. The club needs the information about the players in case something was damaged, or somebody got hurt (insurance reasons) or e.g. in case of the recent Covid Pandemic, they could inform the players if one them had turned Covid positive. When a booking in the past gets created, the user gets a messages about its successful creation, but is informed about having made a booking in the past.
 
 ![Booking in the Past ](./readme-images/bookingpast.png)
 
 [Back to top](#contents)
-#### Future features for Booking
+### Future features for Booking
 There are several ways how the booking system could/should be improved:
 - Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance. 
 - The user should be restricted to making one booking per day so that all players have a change to make reservations and play.
@@ -633,17 +701,18 @@ There are several ways how the booking system could/should be improved:
 
 [Back to top](#contents)
 
-### [Contact Us page](https://tennis-buddies.herokuapp.com/contact/)
+## [Contact Us page](https://tennis-buddies.herokuapp.com/contact/)
 
 This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club. When the user fills in the form, they see a message about the inquiry having been sent. However, this is not fully functional yet and will be taken care of in the next version.
 
 ![Contact Us](./readme-images/contactus.png)
 
-#### Inquiry Confirmation Message
+[Back to top](#contents)
+### Inquiry Confirmation Message
 ![Inquiry Confirmation Message](./readme-images/inquiry.png)
 [Back to top](#contents)
 
-#### Future Features for Contact Us
+### Future Features for Contact Us
 At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is delivered. I need to set this functionality up. At the moment, only a message in CLI appears, but only if sent from the localhost.
 
 [Back to top](#contents)
@@ -651,14 +720,16 @@ At the moment, when the user fills in the form, they get a message about the inq
 ![CLI Message](./readme-images/cli_message.png)
 
 [Back to top](#contents)
-### Profile Icon
+## Profile Icon
 A profile Icon appears when the user is signed in. When the user clicks on the icon, they see the following options:
 
-1. Contact Info - here the user can either [add their contact information](https://tennis-buddies.herokuapp.com/profiles/add/) if they had not done so before, or they can edit/delete the information. Contact Info is required in case the user wants to make a booking, view bookings or wants to add a buddy profile.
+### Contact Info
+Here the user can either [add their contact information](https://tennis-buddies.herokuapp.com/profiles/add/) if they had not done so before, or they can edit/delete the information. Contact Info is required in case the user wants to make a booking, view bookings or wants to add a buddy profile.
 
 The user is informed about each action with a message that appears at the top of the page. Before deleting the profile, the user is asked to confirm the action. The user has an option to cancel edit/delete action in which case they are taken back to the previous page. 
 
-- Add Contact Info   
+[Back to top](#contents)
+#### Add Contact Info   
 </br>
 ![Add Contact Info](./readme-images/add_contact_details.png)
 </br>
@@ -666,13 +737,13 @@ The user is informed about each action with a message that appears at the top of
 
 [Back to top](#contents)
 
-- View Added Contact Info
+#### View Added Contact Info
 </br>
 ![Contact Added](./readme-images/contact_added.png)
 
 [Back to top](#contents)
 
-- Edit Contact Info
+#### Edit Contact Info
 </br>
 ![Edit Contact Info](./readme-images/edit_contact.png)
 </br>
@@ -680,7 +751,7 @@ The user is informed about each action with a message that appears at the top of
 
 [Back to top](#contents)
 
-- Delete Contact Info
+#### Delete Contact Info
 </br>
 ![Delete Contact Info](./readme-images/contact_confirm_delete.png)
 </br>
@@ -688,31 +759,28 @@ The user is informed about each action with a message that appears at the top of
 
 [Back to top](#contents)
 
-2. Profile - A user can choose to fill in their buddy/profile details if they want to be contacted by other players to arrange a game. They are either taken to [add profile](https://tennis-buddies.herokuapp.com/profiles/add/?next=/buddies/add/) or to edit/delete profile if they had previously filled in the information. Again, the user is asked if they are sure about deletion or they can cancel edit/delete and go back to the previous page. All user actions are accompanied by a success message which appears at the top of the page. 
+### Buddy Profile
 
-- Add Buddy Profile   
+[Back to top](#contents)
+#### Add Buddy Profile   
 The only information that is prefilled in this form is the user's email address. This is not an editable field. As regards an image, if the user does not provide one, a placeholder image will be used.
 
 The user can choose their level, availability, type of game, etc. In the future, they will also be able to say that their profile is not to appear in the catalague or in the searches (the backend functionality is not currently in place.)
 
-</br>
 ![Add Buddy Profile](./readme-images/add_buddy_details.png)
-</br>
-[Add Buddy Success Message](./readme-images/add_buddy_success_message.png)
+[Add Buddy Success Message](/readme-images/add_buddy_success_message.png)
 
 [Back to top](#contents)
 
-- View Added Buddy Details
+#### View Added Buddy Details
 </br>
 When the user approaches their own buddy details either from Profile Icon or from Find the Perfect buddies, they can see edit/delete buttons underneath their profile. These are only present when the owner of the profile is the same as the current logged in user. 
 
-</br>
 ![Buddy Details](./readme-images/buddy_details.png)
-</br>
 
 [Back to top](#contents)
 
-- Edit Buddy Details
+#### Edit Buddy Details
 </br>
 ![Edit Buddy Details](./readme-images/edit_buddy_details.png)
 </br>
@@ -720,7 +788,7 @@ When the user approaches their own buddy details either from Profile Icon or fro
 
 [Back to top](#contents)
 
-- Delete Buddy Details
+#### Delete Buddy Details
 </br>
 ![Delete Buddy Details](./readme-images/buddy_delete_confirmation.png)
 </br>
@@ -728,14 +796,17 @@ When the user approaches their own buddy details either from Profile Icon or fro
 
 [Back to top](#contents)
 
-3. Under Your Bookings the user can see/edit/delete their own bookings if they have made some, or they see a message that they have no bookings. More details above.
+### Your Bookings 
+Under Your Bookings the user can see/edit/delete their own bookings if they have made some, or they see a message that they have no bookings. More details above.
 
 [Back to top](#contents)
-### Sign Up Page
+## Sign Up Page
 
 Sign up Page has a simple design. The user has to enter their email and the password twice. This is due to defensive programming principle where we try to avoid unnecessary errors caused by small typos.
 
 All sign in functionalities are a result of using django-allauth. Using this packages has enabled me to set this functionality up quickly and easily.
+
+[Back to top](#contents)
 
 ![Sign Up Page](./readme-images/sign_up_page.png)
 </br>
@@ -743,13 +814,13 @@ All sign in functionalities are a result of using django-allauth. Using this pac
 
 [Back to top](#contents)
 
-### Sign In Page
+## Sign In Page
 ![Sign In Page](./readme-images/sign_in_page.png)
 </br>
 [Sign In Success](./readme-images/sign_in_success_message.png)
 
 [Back to top](#contents)
-### Logout Page
+## Logout Page
 ![Sign Out Page](./readme-images/sign_out_page.png)
 </br>
 [Sign Out Success](./readme-images/sign_out_success_message.png)
@@ -763,29 +834,9 @@ At the moment, the email is not being verified and user can use a made up email.
 
 [Back to top](#contents)
 
-### Contact Form (contact.html)
-A move consists of two steps:
-1. The user has to choose FROM WHICH base they want to take the top disk.
-2. The user has to indicate ON WHICH base they want to place the chosen disk.
+## 403, 404 and 500 Error Pages
 
-
-### 404 and 500 Error Pages
-- If a user navigates to a page that does not exist, a customized 404 error page will appear
-- If a user navigates to a page and there is a server related issue, they will be shown a customized 500 error page
-  
-![404 Error Page Image](readme-images/intial_picture.png) 
-![500 Error Page Image](readme-images/intial_picture.png) 
-
-
-### Staff Dashboard
-
-#### Automatic Email Sending
-### Future Features
-- In the future I would like to add a possibility to book a professional hitter
-
-- In the future I could add a scoreboard with different 
-
-- Automatic email sending
+## Future Features
 
 [Back to top](#contents)
 
