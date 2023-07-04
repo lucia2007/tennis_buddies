@@ -835,6 +835,13 @@ At the moment, the email is not being verified and user can use a made up email.
 [Back to top](#contents)
 
 ## 403, 404 and 500 Error Pages
+- If a user navigates to a page that does not exist, a customized 404 error page will appear.
+- If a user attempts to do something they are not authorized to do, they will get a 403 Error page.
+- If a user navigates to a page and there is a server related issue/error, they will be shown a customized 500 error page.
+    
+![404 Error Page Image](readme-images/404_error_page.png) 
+![403 Error Page Image](readme-images/403_error_page.png) 
+![500 Error Page Image](readme-images/500_error_page.png) 
 
 ## Future Features
 
