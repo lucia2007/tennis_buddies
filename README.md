@@ -650,7 +650,12 @@ The user can see a pop up message which informs them about the successful reserv
 
 [Back to top](#contents)
 
-#### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
+Any user can make maximum one booking per day. This is to prevent one user from reserving too many courts on any given day and gives other users a change to make their own reservations. If a user tries to make a booking on a day when they already have a court booked, they get a warning message about maximum number of bookings and are taken back to the booking calendar, where they can choose a different date.
+
+![Max Booking Warning]()
+<!-- Take a screen shot of the warning message -->
+
+### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
 When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
 
 ![Your Bookings](./readme-images/yourbookings.png)
@@ -686,18 +691,16 @@ The users are allowed to create bookings in the past as well. This is due to the
 ### Future features for Booking
 There are several ways how the booking system could/should be improved:
 - Make the bookings accessible for e.g. next week only, so that the users can't make a booking e.g. two years in advance. 
-- The user should be restricted to making one booking per day so that all players have a change to make reservations and play.
-- At the moment, the combination of date/time/court is unique, but the system should also be checking if the owner has not already created a booking at that particular time/date on a different court or if the user had not been entered as an opponent for the particular time/date combination.
+- At the moment, the combination of date/time/court is unique, but the system should also be checking if the user had not been entered as an opponent for that particular time/date combination.
 - The user should be sent an email after they created a booking.
 - The users which were chosen as opponents should also get a confirmation and the reminder email.
 - The user/opponent should also be getting an email when a booking which they are a part of has been edited or deleted.
 - The user could get a confirmation email when their reservation is coming up.
 - When the user approached the booking system from the calendar, they can clearly see which courts are available. However, when they are editing their booking, they don't see anymore which courts are free on the new desired date/time combination. In the future, the user should be either taken back to the calendar or get some suggestion about which courts are free so they wouldn't have to keep guessing. Maybe the user should be able to just edit the opponents and when they want to change the date/time or court, they would have to cancel the booking and add a new one through the calendar link.
 - The booking calendar could display who the owner/opponents are for a particular booking instead of just "Booked".
-- A member of staff should be able to create any number of bookings on a given day, in case of a special ocasion or event taking place in the club. A staff member would have a priority for booking and would be able to make bookings more in advance than a regular user. 
 - In the future I should diferentiate between a superuser and staff members and adjust the conditional statements.
 - A modal window should pop up when the user is chosing opponents with an information to hold shift or control buttons for choosing multiple players.
-- One of the features I did not manage to do, was to create a separate booking system for staff members, where they would be able to book multiple courts on the same day for multiple hours, much more in advance in the future. (This was taking into account restrictions which are not yet in place for the user booking either: one booking per day per user, bookings only one week in advance.) And of course a staff member should be able to make a booking in anybody's name.
+- One of the features I did not manage to do, was to create a separate booking system for staff members, where they would be able to book multiple courts on the same day for multiple hours, much more in advance in the future. (This was taking into account restrictions which are not yet in place for the user booking either e.g.: bookings only one week in advance.) And of course a staff member should be able to make a booking in anybody's name.
 
 [Back to top](#contents)
 
