@@ -480,6 +480,9 @@ This is the ERD schema was instrumental for creating all the necessary models fo
 [Back to top](#contents)
 
 ## Site Structure
+The Tennis Buddies site takes its form depending on if the user is signed in or not. If the user is not signed in, they can see a Register/Login buttons, whereas if they are sign in, they can see a Profile Icon/Logout buttons. If sstaff member is signed in, they can also see a Staff tab in the NavBar. More details can be found in the NavBar feature section.
+
+There are different features which become available for only a signed in user, or for a user with filled in contact information. These restrictions are described more deeply in revelant sections.
 
 [Back to top](#contents)
 # Design Choices
@@ -489,13 +492,13 @@ The goal for the site was to make it simple, easily understandable, yet attracti
 [Back to top](#contents)
 ## Typography
 
-Originally I wanted to change the provided font-type, but in the end I was quite happy with the original one and so I did not make any alternations.
+Originally I wanted to change the provided font-type, but in the end after playing around with different fonts, I was quite happy with the original bootstrap one and so I did not make any alternations.
 
 [Back to top](#contents)
 
 ## Color Scheme
 
-As regards the color scheme, I normally would use a color scheme/wheel, but here I used only one main yellow/green color for the body and only altered the color of the messages to match it. I chose colors which are associated with tennis. I kept the header and footer white to give the site a clean look.
+As regards the color scheme, I normally would use a color scheme/wheel, but here I used only one main yellow/green color for the body and only altered the color of the pop up messages to match it. I chose colors which are associated with tennis. I kept the header and footer white to give the site a clean look.
 
 [Back to top](#contents)
 
