@@ -841,26 +841,69 @@ At the moment, the email is not being verified and user can use a made up email.
 [Back to top](#contents)
 
 # Technologies Used
+## Languages
+- [Python](https://www.python.org/) - Used for adding functionality to the application.
+- [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
+
+## Frameworks and Software
+- [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive, mobile-first sites.
+- [Django](https://www.djangoproject.com/) - An MVT framework used to create the Tennis Buddies site.
+- [Figma](https://figma.com) - Used to create wireframes.
 - [Github](https://github.com/) - Used for hosting the repository.
+- [Projects in GitHub](https://github.com/lucia2007?tab=projects) - Used for project managament.
 - [Heroku](https://heroku.com/) - Used for deploying the application.
 - [Gitpod](https://www.gitpod.io/#get-started) - Used for developing the application.
-- [Python](https://www.python.org/) - Used for adding functionality to the application.
-- [Projects in GitHub](https://github.com/lucia2007?tab=projects) - Used for project managament.
-- [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used for validation python code.
 - [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables) - Used to generate tables in Markdown.
-- [Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) - Used for creating the dependency diagram.
-- [Favicon Converter](https://favicon.io/favicon-converter/)
-- [Regex Pattern Checker](https://regex101.com/)
+- [Favicon Converter](https://favicon.io/favicon-converter/) - used to create a favicon in correct format.
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
+- [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check. 
+- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debuggin and test responsiveness. 
+- [Cloudinary](https://cloudinary.com/) - A service for hosting all static files in the project.
+- [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used for validation python code.
+- [Regex Pattern Checker](https://regex101.com/) - used to check my regex expression for phone number validation.
 
 [Back to top](#contents)
 
 # Python Packages
+Following packages and libraries were installed and are located in requirements.txt or requirements-graphviz.txt. 
+asgiref==3.6.0
+black==23.3.0
+click==8.1.3
+cloudinary==1.32.0
+crispy-bootstrap5==0.7
+dj-database-url==0.5.0
+dj3-cloudinary-storage==0.0.6
+Django==3.2.19
+django-allauth==0.41.0
+django-crispy-forms==2.0
+django-extensions==3.2.1
+django-stubs==4.2.0
+django-stubs-ext==4.2.0
+django-summernote==0.8.20.0
+django-tables2==2.5.3
+graphviz==0.20.1
+gunicorn==20.1.0
+oauthlib==3.2.2
+pathspec==0.11.1
+psycopg2==2.9.6
+PyJWT==2.6.0
+python3-openid==3.2.0
+pytz==2023.3
+requests-oauthlib==1.3.1
+sqlparse==0.4.4
+types-dj-database-url==1.3.0.3
+types-pytz==2023.3.0.0
+types-PyYAML==6.0.12.9
 
-* [Colorama](https://pypi.org/project/colorama/) - Used to add colours to the terminal.
-* [Time](https://docs.python.org/3/library/time.html) - Used for the slow print functionality and for delaying print statements.
-* [Sys](https://docs.python.org/3/library/sys.html) - Used to provide access to some variables used or maintained by the interpreter.
-* [Random](https://docs.python.org/3/library/random.html) - Used within the slow print functionality.
-* [OS](https://docs.python.org/3/library/os.html) - Used to clear the screen in the terminal.
+pydot==1.4.2
+pygraphviz==1.10
+pyparsing==3.0.9
+urllib3==1.26.16
+graphviz==0.20.1
 
 # Testing
 
