@@ -1097,11 +1097,11 @@ Take the following steps to create a clone of a project:
 # Credits
 
 ## Content
-- I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped 
-- Readmes to follow: (https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment), (https://github.com/amylour/FreeFido_v2)
+- I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me understand the relationships
+- Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment, https://github.com/amylour/FreeFido_v2
 - Table structure in Dashboard https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s
-- Filtered booking list https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user
-- To query according to url+filter https://docs.djangoproject.com/en/4.2/topics/db/queries/
+- [Filtered booking list](https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user)
+- [To query according to url+filter](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
 - [CRUD functionality was done following Dee Mc's Recipe tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
 - [Features section of the home page](https://easy-eater.herokuapp.com/)
 - [Restrict the number of opponents](https://stackoverflow.com/questions/20203806/limit-maximum-choices-of-manytomanyfield/20230270#20230270)
