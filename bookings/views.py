@@ -127,9 +127,17 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         start_time_str = booking_time.split('-')[0].strip()
         # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
         start_time = datetime.strptime(start_time_str, "%H:%M").time()
-        if booking_date < date.today() or start_time < datetime.now().time():
+        date_booked = str(form.cleaned_data.get('date'))  # Convert date to a string
+        active_bookings = Booking.objects.filter(owner=self.request.user.user_profile, date=date_booked).count()
+
+        if active_bookings > 0:
             messages.warning(
-                self.request, f"You have made a booking in the past. Is that what you wanted?"
+                self.request, "You already have a booking on this day. "
+                "Max 1 booking per day are allowed. Choose a different day."
+            )
+            return redirect(reverse('calendar'))
+
+        messages.success(self.request, f"Booking was created successfully.")
                 )
         return super(AddBooking, self).form_valid(form)
 
