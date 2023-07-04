@@ -802,6 +802,7 @@ A move consists of two steps:
 - [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables) - Used to generate tables in Markdown.
 - [Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) - Used for creating the dependency diagram.
 - [Favicon Converter](https://favicon.io/favicon-converter/)
+- [Regex Pattern Checker](https://regex101.com/)
 
 [Back to top](#contents)
 
