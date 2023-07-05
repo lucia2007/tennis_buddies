@@ -101,5 +101,76 @@ The application was also tested using [Google Lighthouse](https://developers.goo
 
 All of my scores for all of the pages were above 90, often close to 100. On a couple of pages the "Best Practices" score is slightly lower, due to an error which is logged into the console and seems to be caused by JSDelivr CDN for the close button on messages. I have not managed to fix this error. Details are in the bug section.
 
+## Additional Testing
 
 ### User Stories Testing
+### Manual Testing
+
+In addition to tests stated above I have performed a series of manual tests. Below is a list of tests that have been conducted. These test are in addition to checking against acceptance criteria of each user story and fulfilling all of the relevant tasks.
+
+| Status | **Main Website - User Logged Out**
+|:-------:|:--------|
+| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Pasting page is restricted to a particular user (delete own booking e.g.) loads a forbidden page
+| &check; | Clicking the nav logo loads the home page
+| &check; | Clicking the Home button on the nav bar loads the home page
+| &check; | Clicking the Find the Perfect Buddy button on the nav bar shows buddy catalogue
+| &check; | Clicking the Booking button on the nav bar takes the user to booking calendar page
+| &check; | Clicking the Contact Us button on the nav bar lists takes the user to the contact us page
+| &check; | Clicking the Log In / Sign Up loads the sign in/sign up page
+| &check; | In the Buddies catalogue, if the user clicks on a buddy card, no details are shown
+| &check; | A moving carousel with three main images is displayed, with links which take the user to relevant pages.
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Clicking the YouTube link in the footer area opens YouTube in a new window
+| &check; | Clicking the LinkedInlink in the footer area opens LinkedIN in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+| &check; | Clicking the Home, Find a Buddy, Booking, Contact us in the footer, takes the user to the respective pages
+| &check; | Clicking the Serve, Grand strokes, Volleys, Strategy takes the user to sites with information about respective topics. The site opens in a new
+| &check; | Clicking the envelope opens an app to send an email.
+
+| Status | **Main Website - User Logged In**
+|:-------:|:--------|
+| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Pasting page that checks object ownership loads a forbidden page
+| &check; | When clicking on Find the Perfect Buddy icon, a search field appears on the right.
+| &check; | The user can search for level, game type, availability, practice type and gender. If looking for a different keyword, the user is informed to change the search.
+| &check; | When clicking on a cell in booking calendar which says free, the user can add a booking if they had filled in their contact details before. If not, they are first taken to fill in their contact details.
+| &check; | A Profile Icon appears for a signed in user on the right next to the Logout button.
+| &check; | A Profile Icon lets the user access their Contact Info, Buddy Profile and their bookings.
+| &check; | The user can add/edit/delete their booking.
+| &check; | The user can add/edit/delete their contact information.
+| &check; | The user can add/edit/delete their buddy information.
+| &check; | The user with filled in contact info, can see their bookings under "Your Bookings" under Profile Icon.
+| &check; | The user is informed by a message appearing at the top of the screen about each add/edit/delete action.
+| &check; | The user is asked to confirm deletion of booking, contact info or buddy details.
+| &check; | If the user deletes their contact info (user profile), their buddy information and bookings are deleted as well.
+| &check; | The user can click a Cancel button if they decide not to edit/delete their booking/contact info or buddy details. They are taken back to the previous page.
+
+| Status | **Main Website - Admin Logged In**
+|:-------:|:--------|
+| &check; | When a staff member/superuser logs in, a Staff button appears which leads to a list of all bookings made by all members.
+| &check; | A staff member can edit/delete anybody's booking. If they delete their own booking, they are taken to bookings/own, if they delete someone else's booking, they are taken to bookings/all.
+|  | When a bookings/all is displayed, Staff button is highlighted. However, this button is highlighted also, when the admin user goes to "Your booking". This is a bug and has been documented above.
+
+ Status | **Create A Booking - User Logged In and has a User Profile**
+|:-------:|:--------|
+| &check; | All elements are required.
+| &check; | When user approaches add booking from booking calendar, date, time and court are prefilled.
+| &check; | User can choose max 3 opponents.
+| &check; | If user makes a booking in the past, they get a warning message.
+| &check; | User can make maximum one booking per day.
+
+Status | **Create A User Profile - User Logged Out**
+|:-------:|:--------|
+| &check; | First name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
+| &check; | Last name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
+| &check; | Phone number is required and is validated to be provided in the following format: +353xxxxxxxxx.
+
+Status | **Create A Buddy Detail Form - User Logged In and has a User Profile**
+|:-------:|:--------|
+| &check; | All fields in the form are required, only in case of the picture, of the user does not provide an image, a placeholder picture is used.
+
+Status | **Create A Contact Form - User Logged In and has a User Profile**
+| &check; | First name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
+| &check; | Last name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
+| &check; | Email is required and must contain "@" and some characters before and after the sign.
