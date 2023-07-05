@@ -63,6 +63,9 @@ Lines > 80, other minor errors     |  many different files, mostly python   | I 
 
 Bug: The Staff link is highlighted also when the user is on bookings/list/own, even though it should be highlighted only when the staff user is on bookings/list/all.
 
+There is a bug in the browser console: 
+[Browser error](/testing-images/browser_error.png)
+
 ## Additional Testing
 ### Lighthouse
 
@@ -74,5 +77,29 @@ The application was also tested using [Google Lighthouse](https://developers.goo
 - SEO - Search Engine Optimisation - shows if the site is optimised for search engine result rankings
 
 ### Results from Lighthouse
+| Page | Validation Results |
+| ---- | ---------- |
+| Home | [Home Page Score](./testing-images/lighthouse_homepage.png) | 
+| Find the Perfect Buddy | [Find Perfect Buddy Score](./testing-images/lighthouse_buddies.png) |
+| Booking Calendar | [Booking Calendar Score](./testing-images/lighthouse_booking_calendar.png) |
+| Add Booking | [Add Booking Score](./testing-images/lighthouse_bookings_add.png) |
+| Your Bookings | [Your Bookings Score](./testing-images/lighthouse_bookings_list_own.png) |
+| Edit Booking | [Edit Booking Score](./testing-images/lighthouse_booking_edit.png)
+| Delete Booking | [Delete Booking Score](./testing-images/lighthouse_booking_delete.png)
+| Contact Us | [Contact Us Score](./testing-images/lighthouse_contactus.png) |
+| Staff | [Staff Score](./testing-images/lighthouse_bookings_list_all.png) | 
+| Add Profile | [Add Profile Score](./testing-images/lighthouse_profile_add.png) | 
+| Edit Profile | [Edit Profile Score](./testing-images/lighthouse_profile_edit.png) |
+| Delete Profile | [Delete Profile Score](./testing-images/lighthouse_profile_delete.png) |
+| Add Buddy  | [Add Buddy Profile Score](./testing-images/lighthouse_profile_add.png) |
+| Buddy Details | [Buddy Details Score](./testing-images/lighthouse_buddy_detail.png)  |
+| Edit Buddy | [Edit Buddy Score](./testing-images/lighthouse_buddy_edit.png) |
+| Delete Buddy | [Delete Buddy Score](./testing-images/lighthouse_buddy_delete.png) |
+| Sign In | [Sign In Score](./testing-images/lighthouse_login.png) |
+| Sign Up | [Sign Up Score](./testing-images/lighthouse_signup.png) |
+| Sign Out | [Sign Out Score](./testing-images/lighthouse_logout.png) |
+
+All of my scores for all of the pages were above 90, often close to 100. On a couple of pages the "Best Practices" score is slightly lower, due to an error which is logged into the console and seems to be caused by JSDelivr CDN for the close button on messages. I have not managed to fix this error. Details are in the bug section.
+
 
 ### User Stories Testing
