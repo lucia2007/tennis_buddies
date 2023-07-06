@@ -64,7 +64,6 @@ class AddBuddy(LoginRequiredMixin, CreateView):
     template_name = "buddies/add.html"
     model = Buddy
     form_class = BuddyForm
-    success_url = "/buddies/"
 
     def form_valid(self, form):
         form.instance.user_profile = self.request.user.user_profile
@@ -80,6 +79,15 @@ class AddBuddy(LoginRequiredMixin, CreateView):
         initial = super().get_initial()
         initial['email'] = self.request.user.email
         return initial
+
+    def get_success_url(self):
+        """ Gets the primary key of the updated buddy.
+        https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model
+        Redirects to the buddy-detail page after a successful update.
+        """
+        pk = self.object.pk
+
+        return reverse_lazy('buddy-detail', kwargs={'pk': pk})
 
 
 class EditBuddy(
