@@ -8,7 +8,7 @@
     <div class="d-flex justify-center p-2">
         <form method="POST" class="text-center mx-auto">
             {%  csrf_token %}
-            <p>Are you sure you want to delete "{{ object.user_profile }}"?</p>
+            <p>Are you sure you want to delete your profile?</p>
             <button type="submit" class="btn btn-primary w-30 mt-2">Confirm</button>
             <a href="{% url 'buddy-detail' pk=buddy.pk %}" class="btn btn-primary w-30 mt-2"
                 aria-label="Let's the user cancel deletion. Takes user back to their Buddy profile">Cancel</a>

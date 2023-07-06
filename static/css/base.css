@@ -238,6 +238,10 @@ a.fontawesome-link {
     font-family: none;
 }
 
+.mobile-table {
+    overflow: hidden;
+}
+
 /* Booking Calendar */
 .date-picker {
     margin: 15px;
