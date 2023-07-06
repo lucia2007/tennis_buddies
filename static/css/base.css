@@ -321,7 +321,7 @@ a.text-reset {
     }
 
     .buddy-details {
-        width: 30%;
+        width: 60%;
         padding: 1rem;
     }
 
@@ -347,6 +347,11 @@ a.text-reset {
 
     .header-right {
         flex-direction: row;
+    }
+
+    .buddy-details {
+        width: 30%;
+        padding: 1rem;
     }
 }
 
