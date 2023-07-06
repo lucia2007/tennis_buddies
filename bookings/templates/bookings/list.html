@@ -12,14 +12,16 @@
         <div class="col-md">
             <div class="card card-body">
                 <table class="table table-sm d-flex d-wrap">
+                    <!-- https://html-validate.org/usage/index.html#inline-configuration -->
+                    <!-- [html-validate-disable-next prefer-tbody] -->
                     <tr>
-                        <th>Owner</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Court</th>
-                        <th>Opponents</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Court</th>
+                        <th scope="col">Opponents</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
                     </tr>
 
                     {% for booking in bookings %}

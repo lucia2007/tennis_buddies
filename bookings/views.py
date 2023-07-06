@@ -117,6 +117,7 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model
         If form is valid, it leads to a reload.
         It returns an object that represents the parent class.
+        Lets the user make maximum one booking per day.
         """
         form.instance.owner = self.request.user.user_profile
 
@@ -126,8 +127,12 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
         start_time_str = booking_time.split('-')[0].strip()
         # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
         start_time = datetime.strptime(start_time_str, "%H:%M").time()
-        date_booked = str(form.cleaned_data.get('date'))  # Convert date to a string
-        active_bookings = Booking.objects.filter(owner=self.request.user.user_profile, date=date_booked).count()
+        # Convert date to a string
+        date_booked = str(form.cleaned_data.get('date'))
+        active_bookings = Booking.objects.filter(
+                owner=self.request.user.user_profile,
+                date=date_booked
+            ).count()
 
         if active_bookings > 0:
             messages.warning(
@@ -138,7 +143,7 @@ class AddBooking(LoginRequiredMixin, TestIfHasProfileMixin, CreateView):
 
         messages.success(self.request, f"Booking was created successfully.")
 
-        if booking_date < date.today() or (booking_date == date.today() and start_time < datetime.now().time()):
+        if booking_date < date.today() or (booking_date == date.today() and start_time < datetime.now().time()):  # noqa
             messages.warning(
                 self.request, f"You have made a booking in the past. "
                 "Is that what you wanted?"
@@ -162,7 +167,7 @@ class EditBooking(
         Determine the success URL based on if the user is a superuser
         and not the owner of the booking
         """
-        all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'
+        all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'  # noqa
         return reverse_lazy('list-bookings', kwargs={'all_or_own': all_or_own})
 
     def test_func(self):
@@ -171,7 +176,8 @@ class EditBooking(
         """
         booking = self.get_object()
         user = self.request.user
-        return user.is_superuser or self.request.user == self.get_object().owner.user
+        return (user.is_superuser or
+                self.request.user == self.get_object().owner.user)
 
 
 class DeleteBooking(
@@ -189,7 +195,7 @@ class DeleteBooking(
         Determine the success URL based on if the user is a superuser
         and not the owner of the booking
         """
-        all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'
+        all_or_own = 'all' if self.request.user.is_superuser and self.request.user.user_profile != self.object.owner else 'own'  # noqa
         return reverse_lazy('list-bookings', kwargs={'all_or_own': all_or_own})
 
     def test_func(self):
@@ -198,7 +204,8 @@ class DeleteBooking(
         """
         booking = self.get_object()
         user = self.request.user
-        return user.is_superuser or self.request.user == self.get_object().owner.user
+        return (user.is_superuser or
+                self.request.user == self.get_object().owner.user)
 
     def delete(self, request, *args, **kwargs):
         """

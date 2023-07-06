@@ -26,12 +26,18 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='buddy',
             name='profile_picture',
-            field=cloudinary.models.CloudinaryField(default='placeholder', max_length=255, verbose_name='image'),
+            field=cloudinary.models.CloudinaryField(
+                default='placeholder', max_length=255, verbose_name='image'
+                ),
         ),
         migrations.AlterField(
             model_name='buddy',
             name='user_profile',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='buddy', to='profiles.userprofile'),
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='buddy',
+                to='profiles.userprofile'
+                ),
             preserve_default=False,
         ),
     ]

@@ -1,6 +1,7 @@
 from django import forms
 from .models import Buddy
 from django.contrib.auth.models import User
+from cloudinary.forms import CloudinaryFileField  # type:ignore
 
 
 class BuddyForm(forms.ModelForm):

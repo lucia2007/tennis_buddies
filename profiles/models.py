@@ -1,8 +1,6 @@
 from django.db import models
 # Import User model from the Django auth app
 from django.contrib.auth.models import User
-# Import Cloudinary for storing images
-from cloudinary.models import CloudinaryField  # type: ignore
 from datetime import date
 from django.core.exceptions import ValidationError
 
