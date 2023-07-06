@@ -459,25 +459,29 @@ I split the project into following user stories:
 - As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
 - As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
 
-The user stories above had all been finished. There are several user stories which had not been done and are postponed for future development, others were moved into won't do category. For more details see Future Features.
+The user stories above had all been finished. There are several user stories which had not been done and are postponed for future development, others were moved into won't do category. For more details see Future Features in each respective section.
 
 I realize that my attempt at agile project development was not perfect and I know I will do several things differently in the future, but it has definitely been an enriching experience and helped me manage the project's scope. In the future I plan to make more detailed Epics and to plan my sprints according to user story points, as now I have a better idea how long different tasks take me and I can make better, if imperfect, estimates.
 
 [Back to top](#contents)
 ## Database Schema (ERD)
 
-[ERD Schema]()
+Before I started writing any code, I spent a lot of time on planning and thinking things through. One part on which I spent a considerable amount of time, was creating the ERD diagram and designing each model and their relationships. I used [Lucid Charts](https://lucid.app/lucidchart/) to create my ERD schema. 
+![ERD Diagram Lucid Charts](/readme-images/erd_diagram_lucidcharts.png)
 
-This is the ERD schema was instrumental for creating all the necessary models for this app. Creating this schema helped me realize the relationships between different apps and models and clarified what kind of fields each of the model components would need. Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me clarify some of the relationships.
+Later when I needed to understand realtionships with django models better, I installed graphviz and related packages with which I could generate the schema below. 
+[ERD Schema graphviz](/readme-images/model2.png)
 
+This ERD schema was instrumental for creating all the necessary models for this app. Creating this schema helped me realize the relationships between different apps and models and clarified what kind of fields each of the model components would need. Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me clarify some of the relationships.
 
-  Models:
-  - Buddies
-  - Booking
-  - allauth
-  - User Profile
-  - Court
-  - ....
+Models used in this project:
+- UserProfile - used to collect contact information for users - full CRUD functionality
+- Buddies - used to create/view/edit and delete buddy profiles with user's preferences and contact information
+- Booking - used for making a court reservation - full CRUD functionality
+- allauth - used for sign in/out/up functionality of the site
+- Court - used for entering courts, not full CRUD
+- Event - left for future development
+- Club - not used
 
 [Back to top](#contents)
 
