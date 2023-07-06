@@ -28,6 +28,7 @@ You can access the Tennis Buddies app here:
     - [First Time Visitor](#first-time-visitor)
     - [Returning Visitor](#returning-visitor)
     - [Frequent Visitor](#frequent-visitor)
+  - [User Stories](#user-stories)
 - [Creation Process](#creation-process)
   - [Design Prototype (Wireframes)](#design-prototype-wireframes)
     - [Desktop Wireframes](#desktop-wireframes)
@@ -43,10 +44,10 @@ You can access the Tennis Buddies app here:
     - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
     - [Testing #9 - 03/07 - 07/07](#testing-9---0307---0707)
     - [GitHub Projects Board](#github-projects-board)
-    - [Moscow principles](#moscow-principles)
+    - [Moscow Prioritization](#moscow-prioritization)
     - [Milestones](#milestones)
     - [Epics](#epics)
-    - [User Stories](#user-stories)
+    - [User Stories](#user-stories-1)
   - [Database Schema (ERD)](#database-schema-erd)
   - [Site Structure](#site-structure)
 - [Design Choices](#design-choices)
@@ -166,6 +167,37 @@ As a visitor, I want to easily find a tennis partner to practise with and make a
 
 ### Frequent Visitor
   - A user can easily make a court reservation or look for a new buddy.
+
+## User Stories
+- As a **user**, I would like to **view the apps homepage** so that I can **learn about the app and see what services it provides**.
+- As a **user** I can **locate the navigation area** so that I can **easily access different parts of the website**
+- As a **user**, I can **access relevant information about opening hours, contact information and social media links without having to scroll back to the top of the page** so that I can **visit the club, contact the club and follow the club online**.
+- As an **unregistered user** I want to be able **to sign up onto the website** so that I can **access websites functionality and content**.
+- As a **registered user** I want to be able **to sign in into my account** so that I can **get access to the website's functionality and options**.
+- As a **signed in user** I want to be able **to sign out of my account** so that I can **keep my account private and safe**.
+- As a **user** I can **enter my personal details** so that I can **create an account with Tennis buddies and be contacted in case of need**
+- As a **signed in user with an active profile** I can **create a buddy profile** so that **I can use the search functionality to find the best tennis partner**
+- As a **user**, I can **edit my buddy profile** to **update my preferences regarding the style of play/practice**.
+- As a **registered user** I can **press delete button on my buddy profile form** so that I can **delete all provided information regarding my preferences for a tennis partner, including pictures**
+- As a **registered user** I can **press delete button on my user profile/contact form** so that I can **delete all provided information regarding my contact details**.
+- As a **user**, I can **edit my user profile** to **update my personal details**.
+- As a **user** I can **visit the Find Your Perfect Buddy page** so that I can **find the perfect match for my tennis practice**.
+- As a **user** I can **reserve a court** so that I can **play at a time that suits me and can avoid come to a full club**.
+- As a **signed in user/staff member** I can **view all the bookings** so that I can **see when other people are playing/the courts are busy**.
+- As a **registered user/superuser** I can **press delete button on my booking details** so that I can **delete my/any user's booking**.
+- As a **user**, I can **edit my bookings** to **update my preferences regarding the day/time/court/opponents**.
+- As a **user/staff** I can **see the list of all bookings (staff)/my own bookings (current user)** so that I can **be reminded of my reservations, but also to be able to update them or delete them**.
+- As a **user** I can **be visually attracted to the app and see the main site features on the moving carousel** so that I can **quickly get an idea what the app offers**.
+- As a **user I want to be informed about different user actions** so that I can **be sure that the itended action took place**.
+- As a **user** I can **view the contact us page** so that I can **get in touch with the club by filling in a contact form and also see the clubs location and opening hours**.
+- As a **user** I can **not add a picture to my buddy profile** so that I can **protect my privacy**.
+- As a **signed in user** I can **search among the buddies** so that I can **find the best partnert to play with**.
+- As a **user** I can **enjoy browsing the webpage while looking for information** so that **I don't feel compelled to leave**.
+- As a **user** I can **easily see which courts are available for booking in a calendar** so that I **don't have to randomly look for free date/time/court combinations**.
+- As a **signed in user** I can **easily see which courts are free on a given day** so that I **don't have to keep guessing a combination of court/time/date which would be free**.
+- As a **user** I want to **press a cancel button which will take me to the previous page** so that I **don't have to use the Back button**.
+- As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
+- As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
 
 
 [Back to top](#contents)
@@ -398,6 +430,11 @@ In the future, I should able to surmise the amount of story points for each Epic
 ### Moscow principles
 I had tried to apply MoSCoW principles in my development but more on a project basis than on a sprint basis. In my first sprints I solely focused on meeting must-have user stories and when most of my necessary features were in place, only then did I start incorporating should-haves or could-haves. As I went along, I also indentified won't-haves which were either to be fully abandoned or left for future development.
 
+- Must Have: must be delivered (max 60% of user stories)
+- Should Have: add significant value, but not crucial (20% of stories)
+- Could Have: small impact if not implemented (20% of stories)
+- Won't Have: not crucial for this iteration
+
 [Back to top](#contents)
 ### Milestones
 I split up my project development into the following milestones:
@@ -429,40 +466,9 @@ Each milestone was split into epics. Looking back at it, my epics copy milestone
 ### User Stories
 Each epic would contain several user stories. Each user story has a description, acceptance criteria and tasks which had to be done before the user story could be closed and moved to done. For details as to which user story was a part of a particular epic/milestone and for the acceptance criteria/tasks, please refer to my [Projects](https://github.com/users/lucia2007/projects/6/views/1) where all the details can be found.
 
-I split the project into following user stories:
-- As a **user**, I would like to **view the apps homepage** so that I can **learn about the app and see what services it provides**.
-- As a **user** I can **locate the navigation area** so that I can **easily access different parts of the website**
-- As a **user**, I can **access relevant information about opening hours, contact information and social media links without having to scroll back to the top of the page** so that I can **visit the club, contact the club and follow the club online**.
-- As an **unregistered user** I want to be able **to sign up onto the website** so that I can **access websites functionality and content**.
-- As a **registered user** I want to be able **to sign in into my account** so that I can **get access to the website's functionality and options**.
-- As a **signed in user** I want to be able **to sign out of my account** so that I can **keep my account private and safe**.
-- As a **user** I can **enter my personal details** so that I can **create an account with Tennis buddies and be contacted in case of need**
-- As a **signed in user with an active profile** I can **create a buddy profile** so that **I can use the search functionality to find the best tennis partner**
-- As a **user**, I can **edit my buddy profile** to **update my preferences regarding the style of play/practice**.
-- As a **registered user** I can **press delete button on my buddy profile form** so that I can **delete all provided information regarding my preferences for a tennis partner, including pictures**
-- As a **registered user** I can **press delete button on my user profile/contact form** so that I can **delete all provided information regarding my contact details**.
-- As a **user**, I can **edit my user profile** to **update my personal details**.
-- As a **user** I can **visit the Find Your Perfect Buddy page** so that I can **find the perfect match for my tennis practice**.
-- As a **user** I can **reserve a court** so that I can **play at a time that suits me and can avoid come to a full club**.
-- As a **signed in user/staff member** I can **view all the bookings** so that I can **see when other people are playing/the courts are busy**.
-- As a **registered user/superuser** I can **press delete button on my booking details** so that I can **delete my/any user's booking**.
-- As a **user**, I can **edit my bookings** to **update my preferences regarding the day/time/court/opponents**.
-- As a **user/staff** I can **see the list of all bookings (staff)/my own bookings (current user)** so that I can **be reminded of my reservations, but also to be able to update them or delete them**.
-- As a **user** I can **be visually attracted to the app and see the main site features on the moving carousel** so that I can **quickly get an idea what the app offers**.
-- As a **user I want to be informed about different user actions** so that I can **be sure that the itended action took place**.
-- As a **user** I can **view the contact us page** so that I can **get in touch with the club by filling in a contact form and also see the clubs location and opening hours**.
-- As a **user** I can **not add a picture to my buddy profile** so that I can **protect my privacy**.
-- As a **signed in user** I can **search among the buddies** so that I can **find the best partnert to play with**.
-- As a **user** I can **enjoy browsing the webpage while looking for information** so that **I don't feel compelled to leave**.
-- As a **user** I can **easily see which courts are available for booking in a calendar** so that I **don't have to randomly look for free date/time/court combinations**.
-- As a **signed in user** I can **easily see which courts are free on a given day** so that I **don't have to keep guessing a combination of court/time/date which would be free**.
-- As a **user** I want to **press a cancel button which will take me to the previous page** so that I **don't have to use the Back button**.
-- As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
-- As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
+The above listed user stories above had all been finished. There are several user stories which had not been done and are postponed for future development, others were moved into "won't do" category. For more details see Future Features in each respective section.
 
-The user stories above had all been finished. There are several user stories which had not been done and are postponed for future development, others were moved into won't do category. For more details see Future Features in each respective section.
-
-I realize that my attempt at agile project development was not perfect and I know I will do several things differently in the future, but it has definitely been an enriching experience and helped me manage the project's scope. In the future I plan to make more detailed Epics and to plan my sprints according to user story points, as now I have a better idea how long different tasks take me and I can make better, if imperfect, estimates.
+I realize that my attempt at agile project development was not perfect and I know I will do several things differently in the future, but it has definitely been an enriching experience which helped me manage the project's scope. In the future I plan to make more detailed Epics and to plan my sprints according to user story points, as now I have a better idea how long different tasks take me and I can make better, if imperfect, estimates.
 
 [Back to top](#contents)
 ## Database Schema (ERD)
@@ -617,7 +623,7 @@ In order to avail of the buddy search functionality, the user must be registered
 
 The link above should have a particular buddy's "pk" at the end of the link. The link in this form does not work. I did not provide a particular profile number, as the profile might get deleted and the link would not work.
 
-![Buddy Detail Page](./readme-images/buddydetails.png)
+![Buddy Detail Page](/readme-images/buddy_details.png)
 
 Here the user can see the player's details such as their level, availability, preferences etc. Also an email address is present at the bottom of the form so that the user can contact the player and arrange a game with them.
 
@@ -660,13 +666,13 @@ The user can see a pop up message which informs them about the successful reserv
 
 [Back to top](#contents)
 
-Any user can make maximum one booking per day. This is to prevent one user from reserving too many courts on any given day and gives other users a change to make their own reservations. If a user tries to make a booking on a day when they already have a court booked, they get a warning message about maximum number of bookings and are taken back to the booking calendar, where they can choose a different date.
+Any user can make maximum one booking per day. This is to prevent one user from reserving too many courts on any given day and gives other users a chance to make their own reservations. If a user tries to make a booking on a day when they already have a court booked, they get a warning message about maximum number of bookings and are taken back to the booking calendar, where they can choose a different date.
 
-![Max Booking Warning]()
-<!-- Take a screen shot of the warning message -->
+![Max Booking Warning](/readme-images/max_bookings_warning.png)
+
 
 ### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
-When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. 
+When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. If a user deletes their contact info and wants to see their bookings (even though there are currently none as they got deleted with the profile), the user is prompted to enter their contact details.
 
 ![Your Bookings](./readme-images/yourbookings.png)
 </br>
@@ -680,9 +686,7 @@ When the user has updated their booking, they can see a success message at the t
 
 [Back to top](#contents)
 
-</br>
 ![Delete Booking](./readme-images/booking_delete_confirmation.png)
-</br>
 ![Delete Booking Success](./readme-images/booking_delete_success_message.png)
 
 [Back to top](#contents)
@@ -778,9 +782,9 @@ A user can choose to fill in their buddy/profile details if they want to be cont
 
 [Back to top](#contents)
 #### Add Buddy Profile   
-The only information that is prefilled in this form is the user's email address. This is not an editable field. As regards an image, if the user does not provide one, a placeholder image will be used.
+All fields in the form are prefilled or have placeholder text to aid the user in filling the form. As regards the image, if the user does not provide one, a placeholder image will be used.
 
-The user can choose their level, availability, type of game, etc. In the future, they will also be able to say that their profile is not to appear in the catalague or in the searches (the backend functionality is not currently in place.)
+The user can choose their level, availability, type of game, etc. In the future, they will also be able to say that their profile is not to appear in the catalague or in the searches (the backend functionality is not currently in place.) Also in the next version, the admin will have a right to approve a buddy profile and dismiss those that violate the code of conduct as defined by the club.
 
 ![Add Buddy Profile](./readme-images/add_buddy_details.png)
 [Add Buddy Success Message](/readme-images/add_buddy_success_message.png)
@@ -859,6 +863,8 @@ At the moment, the email is not being verified and user can use a made up email.
 ![500 Error Page Image](readme-images/500_error_page.png) 
 
 ## Future Features
+Apart from the already mentioned future features in each relevant section, I would like to add a possibility to book a professional hitter/coach. Since Find your perfect buddy have an aspect of social media, I might have to add some restrictions to the buddies, e.g. if someone didn't want to be contacted by a particular player, they should be able to block them out.
+Also I would like to add automated testing, as at this point I relied thoroughly on manual testing.
 
 [Back to top](#contents)
 
@@ -887,6 +893,7 @@ At the moment, the email is not being verified and user can use a made up email.
 - [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used for validation python code.
 - [Regex Pattern Checker](https://regex101.com/) - used to check my regex expression for phone number validation.
+- [Lucid Charts](https://lucid.app/lucidchart/) - for creating my ERD Diagram
 
 [Back to top](#contents)
 
@@ -935,7 +942,7 @@ For testing the application, I used manual testing and external validators. Both
   - I used manual testing throughout the whole development phase of the project. Mainly:
     - I deployed early to avoid any last minute issues and checked my local and life site periodically. With the live site, I could check responsivness from early on on different devices.
     - I attended to any errors which I came across during development process.
-    - I used validators to check my HTML, css and backend code.
+    - I used validators to check my HTML, CSS and backend code.
     - For each of the user stories I wrote down clear acceptance criteria and tasks which had to be done to meet those criteria. Only after I had met all the conditions, did I move the user story to done.
 
 
@@ -1199,6 +1206,9 @@ Take the following steps to create a clone of a project:
 - [Prepopulate AddBooking Form](https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data)
 - [Generate HTML in Django](https://twitter.com/AdamChainz/status/1504231031574040578)
 - [Url encode](https://stackoverflow.com/questions/64538729/how-to-url-encode-in-django-views)
+- [Characters not to be included in name validation](https://salesforce.stackexchange.com/questions/41153/best-regex-for-first-last-name-validation)
+- [Disable html warning](https://html-validate.org/usage/index.html#inline-configuration)
+- [Disable class Deletion warning](https://stackoverflow.com/a/75724709/15098344)
 ## Media
 - https://www.istockphoto.com/photos/tennis-friends
 - https://www.coachhousevets.com/meet-the-team/the-team/no-photo-icon-22/
