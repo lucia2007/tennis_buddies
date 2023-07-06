@@ -61,9 +61,13 @@ Lines > 80, other minor errors     |  many different files, mostly python   | I 
 
 ## Unfixed Bugs
 
-Bug: The Staff link is highlighted also when the user is on bookings/list/own, even though it should be highlighted only when the staff user is on bookings/list/all.
+1. The Staff link is highlighted also when the user is on bookings/list/own, even though it should be highlighted only when the staff user is on bookings/list/all.
+[Highlighted Staff link](/testing-images/highlighted_staff_link.png)
 
-There is a bug in the browser console: 
+2. In my Edit Buddy form the "currently" image field is empty, even though it should display the path to the image. I had not managed to make the path appear. Neverthless, this does not affect the functionality and the user is able to edit the image without any problems.
+[Missing Image description](/testing-images/missing_image_description.png)
+
+1. There is a bug in the browser console related to the imported JS. 
 [Browser error](/testing-images/browser_error.png)
 
 ## Additional Testing
@@ -104,6 +108,40 @@ All of my scores for all of the pages were above 90, often close to 100. On a co
 ## Additional Testing
 
 ### User Stories Testing
+Before any user story could be moved to "done", clear acceptance criteria were defined and necessary tasks were listed. Only after all the criteria were met and all tasks were finished, did I consider a user story finished. The only exception was, if some of the features were moved into "won't do" category. In that case, that feature would be extracted from the user story and labeled as "won't do"
+
+| Status | **Main Website - User Logged Out**
+|:-------:|:--------|
+| &check; | As a **user**, I would like to **view the apps homepage** so that I can **learn about the app and see what services it provides**.
+| &check; | As a **user** I can **locate the navigation area** so that I can **easily access different parts of the website**
+| &check; | As a **user**, I can **access relevant information about opening hours, contact information and social media links without having to scroll back to the top of the page** so that I can **visit the club, contact the club and follow the club online**.
+| &check; | As an **unregistered user** I want to be able **to sign up onto the website** so that I can **access websites functionality and content**.
+| &check; | As a **registered user** I want to be able **to sign in into my account** so that I can **get access to the website's functionality and options**.
+| &check; | As a **signed in user** I want to be able **to sign out of my account** so that I can **keep my account private and safe**.
+| &check; | As a **user** I can **enter my personal details** so that I can **create an account with Tennis buddies and be contacted in case of need**
+| &check; | As a **signed in user with an active profile** I can **create a buddy profile** so that **I can use the search functionality to find the best tennis partner**
+| &check; | As a **user**, I can **edit my buddy profile** to **update my preferences regarding the style of play/practice**.
+| &check; | As a **registered user** I can **press delete button on my buddy profile form** so that I can **delete all provided information regarding my preferences for a tennis partner, including pictures**
+| &check; | As a **registered user** I can **press delete button on my user profile/contact form** so that I can **delete all provided information regarding my contact details**.
+| &check; | As a **user**, I can **edit my user profile** to **update my personal details**.
+| &check; | As a **user** I can **visit the Find Your Perfect Buddy page** so that I can **find the perfect match for my tennis practice**.
+| &check; | As a **user** I can **reserve a court** so that I can **play at a time that suits me and can avoid come to a full club**.
+| &check; | As a **signed in user/staff member** I can **view all the bookings** so that I can **see when other people are playing/the courts are busy**.
+| &check; | As a **registered user/superuser** I can **press delete button on my booking details** so that I can **delete my/any user's booking**.
+| &check; | As a **user**, I can **edit my bookings** to **update my preferences regarding the day/time/court/opponents**.
+| &check; | As a **user/staff** I can **see the list of all bookings (staff)/my own bookings (current user)** so that I can **be reminded of my reservations, but also to be able to update them or delete them**.
+| &check; | As a **user** I can **be visually attracted to the app and see the main site features on the moving carousel** so that I can **quickly get an idea what the app offers**.
+| &check; | As a **user I want to be informed about different user actions** so that I can **be sure that the itended action took place**.
+| &check; | As a **user** I can **view the contact us page** so that I can **get in touch with the club by filling in a contact form and also see the clubs location and opening hours**.
+| &check; | As a **user** I can **not add a picture to my buddy profile** so that I can **protect my privacy**.
+| &check; | As a **signed in user** I can **search among the buddies** so that I can **find the best partnert to play with**.
+| &check; | As a **user** I can **enjoy browsing the webpage while looking for information** so that **I don't feel compelled to leave**.
+| &check; | As a **user** I can **easily see which courts are available for booking in a calendar** so that I **don't have to randomly look for free date/time/court combinations**.
+| &check; | As a **signed in user** I can **easily see which courts are free on a given day** so that I **don't have to keep guessing a combination of court/time/date which would be free**.
+| &check; | As a **user** I want to **press a cancel button which will take me to the previous page** so that I **don't have to use the Back button**.
+| &check; | As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
+| &check; | As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
+
 ### Manual Testing
 
 In addition to tests stated above I have performed a series of manual tests. Below is a list of tests that have been conducted. These test are in addition to checking against acceptance criteria of each user story and fulfilling all of the relevant tasks.
