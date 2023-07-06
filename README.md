@@ -98,11 +98,12 @@ You can access the Tennis Buddies app here:
     - [Manual testing](#manual-testing)
     - [External Testing](#external-testing)
     - [Automated Testing](#automated-testing)
-- [Deployment to Heroku](#deployment-to-heroku)
-  - [Project Deployment](#project-deployment)
+- [Project Deployment](#project-deployment)
   - [Create a new GitHub Repository from CI template](#create-a-new-github-repository-from-ci-template)
-  - [Install Django and the supporting libraries](#install-django-and-the-supporting-libraries)
-  - [Create an app on Heroku](#create-an-app-on-heroku)
+    - [Install Django and the supporting libraries](#install-django-and-the-supporting-libraries)
+  - [ElephantSQL Database](#elephantsql-database)
+  - [Cloudinary API](#cloudinary-api)
+  - [Heroku Deployment](#heroku-deployment)
   - [To fork the repository on GitHub](#to-fork-the-repository-on-github)
   - [To create a local clone of a project](#to-create-a-local-clone-of-a-project)
 - [Credits](#credits)
@@ -946,176 +947,185 @@ For testing the application, I used manual testing and external validators. Both
 
 [Back to top](#contents)
 
-# Deployment to Heroku
+# Project Deployment
 
-## Project Deployment
-
-The application was deployed to Heroku. In order to deploy, the following steps were taken:
-
-1. If you have an account, login to Heroku. Otherwise create a new account.
-2. Once signed in, click the button "New" in the top right corner, below the header and choose "Create new app".
-
-The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
 
 ## Create a new GitHub Repository from CI template
 
-1. Create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+- Create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
 
-<details><summary><b>Step 1</b></summary>
+<details><summary><b>Create GitHub Repository</b></summary>
 
-![Step 1](readme-images/heroku_step_1.png)
+![Create GitHub Repository](readme-images/heroku_step_1.png)
 </details><br />
 
-2. Fill in the needed details as stated in the screenshot below and then click 'Create Repository From Template'.
+- Fill in the needed details as stated in the screenshot below and then click 'Create Repository From Template'. The name you choose must be unique.
 
-<details><summary><b>Step 2</b></summary>
+<details><summary><b>Choose Repository Name</b></summary>
 
-![Step 2](readme-images/heroku_step_2.png)
+![Repository Name](readme-images/heroku_step_2.png)
 </details><br />
 
-3. When the repository is created, click the green 'Gitpod' button as stated in the screenshot below.
+- When the repository is created, click the green 'Gitpod' button as stated in the screenshot below.
 
-<details><summary><b>Step 3</b></summary>
+<details><summary><b>Click Green GitPod Button</b></summary>
 
-![Step 3](readme-images/heroku_step_3.png)
+![Click Green GitPod Button](readme-images/heroku_step_3.png)
 </details><br />
 
-## Install Django and the supporting libraries
+### Install Django and the supporting libraries
 
-4. To install Django and the supporting libraries, type the commands below.
+- To install Django and the supporting libraries, type the commands below.
 
 * ```pip3 install 'django<4' gunicorn```
 * ```pip3 install dj_database_url psycopg2```
 * ```pip3 install dj3-cloudinary-storage```
 
-<details><summary><b>Step 4</b></summary>
+<details><summary><b>Install Supporting Libraries</b></summary>
 
-![Step 4](readme-images/heroku_step_4.png)
+![Install Supporting Libraries](readme-images/heroku_step_4.png)
 </details><br />
 
-5. When Django and the libraries are installed we need to create a requirements file.
+- When Django and the libraries are installed we need to create a requirements file.
 
 * ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
 
-<details><summary><b>Step 5</b></summary>
+<details><summary><b>Create Requirements File</b></summary>
 
 ![Step 5](readme-images/heroku_step_5.png)
 </details><br />
 
-6. Create the project.
+- Create the project.
 
 * ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create your project
 
-<details><summary><b>Step 6</b></summary>
+<details><summary><b>Create Project</b></summary>
 
-![Step 6](readme-images/heroku_step_6.png)
+![Create Project](readme-images/heroku_step_6.png)
 </details><br />
 
-7. When the project is created, we can now create the application.
+- When the project is created, we can now create the application.
 
 * ```django-admin startapp APP_NAME``` - This will create your application
 
-<details><summary><b>Step 7</b></summary>
+<details><summary><b>Create Application</b></summary>
 
-![Step 7](readme-images/heroku_step_7.png)
+![Create Application](readme-images/heroku_step_7.png)
 </details><br />
 
-8. We now need to add the application to settings.py
+- We now need to add the application to settings.py
 
-<details><summary><b>Step 8</b></summary>
+<details><summary><b>Add Application to settings.py</b></summary>
 
-![Step 8](readme-images/heroku_step_8.png)
+![Add Application to settings.py](readme-images/heroku_step_8.png)
 </details><br />
 
-9. Now do your first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+- Now do your first migration and run the server to test that everything works as expected. This is done by writing the commands below.
 
 * ```python3 manage.py migrate``` - This will migrate the changes.
 * ```python3 manage.py runserver``` - This runs the server. To test it, click the 'open browser' button that will be visible after the command is run.
 
+- Create `env.py` file at the root level and include the following environment variables:
 
-## Create an app on Heroku
+import os
 
-9. Next create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+os.environ.setdefault("CLOUDINARY_URL", "insert your own Cloudinary API key here")
+</br>
+os.environ.setdefault("DATABASE_URL", "insert your own ElephantSQL database URL here")
+</br>
+os.environ.setdefault("SECRET_KEY", "this can be any random secret key")
+</br>
+os.environ.setdefault("DEBUG", "True")
+
+The last variable is for local development only and must not be included in production/deployment.
+
+## ElephantSQL Database
+[ElephantSQL](https://www.elephantsql.com/) is used for the PostgreSQL database in this project.
+
+To create your own PostgreSQL database, sign-up with your GitHub account and follow these steps:
+- Click **Create New Instance** to initiate a new database.
+- Choose a name, usually the name of the project.
+- Select **Tiny Turtle(Free)** plan.
+- Leave the **Tags** blank.
+- Select **Region** and **Data Center** closest to you.
+- Afterwards, click on the new database name, where you can view the db URL and Password. Copy it enter the address into your config vars in Heroku and into your env.py file.
+
+## Cloudinary API
+[Cloudinary API](https://cloudinary.com/) is used to store media assets online.
+
+In order to retrieve your Cloudinary API key, you must create an account and log in.
+- Choose 'Programmable Media for image and video API' for 'primary interest'.
+- Copy you **API Environment Variable** from your Cloudinary Dashboard.
+- Remove the `CLOUDINARY_URL=` from the API value and use the key in config vars in Heroku and in your env.py.
+## Heroku Deployment
+
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+
+Create the application on Heroku, attach a database, prepare the environment and settings.py file and setup the Cloudinary storage for static and media files.
 
 * Go to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
 
-* In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
+* Once signed in, click the button "New" in the top right corner, below the header and choose "Create new app". The name you choose must be unique. Choose a region which is closest to you.
 
-<details><summary><b>Step 09</b></summary>
+<details><summary><b>Create New App</b></summary>
 
-![Step 9](readme-images/heroku_step_9.png)
+![Create New App](readme-images/heroku_step_9.png)
 </details><br />
 
-10. Enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
+- Enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
 
-<details><summary><b>Step 10</b></summary>
+<details><summary><b>Choose Name and Region</b></summary>
 
-![Step 10](readme-images/heroku_step_10.png)
+![Choose Name and Region](readme-images/heroku_step_10.png)
 </details><br />
    <details><summary><b>Create new app</b></summary>
 
-   ![Create new app](/readme-images/create_new_app.png)
-   </details><br />
+![Create new app](/readme-images/create_new_app.png)
+</details><br />
 
-3. Choose a unique name for the application and select your region. When done, click "Create app".
-   <details><summary><b>Create app</b></summary>
+- This brings you to the "Deploy" tab. From here, click the "Settings" tab and scroll down to the "Config Vars" section and click on "Reveal Config Vars". In the KEY input field, enter "PORT" and in the VALUE input field, enter "8000". After that, click the "Add" button on the right.
 
-   ![Create app](/readme-images/create_app.png)
-   </details><br />
+<details><summary><b>Config Vars</b></summary>
 
+![Config Vars](/readme-images/config_vars.png)
+</details><br />
 
-4. This brings you to the "Deploy" tab. From here, click the "Settings" tab and scroll down to the "Config Vars" section and click on "Reveal Config Vars". In the KEY input field, enter "PORT" and in the VALUE input field, enter "8000". After that, click the "Add" button on the right.
+We need "DISABLE_COLLECTSTATIC" variable only for the initial deployment, later this variable must be removed.
 
-   <details><summary><b>Config Vars</b></summary>
+Heroku needs two additional files in order to deploy properly:
+- requirements.txt (see above)
+- Procfile - this file can be created with the following command: `echo web: gunicorn app_name.wsgi > Procfile`. Replace 'app-name' with the name of your primary Django app/project name.
 
-   ![Config Vars](/readme-images/config_vars.png)
-   </details><br />
-
-5. Afterwards, scroll down to the "Buildpacks" section of the settings page and click the button "Add buildpack".
-
-   <details><summary><b>Buildpacks</b></summary>
-
-   ![Buildpacks](/readme-images/buildpacks.png)
-   </details><br />
-
-6. First add "Python" package and then "node.js". 
+- Scroll back to the top of the page and choose the "Deploy" tab. Then choose "GitHub" as Deployment method.
    
-   <details><summary><b>Choose Buildpacks</b></summary>
+<details><summary><b>Deployment method</b></summary>
 
-   ![Choose Buildpacks](/readme-images/packages_order.png)
-   </details><br />
+![Deployment method](/readme-images/deploy.png)
+</details><br />
 
-7. If you exchanged the order of the packages, just drag the Python package above.
+Go to "Connect to GiHub" section, search for the repository name and then click "Connect".
    
-   <details><summary><b>Buildpacks' Order</b></summary>
-   
-   ![Buildpacks's Order](/readme-images/buildpacks_correct_order.png)
-   </details><br />
+<details><summary><b>Connect to GitHub</b></summary>
 
-8. Scroll back to the top of the page and choose the "Deploy" tab. Then choose "GitHub" as Deployment method.
-   
-   <details><summary><b>Deployment method</b></summary>
-   
-   ![Deployment method](/readme-images/deploy.png)
-   </details><br />
+![Connect to GitHub](/readme-images/connect_repository.png)
+</details><br />
 
-9. Go to "Connect to GiHub" section, search for the repository and then click "Connect".
+- In the "Automatic Deploys" section, choose your preferred method for deployment. At first, I used the manual deployment option, and later I changed it to automatic deploys. Afterwards, click "Deploy Branch".
    
-   <details><summary><b>Connect to GitHub</b></summary>
-   
-   ![Connect to GitHub](/readme-images/connect_repository.png)
-   </details><br />
+<details><summary><b>Automatic Deploys</b></summary>
 
-10. In the "Automatic Deploys" section, choose your preferred method for deployment. At first, I used the manual deployment option, and later I changed it to automatic deploys. Afterwards, click "Deploy Branch".
-   
-    <details><summary><b>Automatic Deploys</b></summary>
-   
-    ![Automatic Deploys](/readme-images/automatic_deploys.png)
-    </details><br />
+![Automatic Deploys](/readme-images/automatic_deploys.png)
+</details><br />
 
-The link to the the live site can be found here - https://towers-of-hanoi-game.herokuapp.com/.
-The link to the GitHub repository can be found here - https://github.com/lucia2007/towers-of-hanoi.
+Alternatively, you can follow these steps:
+- In the Terminal/CLI connect to Heroku by typing in: `heroku login -i`
+- Set the remote for Heroku: `heroku git: remote -a app_name` (replace app_name with your app name)
+- After doing Git `add`, `commit`, `push` to GitHub, you can type in: `git push heroku main`
 
+The project should now be deployed to Heroku.
+
+The link to the the live site can be found here - https://tennis-buddies.herokuapp.com/.
+The link to the GitHub repository can be found here - https://github.com/lucia2007/tennis_buddies.
 
 [Back to top](#contents)
 
