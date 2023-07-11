@@ -35,6 +35,8 @@ def contact(request):
                 return HttpResponse('Invalid header found.')
             messages.success(request, 'Your inquiry was sent successfully.')
             return redirect('home')
+        else:
+            messages.warning(request, 'Your email is invalid. Try again.')
 
     form = ContactForm()
     return render(request, 'contact/contact.html', {'form': form})
