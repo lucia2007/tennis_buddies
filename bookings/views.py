@@ -40,7 +40,7 @@ class TestIfHasProfileMixin(UserPassesTestMixin):
             return False
 
     def handle_no_permission(self):
-        '''to:[login,Profile] will signup or create a profile'''
+        """to:[login,Profile] will signup or create a profile"""
         if not self.request.user.is_authenticated:
             return super().handle_no_permission()
         if self.raise_exception:

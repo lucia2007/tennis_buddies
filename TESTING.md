@@ -63,7 +63,6 @@ I used only one small JS function for closing a message window after 2000 milise
 
 [CSS Validation Result](/testing-images/css_validation_no_errors.png)
 
-
 ## Browser Compatibility
 
 The website was tested on the following browsers: Google Chrome, Safari, Microsoft Edge and Mozilla Firefox. There were no errors discovered in the functionality of the site or the individual features.

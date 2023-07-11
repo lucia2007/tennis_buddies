@@ -10,7 +10,6 @@ phone_validator = RegexValidator(
 
 # https://salesforce.stackexchange.com/questions/41153/best-regex-for-first-last-name-validation
 firstname_validator = RegexValidator(
-    # regex=r'^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\/<>?:;|=.,0-9]{1,20}$',
     regex=r"^[ \u00c0-\u01ffa-zA-Z'\-]+$",
     message="First name should not contain numbers or special characters."
     )
