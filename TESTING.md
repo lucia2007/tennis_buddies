@@ -45,6 +45,7 @@ I could not check the source for 500 Error page, because when I tried to look at
 | bookingcalendar | na   | na         | na      | [no errors](/testing-images/bookingcalendar_urlspy.png)      | [no errors](/testing-images/bookingcalendar_viewspy.png)         | [no errors](/testing-images/bookingcalendar_tablespy.png)         |
 | bookings | [no errors](/testing-images/bookings_adminpy.png)      | [no errors](/testing-images/bookings_formspy.png)          | [no errors](/testing-images/bookings_modelspy.png)     | [no errors](/testing-images/bookings_urlspy.png)    | [no errors](/testing-images/bookings_viewspy.png)           | na          |
 | buddies | [no errors](/testing-images/buddies_adminpy.png)      | [no errors](/testing-images/buddies_formspy.png)          | [no errors](/testing-images/buddies_modelspy.png)      | [no errors](/testing-images/buddies_urlspy.png)    | [no errors](/testing-images/buddies_viewspy.png)          | na            |
+| contact | na     | [no errors](/testing-images/contactform_formpy.png)        | na      | [no errors](/tennisbuddies/contactform_urlspy.png)     | [no errors](/testing-images/contactform_viewspy.png)            | na            |
 | home | na      | na          | na      | [no errors](/testing-images/home_urlspy.png)     | [no errors](/testing-images/home_viewspy.png)           | na            |
 | profiles | [no errors](/testing-images/profiles_adminpy.png)      | [no errors](/testing-images/profiles_formspy.png)           | [no errors](/testing-images/profiles_modelspy.png)      | [no errors](/testing-images/profiles_urlspy.png)     | [no errors](/testing-images/profiles_viewspy.png)         | na     
 | settings.py | [no errors](/testing-images/tennisbuddies_settings.png)         | na          | na     | na    | na            | na     
@@ -54,9 +55,13 @@ I could not check the source for 500 Error page, because when I tried to look at
 
 I used only one small JS function for closing a message window after 2000 miliseconds. The code is without errors.
 
-[JS Validation](/testing-images/js_timeout.png)
+[JS Validation Result](/testing-images/js_timeout.png)
 
 ### CSS Testing
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) was used to validate my CSS file. External CSS for Bootstrap, provided by CDN was not tested. No errors were found.
+
+[CSS Validation Result](/testing-images/css_validation_no_errors.png)
 
 
 ## Browser Compatibility
@@ -70,6 +75,16 @@ The website was tested on the following browsers: Google Chrome, Safari, Microso
 | Microsoft Edge| &check; | 
 | Mozilla Firefox| &check; | 
 ## Responsiveness Test
+
+Testing of responsive design was carried out manually by utilizing [Google Chrome DevTools](https://developer.chrome.com/docs/devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
+|        | S Galaxy 5 | iPhone 6/6S/7 | iPad Mini | iPad Pro | Display <1200px | Display >1200px |
+| ------ | ---------- | ------------- | --------- | -------- | --------------- | --------------- |
+| Render | pass       | pass          | pass      | pass     | pass            | pass            |
+| Images | pass       | pass          | pass      | pass     | pass            | pass            |
+
+The only devices where the whole content would not fit on the screen where the ones with height around 600px or lower. However, I prefered the scrolling to making the content smaller, as it would be really hard for the user to press the color squares.
+
 ## Fixed Bugs
 
 |                                        BUG                                       | WHERE |                                      HOW                                      |                   COMMIT                   |
@@ -94,13 +109,15 @@ Lines > 80, other minor errors     |  many different files, mostly python   | I 
 
 ## Unfixed Bugs
 
+I have tried to fix the following errors but have not managed to do so in the provided timeframe. I definitely plan to fix these errors in the next version.
+
 1. The Staff link is highlighted also when the user is on bookings/list/own, even though it should be highlighted only when the staff user is on bookings/list/all.
 [Highlighted Staff link](/testing-images/highlighted_staff_link.png)
 
 2. In my Edit Buddy form the "currently" image field is empty, even though it should display the path to the image. I had not managed to make the path appear. Neverthless, this does not affect the functionality and the user is able to edit the image without any problems.
 [Missing Image description](/testing-images/missing_image_description.png)
 
-1. There is a bug in the browser console related to the imported JS. 
+3. There is a bug in the browser console related to the imported JS. The same error appears in most browsers.
 [Browser error](/testing-images/browser_error.png)
 
 ## Additional Testing
@@ -137,8 +154,6 @@ The application was also tested using [Google Lighthouse](https://developers.goo
 | Sign Out | [Sign Out Score](./testing-images/lighthouse_logout.png) |
 
 All of my scores for all of the pages were above 90, often close to 100. On a couple of pages the "Best Practices" score is slightly lower, due to an error which is logged into the console and seems to be caused by JSDelivr CDN for the close button on messages. I have not managed to fix this error. Details are in the bug section.
-
-## Additional Testing
 
 ### User Stories Testing
 Before any user story could be moved to "done", clear acceptance criteria were defined and necessary tasks were listed. Only after all the criteria were met and all tasks were finished, did I consider a user story finished. The only exception was, if some of the features were moved into "won't do" category. In that case, that feature would be extracted from the user story and labeled as "won't do"
@@ -245,3 +260,4 @@ Status | **Create A Contact Form - User Logged In and has a User Profile**
 | &check; | First name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
 | &check; | Last name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
 | &check; | Email is required and must contain "@" and some characters before and after the sign.
+<!-- | &check; | When the user fills in correct information, a message appears that the Inquiry was sent successfully. At the moment, a message appears in the CLI, as email functionality is not yet set up. However, this functionality works only on localhost and is not present on the heroku app, so the user will not see the message if using the deployed site. -->
