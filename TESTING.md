@@ -6,6 +6,8 @@ The [Tennis Buddies](https://tennis-buddies.herokuapp.com/) webpage was thouroug
 
 <!-- All errors were corrected and HTML, JS and CSS files currently have no errors. -->
 ### HTML Testing
+In order to validate my HTML code I had to extract it from "View page source" which is available upon a right mouse click on the respective html page. This is due to the fact that I have been using Jinja syntax and form|crispy and not all of my code would be validated if I just copied my own html code.
+
 During HTML validation I encountered a number of errors in my file. In order to avoid verbosity, I'm attaching the original validation message and a commit number where the errors were corrected. 
 
 | Page | Current Errors and Warning (No Errors) | Original Errors and Warnings | Bug-Fix (Commit #)
@@ -48,8 +50,25 @@ I could not check the source for 500 Error page, because when I tried to look at
 | settings.py | [no errors](/testing-images/tennisbuddies_settings.png)         | na          | na     | na    | na            | na     
 | tennisbuddies | na       | na          | na      | [no errors](/testing-images/tennisbuddies_urlspy)     | na            | na     
 
+### JavaScript Testing
+
+I used only one small JS function for closing a message window after 2000 miliseconds. The code is without errors.
+
+[JS Validation](/testing-images/js_timeout.png)
+
+### CSS Testing
+
 
 ## Browser Compatibility
+
+The website was tested on the following browsers: Google Chrome, Safari, Microsoft Edge and Mozilla Firefox. There were no errors discovered in the functionality of the site or the individual features.
+
+| App | Browser Compatibility |
+| ---- | ---------- |
+| Google Chrome | &check; | 
+| Safari | &check; | 
+| Microsoft Edge| &check; | 
+| Mozilla Firefox| &check; | 
 ## Responsiveness Test
 ## Fixed Bugs
 
