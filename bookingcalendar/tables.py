@@ -13,6 +13,4 @@ class BookingCalendarTable(tables.Table):
     five = tables.Column(verbose_name="Court Five")
 
     class Meta:
-        # model = BookingCalendar
         template_name = "django_tables2/bootstrap.html"
-        # fields = ("court", )

@@ -34,6 +34,20 @@ During HTML validation I encountered a number of errors in my file. In order to 
 
 I could not check the source for 500 Error page, because when I tried to look at the source code in devtools, I had to Confirm Form Resubmission and thus my html code no longer applied.
 
+### Python Testing
+
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files which were created or edited by me.
+
+|        | admin.py| forms.py | models.py | urls.py | views.py | tables.py |
+| ------ | ---------- | ------------- | --------- | -------- | --------------- | --------------- |
+| bookingcalendar | na   | na         | na      | [no errors](/testing-images/bookingcalendar_urlspy.png)      | [no errors](/testing-images/bookingcalendar_viewspy.png)         | [no errors](/testing-images/bookingcalendar_tablespy.png)         |
+| bookings | [no errors](/testing-images/bookings_adminpy.png)      | [no errors](/testing-images/bookings_formspy.png)          | [no errors](/testing-images/bookings_modelspy.png)     | [no errors](/testing-images/bookings_urlspy.png)    | [no errors](/testing-images/bookings_viewspy.png)           | na          |
+| buddies | [no errors](/testing-images/buddies_adminpy.png)      | [no errors](/testing-images/buddies_formspy.png)          | [no errors](/testing-images/buddies_modelspy.png)      | [no errors](/testing-images/buddies_urlspy.png)    | [no errors](/testing-images/buddies_viewspy.png)          | na            |
+| home | na      | na          | na      | [no errors](/testing-images/home_urlspy.png)     | [no errors](/testing-images/home_viewspy.png)           | na            |
+| profiles | [no errors](/testing-images/profiles_adminpy.png)      | [no errors](/testing-images/profiles_formspy.png)           | [no errors](/testing-images/profiles_modelspy.png)      | [no errors](/testing-images/profiles_urlspy.png)     | [no errors](/testing-images/profiles_viewspy.png)         | na     
+| settings.py | [no errors](/testing-images/tennisbuddies_settings.png)         | na          | na     | na    | na            | na     
+| tennisbuddies | na       | na          | na      | [no errors](/testing-images/tennisbuddies_urlspy)     | na            | na     
+
 
 ## Browser Compatibility
 ## Responsiveness Test

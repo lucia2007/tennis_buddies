@@ -46,5 +46,11 @@ class UserProfileForm(forms.ModelForm):
         validators=[phone_validator],
         widget=forms.TextInput(attrs={'placeholder': '+353xxxxxxxxx'})
     )
-    first_name = forms.CharField(max_length=20, required=True, validators=[firstname_validator])
-    last_name = forms.CharField(max_length=20, required=True, validators=[lastname_validator])
+    first_name = forms.CharField(
+        max_length=20,
+        required=True,
+        validators=[firstname_validator])
+    last_name = forms.CharField(
+        max_length=20,
+        required=True,
+        validators=[lastname_validator])

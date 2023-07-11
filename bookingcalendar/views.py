@@ -29,7 +29,7 @@ class BookingCalendarListView(SingleTableView):
         date_param = self.request.GET.get('date')
         # Convert a string to datetime
         # https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/
-        d = timezone.datetime.strptime(date_param, '%Y-%m-%d').date() if date_param else timezone.now().date()
+        d = timezone.datetime.strptime(date_param, '%Y-%m-%d').date() if date_param else timezone.now().date()  # noqa
         courts = Court.objects.all()
 
         for item in TIMES:
