@@ -735,9 +735,12 @@ There are several ways how the booking system could/should be improved:
 
 ## [Contact Us page](https://tennis-buddies.herokuapp.com/contact/)
 
-This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club. When the user fills in the form, they see a message about the inquiry having been sent. However, this is not fully functional yet and will be taken care of in the next version.
-
+This page contains two main sections: a form which a client can fill in if they want to get in touch with the tennis club and a Google map which shows them an exact position of the club. When the user fills in the form, they see a message about the inquiry having been sent. However, this is not fully functional yet and will be taken care of in the next version. 
 ![Contact Us](./readme-images/contactus.png)
+
+The input is validated. First name and last name fields don't accept numbers and other unusual characters. For email validation, the front-end validator is a bit less strict than the backend validator. For example, according to the front-end this address would be acceptable: a@a, but the form would still be invalid. Therefore, I added a warning for the user that the email address is not valid and in what format it should be submitted. It is just a temporary workaround.
+
+[Invalid Email Warning](/readme-images/invalid_email_warning.png)
 
 [Back to top](#contents)
 ### Inquiry Confirmation Message
