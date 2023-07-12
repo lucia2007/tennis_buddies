@@ -42,7 +42,7 @@ You can access the Tennis Buddies app here:
     - [Sprint #6 - 12/06 - 16/06](#sprint-6---1206---1606)
     - [Sprint #7 - 19/06 - 23/06](#sprint-7---1906---2306)
     - [Sprint #8 - 27/06 - 30/06](#sprint-8---2706---3006)
-    - [Testing #9 - 03/07 - 07/07](#testing-9---0307---0707)
+    - [Sprint #9 + #10- 03/07 - 14/07](#sprint-9--10--0307---1407)
     - [GitHub Projects Board](#github-projects-board)
     - [Moscow Prioritization](#moscow-prioritization)
     - [Milestones](#milestones)
@@ -60,6 +60,7 @@ You can access the Tennis Buddies app here:
   - [Home Page](#home-page)
   - [Find the Perfect Buddy Page](#find-the-perfect-buddy-page)
     - [Buddy Search](#buddy-search)
+    - [Future Features for Buddy Search](#future-features-for-buddy-search)
     - [Buddy Details](#buddy-details)
     - [Future Features for Buddy Matching](#future-features-for-buddy-matching)
   - [Booking of the courts](#booking-of-the-courts)
@@ -198,6 +199,9 @@ As a visitor, I want to easily find a tennis partner to practise with and make a
 - As a **user** I want to **press a cancel button which will take me to the previous page** so that I **don't have to use the Back button**.
 - As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
 - As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
+- As a **site owner** I want **the user to provide their phone number in valid format** so that I can **contact them if necessary**.
+- As a **site owner** I can **restrict the number of bookings per user per day** so that all players **get a chance to book a court**.
+- As a **site owner** I can **make sure that the user enters valid information** so that **they can be contacted in time of need**.
 
 
 [Back to top](#contents)
@@ -367,7 +371,7 @@ Finish CRUD functionality for Contact Details (user_profile), for buddy profile
 
 [Back to top](#contents)
 ### Sprint #4 + #5 - 29/05 - 09/06
-The goal is to create a booking CRUD functionality which will enable the user to book a court, view, edit and delete a booking. In the meantime, add carousel and improve basic style of the app, add messages to main user actionas (CRUD).
+The goal is to create a booking CRUD functionality which will enable the user to book a court, view, edit and delete a booking. In the meantime, add carousel and improve basic style of the app, add messages to main user actionas (CRUD). These tasks were split into two sprints due to their complexity.
 
 - US Create Booking
 - US View all Bookings (ListView)
@@ -402,14 +406,23 @@ Make a more advanced booking system, deploy with css and images, make progress w
 
 [Back to top](#contents)
 ### Sprint #8 - 27/06 - 30/06
-Make progress with Readme and fix small bugs encountered during testing.
+Make progress with Readme and fix small bugs encountered during testing. Add phone number validation.
 
 - BF Correct the flow for admin when editing/deleting a booking
 - BF Fix hrefs for sign in and sign up pages
-<!-- - US DOC!!! -->
+- US Restruct number of bookings per user to one per day
+- US Phone number validation
+- DT Readme Project management, Features, User Stories
 
 [Back to top](#contents)
-### Testing #9 - 03/07 - 07/07
+### Sprint #9 + #10- 03/07 - 14/07
+Perform manual testing of HTML, CSS, Python, JS, LightHouse, responsivness, browser compatibility, user story testing. Add custom error pages. Add input validation. Make minor improvements and fix bugs. Again, this milestone took two sprints to complete.
+
+- DT Readme Deployment
+- DT Add customized 403, 404 and 500 error pages
+- US Add validators for user inputs
+- DT Readme: Technologies and packages used, Testing, ERD, Credits, Error Pages sections
+- DT Do thorough testing of all aspects of the application to make sure everything works seamlessly and write up the documentation
 
 
 [Back to top](#contents)
@@ -435,6 +448,8 @@ I had tried to apply MoSCoW principles in my development but more on a project b
 - Could Have: small impact if not implemented (20% of stories)
 - Won't Have: not crucial for this iteration
 
+Unfinished user stories can be found in either to-do or the won't have section of my project board.
+
 [Back to top](#contents)
 ### Milestones
 I split up my project development into the following milestones:
@@ -446,7 +461,7 @@ I split up my project development into the following milestones:
 5. Search Functionality, Contact Form, Improve Styling of Main Elements.
 6. Make a more advanced booking system, deploy with css and images, make progress with Readme.
 7. Make progress with Readme and fix small bugs encountered during testing
-8. Testing
+8. Manual Testing, Readme Completion
 
 [Back to top](#contents)
 ### Epics
@@ -529,7 +544,6 @@ The site contains a simple but effective NavBar which simplifies the movement of
 [Back to top](#contents)
 
 ![Search Feature](./readme-images/conditional_search.png)  
-<!-- Add info about the pop up modal if included, if not, add it to the future features -->
 - Booking - this link takes the user to the bookingcalendar.html where they can see which courts are available on a particular day.
 - Contact us - the contact.html page lets the user get in touch with the club and provides information about the location of the club.
 - Register/Login - when the user is not logged in, they can see "Register/Login" buttons which allow then to create an accout if they don't already have on or to log in, if they already have an account.
@@ -550,9 +564,7 @@ The site contains a simple but effective NavBar which simplifies the movement of
 
 When a user is on a particular page, the link is becomes bold to make it clear to the user which page they are on.
 
-
 The NavBar is responsive and is available in its full version on large screens only. When the screen size diminishes, the NavBar is collapsed into a clickable Hamburger.
-
 
 ![Hamburger](./readme-images/hamburger_collapsed.png)
 ![Hamburger open](./readme-images/hamburger_open.png)
@@ -618,6 +630,10 @@ On this page the user can see a display of players who are looking for a hitting
 
 In order to avail of the buddy search functionality, the user must be registered and signed in. They can search for terms like: "beginner/advanced/intermediate", or "morning/afternoon/both morning and afternoon", or "hitting practice/match practice", or "singles/doubles", or "male/female". Once the user has narrowed down the players to those who match their search criteria, they can click on the card and are taken to a page where the chosen buddy details are presented.
 
+### Future Features for Buddy Search
+
+Originally, the buddy search was intended to be more sophisticated and more straightforward. As a first approximation, there should at least be a pop up modal which would give the user a hint which values they can search for. As the next step, I would like to do a more complicated search functionality, where the user would be able to pick different values in each of the categories. 
+
 [Back to top](#contents)
 ### [Buddy Details](https://tennis-buddies.herokuapp.com/accounts/login/?next=/buddies/"pk")
 
@@ -669,7 +685,6 @@ The user can see a pop up message which informs them about the successful reserv
 Any user can make maximum one booking per day. This is to prevent one user from reserving too many courts on any given day and gives other users a chance to make their own reservations. If a user tries to make a booking on a day when they already have a court booked, they get a warning message about maximum number of bookings and are taken back to the booking calendar, where they can choose a different date.
 
 ![Max Booking Warning](/readme-images/max_bookings_warning.png)
-
 
 ### [Edit/Delete Functionality](https://tennis-buddies.herokuapp.com/bookings/list/own/)
 When the user has created a booking, they are taken to bookings/list/own.html where they can view, edit or delete their own bookings. This page can also be accessed through the Profile icon, under the "Your Booking" tab. Edit and delete features are available only for the owner of the bookings. A regular user can't edit or delete somebody else's booking. If a user deletes their contact info and wants to see their bookings (even though there are currently none as they got deleted with the profile), the user is prompted to enter their contact details.
@@ -730,7 +745,7 @@ This page contains two main sections: a form which a client can fill in if they 
 [Back to top](#contents)
 
 ### Future Features for Contact Us
-At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is delivered. I need to set this functionality up. At the moment, only a message in CLI appears, but only if sent from the localhost.
+At the moment, when the user fills in the form, they get a message about the inquiry being sent, but no email is delivered. I need to set this functionality up. At the moment, only a message in CLI/terminal appears, but this is available only in development environment.
 
 [Back to top](#contents)
 #### CLI Message
@@ -1175,38 +1190,37 @@ Take the following steps to create a clone of a project:
 
 [Back to top](#contents)
 
-
 # Credits
 
 ## Content
 - I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me understand the relationships
-- Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment, https://github.com/amylour/FreeFido_v2
-- Table structure in Dashboard https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s
+- Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment, https://github.com/amylour/FreeFido_v2, https://github.com/adamgilroy22/tribe/tree/main#deployment
+- Table structure in Staff Dashboard https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s was created following this tutorial.
 - [Filtered booking list](https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user)
 - [To query according to url+filter](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
 - [CRUD functionality was done following Dee Mc's Recipe tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
-- [Features section of the home page](https://easy-eater.herokuapp.com/)
+- [Boutique Ado](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2021_T1/courseware/eb05f06e62c64ac89823cc956fcd8191/3adff2bf4a78469db72c5330b1afa836/) inspired me to use "includes" for header.html and footer.html.
+- [Features section of the home page](https://easy-eater.herokuapp.com/) was inspired by this site.
 - [Restrict the number of opponents](https://stackoverflow.com/questions/20203806/limit-maximum-choices-of-manytomanyfield/20230270#20230270)
 - [Update Owner to current user](https://docs.djangoproject.com/en/2.0/topics/class-based-views/generic-editing/#models-and-request-user)
-- [Messages](https://learn.codeinstitute.net/login?next=/courses/course-v1%3ACodeInstitute%2BFST101%2B2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/%3Fchild%3Dfirst)
-- [Delete Message](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown)
-- [Search Functionality](https://www.youtube.com/watch?v=LsU79aY79UA)
-- [Contact Page](https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s)
-- [Contact Form](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend)
+- [Messages](https://learn.codeinstitute.net/login?next=/courses/course-v1%3ACodeInstitute%2BFST101%2B2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/%3Fchild%3Dfirst) - to display messages
+- [Delete Message](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) - to display deletion message in Class based views
+- [Search Functionality](https://www.youtube.com/watch?v=LsU79aY79UA) - to enable search functionality on the Find the Perfect buddy page.
+- [Contact Page Functionality](https://www.youtube.com/watch?v=w4ilq6Zk-08&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=7&t=2s) - to send an email to CLI in developer mode
+- [Contact Form](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) - for contact form structure and google maps
 - [If not for loop last](https://www.reddit.com/r/django/comments/13p2uuz/is_there_a_way_to_if_not_forlooplast/)
-<!-- - [Send Email Tutorial](https://www.youtube.com/watch?v=xNqnHmXIuzU&list=PLCC34OHNcOtrZnQI6ZLvGPUWfQ6oh-D6H&index=8) -->
 - [Check if superuser](https://stackoverflow.com/questions/65421561/how-can-i-check-if-an-user-is-superuser-in-django)
 - [Image overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
-- [Check if date not in the past](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
+- [Check if date is not in the past](https://stackoverflow.com/questions/73260028/how-can-i-check-if-date-is-passed-from-django-model)
 - [TestIfUserProfile Mixin](https://stackoverflow.com/a/42193610/15098344)
 - [Placeholder time=now](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#now)
 - [Split string and get 1st element](https://bobbyhadz.com/blog/python-split-string-and-get-last-element#split-a-string-and-get-the-first-element-in-python)
 - [Convert string to datetime](https://www.freecodecamp.org/news/python-string-to-datetime-how-to-convert-an-str-to-a-date-time-with-strptime/)
-- [Get success url](# https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model)
+- [Get success url with pk](https://stackoverflow.com/questions/26548018/how-to-feed-success-url-with-pk-from-saved-model)
 - [Prepopulate AddBooking Form](https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data)
 - [Generate HTML in Django](https://twitter.com/AdamChainz/status/1504231031574040578)
 - [Url encode](https://stackoverflow.com/questions/64538729/how-to-url-encode-in-django-views)
-- [Characters not to be included in name validation](https://salesforce.stackexchange.com/questions/41153/best-regex-for-first-last-name-validation)
+- [Characters not to be included for name validation](https://salesforce.stackexchange.com/questions/41153/best-regex-for-first-last-name-validation)
 - [Disable html warning](https://html-validate.org/usage/index.html#inline-configuration)
 - [Disable class Deletion warning](https://stackoverflow.com/a/75724709/15098344)
 ## Media
@@ -1216,7 +1230,6 @@ Take the following steps to create a clone of a project:
 
 ## Acknowledgements
 - Extra help and guidance was received from my mentor Precious Ijege, from my husband Sam and fellow colleagues from the Code Institute.
-- Other sources of inspiration and help:
 
 Thank you all for your support and encouragement. I couldn't have done it without you.
 
