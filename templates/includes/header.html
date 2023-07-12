@@ -36,7 +36,7 @@
                     </li>
                     {% if request.user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'list-bookings' %}active{% endif %}"
+                        <a class="nav-link {% if 'bookings/list/all' in request.path  %}active{% endif %}"
                             href="{% url 'list-bookings' 'all' %}" aria-label="Takes the admin user to Staff page">Staff
                         </a>
                     </li>
