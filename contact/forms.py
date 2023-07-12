@@ -30,8 +30,8 @@ class ContactForm(forms.Form):
     email_address = forms.EmailField(
         required=True,
         max_length=150,
-        widget=forms.TextInput(attrs={'placeholder': 'x@x.x'})
     )
+
     message = forms.CharField(widget=forms.Textarea, max_length=2000)
 
     class Meta:

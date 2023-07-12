@@ -36,7 +36,10 @@ def contact(request):
             messages.success(request, 'Your inquiry was sent successfully.')
             return redirect('home')
         else:
-            messages.warning(request, 'Your email is invalid. Try again.')
+            messages.warning(
+                request,
+                'Your email is invalid. It should look like name@domain.com.'
+                )
 
     form = ContactForm()
     return render(request, 'contact/contact.html', {'form': form})
