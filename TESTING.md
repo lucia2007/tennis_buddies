@@ -135,6 +135,7 @@ The only tricky page is where user's bookings are displayed (bookings/list/own o
 | When I edited or deleted bookings as an admin, it would take me 'bookings/list/own' instead of 'bookings/list/all'  |  edit/delete booking pages   | I had to create conditions for get_success_url() and introduce a condition around "Cancel" button on edit/delete booking pages. |[1bf5cf5](https://github.com/lucia2007/tennis_buddies/commit/1bf5cf5f23787d7ee08663e49e1257bb9f792dc1)
 Lines > 80, other minor errors     |  many different files, mostly python   | I shortened most of the lines in python files, except for those where I felt the readability of the code would suffer if the code were split to numerous lines |[74fed1e](https://github.com/lucia2007/tennis_buddies/commit/74fed1e47c47c90f3a9fba0e81a5891acb64d383)
 | When I made a booking at a future date, but the time has passed, I would get a warning about booking in the past. |  views.py bookings   | I had to change the condition check for time in the past |[9aa7a16](https://github.com/lucia2007/tennis_buddies/commit/9aa7a160ba0560cb9ccf5e625de5b3cc1f76c078)
+| Staff tab was highlighted even when I was on bookings/list/own |  header.html   | I had to change the condition to look for the url path and not for url_name |[525c0fd](https://github.com/lucia2007/tennis_buddies/commit/525c0fdfededbb510e0223c77aeb22f88d6a0ee1)
 
 [Back to top](#testing)
 
@@ -142,13 +143,10 @@ Lines > 80, other minor errors     |  many different files, mostly python   | I 
 
 I have tried to fix the following errors but have not managed to do so in the provided timeframe. I definitely plan to fix these errors in the next version.
 
-1. The Staff link is highlighted also when the user is on bookings/list/own, even though it should be highlighted only when the staff user is on bookings/list/all.
-[Highlighted Staff link](/testing-images/highlighted_staff_link.png)
-
-2. In my Edit Buddy form the "currently" image field is empty, even though it should display the path to the image. I had not managed to make the path appear. Neverthless, this does not affect the functionality and the user is able to edit the image without any problems.
+1. In my Edit Buddy form the "currently" image field is empty, even though it should display the path to the image. I had not managed to make the path appear. Neverthless, this does not affect the functionality and the user is able to edit the image without any problems.
 [Missing Image description](/testing-images/missing_image_description.png)
 
-3. There is a bug in the browser console related to the imported JS which handles the appearance of messages. The same error appears in most browsers.
+2. There is a bug in the browser console related to the imported JS which handles the appearance of messages. The same error appears in most browsers.
 [Browser error](/testing-images/browser_error.png)
 
 [Back to top](#testing)

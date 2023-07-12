@@ -1223,6 +1223,7 @@ Take the following steps to create a clone of a project:
 - [Characters not to be included for name validation](https://salesforce.stackexchange.com/questions/41153/best-regex-for-first-last-name-validation)
 - [Disable html warning](https://html-validate.org/usage/index.html#inline-configuration)
 - [Disable class Deletion warning](https://stackoverflow.com/a/75724709/15098344)
+- [Check if url contains a certain string](https://stackoverflow.com/a/12877568/15098344)
 ## Media
 - https://www.istockphoto.com/photos/tennis-friends
 - https://www.coachhousevets.com/meet-the-team/the-team/no-photo-icon-22/
