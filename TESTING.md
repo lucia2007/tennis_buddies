@@ -1,10 +1,27 @@
 # Testing
+- [Testing](#testing)
+  - [Code Validation](#code-validation)
+    - [HTML Testing](#html-testing)
+    - [Python Testing](#python-testing)
+    - [JavaScript Testing](#javascript-testing)
+    - [CSS Testing](#css-testing)
+  - [Browser Compatibility](#browser-compatibility)
+  - [Responsiveness Test](#responsiveness-test)
+  - [Fixed Bugs](#fixed-bugs)
+  - [Unfixed Bugs](#unfixed-bugs)
+  - [Additional Testing](#additional-testing)
+    - [Lighthouse](#lighthouse)
+    - [Results from Lighthouse](#results-from-lighthouse)
+    - [User Stories Testing](#user-stories-testing)
+    - [Manual Testing](#manual-testing)
 
 ## Code Validation
 
 The [Tennis Buddies](https://tennis-buddies.herokuapp.com/) webpage was thouroughly tested. HTML code was reviewed in the [W3C HTML Validator](https://validator.w3.org). The CSS code was validated in the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the JS file was check in [JS Hint](https://jshint.com/). Python files were tested in [Python Linter](https://pep8ci.herokuapp.com/#).  
 
-<!-- All errors were corrected and HTML, JS and CSS files currently have no errors. -->
+All errors were corrected and HTML, JS and CSS files currently have no errors.
+
+[Back to top](#testing)
 ### HTML Testing
 In order to validate my HTML code I had to extract it from "View page source" which is available upon a right mouse click on the respective html page. This is due to the fact that I have been using Jinja syntax and form|crispy and not all of my code would be validated if I just copied my own html code.
 
@@ -25,7 +42,7 @@ During HTML validation I encountered a number of errors in my file. In order to 
 | Edit Profile | [Edit Profile Validation](./testing-images/edit_profile_html_no_errors.png) |
 | Delete Profile | [Delete Profile Validation](./testing-images/delete_profile_html_no_errors.png) |
 | Add Buddy  | [Add Buddy Profile Validation](./testing-images/add_buddy_html_no_errors.png) |
-| Buddy Details | [Buddy Details Validation](./testing-images/buddy_details_html_no_errors.png)  |
+| Buddy Details | [Buddy Details Validation](./testing-images/buddy_details_html_no_errors.png)  | [Buddy Details Errors](/testing-images/buddy_details_errors.png) | [cc08499](https://github.com/lucia2007/tennis_buddies/commit/cc084997fe7a60423879d193b698e38eb28a4fae)
 | Edit Buddy | [Edit Buddy Validation](./testing-images/edit_buddy_html_no_errors.png) |
 | Delete Buddy | [Delete Buddy Validation](./testing-images/delete_buddy_html_no_errors.png) |
 | Sign In | [Sign In Validation](./testing-images/sign_in_html_no_errors.png) |
@@ -36,6 +53,8 @@ During HTML validation I encountered a number of errors in my file. In order to 
 
 I could not check the source for 500 Error page, because when I tried to look at the source code in devtools, I had to Confirm Form Resubmission and thus my html code no longer applied.
 
+[Back to top](#testing)
+
 ### Python Testing
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files which were created or edited by me.
@@ -45,11 +64,13 @@ I could not check the source for 500 Error page, because when I tried to look at
 | bookingcalendar | na   | na         | na      | [no errors](/testing-images/bookingcalendar_urlspy.png)      | [no errors](/testing-images/bookingcalendar_viewspy.png)         | [no errors](/testing-images/bookingcalendar_tablespy.png)         |
 | bookings | [no errors](/testing-images/bookings_adminpy.png)      | [no errors](/testing-images/bookings_formspy.png)          | [no errors](/testing-images/bookings_modelspy.png)     | [no errors](/testing-images/bookings_urlspy.png)    | [no errors](/testing-images/bookings_viewspy.png)           | na          |
 | buddies | [no errors](/testing-images/buddies_adminpy.png)      | [no errors](/testing-images/buddies_formspy.png)          | [no errors](/testing-images/buddies_modelspy.png)      | [no errors](/testing-images/buddies_urlspy.png)    | [no errors](/testing-images/buddies_viewspy.png)          | na            |
-| contact | na     | [no errors](/testing-images/contactform_formpy.png)        | na      | [no errors](/tennisbuddies/contactform_urlspy.png)     | [no errors](/testing-images/contactform_viewspy.png)            | na            |
+| contact | na     | [no errors](/testing-images/contactform_formpy.png)        | na      | [no errors](/testing-images/contactform_urlspy.png)     | [no errors](/testing-images/contactform_viewspy.png)            | na            |
 | home | na      | na          | na      | [no errors](/testing-images/home_urlspy.png)     | [no errors](/testing-images/home_viewspy.png)           | na            |
 | profiles | [no errors](/testing-images/profiles_adminpy.png)      | [no errors](/testing-images/profiles_formspy.png)           | [no errors](/testing-images/profiles_modelspy.png)      | [no errors](/testing-images/profiles_urlspy.png)     | [no errors](/testing-images/profiles_viewspy.png)         | na     
 | settings.py | [no errors](/testing-images/tennisbuddies_settings.png)         | na          | na     | na    | na            | na     
 | tennisbuddies | na       | na          | na      | [no errors](/testing-images/tennisbuddies_urlspy)     | na            | na     
+
+[Back to top](#testing)
 
 ### JavaScript Testing
 
@@ -57,11 +78,15 @@ I used only one small JS function for closing a message window after 2000 milise
 
 [JS Validation Result](/testing-images/js_timeout.png)
 
+[Back to top](#testing)
+
 ### CSS Testing
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) was used to validate my CSS file. External CSS for Bootstrap, provided by CDN was not tested. No errors were found.
 
 [CSS Validation Result](/testing-images/css_validation_no_errors.png)
+
+[Back to top](#testing)
 
 ## Browser Compatibility
 
@@ -73,6 +98,9 @@ The website was tested on the following browsers: Google Chrome, Safari, Microso
 | Safari | &check; | 
 | Microsoft Edge| &check; | 
 | Mozilla Firefox| &check; | 
+
+[Back to top](#testing)
+
 ## Responsiveness Test
 
 Testing of responsive design was carried out manually by utilizing [Google Chrome DevTools](https://developer.chrome.com/docs/devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
@@ -82,7 +110,9 @@ Testing of responsive design was carried out manually by utilizing [Google Chrom
 | Render | pass       | pass          | pass      | pass     | pass            | pass            |
 | Images | pass       | pass          | pass      | pass     | pass            | pass            |
 
-The only devices where the whole content would not fit on the screen where the ones with height around 600px or lower. However, I prefered the scrolling to making the content smaller, as it would be really hard for the user to press the color squares.
+The only tricky page is where user's bookings are displayed (bookings/list/own or /all) on very small devices (below 375px). But since my focus was on devices >= 375px, I did not decrease the size of the content further to keep the text legible.
+
+[Back to top](#testing)
 
 ## Fixed Bugs
 
@@ -106,6 +136,8 @@ The only devices where the whole content would not fit on the screen where the o
 Lines > 80, other minor errors     |  many different files, mostly python   | I shortened most of the lines in python files, except for those where I felt the readability of the code would suffer if the code were split to numerous lines |[74fed1e](https://github.com/lucia2007/tennis_buddies/commit/74fed1e47c47c90f3a9fba0e81a5891acb64d383)
 | When I made a booking at a future date, but the time has passed, I would get a warning about booking in the past. |  views.py bookings   | I had to change the condition check for time in the past |[9aa7a16](https://github.com/lucia2007/tennis_buddies/commit/9aa7a160ba0560cb9ccf5e625de5b3cc1f76c078)
 
+[Back to top](#testing)
+
 ## Unfixed Bugs
 
 I have tried to fix the following errors but have not managed to do so in the provided timeframe. I definitely plan to fix these errors in the next version.
@@ -116,8 +148,10 @@ I have tried to fix the following errors but have not managed to do so in the pr
 2. In my Edit Buddy form the "currently" image field is empty, even though it should display the path to the image. I had not managed to make the path appear. Neverthless, this does not affect the functionality and the user is able to edit the image without any problems.
 [Missing Image description](/testing-images/missing_image_description.png)
 
-3. There is a bug in the browser console related to the imported JS. The same error appears in most browsers.
+3. There is a bug in the browser console related to the imported JS which handles the appearance of messages. The same error appears in most browsers.
 [Browser error](/testing-images/browser_error.png)
+
+[Back to top](#testing)
 
 ## Additional Testing
 ### Lighthouse
@@ -154,6 +188,8 @@ The application was also tested using [Google Lighthouse](https://developers.goo
 
 All of my scores for all of the pages were above 90, often close to 100. On a couple of pages the "Best Practices" score is slightly lower, due to an error which is logged into the console and seems to be caused by JSDelivr CDN for the close button on messages. I have not managed to fix this error. Details are in the bug section.
 
+[Back to top](#testing)
+
 ### User Stories Testing
 Before any user story could be moved to "done", clear acceptance criteria were defined and necessary tasks were listed. Only after all the criteria were met and all tasks were finished, did I consider a user story finished. The only exception was, if some of the features were moved into "won't do" category. In that case, that feature would be extracted from the user story and labeled as "won't do"
 
@@ -188,6 +224,11 @@ Before any user story could be moved to "done", clear acceptance criteria were d
 | &check; | As a **user** I want to **press a cancel button which will take me to the previous page** so that I **don't have to use the Back button**.
 | &check; | As a **user** I can **easily understand what the table lables mean** so that I can **avoid any unnecessary confusion**.
 | &check; | As a **user** I **can clearly see that I made a booking in the past** so that I can **be made aware of the fact**.
+| &check; | As a **site owner** I want **the user to provide their phone number in valid format** so that I can **contact them if necessary**.
+| &check; | As a **site owner** I can **restrict the number of bookings per user per day** so that all players **get a chance to book a court**.
+| &check; | As a **site owner** I can **make sure that the user enters valid information** so that **they can be contacted in time of need**.
+
+[Back to top](#testing)
 
 ### Manual Testing
 
@@ -256,7 +297,10 @@ Status | **Create A Buddy Detail Form - User Logged In and has a User Profile**
 | &check; | All fields in the form are required, only in case of the picture, of the user does not provide an image, a placeholder picture is used.
 
 Status | **Create A Contact Form - User Logged In and has a User Profile**
+|:-------:|:--------|
 | &check; | First name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
 | &check; | Last name is required and has to contain must not contain numbers or special characters outside of the commonly used characters.
 | &check; | Email is required and must contain "@" and some characters before and after the sign.
-<!-- | &check; | When the user fills in correct information, a message appears that the Inquiry was sent successfully. At the moment, a message appears in the CLI, as email functionality is not yet set up. However, this functionality works only on localhost and is not present on the heroku app, so the user will not see the message if using the deployed site. -->
+| &check; | When the user fills in correct information, a message appears that the Inquiry was sent successfully. At the moment, a message appears in the CLI in developement mode, as email functionality is not yet set up.
+
+[Back to top](#testing)
