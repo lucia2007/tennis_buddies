@@ -180,7 +180,7 @@ class EditBooking(
                 self.request.user == self.get_object().owner.user)
 
 
-class DeleteBooking(
+class DeleteBooking(  # type: ignore
         LoginRequiredMixin,
         UserPassesTestMixin,
         SuccessMessageMixin,

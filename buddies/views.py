@@ -118,7 +118,7 @@ class EditBuddy(
         return reverse_lazy('buddy-detail', kwargs={'pk': pk})
 
 
-class DeleteBuddy(
+class DeleteBuddy(  # type: ignore
         LoginRequiredMixin,
         UserPassesTestMixin,
         SuccessMessageMixin,

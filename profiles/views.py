@@ -90,7 +90,7 @@ class AddUserProfile(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class DeleteUserProfile(
+class DeleteUserProfile(  # type: ignore
         LoginRequiredMixin,
         UserPassesTestMixin,
         SuccessMessageMixin,

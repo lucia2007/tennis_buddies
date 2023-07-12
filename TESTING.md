@@ -72,6 +72,8 @@ I could not check the source for 500 Error page, because when I tried to look at
 
 In a few cases I used "# noqa" in order to be able to keep the lines over 80 characters without getting an error. This was done only in cases where the code legibility would suffer if I broke the code apart.
 
+I also used "# type: ignore" for an internal django bug, which is decribed [here](https://stackoverflow.com/a/75724709/15098344). I also used this expression for "missing library stubs or py.typed marker [import] mypy", [explanation](https://mypy.readthedocs.io/en/stable/running_mypy.html).
+
 [Back to top](#testing)
 
 ### JavaScript Testing
