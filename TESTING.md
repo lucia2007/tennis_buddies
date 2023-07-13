@@ -150,8 +150,13 @@ I have tried to fix the following errors but have not managed to do so in the pr
 1. In my Edit Buddy form the "currently" image field is empty, even though it should display the path to the image. I had not managed to make the path appear. Neverthless, this does not affect the functionality and the user is able to edit the image without any problems.
 [Missing Image description](/testing-images/missing_image_description.png)
 
-2. There is a bug in the browser console related to the imported JS which handles the appearance of messages. The same error appears in most browsers.
+2. There is a bug in the browser console related to the imported JS which handles the appearance of messages. The same error appears in most browsers. Error details are below.
+
+'alert.js:21 Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented') at q.close (alert.js:21:22) at (index):665:19'
+
 [Browser error](/testing-images/browser_error.png)
+
+It seems that this error occurs at "EVENT_CLOSE" which is provided by the Boostrap library. Numerous colleagues have reported having the same bug in their console. As this bug has not affected the functionality connected to displaying and closing the messages, I have left this bug-fix for the next version.
 
 [Back to top](#testing)
 
