@@ -1123,6 +1123,11 @@ I had not managed to do automated testing for this application, but I want to ma
 ![Create Application](readme-images/heroku_step_7.png)
 </details><br />
 
+- To create a superuser type in the following code:
+`python3 manage.py createsuperuser`
+
+You will be asked to enter credentials after which the superuser is created.  
+
 - We now need to add the application to settings.py
 
 <details><summary><b>Add Application to settings.py</b></summary>
@@ -1139,15 +1144,75 @@ I had not managed to do automated testing for this application, but I want to ma
 
 import os
 
-os.environ.setdefault("CLOUDINARY_URL", "insert your own Cloudinary API key here")
+os.environ["CLOUDINARY_URL]= "insert your own Cloudinary API key here"
 <br>
-os.environ.setdefault("DATABASE_URL", "insert your own ElephantSQL database URL here")
+os.environ["DATABSE_URL"] = "insert your own ElephantSQL database URL here"
 <br>
-os.environ.setdefault("SECRET_KEY", "this can be any random secret key")
+os.environ["SECRET_KEY"] = "this can be any random secret key"
 <br>
-os.environ.setdefault("DEBUG", "True")
+os.environ["DEVELOPMENT"] = '1'
 
 The last variable is for local development only and must not be included in production/deployment.
+
+- In the `settings.py` add the following code under `from pathlib import Path`:
+
+`import os`
+
+`import dj_database_url`
+
+`if os.path.isfile("env.py"):`
+
+`import env`
+
+* Replace the original SECRET_KEY with the following code:
+
+`SECRET_KEY = os.environ.get('SECRET_KEY')`
+
+* Set `DEBUG = "DEVELOPMENT" in os.environ`. This allows us to have DEBUG set to True when developing locally, but set to False when deployed to Heroku
+
+* Replace the original DATABASES code with the following lines (this allows us to use the postgress database instead of the sqlite3 databases):
+
+`
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }
+`
+
+- Save all the files and migrate the changes:
+`python3 manage.py migrate`
+
+* Add Cloudinary Libraries to the "INSTALLED_APPS" in the following order:
+
+![Cloudinary Libraries added to Installed Apps](/readme-images/cloudinary_installed_apps.png)
+
+* Add the following rows to the settings.py file for Django to be able to use and store static files:
+
+![Static Settings](/readme-images/static_settings.png)
+
+* Link the file to the Heroku templates directory:
+
+![TEMPLATES_DIR](/readme-images/templates_directory.png)
+
+* Update the TEMPLATES array with the following code:
+
+![Template array update](/readme-images/templates_array_update.png)
+
+* Add Heroku app and localhost to ALLOWED_HOSTS so the application can work through Heroku
+
+![ALLOWED_HOSTS](/readme-images/allowed_hosts.png)
+
+* Create the following folders at the top level directory:
+  * media
+  * static
+  * templates
+  
+* Create a file called **Procfile** and add the following line in it:
+`web: gunicorn PROJ_NAME.wsgi`
+
+* Save all the files and do the first commit and push to GitHub:
+  * `git add .`
+  * `git commit -m "Deployment Commit"`
+  * `git push`
 
 [Back to top](#contents)
 ## ElephantSQL Database
@@ -1241,7 +1306,6 @@ The project should now be deployed to Heroku.
 The link to the the live site can be found here - https://tennis-buddies.herokuapp.com/.
 The link to the GitHub repository can be found here - https://github.com/lucia2007/tennis_buddies.
 
-[Back to top](#contents)
 
 [Back to top](#contents)
 ## To fork the repository on GitHub
