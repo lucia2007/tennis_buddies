@@ -504,7 +504,10 @@ Before I started writing any code, I spent a lot of time on planning and thinkin
 
 Later when I needed to understand realtionships with django models better, I installed graphviz and related packages with which I could generate the schema below.
 
-[ERD Schema graphviz](/readme-images/model2.png)
+<details><summary><b>ERD Schema graphviz</b></summary>
+   
+![ERD Schema graphviz](/readme-images/model2.png)
+</details><br />
 
 This ERD schema was instrumental for creating all the necessary models for this app. Creating this schema helped me realize the relationships between different apps and models and clarified what kind of fields each of the model components would need. Later I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me clarify some of the relationships.
 
@@ -584,9 +587,16 @@ The NavBar is responsive and is available in its full version on large screens o
 
 ![Hamburger](./readme-images/hamburger_collapsed.png)
 
-[Hamburger open](./readme-images/hamburger_open.png)
+<details><summary><b>Hamburger Open</b></summary>
+   
+![Hamburger open](./readme-images/hamburger_open.png)
+</details><br />
 
-[Hamburger Profile](./readme-images/hamburger_profile.png)
+<details><summary><b>Hamburger Profile</b></summary>
+   
+![Hamburger Profile](./readme-images/hamburger_profile.png)
+</details><br />
+
 
 [Back to top](#contents)
 ## Carousel
@@ -612,11 +622,21 @@ The carousel also contains arrows and "dashes"/buttons to take the user to the d
 
 On smaller screens, the text disappears to avoid making the images cluttered.
 
-[Welcome Small](./readme-images/carousel_tennis_ball_small.png)
+<details><summary><b>Welcome Small</b></summary>
+   
+![Welcome Small](./readme-images/carousel_tennis_ball_small.png)
+</details><br />
 
-[Find a Perfect Buddy Small](./readme-images/carousel_buddies_small.png)
+<details><summary><b>Find a Perfect Buddy Small</b></summary>
+   
+![Find a Perfect Buddy Small](./readme-images/carousel_buddies_small.png)
+</details><br />
 
-[Book a Court Small](./readme-images/carousel_courts_small.png)
+<details><summary><b>Book a Court Small</b></summary>
+   
+![Book a Court Small](./readme-images/carousel_courts_small.png)
+</details><br />
+
 
 [Back to top](#contents)
 
@@ -626,7 +646,10 @@ The user can find all necessary information in the footer. There is information 
 
 ![Footer](./readme-images/footer.png)
 
-[Footer small screens](./readme-images/footer_small_screens.png)
+<details><summary><b>Footer Small Screens</b></summary>
+   
+![Footer small screens](./readme-images/footer_small_screens.png)
+</details><br />
 
 [Back to top](#contents)
 
@@ -663,7 +686,10 @@ Here the user can see the player's details such as their level, availability, pr
 
 If the signed user is also the owner of the buddy profile, when they click on their own card, they can see "Edit/Delete" buttons at the bottom of their card. These buttons are not present if the profile belongs to someone else.
 
-[Buddy Detail Page Owner](./readme-images/buddydetails_owner.png)
+<details><summary><b>Buddy Detail Page Owner</b></summary>
+   
+![Buddy Detail Page Owner](./readme-images/buddydetails_owner.png)
+</details><br />
 
 [Back to top](#contents)
 ### Future Features for Buddy Matching
@@ -966,7 +992,7 @@ Also I would like to add automated testing, as at this point I relied thoroughly
 - [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used for validation python code.
 - [Regex Pattern Checker](https://regex101.com/) - used to check my regex expression for phone number validation.
-- [Lucid Charts](https://lucid.app/lucidchart/) - for creating my ERD Diagram
+- [Lucid Charts](https://lucidchart.com/) - for creating my ERD Diagram
 
 [Back to top](#contents)
 
@@ -1008,6 +1034,7 @@ Following packages and libraries were installed and are located in requirements.
 - urllib3==1.26.16
 - graphviz==0.20.1
 
+[Back to top](#contents)
 # Testing
 
 For testing the application, I used manual testing and external validators. Both manual and external testing are a part of a separate testing [file](/TESTING.md).
@@ -1055,6 +1082,7 @@ I had not managed to do automated testing for this application, but I want to ma
 ![Click Green GitPod Button](readme-images/heroku_step_3.png)
 </details><br />
 
+[Back to top](#contents)
 ### Install Django and the supporting libraries
 
 - To install Django and the supporting libraries, type the commands below.
@@ -1121,6 +1149,7 @@ os.environ.setdefault("DEBUG", "True")
 
 The last variable is for local development only and must not be included in production/deployment.
 
+[Back to top](#contents)
 ## ElephantSQL Database
 
 [ElephantSQL](https://www.elephantsql.com/) is used for the PostgreSQL database in this project.
@@ -1133,6 +1162,7 @@ To create your own PostgreSQL database, sign-up with your GitHub account and fol
 - Select **Region** and **Data Center** closest to you.
 - Afterwards, click on the new database name, where you can view the db URL and Password. Copy it enter the address into your config vars in Heroku and into your env.py file.
 
+[Back to top](#contents)
 ## Cloudinary API
 
 [Cloudinary API](https://cloudinary.com/) is used to store media assets online.
@@ -1141,6 +1171,8 @@ In order to retrieve your Cloudinary API key, you must create an account and log
 - Choose 'Programmable Media for image and video API' for 'primary interest'.
 - Copy you **API Environment Variable** from your Cloudinary Dashboard.
 - Remove the `CLOUDINARY_URL=` from the API value and use the key in config vars in Heroku and in your env.py.
+
+[Back to top](#contents)
 ## Heroku Deployment
 
 The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
@@ -1211,6 +1243,7 @@ The link to the GitHub repository can be found here - https://github.com/lucia20
 
 [Back to top](#contents)
 
+[Back to top](#contents)
 ## To fork the repository on GitHub
 
 A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changed without affecting the original repository. Take the following steps to fork the repository:
@@ -1233,8 +1266,6 @@ Take the following steps to create a clone of a project:
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type **git clone**, and then paste the URL copied from GitHub.
 7. Press **enter** and the local clone will be created.
-
-
 8. Install requirements to get the project to work by typing in this command:
    pip3 install -r requirements.txt
    This command downloads and installs all the required dependencies as found in requirements.txt file.
@@ -1287,11 +1318,14 @@ Take the following steps to create a clone of a project:
 - [Disable html warning](https://html-validate.org/usage/index.html#inline-configuration)
 - [Disable class Deletion warning](https://stackoverflow.com/a/75724709/15098344)
 - [Check if url contains a certain string](https://stackoverflow.com/a/12877568/15098344)
+
+[Back to top](#contents)
 ## Media
 - https://www.istockphoto.com/photos/tennis-friends
 - https://www.coachhousevets.com/meet-the-team/the-team/no-photo-icon-22/
 - [Tennis Buddies image](https://www.google.com/search?q=tennis+buddies+icon&tbm=isch&ved=2ahUKEwivzZKN0LD_AhU2SEEAHdYeCk4Q2-cCegQIABAA&oq=tennis+buddies+icon&gs_lcp=CgNpbWcQAzIECCMQJzoFCAAQgAQ6BggAEAcQHjoGCAAQCBAeOgYIABAFEB46CwgAEIAEELEDEIMBOgQIABAeOgcIABAYEIAEUP4GWP0iYIIlaABwAHgAgAFoiAGKDpIBBDE3LjOYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=VzCAZO_FJLaQhbIP1r2o8AQ&bih=1441&biw=2844&rlz=1C1CHBF_csIE1041IE1041#imgrc=XSMFqBMnwoaIKM)
 
+[Back to top](#contents)
 ## Acknowledgements
 - Extra help and guidance was received from my mentor Precious Ijege, from my husband Sam and fellow colleagues from the Code Institute. I was especially thankful for my mentor's last minute feedback when I was getting weary and was becoming unattentive to detail.
 
