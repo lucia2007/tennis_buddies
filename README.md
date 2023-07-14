@@ -102,7 +102,7 @@ You can access the Tennis Buddies app here:
     - [Automated Testing](#automated-testing)
 - [Project Deployment](#project-deployment)
   - [Create a new GitHub Repository from CI template](#create-a-new-github-repository-from-ci-template)
-    - [Install Django and the supporting libraries](#install-django-and-the-supporting-libraries)
+  - [Install Django and the supporting libraries](#install-django-and-the-supporting-libraries)
   - [ElephantSQL Database](#elephantsql-database)
   - [Cloudinary API](#cloudinary-api)
   - [Heroku Deployment](#heroku-deployment)
@@ -1083,7 +1083,7 @@ I had not managed to do automated testing for this application, but I want to ma
 </details><br />
 
 [Back to top](#contents)
-### Install Django and the supporting libraries
+## Install Django and the supporting libraries
 
 - To install Django and the supporting libraries, type the commands below.
 
@@ -1140,19 +1140,19 @@ You will be asked to enter credentials after which the superuser is created.
 * ```python3 manage.py migrate``` - This will migrate the changes.
 * ```python3 manage.py runserver``` - This runs the server. To test it, click the 'open browser' button that will be visible after the command is run.
 
-- Create `env.py` file at the root level and include the following environment variables:
+- Create `env.py` file at the root level and include the following environment variables. Don't forget to add the `env.py` file in the `.gitignore` in order to keep your secret information from becoming unsafe:
 
-import os
+`import os`
 
-os.environ["CLOUDINARY_URL]= "insert your own Cloudinary API key here"
-<br>
-os.environ["DATABSE_URL"] = "insert your own ElephantSQL database URL here"
-<br>
-os.environ["SECRET_KEY"] = "this can be any random secret key"
-<br>
-os.environ["DEVELOPMENT"] = '1'
+`os.environ["CLOUDINARY_URL"] = "insert your own Cloudinary API key here"`
 
-The last variable is for local development only and must not be included in production/deployment.
+`os.environ["DATABASE_URL"] = "insert your own ElephantSQL database URL here"`
+
+`os.environ["SECRET_KEY"] = "this can be any random secret key"`
+
+`os.environ["DEVELOPMENT"] = '1'`
+
+The last variable is for local development only and must not be included in production/deployment/config vars in Heroku.
 
 - In the `settings.py` add the following code under `from pathlib import Path`:
 
@@ -1164,13 +1164,13 @@ The last variable is for local development only and must not be included in prod
 
 `import env`
 
-* Replace the original SECRET_KEY with the following code:
+* Replace the original unsafe SECRET_KEY with the following code:
 
 `SECRET_KEY = os.environ.get('SECRET_KEY')`
 
-* Set `DEBUG = "DEVELOPMENT" in os.environ`. This allows us to have DEBUG set to True when developing locally, but set to False when deployed to Heroku
+* Set `DEBUG = "DEVELOPMENT" in os.environ`. This allows us to have DEBUG set to True when developing locally, but set to False when deployed to Heroku.
 
-* Replace the original DATABASES code with the following lines (this allows us to use the postgress database instead of the sqlite3 databases):
+* Replace the original `DATABASES` code with the following lines (this allows us to use the postgress database instead of the sqlite3 databases):
 
 `
 DATABASES = {
@@ -1181,7 +1181,7 @@ DATABASES = {
 - Save all the files and migrate the changes:
 `python3 manage.py migrate`
 
-* Add Cloudinary Libraries to the "INSTALLED_APPS" in the following order:
+* Add Cloudinary Libraries to the "INSTALLED_APPS" in the following order (the order must be adhered to):
 
 ![Cloudinary Libraries added to Installed Apps](/readme-images/cloudinary_installed_apps.png)
 
@@ -1225,7 +1225,7 @@ To create your own PostgreSQL database, sign-up with your GitHub account and fol
 - Select **Tiny Turtle(Free)** plan.
 - Leave the **Tags** blank.
 - Select **Region** and **Data Center** closest to you.
-- Afterwards, click on the new database name, where you can view the db URL and Password. Copy it enter the address into your config vars in Heroku and into your env.py file.
+- Afterwards, click on the new database name, where you can view the db URL and Password. Copy it enter the address into your **config vars in Heroku** and into your `env.py` file.
 
 [Back to top](#contents)
 ## Cloudinary API
@@ -1234,15 +1234,15 @@ To create your own PostgreSQL database, sign-up with your GitHub account and fol
 
 In order to retrieve your Cloudinary API key, you must create an account and log in.
 - Choose 'Programmable Media for image and video API' for 'primary interest'.
-- Copy you **API Environment Variable** from your Cloudinary Dashboard.
-- Remove the `CLOUDINARY_URL=` from the API value and use the key in config vars in Heroku and in your env.py.
+- Copy your **API Environment Variable** from your Cloudinary Dashboard.
+- Remove the `CLOUDINARY_URL=` from the API value and use the key in **config vars in Heroku** and in your `env.py`.
 
 [Back to top](#contents)
 ## Heroku Deployment
 
 The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
 
-Create the application on Heroku, attach a database, prepare the environment and settings.py file and setup the Cloudinary storage for static and media files.
+Create the application on Heroku, attach a database, prepare the `env.py` and `settings.py` file and setup the Cloudinary storage for static and media files.
 
 * Go to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
 
@@ -1250,30 +1250,29 @@ Create the application on Heroku, attach a database, prepare the environment and
 
 <details><summary><b>Create New App</b></summary>
 
-![Create New App](readme-images/heroku_step_9.png)
+![Create New App](/readme-images/heroku_step_9.png)
 </details><br />
 
 <details><summary><b>Choose Name and Region</b></summary>
 
-![Choose Name and Region](readme-images/heroku_step_10.png)
-</details><br />
-   <details><summary><b>Create new app</b></summary>
-
-![Create new app](/readme-images/create_new_app.png)
+![Choose Name and Region](/readme-images/heroku_step_10.png)
 </details><br />
 
 - This brings you to the "Deploy" tab. From here, click the "Settings" tab and scroll down to the "Config Vars" section and click on "Reveal Config Vars". In the KEY input field, enter "PORT" and in the VALUE input field, enter "8000". After that, click the "Add" button on the right.
+
+- Also add the `CLOUDINARY_URL`, `DATABASE_URL` and the `SECRET_KEY`. The values are identical to those entered into the `env.py` file.
+
+- We need `DISABLE_COLLECTSTATIC` variable only for the initial deployment, later this variable must be removed.
 
 <details><summary><b>Config Vars</b></summary>
 
 ![Config Vars](/readme-images/config_vars.png)
 </details><br />
 
-We need "DISABLE_COLLECTSTATIC" variable only for the initial deployment, later this variable must be removed.
 
 Heroku needs two additional files in order to deploy properly:
-- requirements.txt (see above)
-- Procfile - this file can be created with the following command: `echo web: gunicorn app_name.wsgi > Procfile`. Replace 'app-name' with the name of your primary Django app/project name.
+- `requirements.txt` (see above)
+- `Procfile` - this file can be created with the following command: `echo web: gunicorn app_name.wsgi > Procfile`. Replace 'app-name' with the name of your primary Django app/project name.
 
 - Scroll back to the top of the page and choose the "Deploy" tab. Then choose "GitHub" as Deployment method.
    
@@ -1328,23 +1327,31 @@ Take the following steps to create a clone of a project:
 3. In the **HTTPS** section, click on the clipboard icon to copy the displayed URL.
 4. In your IDE of choice, open **Git Bash**.
 5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type **git clone**, and then paste the URL copied from GitHub.
+6. Type `git clone``, and then paste the URL copied from GitHub.
 7. Press **enter** and the local clone will be created.
 8. Install requirements to get the project to work by typing in this command:
-   pip3 install -r requirements.txt
-   This command downloads and installs all the required dependencies as found in requirements.txt file.
-9. Set up environment file so that the project knows what variables are needed to make it work. These variables are usually hidden due to sensitivity of the information. You must not push the env.py file to GitHub. You 
-   will achieve this by adding the env.py to the .gitignore-file. The variables that are declared in the env.py also need to be added to the Heroku config vars. Make all the relevant migrations before running the server by:
-    - python3 manage.py migrate - this makes the necessary migrations
-    - python3 manage.py runserver - enables the project to live locally 
+   `pip3 install -r requirements.txt`
+   This command downloads and installs all the required dependencies as found in `requirements.txt file`.
+9. Set up environment file (`env.py`) so that the project knows what variables are needed to make it work. Add the following code to your file.
+    
+`import os`
+
+`os.environ["CLOUDINARY_URL"] = "insert your own Cloudinary API key here"`
+
+`os.environ["DATABASE_URL"] = "insert your own ElephantSQL database URL here"`
+
+`os.environ["SECRET_KEY"] = "this can be any random secret key"`
+
+`os.environ["DEVELOPMENT"] = '1'`
+
+These variables are usually hidden due to sensitivity of the information. You must not push the `env.py` file to GitHub. You will achieve this by adding the `env.py` to the `.gitignore-file`. The variables that are declared in the `env.py` also need to be added to the **Heroku config vars** apart from the ["DEVELOPMENT"] variable, for detailes see above. (For setting up your CLOUDINARY and ElephantSQL please follow the steps detailed in the deployment section.)
+
+10.  Make all the relevant migrations before running the server by:
+    - `python3 manage.py migrate` - this makes the necessary migrations
+    - `python3 manage.py runserver` - enables the project to live locally 
+    - `python3 manage.py createsuperuser` - this creates a superuser after you provide credentials
 
 ![Github cloning process image](/readme-images/cloning_process.png)
-
-<details><summary><b>Setup env.py (incomplete image due to sensitive information)</b></summary>
-   
-![Env.py](/readme-images/env_py.png)
-
-</details><br />
 
 [Back to top](#contents)
 
@@ -1352,7 +1359,7 @@ Take the following steps to create a clone of a project:
 
 ## Content
 - I followed [this link](https://www.youtube.com/watch?v=6F7QMoIc_dM) to generate an extensive model of all my project apps, including the Django inbuilt models which helped me understand the relationships
-- Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment, https://github.com/amylour/FreeFido_v2, https://github.com/adamgilroy22/tribe/tree/main#deployment
+- Readmes to follow: https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md#deployment, https://github.com/amylour/FreeFido_v2, https://github.com/adamgilroy22/tribe/tree/main#deployment, https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md
 - Table structure in Staff Dashboard was created following [this tutorial](https://www.youtube.com/watch?v=gXGQmt_U9Ao&t=65s).
 - [Filtered booking list](https://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user)
 - [To query according to url+filter](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
