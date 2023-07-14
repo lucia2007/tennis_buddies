@@ -1225,7 +1225,7 @@ To create your own PostgreSQL database, sign-up with your GitHub account and fol
 - Select **Tiny Turtle(Free)** plan.
 - Leave the **Tags** blank.
 - Select **Region** and **Data Center** closest to you.
-- Afterwards, click on the new database name, where you can view the db URL and Password. Copy it enter the address into your **config vars in Heroku** and into your `env.py` file.
+- Afterwards, click on the new database name, where you can view the db URL and Password. Copy the URL and enter the address into your **config vars in Heroku** and into your `env.py` file.
 
 [Back to top](#contents)
 ## Cloudinary API
@@ -1242,7 +1242,7 @@ In order to retrieve your Cloudinary API key, you must create an account and log
 
 The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
 
-Create the application on Heroku, attach a database, prepare the `env.py` and `settings.py` file and setup the Cloudinary storage for static and media files.
+Create the application on Heroku, attach a database, prepare the `env.py` and `settings.py` file and setup the **Cloudinary storage** for static and media files. To do all this, follow the steps above.
 
 * Go to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
 
@@ -1262,7 +1262,7 @@ Create the application on Heroku, attach a database, prepare the `env.py` and `s
 
 - Also add the `CLOUDINARY_URL`, `DATABASE_URL` and the `SECRET_KEY`. The values are identical to those entered into the `env.py` file.
 
-- We need `DISABLE_COLLECTSTATIC` variable only for the initial deployment, later this variable must be removed.
+- `DISABLE_COLLECTSTATIC` variable is needed only for the initial deployment, later this variable must be removed.
 
 <details><summary><b>Config Vars</b></summary>
 
