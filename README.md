@@ -597,7 +597,6 @@ The NavBar is responsive and is available in its full version on large screens o
 ![Hamburger Profile](./readme-images/hamburger_profile.png)
 </details><br />
 
-
 [Back to top](#contents)
 ## Carousel
 
@@ -636,7 +635,6 @@ On smaller screens, the text disappears to avoid making the images cluttered.
    
 ![Book a Court Small](./readme-images/carousel_courts_small.png)
 </details><br />
-
 
 [Back to top](#contents)
 
@@ -1027,7 +1025,7 @@ Following packages and libraries were installed and are located in requirements.
 - types-dj-database-url==1.3.0.3
 - types-pytz==2023.3.0.0
 - types-PyYAML==6.0.12.9
-
+  
 - pydot==1.4.2
 - pygraphviz==1.10
 - pyparsing==3.0.9

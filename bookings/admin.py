@@ -1,6 +1,5 @@
 from django.contrib import admin  # type: ignore
 from .models import Booking, Court
-# from buddies.models import UserProfile  # type: ignore
 
 
 @admin.register(Booking)
