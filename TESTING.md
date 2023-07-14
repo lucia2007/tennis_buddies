@@ -30,7 +30,7 @@ During HTML validation I encountered a number of errors in my file. In order to 
 | Page | Current Errors and Warning (No Errors) | Original Errors and Warnings | Bug-Fix (Commit #)
 | ---- | ---------- | --------- |  ---------- |
 | Home | [Home Page validation](./testing-images/index_html_no_errors.png) | [index.html Errors](./testing-images/homepage_html_validation_errors.png)  | [2c843fa](https://github.com/lucia2007/tennis_buddies/commit/2c843fa7a82dca807c5b41020fd5433524763c75), [522bb31](https://github.com/lucia2007/tennis_buddies/commit/522bb3181c1df4854706dbbc2a55d40e24438dd2)  |
-| Find the Perfect Buddy | [Find Perfect buddy validation](./testing-images/perfect_buddy_no_errors.png) | [Find Buddy Errors](testing-images/perfect_buddy_no_errors.png)  | [0dd4f0d](https://github.com/lucia2007/tennis_buddies/commit/0dd4f0d99bacc93a8cd09d5bcc8bb4af4a5e7bb7) |
+| Find the Perfect Buddy | [Find Perfect buddy validation](./testing-images/perfect_buddy_no_errors.png) | [Find Buddy Errors](testing-images/perfect_buddy_validation_errors.png)  | [0dd4f0d](https://github.com/lucia2007/tennis_buddies/commit/0dd4f0d99bacc93a8cd09d5bcc8bb4af4a5e7bb7) |
 | Booking Calendar | [Booking Validation](./testing-images/booking_calendar_html_no_errors.png) |  [Booking Errors](testing-images/booking_calendar_html_validation_errors.png) | [915dd87](https://github.com/lucia2007/tennis_buddies/commit/915dd87d5b811a77238837d4c9b7dd11ffdd1cff)
 | Add Booking | [Add Booking Validation](./testing-images/add_booking_html_no_errors.png) |
 | Your Bookings | [Your Bookings Validation](./testing-images/your_bookings_html_no_errors.png) |
@@ -67,8 +67,8 @@ I could not check the source for 500 Error page, because when I tried to look at
 | contact | na     | [no errors](/testing-images/contactform_formpy.png)        | na      | [no errors](/testing-images/contactform_urlspy.png)     | [no errors](/testing-images/contactform_viewspy.png)            | na            |
 | home | na      | na          | na      | [no errors](/testing-images/home_urlspy.png)     | [no errors](/testing-images/home_viewspy.png)           | na            |
 | profiles | [no errors](/testing-images/profiles_adminpy.png)      | [no errors](/testing-images/profiles_formspy.png)           | [no errors](/testing-images/profiles_modelspy.png)      | [no errors](/testing-images/profiles_urlspy.png)     | [no errors](/testing-images/profiles_viewspy.png)         | na     
-| settings.py | [no errors](/testing-images/tennisbuddies_settings.png)         | na          | na     | na    | na            | na     
-| tennisbuddies | na       | na          | na      | [no errors](/testing-images/tennisbuddies_urlspy)     | na            | na     
+| settings.py | [no errors](/testing-images/tennisbuddies_settingspy.png)         | na          | na     | na    | na            | na     
+| tennisbuddies | na       | na          | na      | [no errors](/testing-images/tennisbuddies_urlspy.png)     | na            | na     
 
 In a few cases I used "# noqa" in order to be able to keep the lines over 80 characters without getting an error. This was done only in cases where the code legibility would suffer if I broke the code apart.
 
@@ -86,7 +86,7 @@ I used only one small JS function for closing a message window after 2000 milise
 
 ### CSS Testing
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) was used to validate my CSS file. External CSS for Bootstrap, provided by CDN was not tested. No errors were found.
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by CDN was not tested. No errors were found.
 
 [CSS Validation Result](/testing-images/css_validation_no_errors.png)
 
@@ -140,6 +140,8 @@ The only tricky page is where user's bookings are displayed (bookings/list/own o
 Lines > 80, other minor errors     |  many different files, mostly python   | I shortened most of the lines in python files, except for those where I felt the readability of the code would suffer if the code were split to numerous lines |[74fed1e](https://github.com/lucia2007/tennis_buddies/commit/74fed1e47c47c90f3a9fba0e81a5891acb64d383)
 | When I made a booking at a future date, but the time has passed, I would get a warning about booking in the past. |  views.py bookings   | I had to change the condition check for time in the past |[9aa7a16](https://github.com/lucia2007/tennis_buddies/commit/9aa7a160ba0560cb9ccf5e625de5b3cc1f76c078)
 | Staff tab was highlighted even when I was on bookings/list/own |  header.html   | I had to change the condition to look for the url path and not for url_name |[525c0fd](https://github.com/lucia2007/tennis_buddies/commit/525c0fdfededbb510e0223c77aeb22f88d6a0ee1)
+
+The last few commits contain minor bug fixes, usually for broken links, or images not displaying. They always have "Bug-fix" in the name of the commit.
 
 [Back to top](#testing)
 
