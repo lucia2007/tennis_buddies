@@ -1332,7 +1332,7 @@ Take the following steps to create a clone of a project:
 8. Install requirements to get the project to work by typing in this command:
    `pip3 install -r requirements.txt`
    This command downloads and installs all the required dependencies as found in `requirements.txt file`.
-9. Set up environment file (`env.py`) so that the project knows what variables are needed to make it work. Add the following code to your file.
+9. Set up environment file (`env.py`) so that the project knows what variables are needed to make it work. For retrieving the Cloudinary API key and the ElepahtnSQL url, please follow the steps in the subsequent sections. Then add the following code to your file. 
     
 `import os`
 
